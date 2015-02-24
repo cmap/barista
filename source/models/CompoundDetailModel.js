@@ -1,19 +1,11 @@
 // # **CompoundDetailModel**
-
-// A Backbone.Model that represents a single compound's description.  The data
-// model captures a number of fields including
-
-// 1. pert_id: the compound's perturbagen identifier
-// 2. pert_iname: the compound's standardized name
-// 3. pert_summary: a short description of the compound
-// 4. pubchem_cid: the PubChem identifier associated with the compound
-// 5. wiki_url: wikipedia url
-
-// `pert_detail_model = new CompoundDetailModel()`
+/**
+ * A Backbone.Model that represents a single compound's description
+ * The data model captures a number of fields including
+ * `pert_detail_model = new CompoundDetailModel()`
+ */
 
 Barista.Models.CompoundDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
   /**
    * describes the model's default parameters
    * @param {string} pert_id       the compound's perturbagen identifier
@@ -39,9 +31,6 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
     structure_url: ""
   },
 
-  // ### fetch
-  // fetches new data from the pert_info api. All fields are replaced by the first item
-  // that matches the api search_string
   /**
    * fetches new data from the pert_info api
    * @param  {string}  search_string  value to search for

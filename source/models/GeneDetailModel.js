@@ -1,19 +1,11 @@
 // # **GeneDetailModel**
-
-// A Backbone.Model that represents a single compound's description.  The data
-// model captures a number of fields including
-
-// 1. pert_id: the compound's perturbagen identifier
-// 2. pert_iname: the compound's standardized name
-// 3. pert_summary: a short description of the compound
-// 4. pubchem_cid: the PubChem identifier associated with the compound
-// 5. wiki_url: wikipedia url
-
-// `pert_detail_model = new GeneDetailModel()`
+/**
+ * A Backbone.Model that represents a single compound's description
+ * The data model captures a number of fields including
+ * `pert_detail_model = new GeneDetailModel()`
+ */
 
 Barista.Models.GeneDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
     /**
    * describes the model's default parameters
    * @param {string} pert_id       the compound's perturbagen identifier

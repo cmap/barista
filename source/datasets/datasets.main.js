@@ -1,9 +1,10 @@
 // # **CellHistologyDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular Contexts available in the Connectivity Map
-
-// CellHistologyDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
+ * in the Connectivity Map
+ * CellHistologyDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellHistology:
@@ -96,11 +97,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **CellIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular Contexts available in the Connectivity Map
-
-// CellIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
+ * in the Connectivity Map
+ * CellIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets
+ * in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellID:
@@ -194,11 +196,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **CellLineageDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular Contexts available in the Connectivity Map
-
-// CellLineageDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
+ * in the Connectivity Map
+ * CellLineageDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellLineage:
@@ -291,11 +294,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **CellMutationDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular mutation annotations available in the Connectivity Map
-
-// CellMutationDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation
+ * annotations available in the Connectivity Map
+ * CellMutationDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:
@@ -381,11 +385,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **CompoundPertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Perturbation IDs available in the Connectivity Map
-
-// CompoundPertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available
+ * in the Connectivity Map
+ * CompoundPertINameDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CompoundPertIName:
@@ -510,11 +515,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **GeneticPertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Perturbation IDs available in the Connectivity Map
-
-// GeneticPertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available
+ * in the Connectivity Map
+ * GeneticPertINameDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ GeneticPertIName:
@@ -639,11 +645,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **JobIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// job IDs available in the Connectivity Map
-
-// JobIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
+ * Connectivity Map
+ * JobIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets in
+ * views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobID:
@@ -736,11 +743,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **JobNameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// job IDs available in the Connectivity Map
-
-// JobNameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
+ * Connectivity Map
+ * JobNameDataset is typically not used directly, rather it's content is extracted from Barista.Datasets 
+ * in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobName:
@@ -833,11 +841,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **JobStatusDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// job Statuses available in the Connectivity Map
-
-// JobStatusDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the
+ * Connectivity Map
+ * JobStatusDataset is typically not used directly, rather it's content is extracted from Barista.Datasets 
+ * in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobStatus:
@@ -930,11 +939,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **P100PertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// P100 Perturbation IDs available in the Connectivity Map
-
-// P100PertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available
+ * in the Connectivity Map
+ * P100PertINameDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ P100PertIName:
@@ -1034,11 +1044,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **PRISMPertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// PRISM Perturbation IDs available in the Connectivity Map
-
-// PRISMPertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for PRISM Perturbation IDs available
+ * in the Connectivity Map
+ * PRISMPertINameDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ PRISMPertIName:
@@ -1137,11 +1148,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **PertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Perturbation IDs available in the Connectivity Map
-
-// PertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available in
+ * the Connectivity Map
+ * PertINameDataset is typically not used directly, rather it's content is extracted from Barista.Datasets
+ * in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ PertIName:
@@ -1266,11 +1278,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **ToolIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Tool IDs available in the Connectivity Map
-
-// ToolIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Tool IDs available in the
+ * Connectivity Map
+ * ToolIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets in
+ * views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { ToolID:
@@ -1364,11 +1377,12 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 // # **UserIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// user IDs available in the Connectivity Map
-
-// UserIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the
+ * Connectivity Map
+ * UserIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets in
+ * views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { UserID:

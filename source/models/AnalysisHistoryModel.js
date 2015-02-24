@@ -1,10 +1,9 @@
 // # **AnalysisHistoryModel**
-
-// A Backbone.Model that represents an analysis history object.
-// `pert_model = new AnalysisHistoryModel()`
+/**
+ * A Backbone.Model that represents an analysis history object.
+ * `pert_model = new AnalysisHistoryModel()`
+ */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
-    // ### initialize
-    // Overides the base Model's initialize method to add the models date attribute and set the cid to the mongo _id field
     /**
      * Overides the base Model's initialize method to add the models date attribute and set the cid to the
      * mongo _id field

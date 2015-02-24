@@ -1,16 +1,18 @@
 // # **AnalysisHistoryCollection**
-// A Backbone.Collection that represents a set of analysis history objects.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/pertinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
+/**
+ * A Backbone.Collection that represents a set of analysis history objects
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    *'//api.lincscloud.org/a2/pertinfo?callback=?'*
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to *0*
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to *false*
+ */
 
 Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
-    // #### initialize
     /**
      * fetch model data from assigned url
      */
@@ -20,31 +22,23 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
         this.url =  Barista.APIURL + '/compute_status?callback=?';
     },
 
-    // #### model
-    // the model used for the collection objects.
     /**
      * the model used for the collection objects
      */
     model: Barista.Models.AnalysisHistoryModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
     /**
      * the skip parameter used in api calls when the collection is updated
      * @type {Number}
      */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
     /**
      * indicates wether or not the collection is in the middle of a fetch operation
      * @type {Boolean}
      */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
     /**
      * the maximum size of the collection
      * defaults to Infinity
@@ -52,8 +46,6 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
      */
     maxCount: Infinity,
 
-    // ### user_id
-    // the user_id to search jobs for. Forcing this to be set prevents us from searching other users jobs
     /**
      * the user_id to search jobs for
      * Forcing this to be set prevents us from searching other users jobs
@@ -61,18 +53,9 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
      */
     user: undefined,
 
-    // ## getData
-    // `AnalysisHistoryCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 3.  {number}  **limit**  the number of models to be fetched, defaults to *30*
   /**
    * Gets additional data from the specified url and stores them as models in the collection
+   * `AnalysisHistoryCollection.getData(search_string,search_type,limit)`
    * the count and pert_types data is replaced with new data coming from the api call
    * @param  {string}  search_string  the string on which a regex search into the api at the collections
    *                                  url will be performed, defaults to *""*

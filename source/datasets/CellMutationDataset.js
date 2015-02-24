@@ -1,9 +1,10 @@
 // # **CellMutationDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular mutation annotations available in the Connectivity Map
-
-// CellMutationDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation
+ * annotations available in the Connectivity Map
+ * CellMutationDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:

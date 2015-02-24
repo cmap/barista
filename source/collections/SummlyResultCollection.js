@@ -1,21 +1,22 @@
 // # **SummlyResultCollection**
-// A Backbone.Collection that represents a set of CMap Summly results.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *SummlyResultModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/summlyinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-//		pert_collection = new PertCollection({model: PertModel,
-//											url: Barista.APIURL + '/a2/pertinfo?callback=?',
-//											skip: 0,
-//											isLoading: false});
+/**
+ * A Backbone.Collection that represents a set of CMap Summly results
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    *'//api.lincscloud.org/a2/pertinfo?callback=?'*
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to *0*
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to *false*
+ * pert_collection = new PertCollection({model: PertModel,
+                                          url: Barista.APIURL + '/a2/pertinfo?callback=?',
+                                          skip: 0,
+                                          isLoading: false});
+ */
 
 Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
-	// #### initialize
     /**
      * fetch model data from assigned url
      */
@@ -25,31 +26,23 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 		this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
 	},
 
-	// ### model
-	// the model used for collection objects
     /**
      * the model used for collection objects
      */
 	model: Barista.Models.SummlyResultModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
     /**
      * the skip parameter used in api calls when the collection is updated
      * @type {Number}
      */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
     /**
      * indicates wether or not the collection is in the middle of a fetch operation
      * @type {Boolean}
      */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
     /**
      * the maximum size of the collection
      * defaults to Infinity
@@ -57,14 +50,6 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
      */
     maxCount: Infinity,
 
-    // ## getDataMock
-    //			PertCollection.getDataMock(limit);
-
-    // Generates additional fake data objects and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {number}  **limit**  the number of models to be fetched, defaults to *30*
   /**
    * Gets additional data from the specified url and stores them as models in the collection
    * the count and pert_types data is replaced with new data coming from the api call

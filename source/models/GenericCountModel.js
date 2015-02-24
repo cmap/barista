@@ -1,21 +1,16 @@
 // # **GenericCountModel**
-
-// A Backbone.Model that represents the count of a set CMap databbase items.  The data model
-// captures the total count of perturbagens that meet a search criteria.
-
-// optional arguments:
-
-// 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-// 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"//api.lincscloud.org/a2/pertinfo"*
-
-// `generic_count_model = new GenericCountModel()`
+/**
+ * A Backbone.Model that represents the count of a set CMap databbase items
+ * The data model captures the total count of perturbagens that meet a search criteria
+ * optional arguments:
+ * @param {string} search_field  the document field the model with count over upon fetching data,
+ *                               defaults to *"pert_iname"*
+ * @param {string} url           the url of the api service to fetch data from, defaults to
+ *                               *"//api.lincscloud.org/a2/pertinfo"*
+ * `generic_count_model = new GenericCountModel()`
+ */
 
 Barista.Models.GenericCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-  // 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"//api.lincscloud.org/a2/pertinfo"*
   /**
    * describes the model's default parameters
    * @param {string} search_field  the document field the model with count over upon fetching data,
@@ -32,8 +27,6 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
     "distinct": false
   },
 
-  // ## initialize
-  // custom initialization to make sure we have the correct url for jsonp
   /**
    * custom initialization to make sure we have the correct url for jsonp
    */
@@ -44,9 +37,6 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
     }
   },
 
-  // ### fetch
-  // fetches new data from the API.  the count is updated with a new
-  // count based on the results of the api call
   /**
    * fetches new data from the API
    * the count is updated with a new count based on the results of the api call

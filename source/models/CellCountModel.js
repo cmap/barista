@@ -1,21 +1,14 @@
 // # **CellCountModel**
-
-// A Backbone.Model that represents the count of a set of cell_lines.  The data model
-// captures both the total count of cell lines that meet a search criteria and the count
-// of each annotation category for the set of cell lines.
-
-// optional arguments:
-
-// 1.  {string}  **type\_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-
-// `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+/**
+ * A Backbone.Model that represents the count of a set of cell_lines
+ * The data model captures both the total count of cell lines that meet a search criteria and the count of
+ * each annotation category for the set of cell lines
+ * optional arguments:
+ * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
+ *                              to *'["trt_sh","trt_oe"]'*
+ * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ */
 Barista.Models.CellCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {Number}  **pert\_count**  the number of perturbagens matching an api query, defaults to *0*
-  // 2.  {Array}  **pert\_types**  an array of objects representing pert\_type categories to keep track of, defaults to *[{}}]*
-  // 3.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
   /**
    * describes the model's default parameters
    * @param {number} count        the number of perturbagens matching an api query, defaults to *0*
@@ -30,9 +23,6 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
     last_update: (new Date()).getTime()
   },
 
-  // ### fetch
-  // fetches new data from the cell_info api.  the count and pert_types data
-  // is replaced with new data coming from the api call
   /**
    * fetches new data from the cell_info api
    * the count and pert_types data is replaced with new data coming from the api call

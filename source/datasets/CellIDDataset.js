@@ -1,9 +1,10 @@
 // # **CellIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// Cellular Contexts available in the Connectivity Map
-
-// CellIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
+ * in the Connectivity Map
+ * CellIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets
+ * in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellID:

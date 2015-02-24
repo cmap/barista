@@ -1,9 +1,10 @@
 // # **JobIDDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// job IDs available in the Connectivity Map
-
-// JobIDDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
+ * Connectivity Map
+ * JobIDDataset is typically not used directly, rather it's content is extracted from Barista.Datasets in
+ * views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobID:
