@@ -6,7 +6,7 @@ Barista.Models.PertModel = Backbone.Model.extend({
 	// ### initialize
 	// Overides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
 	  /**
-  * Overides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
+  * Overrides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
   * @param  {string}  attributes
   * @param  {string}  options
   */ 

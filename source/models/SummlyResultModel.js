@@ -22,8 +22,10 @@ Barista.Models.SummlyResultModel = Backbone.Model.extend({
    * @param {string} target            the target perturbagen (pert_iname), defaults to *""*
    * @param {number} summly_score      summarized connectivity score across cell types, defaults to *-666*
    * @param {number} summly_rank       summarized percent rank across cell types, defaults to *-666*
-   * @param {number} specificity       fraction of background queries that score/rank higher than the observed connection, defaults to *-666*
-   * @param {object} cell_line_scores  the connectivity map scores in each cell line for the target perturbagen , defaults to *{}*
+   * @param {number} specificity       fraction of background queries that score/rank higher than the
+   *                                   observed connection, defaults to *-666*
+   * @param {object} cell_line_scores  the connectivity map scores in each cell line for the target
+   *                                   perturbagen, defaults to *{}*
    */
 	defaults: {
 		query: "",

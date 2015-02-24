@@ -21,10 +21,14 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
   // 5.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
    /**
    * describes the model's default parameters
-   * @param {string} type_string      the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
+   * @param {string} type_string      the string of pert_types that will be search upon fetching data,
+   *                                  defaults to *'["trt_sh","trt_oe"]'*
    * @param {number} count            the number of perturbagens matching an api query, defaults to *0*
-   * @param {array}  pert_types       an array of objects representing pert\_type categories to keep track of, defaults to *[{}}]*
-   * @param {string} pert_type_field  a field name over which to look for pert_types.  This runs an aggregated count over the specified field name in the Connectivity Map database, defaults to *'pert_icollection'*
+   * @param {array}  pert_types       an array of objects representing pert\_type categories to keep track
+   *                                  of, defaults to *[{}}]*
+   * @param {string} pert_type_field  a field name over which to look for pert_types.  This runs an
+   *                                  aggregated count over the specified field name in the Connectivity
+   *                                  Map database, defaults to *'pert_icollection'*
    * @param {date}   last_update      a timestamp of the latest model update, defaults to the current time
    */
   defaults: {

@@ -14,7 +14,8 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
       /**
    * describes the model's default parameters
    * @param {string} filter       the current filter to be used with api calls, defaults to *""*
-   * @param {object} tree_object  an object that describes the structured tree data representing cell_line counts, defaults to *{children:[]}*
+   * @param {object} tree_object  an object that describes the structured tree data representing cell_line
+   *                              counts, defaults to *{children:[]}*
    */
   defaults: {
     "filter": "",
