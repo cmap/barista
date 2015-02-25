@@ -1,4 +1,3 @@
-// # **CellIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
  * in the Connectivity Map

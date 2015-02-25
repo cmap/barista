@@ -1,4 +1,3 @@
-// # **AnalysisHistoryModel**
 /**
  * A Backbone.Model that represents an analysis history object.
  * `pert_model = new AnalysisHistoryModel()`
@@ -7,8 +6,9 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
     /**
      * Overides the base Model's initialize method to add the models date attribute and set the cid to the
      * mongo _id field
-     * @param  {string}  attributes
-     * @param  {string}  options
+     * @todo these parameters are never used, consider removing from function
+     * @param  {object}  attributes
+     * @param  {object}  options
      */
     initialize: function(attributes, options) {
         this.cid = this.get('_id')

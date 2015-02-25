@@ -1,6 +1,3 @@
-// # **getEmSizeInPixels**
-
-// a utility function to find the size of 1em for the given element id
 /**
  * a utility function to find the size of 1em for the given element id
  * @param  {string}  id  element id

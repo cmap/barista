@@ -1,4 +1,3 @@
-// # **ToolIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Tool IDs available in the
  * Connectivity Map

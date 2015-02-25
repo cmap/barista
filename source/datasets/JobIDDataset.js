@@ -1,4 +1,3 @@
-// # **JobIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
  * Connectivity Map

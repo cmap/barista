@@ -1,22 +1,11 @@
-// # **SummlyResultModel**
-
-// A Backbone.Model that represents the a single CMap Summly result. A single
-// result is composed of the connection between two pert_inames (a query and a target), 
-// the component data that went into computing the summly result, and the statistics 
-// of the summly computation
-
-//		summly_result = new SummlyResultModel();
+/**
+ * A Backbone.Model that represents the a single CMap Summly result
+ * A single result is composed of the connection between two pert_inames (a query and a target), the
+ * component data that went into computing the summly result, and the statistics  of the summly computation
+ * summly_result = new SummlyResultModel();
+ */
 Barista.Models.SummlyResultModel = Backbone.Model.extend({
-	// ### defaults
-	// set up defaults for model values
-
-	// 1.  {String}  **query**  the query perturbagen (pert_iname), defaults to *""*
-	// 2.  {String}  **target**  the target perturbagen (pert_iname), defaults to *""*
-	// 3.  {Number}  **summly_score**   summarized connectivity score across cell types, defaults to *-666*
-	// 4.  {Number}  **summly_rank**  summarized percent rank across cell types, defaults to *-666*
-	// 5.  {Number}  **specificity**  fraction of background queries that score/rank higher than the observed connection, defaults to *-666*
-	// 6.  {Object}  **cell_line_scores**  the connectivity map scores in each cell line for the target perturbagen , defaults to *{}*
-   /**
+	/**
    * set up defaults for model values
    * @param {string} query             the query perturbagen (pert_iname), defaults to *""*
    * @param {string} target            the target perturbagen (pert_iname), defaults to *""*
@@ -36,14 +25,11 @@ Barista.Models.SummlyResultModel = Backbone.Model.extend({
 		cell_line_scores: {}
 	},
 
-	// ### initialize
-	// overides the base model's initialize method to set the model's cid to 
-	// the summly_id
-		/**
+	/**
      * Overides the base Model's initialize method to add the model's cid to the summly_id
+     * @todo these parameters are never used, consider removing from function
      * @param  {string}  attributes
      * @param  {string}  options
-     * are these even used?
      */
 	initialize: function(attributes,options){
 		this.cid = this.get('target');

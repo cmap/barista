@@ -1,4 +1,3 @@
-// # **PRISMPertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for PRISM Perturbation IDs available
  * in the Connectivity Map

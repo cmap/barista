@@ -1,8 +1,7 @@
-// utility function to grab url parameters.
-// taken from http://css-tricks.com/snippets/javascript/get-url-variables/
 /**
  * utility function to grab url parameters
  * @param  {string}  the attribute whose value we want returned
+ * taken from http://css-tricks.com/snippets/javascript/get-url-variables/
  */
 Barista.getQueryVariable = function(variable)
 {

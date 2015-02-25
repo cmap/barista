@@ -1,4 +1,3 @@
-// # **SignatureCollection**
 /**
  * A Backbone.Collection that represents a set of signatures
  * This collection is suitable for internal use in GridView

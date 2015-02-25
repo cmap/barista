@@ -1,4 +1,3 @@
-// # **JobStatusDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the
  * Connectivity Map

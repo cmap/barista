@@ -1,4 +1,3 @@
-// # **GeneDetailModel**
 /**
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
@@ -36,25 +35,18 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
     vector_id: null
   },
 
-  // ### kd_fields
-  // kd specific model fields
   /**
    * kd specific model fields
    * @type {Array}
    */
   kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],
 
-  // ### array_fields
-  // fields that are arrays
   /**
    * fields that are arrays
    * @type {Array}
    */
   array_fields: ['cell_id','sig_id','sig_id_gold'],
 
-  // ### fetch
-  // fetches new data from the pert_info api. All fields are replaced by the first item
-  // that matches the api search_string
   /**
    * fetches new data from the pert_info api
    * All fields are replaced by the first item that matches the api search_string
@@ -119,8 +111,6 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         return deferred;
     },
 
-    // ### fetch_pert_type
-    // fetches new data from the pert_info API for the given pert_type.
       /**
    * fetches new data from the pert_info API for the given pert_type
    * @param  {string}  search_string  value to search for

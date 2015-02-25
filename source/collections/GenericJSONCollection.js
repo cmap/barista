@@ -1,4 +1,3 @@
-// # **GenericJSONCollection**
 /**
  * A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file
  * The JSON file is assumed to contain a top level array containing objects

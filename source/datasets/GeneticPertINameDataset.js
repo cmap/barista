@@ -1,4 +1,3 @@
-// # **GeneticPertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available
  * in the Connectivity Map

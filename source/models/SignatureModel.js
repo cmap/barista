@@ -1,12 +1,11 @@
-// # **SignatureModel**
-
-// A Backbone.Model that represents a single signature
-// `pert_model = new SignatureModel()`
+/**
+ * A Backbone.Model that represents a single signature
+ * `pert_model = new SignatureModel()`
+ */
 Barista.Models.SignatureModel = Backbone.Model.extend({
-	// ### initialize
-	// Overides the base Model's initialize method to set the model's cid to the sig_id of the perturbagen
 	/**
      * Overides the base Model's initialize method to add the model's cid to the sig_id of the perturbagen
+     * @todo these parameters are never used, consider removing from function
      * @param  {string}  attributes
      * @param  {string}  options
      */

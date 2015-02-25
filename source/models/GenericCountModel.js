@@ -1,4 +1,3 @@
-// # **GenericCountModel**
 /**
  * A Backbone.Model that represents the count of a set CMap databbase items
  * The data model captures the total count of perturbagens that meet a search criteria

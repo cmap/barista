@@ -1,12 +1,11 @@
-// # **PertModel**
-
-// A Backbone.Model that represents a single perturbagen
-// `pert_model = new PertModel()`
+/**
+ * A Backbone.Model that represents a single perturbagen
+ * `pert_model = new PertModel()`
+ */
 Barista.Models.PertModel = Backbone.Model.extend({
-	// ### initialize
-	// Overides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
-	  /**
+	/**
   * Overrides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
+  * @todo these parameters are never used, consider removing from function
   * @param  {string}  attributes
   * @param  {string}  options
   */ 

@@ -1,4 +1,3 @@
-// # **AnalysisHistoryCollection**
 /**
  * A Backbone.Collection that represents a set of analysis history objects
  * This collection is suitable for internal use in GridView

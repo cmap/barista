@@ -1,4 +1,3 @@
-// # **UserIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the
  * Connectivity Map

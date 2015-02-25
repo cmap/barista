@@ -1,4 +1,3 @@
-// # **CellMutationDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation
  * annotations available in the Connectivity Map

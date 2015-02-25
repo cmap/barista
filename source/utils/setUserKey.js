@@ -1,11 +1,3 @@
-// # **setUserKey**
-
-// a utility function to set a user_key attribute on the Barista object and set up
-// ajax calls to api.lincscloud.org to pass that user_key as a parameter
-
-// arguments
-//
-// 1.  {string}  **key**  The user_key to use or a path to a JSON file containing a user_key attribute, defaults to *""*
 /**
  * a utility function to set a user_key attribute on the Barista object and set up ajax calls to
  * api.lincscloud.org to pass that user_key as a parameter

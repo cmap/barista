@@ -1,25 +1,15 @@
-// # **PertCountModel**
-
-// A Backbone.Model that represents the count of a set of perturbagens.  The data model
-// captures both the total count of perturbagens that meet a search criteria and the count
-// of each annotation category for the set of perturbagens.
-
-// optional arguments:
-
-// 1.  {string}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-
-// `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+/**
+ * A Backbone.Model that represents the count of a set of perturbagens
+ * The data model captures both the total count of perturbagens that meet a search criteria and the count 
+ * of each annotation category for the set of perturbagens
+ * optional arguments:
+ * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
+ *                              to *'["trt_sh","trt_oe"]'*
+ * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ */
 
 Barista.Models.PertCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {String}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-  // 2.  {Number}  **pert\_count**  the number of perturbagens matching an api query, defaults to *0*
-  // 3.  {Array}  **pert\_types**  an array of objects representing pert\_type categories to keep track of, defaults to *[{}}]*
-  // 4.  {String}  **pert\_type\_field**  a field name over which to look for pert_types.  This runs an aggregated count over the specified field name in the Connectivity Map database, defaults to *'pert_icollection'*
-  // 5.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
-      /**
+  /**
    * describes the model's default parameters
    * @param {string}  type_string      the string of pert_types that will be search upon fetching data,
    *                                   defaults to *'["trt_sh","trt_oe"]'*
@@ -39,9 +29,6 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
     "last_update": (new Date()).getTime()
   },
 
-  // ### fetch
-  // fetches new data from the pert_info api.  the count and pert_types data
-  // is replaced with new data coming from the api call
   /**
    * fetches new data from the pert_info api
    * the count and pert_types data is replaced with new data coming from the api call
