@@ -1,6 +1,9 @@
 Barista.Views.GridView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "GridView",
 /**
  * add description
@@ -135,11 +138,6 @@ Barista.Views.GridView = Backbone.View.extend({
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### scroll_to_top
-	// scrolls the grid to the top of its container
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
 	/**
 	 * scrolls the grid to the top of its container
 	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
@@ -150,12 +148,7 @@ Barista.Views.GridView = Backbone.View.extend({
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### show_scroll_to_top_button
-	// shows the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
-		/**
+	/**
 	 * scrolls the grid to the bottom of its container
 	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
 	 */
@@ -165,12 +158,7 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.scroll_to_top_button_id).animate({opacity:1},duration);
 	},
 
-	// ### hide_scroll_to_top_button
-	// hides the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
-		/**
+	/**
 	 * hides the scroll to top button
 	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
 	 */
@@ -455,8 +443,6 @@ Barista.Views.GridView = Backbone.View.extend({
 		});
 	},
 
-	// ### open_edit_table
-	// open up a column to show editing buttons
 	/**
 	 * open up a column to show editing buttons
 	 */
@@ -469,8 +455,6 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.close_edit_table();});
 	},
 
-	// ### close_edit_table
-	// close column showing editing buttons
 	/**
 	 * close column showing editing buttons
 	 */
@@ -483,17 +467,10 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.open_edit_table();});
 	},
 
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *500*
-
-	//		pert_detail_view.hide(duration);
 	/**
 	 * hides the view by dimming the opacity and hiding it in the DOM
 	 * @param  {number}  duration  the time in ms for the hide animation. defualts to *500*
+	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){
 		var self = this;
@@ -501,17 +478,10 @@ Barista.Views.GridView = Backbone.View.extend({
 		setTimeout(function(){self.$el.hide();},duration);
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *500*
-
-	//		pert_detail_view.show(duration);
-		/**
+	/**
 	 * shows the view by brightening the opacity and showing it in the DOM
 	 * @param  {number}  duration  the time in ms for the hide animation. defualts to *500*
+	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){
 		this.$el.show();

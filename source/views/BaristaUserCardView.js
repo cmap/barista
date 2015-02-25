@@ -1,20 +1,15 @@
-// # **BaristaUserCardView**
-// A Backbone View that displays a card of information about a user
-
-// basic use:
-
-//		card_view = new BaristaUserCardView();
-
-// optional arguments:
-
-// 1.  {string}  **realName**  the name to display. defaults to *"Name"*
-// 2.  {string}  **username**  the name to display. defaults to *"Username"*
-// 3.  {string}  **email**  the email to display. defaults to "user@mail.com"
-// 2.  {string}  **badges**  an array of badge images to display. defaults to *[]*
+/**
+ * A Backbone View that displays a card of information about a user
+ * basic use:
+ * card_view = new BaristaUserCardView();
+ * optional arguments:
+ * @param {string} realName  the name to display. defaults to *"Name"*
+ * @param {string} username  the name to display. defaults to *"Username"*
+ * @param {string} email     the email to display. defaults to "user@mail.com"
+ * @param {string} badges    an array of badge images to display. defaults to *[]*
+ */
 
 Barista.Views.BaristaUserCardView = Backbone.View.extend({
-    // ### name
-    // give the view a name to be used throughout the View's functions when it needs to know what its class name is
     /**
      * give the view a name to be used throughout the View's functions when it needs to know what its class
      * name is
@@ -22,9 +17,6 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
      */
     name: "BaristaUserCardView",
 
-    // ## initialize
-    // overide the view's default initialize method in order to catch options and
-    // render a custom template
     /**
      * overide the view's default initialize method in order to catch options and render a custom template
      */
@@ -40,8 +32,6 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
         this.compile_template();
     },
 
-    // ### compile_template
-    // use Handlebars to compile the template for the view
     /**
      * use Handlebars to compile the template for the view
      */
@@ -55,8 +45,6 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
                                                 badges: this.badge_urls}));
     },
 
-    // ### map_badges
-    // translate the passed array of badge names into image urls
     /**
      * translate the passed array of badge names into image urls
      */

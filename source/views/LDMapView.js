@@ -1,35 +1,34 @@
-// # **LDMapView**
-
-// A Backbone.View that displays a simple LDMap.  The view is normally paired with 
-// a *HeatMapModel*, but works with any model that provides *data*,*cid*, and
-// *title* attributes.
-
-// optional arguments:
-
-// 1.  {string}  **template**  The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 3.  {string}  **low\_color**  the hex color code to use as lowest value color in the LDMap, defaults to *#0000ff*
-// 4.  {string}  **high\_color**  the hex color code to use as highest value color in the LDMap, defaults to *#ff0000*
-// 5.  {d3.scale}  **color_scale**  custom color scale to use in the LDMap.  If supplied, low\_color and high\_color are ignored, defaults to *undefined*
-// 6.  {Number}  **plot_height**  the height of the LDMap to generate in pixels, defaults to *300*
-// 7.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		LDMap_view = new LDMapView({el: $("target_selector"),
-//												model: new HeatmapModel(),
-//												template: BaristaTemplates.d3_target,
-//												bg_color: "#ffffff",
-//												low_color: "#0000ff",
-//												high_color: "#ff0000",
-//												color_scale: undefined,
-//												plot_height: 300,
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a simple LDMap
+ * The view is normally paired with a *HeatMapModel*, but works with any model that provides *data*,*cid*,
+ * and *title* attributes
+ * optional arguments:
+ * @param {string}   tenplate     The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
+ * @param {string}   bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                                *#ffffff*
+ * @param {string}   low_color    the hex color code to use as lowest value color in the LDMap, defaults to
+ *                                *#0000ff*
+ * @param {string}   high_color   the hex color code to use as highest value color in the LDMap, defaults
+ *                                to *#ff0000*
+ * @param {d3.scale} color_scale  custom color scale to use in the LDMap.  If supplied, low_color and
+ *                                high_color are ignored, defaults to *undefined*
+ * @param {number}   plot_height  the height of the LDMap to generate in pixels, defaults to *300*
+ * @param {string}   span_class   a bootstrap span class to size the width of the view, defaults to
+ *                                *"span12"*
+ * example usage:
+ * LDMap_view = new LDMapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.LDMapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -37,17 +36,12 @@ Barista.Views.LDMapView = Backbone.View.extend({
 	 */
 	name: "LDMapView",
 
-	// ### model
-	// set up the view's default model
 	/**
 	 * set up the view's default model
 	 * @type {Barista}
 	 */
 	model: new Barista.Models.HeatmapModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
 	/**
 	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
 	 * resize events to view re-draws, compile the template, and render the view
@@ -88,8 +82,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
 	/**
 	 * use Handlebars to compile the template for the view
 	 */
@@ -101,8 +93,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
 	/**
 	 * completely redraw the view. Updates both static and dynamic content in the view
 	 */
@@ -111,8 +101,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
 	/**
 	 * initialize the static parts of the view's panel
 	 */
@@ -225,8 +213,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### render
-	// update the dynamic potions of the view
 	/**
 	 * update the dynamic potions of the view
 	 */
@@ -303,9 +289,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		rid_selection.exit().remove();
 	},
 
-	// ### unravel_data
-	// internal utility function to express 2D array data as a flat data array of objects with array
-	// coordinates and data value as attributes.
 	/**
 	 * internal utility function to express 2D array data as a flat data array of objects with array
 	 * coordinates and data value as attributes
@@ -323,8 +306,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		return unraveled_data;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
 	/**
 	 * save the current state of the view into a png image
 	 */

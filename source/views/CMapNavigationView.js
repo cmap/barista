@@ -1,13 +1,11 @@
-// # **CMapNavigationView**
-
-// A view the provides the standard Connectivity map application navigation for apps built on apps.lincscloud.org
-// basic use:
-
-//		nav = new CMapNavigationView({el:"header_target"});
+/**
+ * A view the provides the standard Connectivity map application navigation for apps built on
+ * apps.lincscloud.org
+ * basic use:
+ * nav = new CMapNavigationView({el:"header_target"});
+ */
 
 Barista.Views.CMapNavigationView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -15,8 +13,6 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
 	 */
 	name: "CMapNavigationView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
 	/**
 	 * overide the default Backbone.View initialize function to compile a built in template and then render
 	 * the view
@@ -44,9 +40,6 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
 
 	},
 
-    // ### wrap_content
-    // wrap all existing content in the elements we need to work
-    // the slide out navigation that we are going to build
     /**
      * wrap all existing content in the elements we need to work the slide out navigation that we are going
      * to build
@@ -56,8 +49,6 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
         $(".cmap-navigation-content").wrapAll('<div class="cmap-navigation-wrapper"/>');
     },
 
-    // ### build navigation
-    // build the navigation pane using all reuested menu items and links
     /**
      * build the navigation pane using all reuested menu items and links
      */

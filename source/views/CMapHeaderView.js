@@ -1,25 +1,21 @@
-// # **CMapHeaderView**
-
-// A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
-// the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
-// sharing, settings, and information.  The view accepts as parameters a page title, subtitle, and handlebars template
-// basic use:
-
-//		header = new CMapHeaderView({el:"header_target"});
-
-// optional arguments:
-
-// 1.  {string}  **title**  The title of the page. Defaults to *Title*
-// 2.  {string}  **subtitle**  The title of the page. Defaults to *Sub Title*
-// 3.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapHeader.handlebars*
-
-//		header = new CMapHeaderView({el:"header_target",
-//									title: "",
-//									subtitle: "",
-//									template: "templates/CMapHeader.handlebars"});
+/**
+ * A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
+ * the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+ * sharing, settings, and information
+ * The view accepts as parameters a page title, subtitle, and handlebars template
+ * basic use:
+ * header = new CMapHeaderView({el:"header_target"});
+ * optional arguments:
+ * @param {string} title     The title of the page. Defaults to *Title*
+ * @param {string} subtitle  The title of the page. Defaults to *Sub Title*
+ * @param {string} template  The path to a handlebars template to use. Defaults to
+ *                           *templates/CMapHeader.handlebars*
+ * header = new CMapHeaderView({el:"header_target",
+									title: "",
+									subtitle: "",
+									template: "templates/CMapHeader.handlebars"});
+ */
 Barista.Views.CMapHeaderView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -27,8 +23,6 @@ Barista.Views.CMapHeaderView = Backbone.View.extend({
 	 */
 	name: "CMapHeaderView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
 	/**
 	 * overide the default Backbone.View initialize function to compile a built in template and then render
 	 * the view
@@ -59,8 +53,6 @@ Barista.Views.CMapHeaderView = Backbone.View.extend({
 		}
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the specified template for the view
 	/**
 	 * use Handlebars to compile the specified template for the view
 	 */

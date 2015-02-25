@@ -1,29 +1,29 @@
-// # **CMapFooterView**
-
-// A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
-// the view provides standard copyright text and customizable organization name,
-// terms and conditions link, and organization logo/link
-// basic use:
-
-//		header = new CMapHeaderView({el:"header_target"});
-
-// optional arguments:
-
-// 1.  {string}  **organization**  the name of the organization that claims copyright. Defaults to *Broad Institute*
-// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *//lincscloud.org/terms-and-conditions/*
-// 3.  {Array}  **logo**  The urls to organization logos to use. Defaults to *['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png','//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
-// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['//www.broadinstitute.org/','//lincscloud.org/']*
-// 5.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapFooter.handlebars*
-
-//		header = new CMapFooterView({el:"footer_target",
-//									organization: "Broad Institute",
-//									terms_url: "//lincscloud.org/terms-and-conditions/",
-// 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
-// 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
-//									template: "../templates/CMapFooter.handlebars"});
+/**
+ * A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
+ * the view provides standard copyright text and customizable organization name, terms and conditions link,
+ * and organization logo/link
+ * basic use:
+ * header = new CMapHeaderView({el:"header_target"});
+ * optional arguments:
+ * @param {string} organization  the name of the organization that claims copyright. Defaults to *Broad
+ *                               Institute*
+ * @param {string} terms_url     The url on which to find terms and conditions. Defaults to
+ *                               '//lincscloud.org/terms-and-conditions/''
+ * @param {array}  logo          The urls to organization logos to use. Defaults to
+ *                               *['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png',
+ *                               '//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
+ * @param {array}  logo_url      The urls to organization links to use. Defaults to 
+ *                               *['//www.broadinstitute.org/','//lincscloud.org/']*
+ * @param {string} template      The path to a handlebars template to use. Defaults to
+ *                               *templates/CMapFooter.handlebars*
+ * header = new CMapFooterView({el:"footer_target",
+									organization: "Broad Institute",
+									terms_url: "//lincscloud.org/terms-and-conditions/",
+ 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
+ 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
+									template: "../templates/CMapFooter.handlebars"});
+ */
 Barista.Views.CMapFooterView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -31,8 +31,6 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 	 */
 	name: "CMapFooterView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
 	/**
 	 * overide the default Backbone.View initialize function to compile a built in template and then render
 	 * the view
@@ -52,8 +50,6 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 		this.render();
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the specified template for the view
 	/**
 	 * use Handlebars to compile the specified template for the view
 	 */

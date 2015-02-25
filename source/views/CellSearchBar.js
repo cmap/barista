@@ -79,13 +79,6 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 
 	},
 
-
-	/**
-    Gets the current text entered in the view's search bar
-
-    @method get_val
-    **/
-
     /**
      * Gets the current text entered in the view's search bar
      */
@@ -94,12 +87,6 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-
-    @method random_val
-    **/
-
-    	/**
     fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
     **/
 	random_val: function(){
@@ -124,12 +111,6 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-
-    @method render
-    **/
-
-    	/**
     renders the view
     **/
 	render: function(){

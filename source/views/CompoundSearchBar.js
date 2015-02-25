@@ -8,8 +8,6 @@ search view's input, a "search:DidType" event is fired.
 @extends Backbone.View
 **/
 Barista.Views.CompoundSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -52,22 +50,10 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 	/**
     Gets the current text entered in the view's search bar
-    
-    @method get_val
-    **/
-
-    	/**
-    Gets the current text entered in the view's search bar
     **/
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
-
-	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    
-    @method random_val
-    **/
 
 	/**
     fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
@@ -95,12 +81,6 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-    
-    @method render
-    **/
-
-    	/**
     renders the view
     **/
 	render: function(){

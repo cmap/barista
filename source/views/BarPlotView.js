@@ -1,50 +1,50 @@
-// # **BarPlotView**
-// A Backbone.View that displays a scatter plot.  the view's model is assumed to have the same defaults
-// as specified in **BarPlotModel**
-
-// basic use:
-
-//		bar_plot_view = new BarPlotView();
-
-// optional arguments:
-
-// 1.  {String}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {String}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {String}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-// 4.  {Array}  **range**  a two element array specifying the plotting bounds of the plot, defaults to *[min(data),max(data)]*
-// 5.  {Bool}  **log**  if set to true, plots the data on a log scale, defaults to *false*
-// 6. {Number} **min_lock** if set, locks the minimum of the range at the given value. Ignored if range is set. defaults to *undefined*
-// 7. {Number} **max_lock** if set, locks the maximum of the range at the given value. Ignored if range is set. defaults to *undefined*
-// 8. {Bool} **min_expand** if set, allows the minimum of the range to expand if data is found below it. defaults to *false*
-// 9. {Bool} **max_expand** if set, allows the maximum of the range to expand if data is found above it. defaults to *false*
-// 10. {String} **orientation** sets the orientation of the bar plot. options are 'horizontal' or 'vertical'. defaults to *'vertical'*
-// 11.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-
-//		bar_plot_view = new BarPlotView({el: $("target_selector",
-//									bg_color:"#ffffff", 
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									scale_by: undefined,
-//									range: undefined,
-//									log: false,
-//									min_lock: undefined,
-//									max_lock: undefined,
-//									min_expand: false,
-//									max_expand: false,
-//									plot_height: 120});
+/**
+ * A Backbone.View that displays a scatter plot
+ * the view's model is assumed to have the same defaults as specified in **BarPlotModel**
+ * basic use:
+ * bar_plot_view = new BarPlotView();
+ * optional arguments:
+ * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                               *#ffffff*
+ * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults to
+ *                               *#1b9e77*
+ * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
+ *                               *"span12"*
+ * @param {array}   range        a two element array specifying the plotting bounds of the plot, defaults
+ *                               to *[min(data),max(data)]*
+ * @param {boolean} log          if set to true, plots the data on a log scale, defaults to *false*
+ * @param {number}  min_lock     if set, locks the minimum of the range at the given value. Ignored if
+ *                               range is set. defaults to *undefined*
+ * @param {number}  max_lock     if set, locks the maximum of the range at the given value. Ignored if
+ *                               range is set. defaults to *undefined*
+ * @param {boolean} min_expand   if set, allows the minimum of the range to expand if data is found below
+ *                               it. defaults to *false*
+ * @param {boolean} max_expand   if set, allows the maximum of the range to expand if data is found above
+ *                               it. defaults to *false*
+ * @param {string}  orientation  sets the orientation of the bar plot. options are 'horizontal' or
+ *                               'vertical'. defaults to *'vertical'*
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
+ * bar_plot_view = new BarPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									range: undefined,
+									log: false,
+									min_lock: undefined,
+									max_lock: undefined,
+									min_expand: false,
+									max_expand: false,
+									plot_height: 120});
+ */
 
 Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
-	// ### model
-	// set up the view's default model
 	/**
 	 * set up the view's default model
 	 * @type {Barista}
 	 */
 	model: new Barista.Models.BarPlotModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
 	/**
 	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
 	 * template, bind model changes to view updates, and render the view
@@ -85,8 +85,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
 	/**
 	 * completely redraw the view
 	 * Updates both static and dynamic content in the view
@@ -97,8 +95,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.update();
 	},
 
-	// ### init_plot
-	// initialize the static parts of the view's panel
 	/**
 	 * initialize the static parts of the view's panel
 	 */
@@ -135,8 +131,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('title'));
 	},
 
-	// ### update
-	// update the dynamic potions of the view
 	/**
 	 * update the dynamic potions of the view
 	 */
@@ -163,8 +157,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_ranges
-	// utility function used to get the x and y ranges used in the plot
 	/**
 	 * utility function used to get the x and y ranges used in the plot
 	 */
@@ -207,8 +199,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_scales
-	// utility function used to get the x and y scales used in the plot
 	/**
 	 * utility function used to get the x and y scales used in the plot
 	 */
@@ -225,8 +215,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### build_axes
-	// utility function used to build x and y axes
 	/**
 	 * utility function used to build x and y axes
 	 */
@@ -255,8 +243,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
 	/**
 	 * utility function to apply custom styles to axis components
 	 */
@@ -276,8 +262,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.style("font-size","11px");
 	},
 
-	// ### render_vertical_bars
-	// draws bars in vertical mode
 	/**
 	 * draws bars in vertical mode
 	 */
@@ -329,8 +313,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.style_axes();
 	},
 
-	// ### render_horizontal_bars
-	// draws bars in horizontal mode
 	/**
 	 * draws bars in horizontal mode
 	 */
@@ -365,8 +347,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('axis_title'));
 	},
 
-	// ### update_vertical_bars
-	// updates the data in the bars in vertical orientation
 	/**
 	 * updates the data in the bars in vertical orientation
 	 */
@@ -431,8 +411,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.style_axes();
 	},
 
-	// ### update_horizontal_bars
-	// updates the data in the bars in vertical orientation
 	/**
 	 * updates the data in the bars in vertical orientation
 	 */

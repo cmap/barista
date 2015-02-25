@@ -1,35 +1,31 @@
-// # **PlatformSummaryView**
-
-// A Backbone.View that shows a quick view card used to display the available data on lincscloud.org
-// for a given platform. The widget displays a count of the available experiments on the platform, 
-// a description of the platform, a widget to extract a listing of the data available, and a link 
-// to a platform specific app for viewing the contents of the available data on that platform.  
-// This view is frequently paired with a **PlatformSummaryModel**
-
-// basic use:
-
-//		platform_summary_view = new PlatformSummaryView();
-
-// optional arguments:
-
-// ...
-
-//		platform_summary_view = new PlatformSummaryView({ 
-//									... });
-
-
+/**
+ * A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for
+ * a given platform
+ * he widget displays a count of the available experiments on the platform, a description of the platform,
+ * a widget to extract a listing of the data available, and a link to a platform specific app for viewing
+ * the contents of the available data on that platform
+ * This view is frequently paired with a **PlatformSummaryModel**
+ * basic use:
+ * platform_summary_view = new PlatformSummaryView();
+ * optional arguments:
+ * ...
+		platform_summary_view = new PlatformSummaryView({ 
+									... });
+ */
 Barista.Views.PlatformSummaryView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PlatformSummaryView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.GenericCountModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
 	/**
 	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
 	 * template, bind model changes to view updates, and render the view
@@ -198,8 +194,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view.
 	/**
 	 * completely redraw the view
 	 */
@@ -232,8 +226,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			+ "letter-spacing:" + font.spacing + "; ";
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
 	/**
 	 * initialize the static parts of the view's panel
 	 */
@@ -403,8 +395,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 							.html("<span style=\"" + this.control_css_style + "\"><i class='" + icon_class + "' style='margin-right:2px;'></i>" + message + "</span>");
 	},
 
-	// ### download_table
-	// download the backing data that matches the current model state.
 	/**
 	 * download the backing data that matches the current model state
 	 */
@@ -474,22 +464,22 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 	},
 
-	// ### render_description
-	// utility function to break a long description string into a multiline
-	// and draw it at the desired location
-
-	// options
-
-	// 1.  {string}  **description_string**  the string to be displayed, defaults to *""*
-	// 2.  {right}  **right**  the x position to place the **right** edge of text, defaults to *this.width*
-	// 3.  {left}  **left**  the x position to place the **left** edge of text, defaults to *this.width - 500*
-	// 4.  {top}  **top**  the y position to place the **top** edge of text, defaults to *0*
-	// 5.  {bottom}  **bottom**  the y position to place the **bottom** edge of text, defaults to *100*
-	// 6.  {node_class}  **node_class**  the class used for locating the text node within fg_layer, defaults to *""*
 	/**
 	 * utility function to break a long description string into a multiline and draw it at the desired
 	 * location
 	 * @param  {object} options  describes the options for drawing a string to the screen
+	 * arguments for options:
+	 * @param {string}     description_string  the string to be displayed, defaults to *""*
+	 * @param {right}      right               the x position to place the **right** edge of text, defaults
+	 *                                         to *this.width*
+	 * @param {left}       left                the x position to place the **left** edge of text, defaults
+	 *                                         to *this.width - 500*
+	 * @param {top}        top                 the y position to place the **top** edge of text, defaults
+	 *                                         to *0*
+	 * @param {bottom}     bottom              the y position to place the **bottom** edge of text,
+	 *                                         defaults to *100*
+	 * @param {node_class} node_class          the class used for locating the text node within fg_layer,
+	 *                                         defaults to *""*
 	 */
 	render_description: function(options){
 		var self = this;
@@ -543,8 +533,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 				.text(function(d){return d;}));
 	},
 	
-	// ### savePng
-	// save the current state of the view into a png image
 	/**
 	 * save the current state of the view into a png image
 	 */

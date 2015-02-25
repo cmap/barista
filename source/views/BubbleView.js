@@ -1,23 +1,19 @@
-// # **BubbleView**
-// A Backbone.View that displays a single level tree of data as a bubble plot.  The view should be bound to a
-// model such as a **PertCellBreakdownModel** that captures tree data in a *tree_object* attribute.
-
-// basic use:
-
-//		bubble_view = new BubbleView({el: $("target_selector")});
-
-// optional arguments:
-
-// 3.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span4"*
-
-//		bubble_view = new BubbleView({el: $("target_selector"),
-//									fg_color: "#1b9e77",
-//									span_class: "span4"});
+/**
+ * A Backbone.View that displays a single level tree of data as a bubble plot
+ * The view should be bound to a model such as a **PertCellBreakdownModel** that captures tree data in a
+ * *tree_object* attribute
+ * basic use:
+ * bubble_view = new BubbleView({el: $("target_selector")});
+ * optional arguments:
+ * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
+ *                             *#1b9e77*
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to *"span4"*
+ * bubble_view = new BubbleView({el: $("target_selector"),
+									fg_color: "#1b9e77",
+									span_class: "span4"});
+ */
 
 Barista.Views.BubbleView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
@@ -25,17 +21,12 @@ Barista.Views.BubbleView = Backbone.View.extend({
 	 */
 	name: "BubbleView",
 
-	// ### model
-	// set up the view's default model
 	/**
 	 * set up the view's default model
 	 * @type {Barista}
 	 */
 	model: new Barista.Models.PertCellBreakdownModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
 	/**
 	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
 	 * template, bind model changes to view updates, and render the view
@@ -85,8 +76,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
 		$(window).resize(function() {self.render();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
 	/**
 	 * use Handlebars to compile the template for the view
 	 */
@@ -97,8 +86,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### render
-	// draw the view from scratch
 	/**
 	 * draw the view from scratch
 	 */
@@ -175,7 +162,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
 		// reset a damening variable for simulation
 		this.damp = 0.1;
 
-		// tick function for use in the force class
 		/**
 		 * tick function for use in the force class
 		 * @param  {number} e 
@@ -189,8 +175,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
         }
 	},
 
-	// ### vertical_split
-	// push bubbles vertically based on an attribute property
 	/**
 	 * push bubbles vertically based on an attribute property
 	 * @param  {number} alpha
@@ -225,8 +209,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
 			});
 	},
 
-	// ### update
-	// update the plot with new data
 	/**
 	 * update the plot with new data
 	 */
@@ -289,7 +271,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
         this.nodes = this.vis.selectAll("circle");
         this.nodes.call(this.force.drag());
 
-        // tick function for use in the force class
         /**
          * tick function for use in the force class
          * @param  {number} e 
