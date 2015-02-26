@@ -40,9 +40,10 @@ Barista.Datasets = _.extend(Barista.Datasets,
 				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* set the remote data source to use pertinfo with custom query params
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
