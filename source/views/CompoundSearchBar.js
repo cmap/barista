@@ -1,12 +1,11 @@
 /**
-A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
-search view's input, a "search:DidType" event is fired.
-
-@class PertSearchBar
-@constructor
-@extends Backbone.View
-**/
+ * A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
+ * functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
+ * search view's input, a "search:DidType" event is fired.
+ * @class PertSearchBar
+ * @constructor
+ * @extends Backbone.View
+*/
 Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
@@ -15,7 +14,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	 */
 	name: "CompoundSearchBar",
 /**
- * add descriprion
+ * overrides the default Backbone.View initialize method
  */
 	initialize: function(){
 		var self = this;
@@ -26,13 +25,13 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 			var val  = $("#search",self.el).val();
 			var type = "";
 			/**
-			Fired when the text in the view's search box changes
+			 * Fired when the text in the view's search box changes
+			 * @event search:DidType
+			 * @param {Object} [msg={val:"",type:""}] an object containing the message of the event
+			 * @param {String} [msg.val=""] the string val of the views search bar at the time of the event
+			 * @param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
+			 */
 
-			@event search:DidType
-			@param {Object} [msg={val:"",type:""}] an object containing the message of the event
-			@param {String} [msg.val=""] the string val of the views search bar at the time of the event
-			@param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
-			**/
 			self.trigger("search:DidType",{val: val,type: type});
 		};
 
@@ -49,15 +48,15 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 
 	/**
-    Gets the current text entered in the view's search bar
-    **/
+	 * Gets the current text entered in the view's search bar
+    */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    **/    
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */    
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
@@ -73,7 +72,8 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 		});
 	},
 /**
- * add description
+ * triggers a "search:DidType" event for the given search value
+ * @param {string} new_val  value to search for
  */
 	set_val: function(new_val){
 		$("#search",this.el).val(new_val);
@@ -81,8 +81,8 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 		// load the template into the view's el tag
@@ -112,9 +112,9 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 				dataType: 'jsonp',
 
 				/**
-				 * add description
+				 * returns the processed list of data for the autocomplete
+				 * @param {array} response  array of data to extract cell id from
 				 */
-
 				filter: function(response){
 					var datum_list = [];
 					var auto_data = [];

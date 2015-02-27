@@ -374,7 +374,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 							.html("<a href='"+this.details_url+"' target='"+this.details_target+"' style=\"" + this.control_css_style + "\"><i class='icon-chevron-sign-right'></i> "+this.details_text+"</a>");
 	},
 	/**
-	 * add description
+	 * creates the render control object and draws it to the screen
 	 * @param  {string}   message     visible text
 	 * @param  {string}   icon_class  value of the class attribute
 	 * @param  {function} handler     function associated with click
@@ -438,7 +438,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		});
 	},
 	/**
-	 * add description
+	 * renders the view
 	 */
 	render: function(){
 		// stuff this into a variable for later use

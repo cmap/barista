@@ -45,7 +45,7 @@ Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   className: "html-cell",
   formatter: new Barista.HTMLFormatter(),
   /**
-   * add description
+   * renders the view
    */
   render: function () {
     this.$el.html(this.formatter.fromRaw(this.model.get(this.column.get("name"))));

@@ -9,7 +9,7 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 		model: new Barista.Models.PertCellBreakdownModel(),
 
 		/**
-		 * add description
+		 * overrides the default Backbone.View initialize method
 		 */
 
 		initialize: function(){
@@ -72,7 +72,7 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 /**
- * add description
+ * renders the view
  */
 	render: function(){
 		// stuff this into a variable for later use
@@ -146,7 +146,7 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			.on("click",function(){self.savePng();});
 	},
 /**
- * add description
+ * updates the visibility of the element
  */
 	update_vis: function(){
 		var self = this;

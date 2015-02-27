@@ -6,7 +6,7 @@ Barista.Views.GridView = Backbone.View.extend({
 	 */
 	name: "GridView",
 /**
- * add description
+ * overrides the default Backbone.View initialize method
  */
 	initialize: function(){
 		var self = this;
@@ -48,7 +48,6 @@ Barista.Views.GridView = Backbone.View.extend({
 			onClick: function () {
 				self.trigger("grid:RowClick", this.model);
 			},
-			// overide Backgrid.Row's native render method
 			/**
 			 * overide Backgrid.Row's native render method
 			 */
@@ -67,7 +66,6 @@ Barista.Views.GridView = Backbone.View.extend({
 				return this;
 			},
 
-			// overide Backgrid.Row's native remove method
 			/**
 			 * overide Backgrid.Row's native remove method
 			 */
@@ -168,11 +166,12 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.scroll_to_top_button_id).clearQueue();
 		$("#" + this.scroll_to_top_button_id).animate({opacity:0},duration);
 	},
+
 /**
- * add description
- * @param  {string} search_val   [description]
- * @param  {string} search_type  [description]
- * @param  {number} limit        [description]
+ * changes the visible collection data and rejects the slice
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit         the number of models to be fetched
  */
 	replace_collection: function(search_val,search_type,limit){
 		var getData_promise;
@@ -200,10 +199,10 @@ Barista.Views.GridView = Backbone.View.extend({
 		return getData_promise;
 	},
 /**
- * add description
- * @param  {string} search_val   [description]
- * @param  {string} search_type  [description]
- * @param  {number} limit        [description]
+ * changes the visible collection data
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit         the number of models to be fetched
  */
 	update_collection: function(search_val,search_type,limit){
 		var getData_promise;
@@ -224,7 +223,7 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 	},
 /**
- * add description
+ * hides the visible data and rejects the slice
  */
 	clear_collection: function(){
 		var self = this;
@@ -303,10 +302,7 @@ Barista.Views.GridView = Backbone.View.extend({
 			dataType: 'json',
 			url: sig_slice,
 			data: {q: self.collection.q_param,l: 1000},
-			/**
-			 * add description
-			 * @param  {[type]} res [description]
-			 */
+			
 			success: function(res){
 				if (res.file_url){
 					self.change_slice_button_state("link",res.file_url);
@@ -314,9 +310,7 @@ Barista.Views.GridView = Backbone.View.extend({
 					self.change_slice_button_state("fail");
 				}
 			},
-			/**
-			 * add description
-			 */
+
 			error: function(){
 				self.change_slice_button_state("fail");
 			}

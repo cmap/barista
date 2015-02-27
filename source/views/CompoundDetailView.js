@@ -44,7 +44,8 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 	},
 
 	/**
-	 * completely render the view. Updates both static and dynamic content in the view
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
 	 */
 	render: function(){
 		// keep track of our scope at this level
@@ -525,7 +526,7 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 
 
 	/**
-	 * overide the base views save_png_pre method to clear out the image so we can render the png properly
+	 * override the base views save_png_pre method to clear out the image so we can render the png properly
 	 */
 	save_png_pre: function(){
 		// remove the static index reagent icon
@@ -537,7 +538,7 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 	},
 
 	/**
-	 * overide the base views save_png_post method to restore the image after saving
+	 * override the base views save_png_post method to restore the image after saving
 	 */
 	save_png_post: function(){
 		// draw the static index reagent icon

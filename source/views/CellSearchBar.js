@@ -1,34 +1,30 @@
 /**
-A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
-search view's input, a "search:DidType" event is fired.
-
-@class PertSearchBar
-@constructor
-@extends Backbone.View
-**/
+ * A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
+ * functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the
+ * search view's input, a "search:DidType" event is fired.
+ * @class PertSearchBar
+ * @constructor
+ * @extends Backbone.View
+*/
 Barista.Views.CellSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
 	/**
 	 * give the view a name to be used throughout the View's functions when it needs to know what its class
 	 * name is
 	 * @type {String}
-	 */
+ */
 	name: "CellSearchBar",
 /**
- * add description
+ * overrides the default Backbone.View initialize method
  */
 	initialize: function(){
 		var self = this;
 
 		/**
-		determines whether or not the search view will match cell lines for autocomplete
-
-		@property match_cell_lines
-		@default true
-		@type Boolean
-		**/
+		 * determines whether or not the search view will match cell lines for autocomplete
+		 * @property match_cell_lines
+		 * @default true
+		 * @type Boolean
+		*/
 		// determine whether or not we will match cell line strings in the autocomplete
 		this.match_cell_lines = (this.options.match_cell_lines !== undefined) ? this.options.match_cell_lines : true;
 
@@ -87,8 +83,8 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */
 	random_val: function(){
 		var self = this;
 		var cellinfo = Barista.APIURL + '/a2/cellinfo?callback=?';
@@ -102,8 +98,8 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 		});
 	},
 /**
- * add description
- * @param {} new_val [description]
+ * triggers a "search:DidType" event for the given search value
+ * @param {} new_val value to search for
  */
 	set_val: function(new_val){
 		$("#search",this.el).val(new_val);
@@ -111,8 +107,8 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 

@@ -104,9 +104,9 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 		});
 	},
 /**
- * add description
- * @param {[type]} new_val  [description]
- * @param {[type]} new_type [description]
+ * triggers a "search:DidType" event for the given search value
+ * @param {[type]} new_val   value to search for
+ * @param {[type]} new_type  type of value
  */
 	set_val: function(new_val,new_type){
 		new_type = (new_type !== undefined) ? new_type : "single";
