@@ -8,28 +8,24 @@
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobID:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
              * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'JobID',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
              * @type {[type]}
@@ -37,7 +33,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
                   /**
                     * set the remote data source to use compute_status with custom query params

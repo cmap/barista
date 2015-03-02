@@ -159,7 +159,7 @@ Barista.Views.BubbleView = Backbone.View.extend({
         this.nodes = this.vis.selectAll("circle");
         this.nodes.call(this.force.drag());
 
-		// reset a damening variable for simulation
+		// reset a dampening variable for simulation
 		this.damp = 0.1;
 
 		/**

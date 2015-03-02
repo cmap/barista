@@ -169,7 +169,7 @@ Barista.Views.GridView = Backbone.View.extend({
  * changes the visible collection data and rejects the slice
  * @param  {string} search_val   the value to search for
  * @param  {string} search_type  the type of search that will be performed by getData
- * @param  {number} limit         the number of models to be fetched
+ * @param  {number} limit        the number of models to be fetched
  */
 	replace_collection: function(search_val,search_type,limit){
 		var getData_promise;
@@ -200,7 +200,7 @@ Barista.Views.GridView = Backbone.View.extend({
  * changes the visible collection data
  * @param  {string} search_val   the value to search for
  * @param  {string} search_type  the type of search that will be performed by getData
- * @param  {number} limit         the number of models to be fetched
+ * @param  {number} limit        the number of models to be fetched
  */
 	update_collection: function(search_val,search_type,limit){
 		var getData_promise;
