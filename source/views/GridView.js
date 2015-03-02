@@ -123,8 +123,6 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 	},100),
 
-	// ### add_scroll_to_top_button
-	// adds a UI control to scroll the top of the grid
 	/**
 	 * adds a UI control to scroll the top of the grid
 	 */

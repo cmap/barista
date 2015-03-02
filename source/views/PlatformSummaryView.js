@@ -204,7 +204,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 	
 	/**
 	 * applies the given font to the text at the given target
-	 * @param  {font} font      font to apply
+	 * @param  {font}   font    font to apply
 	 * @param  {string} target  text target to apply font to
 	 */
 	apply_font: function(font, target) {
@@ -216,7 +216,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			.attr("fill", font.color);
 	},
 	/**
-	 * add description
+	 * converts the attributes of a font object to a string of css text
 	 * @param  {font} font  font object
 	 */
 	font_to_css_style: function(font) {

@@ -63,7 +63,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 	model: new Barista.Models.ScatterPlotModel(),
 
 	/**
-	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * override the default Backbone.View initialize method to handle optional arguments, compile the view
 	 * template, bind model changes to view updates, and render the view
 	 */
 	initialize: function(){

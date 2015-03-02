@@ -1620,27 +1620,15 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 
 
 	/**
-    Gets the current text entered in the view's search bar
-
-    @method get_val
-    **/
-
-    	/**
-    Gets the current text entered in the view's search bar
-    **/
+	 * Gets the current text entered in the view's search bar
+    */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-
-    @method random_val
-    **/
-
-    	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */
 	random_val: function(){
 		var self = this;
 		var cellinfo = Barista.APIURL + '/a2/cellinfo?callback=?';
@@ -1663,14 +1651,8 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-
-    @method render
-    **/
-
-    	/**
-    renders the view
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 

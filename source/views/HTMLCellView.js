@@ -23,14 +23,14 @@
 
 /**
  * A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the
- * string version of the rawinput
+ * string version of the raw input
  */
 Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
 Barista.HTMLFormatter.prototype = new Backgrid.CellFormatter();
 _.extend(Barista.HTMLFormatter.prototype, {
   /**
-   * add description
-   * @param  {[type]} rawValue [description]
+   * returns the raw input value
+   * @param  {string} rawValue  string version of raw input
    */
   fromRaw: function (rawValue) {
     if (_.isUndefined(rawValue) || _.isNull(rawValue)) return '';
