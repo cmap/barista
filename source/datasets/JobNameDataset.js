@@ -39,7 +39,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     *                          from function
                     * @param  {string}  query  custom query
                     */ 
-                reomote: function(url,query){
+                remote: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
                           'q={"params.rpt":{"$regex":"^' + query + '", "$options":"i"}}',

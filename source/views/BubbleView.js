@@ -181,28 +181,41 @@ Barista.Views.BubbleView = Backbone.View.extend({
 	 */
 	vertical_split: function(alpha){
 		var self = this;
+		//select all circles on the page
 		bubble_selection = this.vis.selectAll('circle');
 		bubble_selection
+		//edit the center y attribute
 			.attr("cy",function(d){
+				//if the vertical split category is undefined, return the y value of d
 				if (self.category_centers[d[self.v_split]] === undefined){
 					return(d.y);
 				}
+				//if the value of the vertical split category is 0, return the y value of d
 				var category_y = self.category_centers[d[self.v_split]].y;
 				if (category_y === 0){
 					return(d.y);
-				}else{
+				}
+				//otherwise, add the current d.y value to the product of equations involving the vertical
+				//center, vertical split category, dampening value, and alpha value
+				else{
 					d.y = d.y + (self.v_center + category_y - d.y) * (self.damp + 0.03) * alpha * 1.1;
 					return(d.y);
 				}
 			})
+			//edit the center x attribute
 			.attr("cx",function(d){
+				//if the vertical split category is undefined, return the y value of d
 				if (self.category_centers[d[self.v_split]] === undefined){
 					return(d.x);
 				}
+				//if the value of the vertical split category is 0, return the x value of d
 				var category_x = self.category_centers[d[self.v_split]].x;
 				if (category_x === 0){
 					return(d.x);
-				}else{
+				}
+				//otherwise, add the current d.x value to the product of equations involving the horizontal
+				//center, vertical split category, dampening value, and alpha value
+				else{
 					d.x = d.x + (self.h_center - category_x - d.x) * (self.damp + 0.03) * alpha * 1.1;
 					return (d.x);
 				}
