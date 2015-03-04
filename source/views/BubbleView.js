@@ -163,8 +163,8 @@ Barista.Views.BubbleView = Backbone.View.extend({
 		this.damp = 0.1;
 
 		/**
-		 * tick function for use in the force class
-		 * @param  {number} e 
+		 * tick function for use in the force class, decrements alpha value
+		 * @param  {object} e  data from tick event
 		 */
 		function tick(e){
 			self.vertical_split(e.alpha);
@@ -177,7 +177,7 @@ Barista.Views.BubbleView = Backbone.View.extend({
 
 	/**
 	 * push bubbles vertically based on an attribute property
-	 * @param  {number} alpha
+	 * @param  {number} alpha  in combination with damp value, creates spring constant for bubble animation
 	 */
 	vertical_split: function(alpha){
 		var self = this;
@@ -285,9 +285,9 @@ Barista.Views.BubbleView = Backbone.View.extend({
         this.nodes.call(this.force.drag());
 
         /**
-         * tick function for use in the force class
-         * @param  {number} e 
-         */
+		 * tick function for use in the force class, decrements alpha value
+		 * @param  {object} e  data from tick event
+		 */
 		function tick(e){
 			self.vertical_split(e.alpha);
 			self.nodes.attr("cx", function(d) {return d.x;})
