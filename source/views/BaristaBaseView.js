@@ -8,13 +8,13 @@
  * base_view = new BaristaBaseView();
  * optional arguments:
  * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
- *                               *#ffffff*
+ *                               #ffffff
  * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults
- *                               to *#1b9e77*
+ *                               to #1b9e77
  * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
- *                               *"col-lg-12"*
- * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
- * @param {boolean} png          show the png export button. defaults to *true*
+ *                               "col-lg-12"
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
+ * @param {boolean} png          show the png export button. defaults to true
  * base_view = new BaristaBaseView({el: $("target_selector",
 									bg_color:"#ffffff",
 									fg_color: "#1b9e77",
@@ -249,7 +249,7 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 	 * dummy method that should be overridden if there is any work to do before saving the png image of
 	 * the view
 	 * For example, removing elements that will not render properly could be done before saving the image
-	 * This function is called as the first step of *save_png*
+	 * This function is called as the first step of save_png
 	 */
 	save_png_pre: function(){},
 
@@ -257,13 +257,13 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 	 * dummy method that should be overridden if there is any work to do after saving the png image of
 	 * the view
 	 * For example, restoring elements that were removed before saving could be done after saving the image
-	 * This function is called as the last step of *save_png*
+	 * This function is called as the last step of save_png
 	 */
 	save_png_post: function(){},
 
 	/**
 	 * hides the view by dimming the opacity and hiding it in the DOM
-	 * @param  {number} duration  the time in ms for the hide animation. defualts to *1*
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
 	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){

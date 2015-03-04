@@ -5,17 +5,17 @@
  * basic use:
  * header = new CMapHeaderView({el:"header_target"});
  * optional arguments:
- * @param {string} organization  the name of the organization that claims copyright. Defaults to *Broad
- *                               Institute*
+ * @param {string} organization  the name of the organization that claims copyright. Defaults to Broad
+ *                               Institute
  * @param {string} terms_url     The url on which to find terms and conditions. Defaults to
- *                               '//lincscloud.org/terms-and-conditions/''
+ *                               '//lincscloud.org/terms-and-conditions/'
  * @param {array}  logo          The urls to organization logos to use. Defaults to
- *                               *['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png',
- *                               '//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
+ *                               ['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png',
+ *                               '//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']
  * @param {array}  logo_url      The urls to organization links to use. Defaults to 
- *                               *['//www.broadinstitute.org/','//lincscloud.org/']*
+ *                               ['//www.broadinstitute.org/','//lincscloud.org/']
  * @param {string} template      The path to a handlebars template to use. Defaults to
- *                               *templates/CMapFooter.handlebars*
+ *                               templates/CMapFooter.handlebars
  * header = new CMapFooterView({el:"footer_target",
 									organization: "Broad Institute",
 									terms_url: "//lincscloud.org/terms-and-conditions/",

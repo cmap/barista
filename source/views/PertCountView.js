@@ -1,20 +1,20 @@
 /**
  * A Backbone.View that shows that number of perturbagens matching a given query
  * Optionally, sub-category counts are give for the type of perturbagen queried for
- * This view is frequently paired with a **PertCountModel** or **CellCountModel**
+ * This view is frequently paired with a PertCountModel or CellCountModel
  * basic use:
  * count_view = new PertCountView();
  * optional arguments:
  * @param {string} bg_color     the hex color code to use as the backgound of the view, defaults to
- *                              *#ffffff*
+ *                              #ffffff
  * @param {string} well_color   the hex color code to use as the backgound of the wells, defaults to
- *                              *#bdbdbd*
+ *                              #bdbdbd
  * @param {string} fg_color     the hex color code to use as the foreground color of the view, defaults
- *                              to *#1b9e77*
+ *                              to #1b9e77
  * @param {string} span_class   a bootstrap span class to size the width of the view, defaults to
- *                              *"col-lg-4"*
- * @param {string} static_text  the static text header to use in the view, defaults to *"Reagents"*
- * @param {array}  categories   an array of objects to use as categories to display, defaults to *[]*
+ *                              "col-lg-4"
+ * @param {string} static_text  the static text header to use in the view, defaults to "Reagents"
+ * @param {array}  categories   an array of objects to use as categories to display, defaults to []
  * count_view = new PertCountView({bg_color:"#ffffff",
 									well_color: "#bdbdbd",
 									fg_color: "#1b9e77",

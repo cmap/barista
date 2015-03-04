@@ -1,6 +1,6 @@
 /**
 A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
+functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the
 search view's input, a "search:DidType" event is fired.
 
 @class PertSearchBar

@@ -1,20 +1,20 @@
 /**
  * A Backbone.View that displays a simple LDMap
- * The view is normally paired with a *HeatMapModel*, but works with any model that provides *data*,*cid*,
- * and *title* attributes
+ * The view is normally paired with a HeatMapModel, but works with any model that provides *data*,*cid*,
+ * and title attributes
  * optional arguments:
- * @param {string}   tenplate     The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
+ * @param {string}   tenplate     The handlebars template to use. Defaults to BaristaTemplates.d3_target
  * @param {string}   bg_color     the hex color code to use as the backgound of the view, defaults to
- *                                *#ffffff*
+ *                                #ffffff
  * @param {string}   low_color    the hex color code to use as lowest value color in the LDMap, defaults to
- *                                *#0000ff*
+ *                                #0000ff
  * @param {string}   high_color   the hex color code to use as highest value color in the LDMap, defaults
- *                                to *#ff0000*
+ *                                to #ff0000
  * @param {d3.scale} color_scale  custom color scale to use in the LDMap.  If supplied, low_color and
- *                                high_color are ignored, defaults to *undefined*
- * @param {number}   plot_height  the height of the LDMap to generate in pixels, defaults to *300*
+ *                                high_color are ignored, defaults to undefined
+ * @param {number}   plot_height  the height of the LDMap to generate in pixels, defaults to 300
  * @param {string}   span_class   a bootstrap span class to size the width of the view, defaults to
- *                                *"span12"*
+ *                                "span12"
  * example usage:
  * LDMap_view = new LDMapView({el: $("target_selector"),
 												model: new HeatmapModel(),

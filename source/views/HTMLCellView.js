@@ -1,10 +1,10 @@
 /**
  * a Backgrid extension that supports display of html content in Backgrid tables
- * HTMLCellView defines both a Backgrid.Cell subclass (**HTMLCell**) and Backgrid.CellFormatter subclass
- * (**HTMLFormatter**) to use with it
+ * HTMLCellView defines both a Backgrid.Cell subclass (HTMLCell) and Backgrid.CellFormatter subclass
+ * (HTMLFormatter) to use with it
  * These two components are used together to integrate with Backgrid's existing cell definitions in order
- * to use **HTMLCell** and **HTMLFormatter**, specify the cell parameter of a Backgrid column definition
- * as **HTMLCell**
+ * to use HTMLCell and HTMLFormatter, specify the cell parameter of a Backgrid column definition as
+ * HTMLCell
  * as an example:
  *    // set up a default collection and column definition for the grid to operate on
      this.collection = new PertCollection();

@@ -1,28 +1,28 @@
 /**
  * A Backbone.View that displays a scatter plot
- * the view's model is assumed to have the same defaults as specified in **BarPlotModel**
+ * the view's model is assumed to have the same defaults as specified in BarPlotModel
  * basic use:
  * bar_plot_view = new BarPlotView();
  * optional arguments:
  * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
- *                               *#ffffff*
+ *                               #ffffff
  * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults to
- *                               *#1b9e77*
+ *                               #1b9e77
  * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
- *                               *"span12"*
+ *                               "span12"
  * @param {array}   range        a two element array specifying the plotting bounds of the plot, defaults
- *                               to *[min(data),max(data)]*
- * @param {boolean} log          if set to true, plots the data on a log scale, defaults to *false*
+ *                               to [min(data),max(data)]
+ * @param {boolean} log          if set to true, plots the data on a log scale, defaults to false
  * @param {number}  min_lock     if set, locks the minimum of the range at the given value. Ignored if
- *                               range is set. defaults to *undefined*
+ *                               range is set. defaults to undefined
  * @param {number}  max_lock     if set, locks the maximum of the range at the given value. Ignored if
- *                               range is set. defaults to *undefined*
+ *                               range is set. defaults to undefined
  * @param {boolean} min_expand   if set, allows the minimum of the range to expand if data is found below
- *                               it. defaults to *false*
+ *                               it. defaults to false
  * @param {boolean} max_expand   if set, allows the maximum of the range to expand if data is found above
- *                               it. defaults to *false*
+ *                               it. defaults to false
  * @param {string}  orientation  sets the orientation of the bar plot. options are 'horizontal' or
- *                               'vertical'. defaults to *'vertical'*
+ *                               'vertical'. defaults to 'vertical'
  * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
  * bar_plot_view = new BarPlotView({el: $("target_selector",
 									bg_color:"#ffffff", 

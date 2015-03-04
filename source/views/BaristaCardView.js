@@ -4,14 +4,14 @@
  * basic use:
 		card_view = new BaristaCardView();
  * optional arguments:
- * @param {string} url         the link to navigate to if the card is clicked, defaults to *""*
- * @param {string} title       the title of the card. defaults to *"title"*
- * @param {string} subtitle    the subtitle of the card. defaults to *"subtitle"*
- * @param {string} image       the link to an image to show as the cards main content. defaults to *""*
+ * @param {string} url         the link to navigate to if the card is clicked, defaults to ""
+ * @param {string} title       the title of the card. defaults to "title"
+ * @param {string} subtitle    the subtitle of the card. defaults to "subtitle"
+ * @param {string} image       the link to an image to show as the cards main content. defaults to ""
  * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
- *                             *#1b9e77*
+ *                             #1b9e77
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
- *                             *"col-lg-12"*
+ *                             "col-lg-12"
  * card_view = new BaristaCardView({el: $("target_selector",
 									url:"",
 									title:"",

@@ -1,13 +1,13 @@
 /**
  * A Backbone.View that displays a single level tree of data as a bubble plot
  * The view should be bound to a model such as a **PertCellBreakdownModel** that captures tree data in a
- * *tree_object* attribute
+ * tree_object attribute
  * basic use:
  * bubble_view = new BubbleView({el: $("target_selector")});
  * optional arguments:
  * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
- *                             *#1b9e77*
- * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to *"span4"*
+ *                             #1b9e77
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span4"
  * bubble_view = new BubbleView({el: $("target_selector"),
 									fg_color: "#1b9e77",
 									span_class: "span4"});

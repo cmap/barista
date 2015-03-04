@@ -9,10 +9,10 @@
  * The view also renders a title based on the model's title attribute
  * optional arguments:
  * @param {string} template    The path to a handlebars template to use. Defaults to
- *                             *../templates/d3_target.handlebars*
+ *                             ../templates/d3_target.handlebars
  * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
- *                             *#bdbdbd*
- * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to *"span12"*
+ *                             #bdbdbd
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span12"
  * example usage:
  * tick_view = new TickView({el: $("target_selector"),
 												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
@@ -276,7 +276,7 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	/**
 	 * hides the view by dimming the opacity and hiding it in the DOM
-	 * @param  {number} duration  the time in ms for the hide animation. defualts to *1*
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
 	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){
@@ -295,7 +295,7 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	/**
 	 * shows the view by brightening the opacity and showing it in the DOM
-	 * @param  {number} duration  the time in ms for the show animation. defualts to *1*
+	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
 	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){

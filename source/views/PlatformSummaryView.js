@@ -4,7 +4,7 @@
  * he widget displays a count of the available experiments on the platform, a description of the platform,
  * a widget to extract a listing of the data available, and a link to a platform specific app for viewing
  * the contents of the available data on that platform
- * This view is frequently paired with a **PlatformSummaryModel**
+ * This view is frequently paired with a PlatformSummaryModel
  * basic use:
  * platform_summary_view = new PlatformSummaryView();
  * optional arguments:
@@ -182,8 +182,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
 	/**
 	 * use Handlebars to compile the template for the view
 	 */
@@ -469,17 +467,16 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 	 * location
 	 * @param  {object} options  describes the options for drawing a string to the screen
 	 * arguments for options:
-	 * @param {string}     description_string  the string to be displayed, defaults to *""*
-	 * @param {right}      right               the x position to place the **right** edge of text, defaults
-	 *                                         to *this.width*
-	 * @param {left}       left                the x position to place the **left** edge of text, defaults
-	 *                                         to *this.width - 500*
-	 * @param {top}        top                 the y position to place the **top** edge of text, defaults
-	 *                                         to *0*
+	 * @param {string}     description_string  the string to be displayed, defaults to ""
+	 * @param {right}      right               the x position to place the right edge of text, defaults
+	 *                                         to this.width
+	 * @param {left}       left                the x position to place the left edge of text, defaults
+	 *                                         to this.width - 500
+	 * @param {top}        top                 the y position to place the top edge of text, defaults to 0
 	 * @param {bottom}     bottom              the y position to place the **bottom** edge of text,
-	 *                                         defaults to *100*
+	 *                                         defaults to 100
 	 * @param {node_class} node_class          the class used for locating the text node within fg_layer,
-	 *                                         defaults to *""*
+	 *                                         defaults to ""
 	 */
 	render_description: function(options){
 		var self = this;

@@ -1,24 +1,24 @@
 /**
  * A Backbone.View that displays a simple heatmap
- * The view is normally paired with a *HeatmapModel*, but works with any model that provides *data*, *rid*,
- * *cid*, and *title* attributes
+ * The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,
+ * and title attributes
  * optional arguments:
  * @param {string}   template           The handlebars template to use. Defaults to
- *                                      *BaristaTemplates.d3_target*
+ *                                      BaristaTemplates.d3_target
  * @param {string}   bg_color           the hex color code to use as the backgound of the view, defaults to
- *                                      *#ffffff*
+ *                                      #ffffff
  * @param {string}   low_color          the hex color code to use as lowest value color in the heatmap,
- *                                      defaults to *#0000ff*
+ *                                      defaults to #0000ff
  * @param {string}   high_color         the hex color code to use as highest value color in the heatmap,
- *                                      defaults to *#ff0000*
+ *                                      defaults to #ff0000
  * @param {d3.scale} color_scale        custom color scale to use in the heatmap.  If supplied, low_color
- *                                      and high_color are ignored, defaults to *undefined*
+ *                                      and high_color are ignored, defaults to undefined
  * @param {d3.scale} annot_color_scale  custom color scale to use in the heatmap annotations. defaults to
- *                                      *undefined* and causes the annotations to be rendered with a
+ *                                      undefined and causes the annotations to be rendered with a
  *                                      standard color scale
- * @param {number}   plot_height        the height of the heatmap to generate in pixels, defaults to *300*
+ * @param {number}   plot_height        the height of the heatmap to generate in pixels, defaults to 300
  * @param {string}   span_class         a bootstrap span class to size the width of the view, defaults to
- *                                      *"span12"*
+ *                                      "span12"
  * example usage:
  * heatmap_view = new HeatmapView({el: $("target_selector"),
 												model: new HeatmapModel(),

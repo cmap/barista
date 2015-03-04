@@ -4,9 +4,9 @@
  * pert_detail_view = new PertDetailView({el: $("target_selector")});
  * optional arguments:
  * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
- *                             *#ffffff*
+ *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
- *                             *"col-lg-12"*
+ *                             "col-lg-12"
  * pert_detail_view = new PertDetailView({el: $("target_selector"),
  												model: PertDetailModel,
  												bg_color: "#ffffff",
@@ -539,14 +539,14 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 	 * utility function to break a long summary string into a multiline and draw it at the desired location
 	 * @param  {object} options  describes the options for drawing a string to the screen
 	 * arguments for options:
-	 * @param {string} summary_string  the string to be displayed, defaults to *""*
-	 * @param {right}  right           the x position to place the **right** edge of text, defaults to
-	 *                                 *this.width*
-	 * @param {left}   left            the x position to place the **left** edge of text, defaults to
-	 *                                 *this.width - 500*
-	 * @param {top}    top             the y position to place the **top** edge of text, defaults to *0*
-	 * @param {bottom} bottom          the y position to place the **bottom** edge of text, defaults to
-	 *                                 *100*
+	 * @param {string} summary_string  the string to be displayed, defaults to ""
+	 * @param {right}  right           the x position to place the right edge of text, defaults to
+	 *                                 this.width
+	 * @param {left}   left            the x position to place the left edge of text, defaults to
+	 *                                 this.width - 500
+	 * @param {top}    top             the y position to place the top edge of text, defaults to 0
+	 * @param {bottom} bottom          the y position to place the bottom edge of text, defaults to
+	 *                                 100
 	 */
 	render_summary: function(options){
 		var self = this;

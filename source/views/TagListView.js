@@ -7,16 +7,15 @@
  * tag_list_view = new TagListView();
  * optional arguments:
  * @param {string} bg_color       the hex color code to use as the backgound of the view, defaults to
- *                                *#ffffff*
+ *                                #ffffff
  * @param {string} fg_color       the hex color code to use as the foreground color of the view, defaults
- *                                to *white*
- * @param {string} tag_color      the hex color code to use as the tag color of the view, defaults to
- *                                *gray*
+ *                                to white
+ * @param {string} tag_color      the hex color code to use as the tag color of the view, defaults to gray
  * @param {string} span_class     a bootstrap span class to size the width of the view, defaults to
- *                                *"col-lg-12"*
- * @param {number} plot_height    the height of the plot in pixels, defaults to *120*
+ *                                "col-lg-12"
+ * @param {number} plot_height    the height of the plot in pixels, defaults to 120
  * @param {string} display_field  the model attribute to display for each model in the view's colleciton.
- *                                defualts to *'cid'*
+ *                                defualts to 'cid'
  * tag_list_view = new TagListView({el: $("target_selector",
 									bg_color:"#ffffff", 
 									fg_color: "white",

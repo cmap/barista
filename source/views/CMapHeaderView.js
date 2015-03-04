@@ -6,10 +6,10 @@
  * basic use:
  * header = new CMapHeaderView({el:"header_target"});
  * optional arguments:
- * @param {string} title     The title of the page. Defaults to *Title*
- * @param {string} subtitle  The title of the page. Defaults to *Sub Title*
+ * @param {string} title     The title of the page. Defaults to Title
+ * @param {string} subtitle  The title of the page. Defaults to Sub Title
  * @param {string} template  The path to a handlebars template to use. Defaults to
- *                           *templates/CMapHeader.handlebars*
+ *                           templates/CMapHeader.handlebars
  * header = new CMapHeaderView({el:"header_target",
 									title: "",
 									subtitle: "",

@@ -136,7 +136,7 @@ Barista.Views.GridView = Backbone.View.extend({
 
 	/**
 	 * scrolls the grid to the top of its container
-	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
 	 */
 	scroll_to_top: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
@@ -146,7 +146,7 @@ Barista.Views.GridView = Backbone.View.extend({
 
 	/**
 	 * scrolls the grid to the bottom of its container
-	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
 	 */
 	show_scroll_to_top_button: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
@@ -156,7 +156,7 @@ Barista.Views.GridView = Backbone.View.extend({
 
 	/**
 	 * hides the scroll to top button
-	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to *500*
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
 	 */
 	hide_scroll_to_top_button: function(duration){
 		var self= this;
@@ -461,7 +461,7 @@ Barista.Views.GridView = Backbone.View.extend({
 
 	/**
 	 * hides the view by dimming the opacity and hiding it in the DOM
-	 * @param  {number}  duration  the time in ms for the hide animation. defualts to *500*
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
 	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){
@@ -472,7 +472,7 @@ Barista.Views.GridView = Backbone.View.extend({
 
 	/**
 	 * shows the view by brightening the opacity and showing it in the DOM
-	 * @param  {number}  duration  the time in ms for the hide animation. defualts to *500*
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
 	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){

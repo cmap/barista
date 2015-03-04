@@ -1,40 +1,40 @@
 /**
  * A Backbone.View that displays a scatter plot
- * the view's model is assumed to have the same defaults as specified in **ScatterPlotModel**
+ * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
  * basic use:
  * scatter_plot_view = new ScatterPlotView();
  * optional arguments:
  * @param {string}  bg_color      the hex color code to use as the backgound of the view, defaults to
- *                                *#ffffff*
+ *                                #ffffff
  * @param {string}  fg_color      the hex color code to use as the foreground color of the view, defaults
- *                                to *#1b9e77*
+ *                                to #1b9e77
  * @param {string}  span_class    a bootstrap span class to size the width of the view, defaults to
- *                                *"span12"*
+ *                                "span12"
  * @param {string}  scale_by      an attribute in the model's meta data object to scale points by, defaults
- *                                to *undefined*
+ *                                to undefined
  * @param {array}   x_range       a two element array specifying the x plotting bounds of the plot,
- *                                defaults to *[min(x_data),max(x_data)]*
+ *                                defaults to [min(x_data),max(x_data)]
  * @param {array}   y_range       a two element array specifying the y plotting bounds of the plot,
- *                                defaults to *[min(y_data),max(y_data)]*
- * @param {boolean} x_log         if set to true, plots the x axis on a log scale, defaults to *false*
- * @param {boolean} y_log         if set to true, plots the y axis on a log scale, defaults to *false*
+ *                                defaults to [min(y_data),max(y_data)]
+ * @param {boolean} x_log         if set to true, plots the x axis on a log scale, defaults to false
+ * @param {boolean} y_log         if set to true, plots the y axis on a log scale, defaults to false
  * @param {number}  x_min_lock    if set, locks the minimum of the x_range at the given value. Ignored if
- *                                x_range is set. defaults to *undefined*
+ *                                x_range is set. defaults to undefined
  * @param {number}  y_min_lock    if set, locks the minimum of the y_range at the given value. Ignored if
- *                                y_range is set. defaults to *undefined*
+ *                                y_range is set. defaults to undefined
  * @param {number}  x_max_lock    if set, locks the maximum of the x_range at the given value. Ignored if
- *                                x_range is set. defaults to *undefined*
+ *                                x_range is set. defaults to undefined
  * @param {number}  y_max_lock    if set, locks the maximum of the y_range at the given value. Ignored if
- *                                y_range is set. defaults to *undefined*
+ *                                y_range is set. defaults to undefined
  * @param {boolean} x_min_expand  if set, allows the minimum of the x_range to expand if data is found
- *                                below it. defaults to *false*
+ *                                below it. defaults to false
  * @param {boolean} y_min_expand  if set, allows the minimum of the y_range to expand if data is found
- *                                below it. defaults to *false*
+ *                                below it. defaults to false
  * @param {boolean} x_max_expand  if set, allows the maximum of the x_range to expand if data is found
- *                                above it. defaults to *false*
+ *                                above it. defaults to false
  * @param {boolean} y_max_expand  if set, allows the maximum of the y_range to expand if data is found
- *                                above it. defaults to *false*
- * @param {number}  plot_height   the height of the plot in pixels, defaults to *120*
+ *                                above it. defaults to false
+ * @param {number}  plot_height   the height of the plot in pixels, defaults to 120
  * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
 									bg_color:"#ffffff", 
 									fg_color: "#1b9e77",
