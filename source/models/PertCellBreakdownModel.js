@@ -7,9 +7,9 @@
 Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
       /**
    * describes the model's default parameters
-   * @param {string} filter       the current filter to be used with api calls, defaults to *""*
+   * @param {string} filter       the current filter to be used with api calls, defaults to ""
    * @param {object} tree_object  an object that describes the structured tree data representing cell_line
-   *                              counts, defaults to *{children:[]}*
+   *                              counts, defaults to {children:[]}
    */
   defaults: {
     "filter": "",
@@ -26,7 +26,7 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var pert_info = Barista.APIURL + '/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi"){

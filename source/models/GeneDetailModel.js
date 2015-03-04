@@ -126,7 +126,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         var params = params = {q:'{"pert_type":"'+ pert_type + '","pert_iname":"' + search_string + '"}',
                               l:1};
 
-        // run the api request.  If the search string is ""resolve the generated promise
+        // run the api request.  If the search string is "", resolve the generated promise
         // with a null value, otherwise resolve it with the returned pert annotations
         var self = this;
         $.getJSON(pert_info,params,function(perts) {

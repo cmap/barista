@@ -2,13 +2,13 @@
  * A Backbone.Collection that represents a set of analysis history objects
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to PertModel
  * @param {string}         url        the url from which model data is fetched. defaults  to
- *                                    *'//api.lincscloud.org/a2/pertinfo?callback=?'*
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
  * @param {string}         skip       the skip parameter used in api calls when the collection is updated
- *                                    defaults to *0*
+ *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to *false*
+ *                                    operation. defaults to false
  */
 
 Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
@@ -16,7 +16,6 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
      * fetch model data from assigned url
      */
     initialize: function(){
-        // #### url
         // the url from which model data is fetched
         this.url =  Barista.APIURL + '/compute_status?callback=?';
     },
@@ -57,16 +56,16 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
    * `AnalysisHistoryCollection.getData(search_string,search_type,limit)`
    * the count and pert_types data is replaced with new data coming from the api call
    * @param  {string}  search_string  the string on which a regex search into the api at the collections
-   *                                  url will be performed, defaults to *""*
-   * @param  {string}  search_type    the type of search that will be performed, defaults to *"single"*
-   * @param  {number}  limit          the number of models to be fetched, defaults to *30*
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
    */
     getData: function(search_string,search_type,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
-        // store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+        // store the value of search_string, search_type, and limit on the collection object
         this.search_string = (search_string !== undefined) ? search_string : '';
         this.search_type = (search_type !== undefined) ? search_type : '';
         this.limit = (limit !== undefined) ? limit : 30;
@@ -105,7 +104,7 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
 
         // make the api call and store the results as individual models in the collection.
         // we don't remove old models in this case as we want to support continuous building
-        // of the model list from a remote api.  On success, set **isLoading** back to false
+        // of the model list from a remote api.  On success, set isLoading back to false
         // and resolve a deferred that we set up as a return value
         var def = $.Deferred();
         $.getJSON(this.url, params, function(res){

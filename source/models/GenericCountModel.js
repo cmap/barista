@@ -3,9 +3,9 @@
  * The data model captures the total count of perturbagens that meet a search criteria
  * optional arguments:
  * @param {string} search_field  the document field the model with count over upon fetching data,
- *                               defaults to *"pert_iname"*
+ *                               defaults to "pert_iname"
  * @param {string} url           the url of the api service to fetch data from, defaults to
- *                               *"//api.lincscloud.org/a2/pertinfo"*
+ *                               "//api.lincscloud.org/a2/pertinfo"
  * `generic_count_model = new GenericCountModel()`
  */
 
@@ -13,9 +13,9 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
   /**
    * describes the model's default parameters
    * @param {string} search_field  the document field the model with count over upon fetching data,
-   *                               defaults to *"pert_iname"*
+   *                               defaults to "pert_iname"
    * @param {string} url           the url of the api service to fetch data from, defaults to
-   *                               *"//api.lincscloud.org/a2/pertinfo"*
+   *                               "//api.lincscloud.org/a2/pertinfo"
    */
   defaults: {
     "search_field": "pert_iname",

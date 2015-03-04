@@ -4,20 +4,20 @@
  * each annotation category for the set of signatures
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
- *                              to *'["trt_sh","trt_oe"]'*
+ *                              to '["trt_sh","trt_oe"]'
  */
 
 Barista.Models.SigCountModel = Backbone.Model.extend({
   /**
    * describes the model's default parameters
    * @param {string} type_string      the string of pert_types that will be search upon fetching data,
-   *                                  defaults to *'["trt_sh","trt_oe"]'*
-   * @param {number} count            the number of perturbagens matching an api query, defaults to *0*
+   *                                  defaults to '["trt_sh","trt_oe"]'
+   * @param {number} count            the number of perturbagens matching an api query, defaults to 0
    * @param {array}  pert_types       an array of objects representing pert\_type categories to keep track
-   *                                  of, defaults to *[{}}]*
+   *                                  of, defaults to [{}}]
    * @param {string} pert_type_field  a field name over which to look for pert_types.  This runs an
    *                                  aggregated count over the specified field name in the Connectivity
-   *                                  Map database, defaults to *'pert_icollection'*
+   *                                  Map database, defaults to 'pert_icollection'
    * @param {date}   last_update      a timestamp of the latest model update, defaults to the current time
    */
   defaults: {
@@ -38,7 +38,7 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var sig_info = Barista.APIURL + '/a2/siginfo?callback=?';
     var params = {};
     if (search_type === "multi") {

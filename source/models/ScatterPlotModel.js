@@ -12,12 +12,12 @@
 Barista.Models.ScatterPlotModel = Backbone.Model.extend({
 	/**
    * set of model defaults
-   * @param {string} title         the title of the plot. Defaults to *""*
-   * @param {string} x_axis-title  the title of the x_axis. Defaults to *""*
-   * @param {string} y_axis-title  the title of the y_axis. Defaults to *""*
-   * @param {array}  x_data        an array of data for the x_axis. Defaults to *[]*
-   * @param {array}  y_data        an array of data for the y_axis. Defaults to *[]*
-   * @param {object} meta-data     object containing meta data for the points in the plot. Defaults to *{}*
+   * @param {string} title         the title of the plot. Defaults to ""
+   * @param {string} x_axis-title  the title of the x_axis. Defaults to ""
+   * @param {string} y_axis-title  the title of the y_axis. Defaults to ""
+   * @param {array}  x_data        an array of data for the x_axis. Defaults to []
+   * @param {array}  y_data        an array of data for the y_axis. Defaults to []
+   * @param {object} meta-data     object containing meta data for the points in the plot. Defaults to {}
    */
 	defaults: {
 		title: "",

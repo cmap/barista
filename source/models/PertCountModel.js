@@ -4,7 +4,7 @@
  * of each annotation category for the set of perturbagens
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
- *                              to *'["trt_sh","trt_oe"]'*
+ *                              to '["trt_sh","trt_oe"]'
  * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 
@@ -12,13 +12,13 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
   /**
    * describes the model's default parameters
    * @param {string}  type_string      the string of pert_types that will be search upon fetching data,
-   *                                   defaults to *'["trt_sh","trt_oe"]'*
-   * @param {number}  count            the number of perturbagens matching an api query, defaults to *0*
-   * @param {array}   pert_types       an array of objects representing pert\_type categories to keep track
-   *                                   of, defaults to *[{}}]*
+   *                                   defaults to '["trt_sh","trt_oe"]'
+   * @param {number}  count            the number of perturbagens matching an api query, defaults to 0
+   * @param {array}   pert_types       an array of objects representing pert_type categories to keep track
+   *                                   of, defaults to [{}}]
    * @param {string}  pert_type_field  a field name over which to look for pert_types.  This runs an
    *                                   aggregated count over the specified field name in the Connectivity
-   *                                   Map database, defaults to *'pert_icollection'*
+   *                                   Map database, defaults to 'pert_icollection'
    * @param {date}    last_update      a timestamp of the latest model update, defaults to the current time
    */
   defaults: {
@@ -39,7 +39,7 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var pert_info = Barista.APIURL + '/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi") {

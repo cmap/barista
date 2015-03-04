@@ -28,7 +28,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
-             * @type {[type]}
              */
             engine: Hogan,
 
