@@ -27,6 +27,9 @@ Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
     // set up label, default if not specified
     this.label = (this.options.label !== undefined) ? this.options.label : 'Signatures';
 
+    // set the animation duration for count.
+    this.duration = (this.options.duration != undefined) ? this.options.duration : 500;
+
     // set up the top bar color, default to gray if not specified
     this.top_bar_color = (this.options.top_bar_color !== undefined) ? this.options.top_bar_color : 'white';
 
@@ -136,7 +139,7 @@ Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
 
     // transition the count to the new value
     this.fg_layer.selectAll('.genericCountViewCount').data([1])
-      .transition().duration(500)
+      .transition().duration(this.duration)
       .tween("text", function() {
           var i = d3.interpolate(this.textContent.replace(",",""), count);
           return function(t) {
