@@ -1,42 +1,46 @@
-// # **PertCountView**
-
-// A Backbone.View that shows that number of perturbagens matching a given query.  Optionally, sub-category
-// counts are give for the type of perturbagen queried for.  This view is frequently paired with a
-// **PertCountModel** or **CellCountModel**
-
-// basic use:
-
-//		count_view = new PertCountView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **well\_color**  the hex color code to use as the backgound of the wells, defaults to *#bdbdbd*
-// 3.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-4"*
-// 5.  {string}  **static\_text**  the static text header to use in the view, defaults to *"Reagents"*
-// 6.  {array}  **categories**  an array of objects to use as categories to display, defaults to *[]*
-
-//		count_view = new PertCountView({bg_color:"#ffffff",
-//									well_color: "#bdbdbd",
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									static_text: "Reagents",
-//									categories: []});
-
+/**
+ * A Backbone.View that shows that number of perturbagens matching a given query
+ * Optionally, sub-category counts are give for the type of perturbagen queried for
+ * This view is frequently paired with a PertCountModel or CellCountModel
+ * basic use:
+ * count_view = new PertCountView();
+ * optional arguments:
+ * @param {string} bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                              #ffffff
+ * @param {string} well_color   the hex color code to use as the backgound of the wells, defaults to
+ *                              #bdbdbd
+ * @param {string} fg_color     the hex color code to use as the foreground color of the view, defaults
+ *                              to #1b9e77
+ * @param {string} span_class   a bootstrap span class to size the width of the view, defaults to
+ *                              "col-lg-4"
+ * @param {string} static_text  the static text header to use in the view, defaults to "Reagents"
+ * @param {array}  categories   an array of objects to use as categories to display, defaults to []
+ * count_view = new PertCountView({bg_color:"#ffffff",
+									well_color: "#bdbdbd",
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									static_text: "Reagents",
+									categories: []});
+ */
 
 Barista.Views.PertCountView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PertCountView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.PertCountModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -93,8 +97,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
@@ -102,15 +107,17 @@ Barista.Views.PertCountView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view.
+	/**
+	 * completely redraw the view
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -227,7 +234,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 			.on("mouseout",function(){d3.select(this).transition().duration(500).attr("opacity",0.25).attr("fill","#000000");})
 			.on("click",function(){self.save_png();});
 	},
-
+	/**
+	 * update the dynamic potions of the view
+	 */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -284,8 +293,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 			});
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		//set the animate the div containing the view by applying and then removing
 		// css classes that defined the transitions we want

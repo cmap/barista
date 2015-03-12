@@ -5,7 +5,6 @@ Barista.Models.SequenceModel = Backbone.Model.extend({
 
   /**
    * the default options for the model
-   * @type {Object}
    */
   defaults: {
     sequence: '',
@@ -21,8 +20,7 @@ Barista.Models.SequenceModel = Backbone.Model.extend({
   },
 
   /**
-   * function to populate the derived model attributes of
-   * displaySequence and modifications
+   * function to populate the derived model attributes of displaySequence and modifications
    */
   parseSequence: function() {
     var sequence = this.get('sequence'),

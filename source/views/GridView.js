@@ -1,8 +1,13 @@
 Barista.Views.GridView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "GridView",
-
+/**
+ * overrides the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 		// default search value
@@ -36,10 +41,16 @@ Barista.Views.GridView = Backbone.View.extend({
 			events: {
 				"click": "onClick"
 			},
+			/**
+			 *  build the grid on the template using a clickable row
+			 *  If a row is clicked, a grid:RowClick event is fired with the row's model as the passed data
+			 */
 			onClick: function () {
 				self.trigger("grid:RowClick", this.model);
 			},
-			// overide Backgrid.Row's native render method
+			/**
+			 * overide Backgrid.Row's native render method
+			 */
 			render: function () {
 				this.$el.empty();
 				var fragment = document.createDocumentFragment();
@@ -55,7 +66,9 @@ Barista.Views.GridView = Backbone.View.extend({
 				return this;
 			},
 
-			// overide Backgrid.Row's native remove method
+			/**
+			 * overide Backgrid.Row's native remove method
+			 */
 			remove: function () {
 				this.$el.addClass("cmap-active-grid-row");
 				this.$el.animate({"opacity":0},1000);
@@ -110,8 +123,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 	},100),
 
-	// ### add_scroll_to_top_button
-	// adds a UI control to scroll the top of the grid
+	/**
+	 * adds a UI control to scroll the top of the grid
+	 */
 	add_scroll_to_top_button: function(){
 		var self = this;
 		this.scroll_to_top_button_id = this.div_string + 'scroll_button';
@@ -120,33 +134,30 @@ Barista.Views.GridView = Backbone.View.extend({
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### scroll_to_top
-	// scrolls the grid to the top of its container
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * scrolls the grid to the top of its container
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	scroll_to_top: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
 		$("#" + this.div_string).animate({scrollTop:0},duration);
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### show_scroll_to_top_button
-	// shows the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * scrolls the grid to the bottom of its container
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	show_scroll_to_top_button: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
 		$("#" + this.scroll_to_top_button_id).clearQueue();
 		$("#" + this.scroll_to_top_button_id).animate({opacity:1},duration);
 	},
 
-	// ### hide_scroll_to_top_button
-	// hides the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * hides the scroll to top button
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	hide_scroll_to_top_button: function(duration){
 		var self= this;
 		duration = (duration !== undefined) ? duration : 500;
@@ -154,6 +165,12 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.scroll_to_top_button_id).animate({opacity:0},duration);
 	},
 
+/**
+ * changes the visible collection data and rejects the slice
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit        the number of models to be fetched
+ */
 	replace_collection: function(search_val,search_type,limit){
 		var getData_promise;
 		var self = this;
@@ -179,7 +196,12 @@ Barista.Views.GridView = Backbone.View.extend({
 		});
 		return getData_promise;
 	},
-
+/**
+ * changes the visible collection data
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit        the number of models to be fetched
+ */
 	update_collection: function(search_val,search_type,limit){
 		var getData_promise;
 		if (this.collection.models.length < this.collection.maxCount){
@@ -198,7 +220,9 @@ Barista.Views.GridView = Backbone.View.extend({
 			return getData_promise;
 		}
 	},
-
+/**
+ * hides the visible data and rejects the slice
+ */
 	clear_collection: function(){
 		var self = this;
 		this.collection.skip = 0;
@@ -217,7 +241,9 @@ Barista.Views.GridView = Backbone.View.extend({
 
 		},500);
 	},
-
+/**
+ * changes the height of the grid based on the number of elements it holds
+ */
 	resize_div: function(){
 		var self = this;
 		var container_height =  $("#" + this.div_string).height();
@@ -229,7 +255,9 @@ Barista.Views.GridView = Backbone.View.extend({
 			$("#" + self.div_string).animate({height:target_height},500);
 		},500);
 	},
-
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'backgrid_target' + new Date().getTime();;
 		this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
@@ -241,7 +269,10 @@ Barista.Views.GridView = Backbone.View.extend({
 													   edit: this.edit,
 													}));
 	},
-
+/**
+ * attempts to return data from a slice, and returns the slice button to its previous state if a failure
+ * is detected
+ */
 	slice_all_table_data: function(){
 		var self = this;
 		// change the button state to progress
@@ -269,6 +300,7 @@ Barista.Views.GridView = Backbone.View.extend({
 			dataType: 'json',
 			url: sig_slice,
 			data: {q: self.collection.q_param,l: 1000},
+			
 			success: function(res){
 				if (res.file_url){
 					self.change_slice_button_state("link",res.file_url);
@@ -276,6 +308,7 @@ Barista.Views.GridView = Backbone.View.extend({
 					self.change_slice_button_state("fail");
 				}
 			},
+
 			error: function(){
 				self.change_slice_button_state("fail");
 			}
@@ -289,10 +322,14 @@ Barista.Views.GridView = Backbone.View.extend({
 			self.change_slice_button_state("fail");
 		},60000);
 	},
-
+/**
+ * changes the state of the slice button based on the current state
+ * @param  {string} state  current state of the slice button (i.e. slice, progress, or link)
+ * @param  {string} link   link to the slice
+ */
 	change_slice_button_state: function (state,link){
 		var self = this;
-		// unbind an handlers on the button
+		// unbind any handlers on the button
 		$("#" + self.div_string + "_slice",self.el).unbind();
 
 		// handle the re-binding of handlers and update the button text and icon
@@ -339,7 +376,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 
 	},
-
+	/**
+	 * download the backing data that matches the current model state
+	 */
 	download_table: function(){
 		var self = this;
 		// indicate we are downloading something
@@ -396,8 +435,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		});
 	},
 
-	// ### open_edit_table
-	// open up a column to show editing buttons
+	/**
+	 * open up a column to show editing buttons
+	 */
 	open_edit_table: function(){
 		var self = this;
 		console.log("opening edit");
@@ -407,8 +447,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.close_edit_table();});
 	},
 
-	// ### close_edit_table
-	// close column showing editing buttons
+	/**
+	 * close column showing editing buttons
+	 */
 	close_edit_table: function(){
 		var self = this;
 		var idCol = this.grid.columns.where({ name: "edit" });
@@ -418,28 +459,22 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.open_edit_table();});
 	},
 
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *500*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		var self = this;
 		this.$el.animate({opacity:0},duration);
 		setTimeout(function(){self.$el.hide();},duration);
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *500*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		this.$el.show();
 		this.$el.animate({opacity:1},duration);

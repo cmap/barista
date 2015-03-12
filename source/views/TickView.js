@@ -1,41 +1,45 @@
-// # **TickView**
-
-// A Backbone.View that displays a Connectivity Map tick view.  The view is must be paired with a CMapTickModel that
-// describes the rows to display in the tick view and the scores of the ticks to show for each row.  An 
-// example input data object from a CMapTickModel might looks like this:
-
-//			{PC3: [.23,-.28], MCF7: [-0.6]}
-
-// The view will render a row for each key in the data object and a tick for each entry in the array values
-// for each row.  The view also renders a title based on the model's title attribute
-
-// optional arguments:
-
-// 1.  {string}  **template**  The path to a handlebars template to use. Defaults to *../templates/d3_target.handlebars*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#bdbdbd*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		tick_view = new TickView({el: $("target_selector"),
-//												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
-//												template: "../templates/d3_target.handlebars",
-//												bg_color: "#bdbdbd",
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a Connectivity Map tick view
+ * The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and
+ * the scores of the ticks to show for each row
+ * An example input data object from a CMapTickModel might looks like this:
+ * {PC3: [.23,-.28], MCF7: [-0.6]}
+ * The view will render a row for each key in the data object and a tick for each entry in the array values
+ * for each row
+ * The view also renders a title based on the model's title attribute
+ * optional arguments:
+ * @param {string} template    The path to a handlebars template to use. Defaults to
+ *                             ../templates/d3_target.handlebars
+ * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
+ *                             #bdbdbd
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span12"
+ * example usage:
+ * tick_view = new TickView({el: $("target_selector"),
+												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
+												template: "../templates/d3_target.handlebars",
+												bg_color: "#bdbdbd",
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.TickView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "TickView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.TickModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#eeeeee";
@@ -53,10 +57,10 @@ Barista.Views.TickView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template_and_draw
-	// use Handlebars to compile the template for the view and draw it for the first time
-
-	//		tick_view.compile_template_and_draw();
+	/**
+	 * use Handlebars to compile the template for the view and draw it for the first time
+	 * tick_view.compile_template_and_draw();
+	 */
 	compile_template_and_draw: function(){
 		var self = this;
 		this.isCompiling = true;
@@ -75,11 +79,11 @@ Barista.Views.TickView = Backbone.View.extend({
 		this.redraw();
 	},
 
-	// ### redraw
-	// perform a full redraw of the view, including wiping out all d3 drawn components in the view and 
-	// initializing them again from scratch.
-
-	//		tick_view.redraw();
+	/**
+	 * perform a full redraw of the view, including wiping out all d3 drawn components in the view and 
+	 * initializing them again from scratch
+	 * tick_view.redraw();
+	 */
 	redraw: function(){
 		var self = this;
 		// set up the panel's width and height via animation
@@ -94,11 +98,11 @@ Barista.Views.TickView = Backbone.View.extend({
 		},501);
 	},
 
-	// ### init_view
-	// set up the view from scratch.  Draw a background panel and place all dynamic content on that panel
-	// with defualt values
-
-	//		tick_view.init_view();
+	/**
+	 * set up the view from scratch
+	 * Draw a background panel and place all dynamic content on that panel with defualt values
+	 * tick_view.init_view();
+	 */
 	init_view: function(){
 		// stuff "this" into a variable for use inside of scoped funcitons
 		var self = this;
@@ -236,10 +240,10 @@ Barista.Views.TickView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### render
-	// render the dynamic content of the view based on the current state of the view's data model
-
-	//		tick_view.render();
+	/**
+	 * render the dynamic content of the view based on the current state of the view's data model
+	 * tick_view.render();
+	 */
 	render: function(){
 		// grab data from the model and sort it according to the values in the object
 		var data_array = _.pairs(this.model.get('data_object'));
@@ -270,14 +274,11 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	},
 
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *1*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		var self = this;
@@ -292,24 +293,20 @@ Barista.Views.TickView = Backbone.View.extend({
 		}
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *1*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		this.$el.show();
 		this.$el.animate({opacity:1},duration);
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
-
-	//		tick_view.save_png();
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.vis.attr("width");

@@ -1,31 +1,35 @@
-// # **CompoundDetailView**
-
-// A Backbone.View that shows information about a small molecule compound.  This view is
-// frequently paired with a CompoundDetailModel.
-
-//		pert_detail_view = new CompoundDetailView({el: $("target_selector")});
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-
-//		pert_detail_view = new CompoundDetailView({el: $("target_selector"),
-// 												model: CompoundDetailModel,
-// 												bg_color: "#ffffff",
-// 												span_class: "col-lg-12"});
+/**
+ * A Backbone.View that shows information about a small molecule compound
+ * This view is frequently paired with a CompoundDetailModel
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector")});
+ * optional arguments:
+ * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
+ *                             #ffffff
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
+ *                             "col-lg-12"
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
+ 												model: CompoundDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ */
 Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CompoundDetailView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.CompoundDetailModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up the plot height
 		this.options.plot_height = 260;
@@ -39,8 +43,10 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		this.base_initialize();
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		// keep track of our scope at this level
 		var self = this;
@@ -272,17 +278,28 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		this.render();
 		return this;
 	},
 
-	// ### render_label_and_value
-	// utility function to draw a standard label and value for that label under
-	// the main pert_iname and pert_id text.  If pass_model_field_as_text is true,
-	// pass the value in model_field as text instead of serching for it in the model
+	/**
+	* utility function to draw a standard label and value for that label under the main pert_iname and
+	* pert_id text
+	* If pass_model_field_as_text is true, pass the value in model_field as text instead of serching for
+	* it in the model
+	* @param  {string}  class_name_base           base of the class name of the attribute
+	* @param  {string}  label_text                visible text that labels the element on screen
+	* @param  {string}  model_field               text to appear in the model field
+	* @param  {boolean} pass_model_field_as_text  determines whether the value in model_field will appear
+	*                                             as text (true) or if the value must be obtained by
+	*                                             searching (false)
+	* @param  {number}  x_pos_base                base position for the x_label set
+	* @param  {[type]}  value_link                iff supplied, used as a link on the visible text
+*/
 	render_label_and_value: function(class_name_base, label_text, model_field, pass_model_field_as_text, x_pos_base, value_link){
 		// set up a local variable to keep our scope straight
 		var self = this;
@@ -349,17 +366,19 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render_summary
-	// utility function to break a long summary string into a multiline
-	// and draw it at the desired location
-
-	// options
-
-	// 1.  {string}  **summary_string**  the string to be displayed, defaults to *""*
-	// 2.  {right}  **right**  the x position to place the **right** edge of text, defaults to *this.width*
-	// 3.  {left}  **left**  the x position to place the **left** edge of text, defaults to *this.width - 500*
-	// 4.  {top}  **top**  the y position to place the **top** edge of text, defaults to *0*
-	// 5.  {bottom}  **bottom**  the y position to place the **bottom** edge of text, defaults to *100*
+	/**
+	 * utility function to break a long summary string into a multiline and draw it at the desired location
+	 * @param  {object} options  describes the options for drawing a string to the screen
+	 * arguments for options:
+	 * @param {string} summary_string  the string to be displayed, defaults to ""
+	 * @param {right}  right           the x position to place the right edge of text, defaults to
+	 *                                 this.width
+	 * @param {left}   left            the x position to place the left edge of text, defaults to
+	 *                                 this.width - 500
+	 * @param {top}    top             the y position to place the **top** edge of text, defaults to 0
+	 * @param {bottom} bottom          the y position to place the **bottom** edge of text, defaults to
+	 *                                 100
+	 */
 	render_summary: function(options){
 		var self = this;
 
@@ -411,8 +430,9 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 				.text(function(d){return d;});
 	},
 
-	// ### toggle_panel_state
-	// utility to open or close the view
+	/**
+	 * utility to open or close the view
+	 */
 	toggle_panel_state: function(){
 		var self = this;
 		var h;
@@ -436,8 +456,14 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		this.vis.transition().duration(500).attr("height",h);
 	},
 
-	// ### draw tags
-	// utility function to draw tags given an array.
+	/**
+	 * utility function to draw tags given an array
+	 * @param  {string} class_name_base  base of the class name of the attribute
+	 * @param  {string} label_text       visible text that labels the element on screen
+	 * @param  {array}  data             array of data
+	 * @param  {string} fg_color         fill color of label
+	 * @param  {string} tag_color        color for background layer of tags 
+	 */
 	draw_tags: function(class_name_base, label_text, data, fg_color, tag_color){
 		var x_offsets = [10];
 		var row_number = 0;
@@ -491,16 +517,17 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		return this
 	},
 
-	// ### clear_summary
-	// utility function to clear the pert summary
+	/**
+	 * utility function to clear the pert summary
+	 */
 	clear_summary: function(){
 		this.fg_layer.selectAll('.summary_text').data([]).exit().remove();
 	},
 
 
-	// ### save_png_pre
-	// overide the base views save_png_pre method to clear out the image so we
-	// can render the png properly
+	/**
+	 * override the base views save_png_pre method to clear out the image so we can render the png properly
+	 */
 	save_png_pre: function(){
 		// remove the static index reagent icon
 		this.fg_layer.selectAll('.index_text_icon').data([]).exit().remove();
@@ -510,9 +537,9 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 			.attr('x',10)
 	},
 
-	// ### save_png_post
-	// overide the base views save_png_post method to restore the image after
-	// saving
+	/**
+	 * override the base views save_png_post method to restore the image after saving
+	 */
 	save_png_post: function(){
 		// draw the static index reagent icon
 		this.fg_layer.selectAll('.index_text_icon').data([]).exit().remove();

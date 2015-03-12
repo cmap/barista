@@ -1,58 +1,71 @@
-// # **ScatterPlotView**
-// A Backbone.View that displays a scatter plot.  the view's model is assumed to have the same defaults
-// as specified in **ScatterPlotModel**
-
-// basic use:
-
-//		scatter_plot_view = new ScatterPlotView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-// 4.  {string}  **scale_by**  an attribute in the model's meta data object to scale points by, defaults to *undefined*
-// 5.  {Array}  **x_range**  a two element array specifying the x plotting bounds of the plot, defaults to *[min(x_data),max(x_data)]*
-// 6.  {Array}  **y_range**  a two element array specifying the y plotting bounds of the plot, defaults to *[min(y_data),max(y_data)]*
-// 7.  {Bool}  **x_log**  if set to true, plots the x axis on a log scale, defaults to *false*
-// 8.  {Bool}  **y_log**  if set to true, plots the y axis on a log scale, defaults to *false*
-// 9. {Number} **x_min_lock** if set, locks the minimum of the x_range at the given value. Ignored if x_range is set. defaults to *undefined*
-// 10. {Number} **y_min_lock** if set, locks the minimum of the y_range at the given value. Ignored if y_range is set. defaults to *undefined*
-// 11. {Number} **x_max_lock** if set, locks the maximum of the x_range at the given value. Ignored if x_range is set. defaults to *undefined*
-// 12. {Number} **y_max_lock** if set, locks the maximum of the y_range at the given value. Ignored if y_range is set. defaults to *undefined*
-// 13. {Bool} **x_min_expand** if set, allows the minimum of the x_range to expand if data is found below it. defaults to *false*
-// 14. {Bool} **y_min_expand** if set, allows the minimum of the y_range to expand if data is found below it. defaults to *false*
-// 15. {Bool} **x_max_expand** if set, allows the maximum of the x_range to expand if data is found above it. defaults to *false*
-// 16. {Bool} **y_max_expand** if set, allows the maximum of the y_range to expand if data is found above it. defaults to *false*
-// 17.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-
-//		scatter_plot_view = new ScatterPlotView({el: $("target_selector",
-//									bg_color:"#ffffff", 
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									scale_by: undefined,
-//									x_range: undefined,
-//									y_range: undefined,
-//									x_log: false,
-//									y_log: false,
-//									x_min_lock: undefined,
-//									y_min_lock: undefined,
-//									x_max_lock: undefined,
-//									y_max_lock: undefined,
-//									x_min_expand: false,
-//									y_min_expand: false,
-//									x_max_expand: false,
-//									y_max_expand: false,
-//									plot_height: 120});
+/**
+ * A Backbone.View that displays a scatter plot
+ * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
+ * basic use:
+ * scatter_plot_view = new ScatterPlotView();
+ * optional arguments:
+ * @param {string}  bg_color      the hex color code to use as the backgound of the view, defaults to
+ *                                #ffffff
+ * @param {string}  fg_color      the hex color code to use as the foreground color of the view, defaults
+ *                                to #1b9e77
+ * @param {string}  span_class    a bootstrap span class to size the width of the view, defaults to
+ *                                "span12"
+ * @param {string}  scale_by      an attribute in the model's meta data object to scale points by, defaults
+ *                                to undefined
+ * @param {array}   x_range       a two element array specifying the x plotting bounds of the plot,
+ *                                defaults to [min(x_data),max(x_data)]
+ * @param {array}   y_range       a two element array specifying the y plotting bounds of the plot,
+ *                                defaults to [min(y_data),max(y_data)]
+ * @param {boolean} x_log         if set to true, plots the x axis on a log scale, defaults to false
+ * @param {boolean} y_log         if set to true, plots the y axis on a log scale, defaults to false
+ * @param {number}  x_min_lock    if set, locks the minimum of the x_range at the given value. Ignored if
+ *                                x_range is set. defaults to undefined
+ * @param {number}  y_min_lock    if set, locks the minimum of the y_range at the given value. Ignored if
+ *                                y_range is set. defaults to undefined
+ * @param {number}  x_max_lock    if set, locks the maximum of the x_range at the given value. Ignored if
+ *                                x_range is set. defaults to undefined
+ * @param {number}  y_max_lock    if set, locks the maximum of the y_range at the given value. Ignored if
+ *                                y_range is set. defaults to undefined
+ * @param {boolean} x_min_expand  if set, allows the minimum of the x_range to expand if data is found
+ *                                below it. defaults to false
+ * @param {boolean} y_min_expand  if set, allows the minimum of the y_range to expand if data is found
+ *                                below it. defaults to false
+ * @param {boolean} x_max_expand  if set, allows the maximum of the x_range to expand if data is found
+ *                                above it. defaults to false
+ * @param {boolean} y_max_expand  if set, allows the maximum of the y_range to expand if data is found
+ *                                above it. defaults to false
+ * @param {number}  plot_height   the height of the plot in pixels, defaults to 120
+ * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									x_min_lock: undefined,
+									y_min_lock: undefined,
+									x_max_lock: undefined,
+									y_max_lock: undefined,
+									x_min_expand: false,
+									y_min_expand: false,
+									x_max_expand: false,
+									y_max_expand: false,
+									plot_height: 120});
+ */
 
 Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.ScatterPlotModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * override the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up x and y range and determine if are going to draw the axes dynamically
 		this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
@@ -95,16 +108,19 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.base_initialize();
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		this.base_render();
 		this.init_plot();
 		this.update();
 	},
 
-	// ### init_plot
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_plot: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -190,8 +206,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('title'));
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 	var self = this;
 	
@@ -241,8 +258,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 	this.style_axes();
 	},
 
-	// ### set_ranges
-	// utility function used to get the x and y ranges used in the plot
+	/**
+	 * utility function used to get the x and y ranges used in the plot
+	 */
 	set_ranges: function(){
 		var x_data,y_data,min,max;
 		// calculate the x_range. If we need to caluclate it dynamically, check the lock and expand
@@ -318,8 +336,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_scales
-	// utility function used to get the x and y scales used in the plot
+	/**
+	 * utility function used to get the x and y scales used in the plot
+	 */
 	set_scales: function(){
 		if (this.x_log){
 			this.x_scale=d3.scale.log().domain([this.x_range[0],this.x_range[1]]).range([this.margin, this.width - this.margin]);
@@ -333,8 +352,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### build_axes
-	// utility function used to build x and y axes
+	/**
+	 * utility function used to build x and y axes
+	 */
 	build_axes: function(){
 		this.xAxis = d3.svg.axis()
 			.scale(this.x_scale)
@@ -344,8 +364,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.orient("left");
 	},
 
-	// ### set_scaling_function
-	// utility function to compute a radius scaling funciton to use in plots
+	/**
+	 * utility function to compute a radius scaling funciton to use in plots
+	 */
 	set_scaling_function: function(){
 		var self = this;
 		if (this.scale_by !== undefined){
@@ -360,8 +381,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
+	/**
+	 * utility function to apply custom styles to axis components
+	 */
 	style_axes: function(){
 		this.vis.selectAll('.axis').selectAll("path")
 			.style("fill","none")

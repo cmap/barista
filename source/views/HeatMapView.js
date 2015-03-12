@@ -1,46 +1,56 @@
-// # **HeatmapView**
-
-// A Backbone.View that displays a simple heatmap.  The view is normally paired with 
-// a *HeatmapModel*, but works with any model that provides *data*, *rid*, *cid*, and
-// *title* attributes.
-
-// optional arguments:
-
-// 1.  {string}  **template**  The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 3.  {string}  **low\_color**  the hex color code to use as lowest value color in the heatmap, defaults to *#0000ff*
-// 4.  {string}  **high\_color**  the hex color code to use as highest value color in the heatmap, defaults to *#ff0000*
-// 5.  {d3.scale}  **color_scale**  custom color scale to use in the heatmap.  If supplied, low\_color and high\_color are ignored, defaults to *undefined*
-// 6.  {d3.scale}  **annot_color_scale**  custom color scale to use in the heatmap annotations. defaults to *undefined* and causes the annotations to be rendered with a standard color scale
-// 7.  {Number}  **plot_height**  the height of the heatmap to generate in pixels, defaults to *300*
-// 8.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		heatmap_view = new HeatmapView({el: $("target_selector"),
-//												model: new HeatmapModel(),
-//												template: BaristaTemplates.d3_target,
-//												bg_color: "#ffffff",
-//												low_color: "#0000ff",
-//												high_color: "#ff0000",
-//												color_scale: undefined,
-//												annot_color_scale: undefined,
-//												plot_height: 300,
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a simple heatmap
+ * The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,
+ * and title attributes
+ * optional arguments:
+ * @param {string}   template           The handlebars template to use. Defaults to
+ *                                      BaristaTemplates.d3_target
+ * @param {string}   bg_color           the hex color code to use as the backgound of the view, defaults to
+ *                                      #ffffff
+ * @param {string}   low_color          the hex color code to use as lowest value color in the heatmap,
+ *                                      defaults to #0000ff
+ * @param {string}   high_color         the hex color code to use as highest value color in the heatmap,
+ *                                      defaults to #ff0000
+ * @param {d3.scale} color_scale        custom color scale to use in the heatmap.  If supplied, low_color
+ *                                      and high_color are ignored, defaults to undefined
+ * @param {d3.scale} annot_color_scale  custom color scale to use in the heatmap annotations. defaults to
+ *                                      undefined and causes the annotations to be rendered with a
+ *                                      standard color scale
+ * @param {number}   plot_height        the height of the heatmap to generate in pixels, defaults to 300
+ * @param {string}   span_class         a bootstrap span class to size the width of the view, defaults to
+ *                                      "span12"
+ * example usage:
+ * heatmap_view = new HeatmapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												annot_color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.HeatmapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "HeatMapView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.HeatmapModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -78,8 +88,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'd3_target' + new Date().getTime();;
@@ -88,15 +99,17 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view. Updates both static and dynamic content in the view.
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -262,8 +275,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### add look up table
-	// adds a simple color lookup table based on the heatmap's color_scale
+	/**
+	 * adds a simple color lookup table based on the heatmap's color_scale
+	 */
 	add_lookup_table: function(){
 		var self, data, scale_range, scale_domain, scale_unit, domain_unit;
 		self = this;
@@ -283,8 +297,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 
 	},
 
-	// ### set_scale
-	// utility function used to get the y scale used in the plot
+	/**
+	 * utility function used to get the y scale used in the plot
+	 */
 	set_scale: function(){
 			var domain, range_min, range_max, range;
 			// get the current data domain from this.color
@@ -299,16 +314,18 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			this.y_scale=d3.scale.linear().domain([domain[domain.length-1],domain[0]]).range(range);
 	},
 
-	// ### build_axis
-	// utility function used to build y axis for the look up table
+	/**
+	 * utility function used to build y axis for the look up table
+	 */
 	build_axis: function(){
 		this.yAxis = d3.svg.axis()
 			.scale(this.y_scale)
 			.orient("right");
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
+	/**
+	 * utility function to apply custom styles to axis components
+	 */
 	style_axes: function(){
 		this.vis.selectAll('.axis').selectAll("path")
 			.style("fill","none")
@@ -325,8 +342,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			.style("font-size","11px");
 	},
 
-	// ### render
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	render: function(){
 		var self = this;
 		// determine the height and width of cells in the heatmap
@@ -470,9 +488,11 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		}
 	},
 
-	// ### unravel_data
-	// internal utility function to express 2D array data as a flat data array of objects with array
-	// coordinates and data value as attributes.
+	/**
+	 * internal utility function to express 2D array data as a flat data array of objects with array
+	 * coordinates and data value as attributes
+	 * @param {array} data  2D array of data
+	 */
 	unravel_data: function(data){
 		unraveled_data = [];
 		data.forEach(function(i_e,i){
@@ -483,8 +503,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		return unraveled_data;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.width;

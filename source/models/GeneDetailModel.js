@@ -1,19 +1,10 @@
-// # **GeneDetailModel**
-
-// A Backbone.Model that represents a single compound's description.  The data
-// model captures a number of fields including
-
-// 1. pert_id: the compound's perturbagen identifier
-// 2. pert_iname: the compound's standardized name
-// 3. pert_summary: a short description of the compound
-// 4. pubchem_cid: the PubChem identifier associated with the compound
-// 5. wiki_url: wikipedia url
-
-// `pert_detail_model = new GeneDetailModel()`
+/**
+ * A Backbone.Model that represents a single compound's description
+ * The data model captures a number of fields including
+ * `pert_detail_model = new GeneDetailModel()`
+ */
 
 Barista.Models.GeneDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
     /**
    * describes the model's default parameters
    * @param {string} pert_id       the compound's perturbagen identifier
@@ -44,19 +35,21 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
     vector_id: null
   },
 
-  // ### kd_fields
-  // kd specific model fields
+  /**
+   * kd specific model fields
+   * @type {Array}
+   */
   kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],
 
-  // ### array_fields
-  // fields that are arrays
+  /**
+   * fields that are arrays
+   * @type {Array}
+   */
   array_fields: ['cell_id','sig_id','sig_id_gold'],
 
-  // ### fetch
-  // fetches new data from the pert_info api. All fields are replaced by the first item
-  // that matches the api search_string
   /**
    * fetches new data from the pert_info api
+   * All fields are replaced by the first item that matches the api search_string
    * @param  {string}  search_string  value to search for
    */
   fetch: function(search_string){
@@ -118,12 +111,10 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         return deferred;
     },
 
-    // ### fetch_pert_type
-    // fetches new data from the pert_info API for the given pert_type.
       /**
-   * fetches new data from the cell_info api
+   * fetches new data from the pert_info API for the given pert_type
    * @param  {string}  search_string  value to search for
-   * @param  {string}  search_type    one of 'multi', 'single', or 'cell'
+   * @param  {string}  pert_type      one of 'multi', 'single', or 'cell'
    */
     fetch_pert_type: function(search_string,pert_type){
         // set up a deferred object that we can use in the fetch function above
@@ -135,7 +126,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         var params = params = {q:'{"pert_type":"'+ pert_type + '","pert_iname":"' + search_string + '"}',
                               l:1};
 
-        // run the api request.  If the search string is ""resolve the generated promise
+        // run the api request.  If the search string is "", resolve the generated promise
         // with a null value, otherwise resolve it with the returned pert annotations
         var self = this;
         $.getJSON(pert_info,params,function(perts) {

@@ -1,6 +1,6 @@
 /**
 A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
+functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the
 search view's input, a "search:DidType" event is fired.
 
 @class PertSearchBar
@@ -8,17 +8,21 @@ search view's input, a "search:DidType" event is fired.
 @extends Backbone.View
 **/
 Barista.Views.PertSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PertSearchBar",
-
+/**
+ * overide the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 
 
 		/**
 		determines wether or not the search view will match cell lines for autocomplete
-
 		@property match_cell_lines
 		@default true
 		@type Boolean
@@ -75,21 +79,16 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 
 	},
 
-
 	/**
-    Gets the current text entered in the view's search bar
-
-    @method get_val
-    **/
+	 * Gets the current text entered in the view's search bar
+    */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-
-    @method random_val
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
@@ -104,7 +103,11 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 			self.trigger("search:DidType",{val: val,type: 'single'});
 		});
 	},
-
+/**
+ * triggers a "search:DidType" event for the given search value
+ * @param {string} new_val   value to search for
+ * @param {string} new_type  type of value
+ */
 	set_val: function(new_val,new_type){
 		new_type = (new_type !== undefined) ? new_type : "single";
 		$("#search",this.el).val(new_val);
@@ -112,10 +115,8 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-
-    @method render
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 		// load the template into the view's el tag
