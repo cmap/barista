@@ -1,7 +1,6 @@
-/**********************************************************
- * Generic Count View                                     *
+/**
  * a view that supports a single label and a single count *
- **********************************************************/
+ */
 
 Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
   /**

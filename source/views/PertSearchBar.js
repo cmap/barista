@@ -26,7 +26,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 		@property match_cell_lines
 		@default true
 		@type Boolean
-		**/
+		*/
 
 		// set up custom Datasets if they are passed in the constructor
 		this.datasets = (this.options.datasets !== undefined) ? this.options.datasets : [Barista.Datasets.CellID,Barista.Datasets.PertIName];
@@ -64,7 +64,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 				@param {Object} [msg={val:"",type:""}] an object containing the message of the event
 				@param {String} [msg.val=""] the string val of the views search bar at the time of the event
 				@param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
-				**/
+				*/
 				self.trigger("search:DidType",{val: val,type: type});
 			};
 
