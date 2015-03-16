@@ -6,41 +6,36 @@
  */
 
 Barista.Datasets = _.extend(Barista.Datasets,
-	{ CellHistology:
+	{ 	CellHistology:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'CellHistology',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: "",
 				  /**
   					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url    @todo this parameters is never used, consider removing
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
   					*/ 
@@ -96,7 +91,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **CellIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
  * in the Connectivity Map
@@ -107,41 +101,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellID:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'CellID',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
-			 * @type {[type]}
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
   					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url, query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
@@ -195,7 +184,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **CellLineageDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available
  * in the Connectivity Map
@@ -206,40 +194,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellLineage:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'CellLineage',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
   					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
@@ -293,7 +277,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **CellMutationDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation
  * annotations available in the Connectivity Map
@@ -304,40 +287,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'CellMutation',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
   					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
@@ -384,7 +363,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **CompoundPertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available
  * in the Connectivity Map
@@ -395,40 +373,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ CompoundPertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'CompoundPertIName',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* set the remote data source to use pertinfo with custom query params
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
@@ -514,7 +488,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **GeneticPertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available
  * in the Connectivity Map
@@ -525,40 +498,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ GeneticPertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'GeneticPertIName',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
 				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
+  					* set the remote data source to use pertinfo with custom query params
+  					* @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
   					*/ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
@@ -644,7 +613,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **JobIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
  * Connectivity Map
@@ -655,41 +623,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobID:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
              * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'JobID',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
              */
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use compute_status with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+                    * from function
+                    * @param  {string}  query  custom query
+                    */ 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -699,11 +663,11 @@ Barista.Datasets = _.extend(Barista.Datasets,
                 },
 
                 dataType: 'jsonp',
-				/**
-				 * returns the processed list of data for the autocomplete
-				 * @param {array} response  array of data to extract job id from
-				 */
-				filter: function(response){
+        /**
+         * returns the processed list of data for the autocomplete
+         * @param {array} response  array of data to extract job id from
+         */
+        filter: function(response){
                     var datum_list = [];
                     var auto_data = [];
                     var object_map = {};
@@ -742,7 +706,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
     }
 );
 
-// # **JobNameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
  * Connectivity Map
@@ -753,42 +716,38 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobName:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
              * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'JobName',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
              */
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
-                reomote: function(url,query){
+                  /**
+                    * set the remote data source to use compute_status with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+                    *                          from function
+                    * @param  {string}  query  custom query
+                    */ 
+                remote: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
                           'q={"params.rpt":{"$regex":"^' + query + '", "$options":"i"}}',
@@ -797,11 +756,11 @@ Barista.Datasets = _.extend(Barista.Datasets,
                 },
 
                 dataType: 'jsonp',
-				/**
-				 * returns the processed list of data for the autocomplete
-				 * @param {array} response  array of data to extract job id from
-				 */
-				filter: function(response){
+        /**
+         * returns the processed list of data for the autocomplete
+         * @param {array} response  array of data to extract job id from
+         */
+        filter: function(response){
                     var datum_list = [];
                     var auto_data = [];
                     var object_map = {};
@@ -840,7 +799,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
     }
 );
 
-// # **JobStatusDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the
  * Connectivity Map
@@ -851,41 +809,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
     { JobStatus:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
              * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'JobStatus',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
              */
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use compute_status with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+                    *                          from function
+                    * @param  {string}  query  custom query
+                    */ 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -895,11 +849,11 @@ Barista.Datasets = _.extend(Barista.Datasets,
                 },
 
                 dataType: 'jsonp',
-				/**
-				 * returns the processed list of data for the autocomplete
-				 * @param {array} response  array of data to extract status from
-				 */
-				filter: function(response){
+                      /**
+         * returns the processed list of data for the autocomplete
+         * @param {array} response  array of data to extract status from
+         */
+        filter: function(response){
                     var datum_list = [];
                     var auto_data = [];
                     var object_map = {};
@@ -938,7 +892,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
     }
 );
 
-// # **P100PertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available
  * in the Connectivity Map
@@ -949,42 +902,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ P100PertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'P100PertIName',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: #7bd9e4">P100</span><span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
-			 * @type {[type]}
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use profileinfo with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
+                    */ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return ['//prefix:8080/p100/v1/profileinfo?',
@@ -1043,7 +991,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **PRISMPertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for PRISM Perturbation IDs available
  * in the Connectivity Map
@@ -1054,41 +1001,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ PRISMPertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'PRISMPertIName',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: #8387e6">PRISM</span><span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use profileinfo with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
+                    */ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/prism/v1/profileinfo?',
@@ -1147,7 +1090,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **PertINameDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available in
  * the Connectivity Map
@@ -1158,41 +1100,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ PertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
 			/**
 			 * only return 6 items at a time in the autocomplete dropdown
 			 * @type {Number}
 			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
 			/**
 			 * provide a name for the default typeahead data source
 			 * @type {String}
 			 */
 			name: 'PertIName',
 
-			// the template to render for all results
 			/**
 			 * the template to render for all results
 			 * @type {String}
 			 */
 			template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
 			/**
 			 * use twitter's hogan.js to compile the template for the typeahead results
 			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use pertinfo with custom query params
 				url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use pertinfo with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
+                    */ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/pertinfo?',
@@ -1277,7 +1215,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
 	}
 );
 
-// # **ToolIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for Tool IDs available in the
  * Connectivity Map
@@ -1288,42 +1225,36 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
     { ToolID:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
-             * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'ToolID',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
-             * @type {[type]}
              */
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use compute_status with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+                    *                          from function
+                    * @param  {string}  query  custom query
+                    */ 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -1333,11 +1264,11 @@ Barista.Datasets = _.extend(Barista.Datasets,
                 },
 
                 dataType: 'jsonp',
-				/**
-				 * returns the processed list of data for the autocomplete
-				 * @param {array} response  array of data to extract tool id from
-				 */
-				filter: function(response){
+                        /**
+         * returns the processed list of data for the autocomplete
+         * @param {array} response  array of data to extract tool id from
+         */
+        filter: function(response){
                     var datum_list = [];
                     var auto_data = [];
                     var object_map = {};
@@ -1376,7 +1307,6 @@ Barista.Datasets = _.extend(Barista.Datasets,
     }
 );
 
-// # **UserIDDataset**
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the
  * Connectivity Map
@@ -1387,42 +1317,37 @@ Barista.Datasets = _.extend(Barista.Datasets,
 Barista.Datasets = _.extend(Barista.Datasets,
     { UserID:
             {
-            // only return 6 items at a time in the autocomplete dropdown
             /**
              * only return 6 items at a time in the autocomplete dropdown
              * @type {Number}
              */
             limit: 6,
 
-            // provide a name for the default typeahead data source
             /**
              * provide a name for the default typeahead data source
              * @type {String}
              */
             name: 'UserID',
 
-            // the template to render for all results
             /**
              * the template to render for all results
              * @type {String}
              */
             template: '<span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-            // use twitter's hogan.js to compile the template for the typeahead results
             /**
              * use twitter's hogan.js to compile the template for the typeahead results
-             * @type {[type]}
              */
             engine: Hogan,
 
             remote: {
-                // set the remote data source to use cellinfo with custom query params
                 url: '',
-				  /**
-  					* set the remote data source to use cellinfo with custom query params
-  					* @param  {string}  url
-  					* @param  {string}  query
-  					*/ 
+                  /**
+                    * set the remote data source to use compute_status with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+                    *                          from function
+                    * @param  {string}  query  custom query
+                    */ 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -1432,11 +1357,11 @@ Barista.Datasets = _.extend(Barista.Datasets,
                 },
 
                 dataType: 'jsonp',
-				/**
-				 * returns the processed list of data for the autocomplete
-				 * @param {array} response  array of data to extract job id from
-				 */
-				filter: function(response){
+        /**
+         * returns the processed list of data for the autocomplete
+         * @param {array} response  array of data to extract job id from
+         */
+        filter: function(response){
                     var datum_list = [];
                     var auto_data = [];
                     var object_map = {};

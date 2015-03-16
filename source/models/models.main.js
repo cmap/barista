@@ -1,15 +1,14 @@
-// # **AnalysisHistoryModel**
-
-// A Backbone.Model that represents an analysis history object.
-// `pert_model = new AnalysisHistoryModel()`
+/**
+ * A Backbone.Model that represents an analysis history object.
+ * `pert_model = new AnalysisHistoryModel()`
+ */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
-    // ### initialize
-    // Overides the base Model's initialize method to add the models date attribute and set the cid to the mongo _id field
     /**
-     * Overides the base Model's initialize method to add the models date attribute and set the cid to
-     * the mongo _id field
-     * @param  {string}  attributes
-     * @param  {string}  options
+     * Overides the base Model's initialize method to add the models date attribute and set the cid to the
+     * mongo _id field
+     * @todo these parameters are never used, consider removing from function
+     * @param  {object}  attributes
+     * @param  {object}  options
      */
     initialize: function(attributes, options) {
         this.cid = this.get('_id')
@@ -24,67 +23,53 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
   }
 });
 
-// # **BarPlotModel**
-// A Backbone.Model to hold the information needed to make a simple bar plot.  The model includes a title,
-// axis title, data, data_labels, and an optional object for metadata on the points in the data.  The meta
-// data object should contain attributes for each meta data category and an array of values matching the size
-// of the points in the data.  for example:
+/**
+ * A Backbone.Model to hold the information needed to make a simple bar plot
+ * The model includes a title, axis title, data, data_labels, and an optional object for metadata on the
+ * points in the data
+ * The meta data object should contain attributes for each meta data category and an array of values
+ * matching the size of the points in the data
+ * for example:
+ * meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
 
-//    meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
+   usage:
 
-// usage:
-
-//    summly_result = new SummlyResultModel();
+		summly_result = new SummlyResultModel();
+ */
 Barista.Models.BarPlotModel = Backbone.Model.extend({
-  // ### defaults
-  // set of model defaults
-
-  // 1.  {String}  **title**  the title of the plot. Defaults to *""*
-  // 2.  {String}  **axis_title**  the title of the x_axis. Defaults to *""*
-  // 4.  {Array}  **data**  an array of data for the x_axis. Defaults to *[]*
-  // 5.  {Array}  **data_labels**  an array of data for the y_axis. Defaults to *[]*
-  // 1.  {Object}  **meta_data**  object containing meta data for the points in the plot. Defaults to *{}*
-    /**
-   * set of model defaults
-   * @param {string} title        the title of the plot. Defaults to *""*
-   * @param {string} axis-title   the title of the x_axis. Defaults to *""*
-   * @param {array}  data         an array of data for the x_axis. Defaults to *[]*
-   * @param {array}  data_labels  an array of data for the y_axis. Defaults to *[]*
-   * @param {object} meta-data    object containing meta data for the points in the plot. Defaults to *{}*
-   */
-  defaults: {
-    title: "",
-    axis_title: "",
-    data: [],
-    data_labels: [],
-    meta_data: {}
-  }
+	/**
+	 * set of model defaults
+	 * @param {string}  title        the title of the plot. Defaults to ""
+	 * @param {string}  axis_title   the title of the x_axis. Defaults to ""
+	 * @param {array}   data         an array of data for the x_axis. Defaults to []
+	 * @param {array}   data_labels  an array of data for the y_axis. Defaults to []
+	 * @param {object}  meta_data    object containing meta data for the points in the plot
+	 *                               Defaults to {}
+	 */
+	defaults: {
+		title: "",
+		axis_title: "",
+		data: [],
+		data_labels: [],
+		meta_data: {}
+	}
 });
 
-// # **CellCountModel**
-
-// A Backbone.Model that represents the count of a set of cell_lines.  The data model
-// captures both the total count of cell lines that meet a search criteria and the count
-// of each annotation category for the set of cell lines.
-
-// optional arguments:
-
-// 1.  {string}  **type\_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-
-// `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+/**
+ * A Backbone.Model that represents the count of a set of cell_lines
+ * The data model captures both the total count of cell lines that meet a search criteria and the count of
+ * each annotation category for the set of cell lines
+ * optional arguments:
+ * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
+ *                              to '["trt_sh","trt_oe"]'
+ * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ */
 Barista.Models.CellCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {Number}  **pert\_count**  the number of perturbagens matching an api query, defaults to *0*
-  // 2.  {Array}  **pert\_types**  an array of objects representing pert\_type categories to keep track of, defaults to *[{}}]*
-  // 3.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
-
-   /**
+  /**
    * describes the model's default parameters
-   * @param {number} count        the number of perturbagens matching an api query, defaults to *0*
+   * @param {number} count        the number of perturbagens matching an api query, defaults to 0
    * @param {array}  pert_types   an array of objects representing pert\_type categories to keep track of,
-   *                              defaults to *[{}}]*
+   *                              defaults to [{}}]
    * @param {date}   last_update  a timestamp of the latest model update, defaults to the current time
    */
   defaults: {
@@ -93,10 +78,6 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
     g: "cell_type",
     last_update: (new Date()).getTime()
   },
-
-  // ### fetch
-  // fetches new data from the cell_info api.  the count and pert_types data
-  // is replaced with new data coming from the api call
 
   /**
    * fetches new data from the cell_info api
@@ -108,7 +89,7 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the pert_params for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var sig_info = Barista.APIURL + '/a2/siginfo?callback=?';
     var pert_info = Barista.APIURL + '/a2/pertinfo?callback=?';
     var cell_info = Barista.APIURL + '/a2/cellinfo?callback=?';
@@ -131,7 +112,7 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
     // if the search type is a "cell", leverage siginfo and cellinfo apis
     if (search_type === "cell") {
       $.getJSON(sig_info,pert_params,function(sig_res) {
-        // if there is no reponse, set **pert\_count: num_perts** and **pert\_types: [{}]**
+        // if there is no reponse, set pert_count: num_perts and pert_types: [{}]
         if (sig_res === 0){
           num_perts = 0;
           self.set({count: num_perts, pert_types: [{}], last_update: t});
@@ -149,11 +130,11 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
         // if the search type is not "cell", leverage the pertinfo api
         $.getJSON(pert_info,pert_params,function(pert_res) {
         if (pert_res === 0){
-          // if there is no reponse, set **pert\_count: num_perts** and **pert\_types: [{}]**
+          // if there is no reponse, set pert_count: num_perts and pert_types: [{}]
           num_perts = 0;
           self.set({count: num_perts, pert_types: [{}], last_update: t});
         }else{
-          // if there is a reponse, update *pert\_count* and *pert\_types*
+          // if there is a reponse, update pert_count and pert_types
           num_perts = pert_res.length;
           var cell_lines = '["' + pert_res.join('","') + '"]';
           var cell_params = {q:'{"cell_id":{"$in":' + cell_lines + '}}', g:self.get("g")};
@@ -166,40 +147,30 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
   }
 });
 
-// # **CellModel**
-
-// A Backbone.Model that represents a cell line
-// `pert_model = new CellModel()`
+/**
+ * A Backbone.Model that represents a cell line
+ * `pert_model = new CellModel()`
+ */
 Barista.Models.CellModel = Backbone.Model.extend({
-  // ### initialize
-  // Overides the base Model's initialize method to set the model's cid to the cell_id of the perturbagen
-  /**
-  * Overides the base Model's initialize method to set the model's cid to the cell_id of the perturbagen
-  * @param  {string}  attributes
-  * @param  {string}  options
-  */ 
-  initialize: function(attributes, options) {
-    this.cid = this.get('cell_id');
+	/**
+	 * Overides the base Model's initialize method to set the model's cid to the cell_id of the perturbagen
+	 * @todo these parameters are never used, consider removing from function
+	 * @param  {string}  attributes
+	 * @param  {string}  options
+	 */
+	initialize: function(attributes, options) {
+		this.cid = this.get('cell_id');
   }
 });
 
-// # **CompoundDetailModel**
-
-// A Backbone.Model that represents a single compound's description.  The data
-// model captures a number of fields including
-
-// 1. pert_id: the compound's perturbagen identifier
-// 2. pert_iname: the compound's standardized name
-// 3. pert_summary: a short description of the compound
-// 4. pubchem_cid: the PubChem identifier associated with the compound
-// 5. wiki_url: wikipedia url
-
-// `pert_detail_model = new CompoundDetailModel()`
+/**
+ * A Backbone.Model that represents a single compound's description
+ * The data model captures a number of fields including
+ * `pert_detail_model = new CompoundDetailModel()`
+ */
 
 Barista.Models.CompoundDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-    /**
+  /**
    * describes the model's default parameters
    * @param {string} pert_id       the compound's perturbagen identifier
    * @param {string} pert_iname    the compound's standardized name
@@ -207,6 +178,7 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
    * @param {string} pubchem_cid   the PubChem identifier associated with the compound
    * @param {string} wiki_url      wikipedia url
    */
+
   defaults: {
     pert_id: "",
     pert_iname: "",
@@ -223,12 +195,8 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
     structure_url: ""
   },
 
-  // ### fetch
-  // fetches new data from the pert_info api. All fields are replaced by the first item
-  // that matches the api search_string
-    /**
+  /**
    * fetches new data from the pert_info api
-   * All fields are replaced by the first item that matches the api search_string
    * @param  {string}  search_string  value to search for
    */
   fetch: function(search_string){
@@ -322,23 +290,14 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
   }
 });
 
-// # **GeneDetailModel**
-
-// A Backbone.Model that represents a single compound's description.  The data
-// model captures a number of fields including
-
-// 1. pert_id: the compound's perturbagen identifier
-// 2. pert_iname: the compound's standardized name
-// 3. pert_summary: a short description of the compound
-// 4. pubchem_cid: the PubChem identifier associated with the compound
-// 5. wiki_url: wikipedia url
-
-// `pert_detail_model = new GeneDetailModel()`
+/**
+ * A Backbone.Model that represents a single compound's description
+ * The data model captures a number of fields including
+ * `pert_detail_model = new GeneDetailModel()`
+ */
 
 Barista.Models.GeneDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-      /**
+    /**
    * describes the model's default parameters
    * @param {string} pert_id       the compound's perturbagen identifier
    * @param {string} pert_iname    the compound's standardized name
@@ -368,26 +327,19 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
     vector_id: null
   },
 
-  // ### kd_fields
-  // kd specific model fields
   /**
    * kd specific model fields
    * @type {Array}
    */
   kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],
 
-  // ### array_fields
-  // fields that are arrays
   /**
    * fields that are arrays
    * @type {Array}
    */
   array_fields: ['cell_id','sig_id','sig_id_gold'],
 
-  // ### fetch
-  // fetches new data from the pert_info api. All fields are replaced by the first item
-  // that matches the api search_string
-    /**
+  /**
    * fetches new data from the pert_info api
    * All fields are replaced by the first item that matches the api search_string
    * @param  {string}  search_string  value to search for
@@ -451,12 +403,10 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         return deferred;
     },
 
-    // ### fetch_pert_type
-    // fetches new data from the pert_info API for the given pert_type.
       /**
-   * fetches new data from the pert_info api for the given pert_type
+   * fetches new data from the pert_info API for the given pert_type
    * @param  {string}  search_string  value to search for
-   * @param  {string}  search_type    one of 'multi', 'single', or 'cell'
+   * @param  {string}  pert_type      one of 'multi', 'single', or 'cell'
    */
     fetch_pert_type: function(search_string,pert_type){
         // set up a deferred object that we can use in the fetch function above
@@ -468,7 +418,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
         var params = params = {q:'{"pert_type":"'+ pert_type + '","pert_iname":"' + search_string + '"}',
                               l:1};
 
-        // run the api request.  If the search string is ""resolve the generated promise
+        // run the api request.  If the search string is "", resolve the generated promise
         // with a null value, otherwise resolve it with the returned pert annotations
         var self = this;
         $.getJSON(pert_info,params,function(perts) {
@@ -487,183 +437,162 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
     }
 });
 
-// # **GenericCountModel**
-
-// A Backbone.Model that represents the count of a set CMap databbase items.  The data model
-// captures the total count of perturbagens that meet a search criteria.
-
-// optional arguments:
-
-// 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-// 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"//api.lincscloud.org/a2/pertinfo"*
-
-// `generic_count_model = new GenericCountModel()`
+/**
+ * A Backbone.Model that represents the count of a set CMap databbase items
+ * The data model captures the total count of perturbagens that meet a search criteria
+ * optional arguments:
+ * @param {string} search_field  the document field the model with count over upon fetching data,
+ *                               defaults to "pert_iname"
+ * @param {string} url           the url of the api service to fetch data from, defaults to
+ *                               "//api.lincscloud.org/a2/pertinfo"
+ * `generic_count_model = new GenericCountModel()`
+ */
 
 Barista.Models.GenericCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
 
-  // 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-  // 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"//api.lincscloud.org/a2/pertinfo"*
-  /**
-   * describes the model's default parameters
-   * @param {string} search_field  the document field the model with count over upon fetching data,
-   *                               defaults to *"pert_iname"*
-   * @param {string} url           the url of the api service to fetch data from, defaults to 
-   *                               *"//api.lincscloud.org/a2/pertinfo"*
-   */
-  defaults: {
-    "search_field": "pert_iname",
-    "url": "//api.lincscloud.org/a2/pertinfo",
-    "count": 0,
-    "last_update": (new Date()).getTime(),
-    "search_string": "",
-    "distinct": false
+  defaults:{
+    count:0,
+
   },
-
-  // ## initialize
-  // custom initialization to make sure we have the correct url for jsonp
   /**
    * custom initialization to make sure we have the correct url for jsonp
    */
-  initialize: function(){
-    var re = new RegExp("/?callback=/?");
-    if (!re.test(this.get("url"))){
-      this.set({"url": this.get("url") + "?callback=?"});
-    }
+  initialize:function(attrs){
+    this.setListeners();
   },
 
-  // ### fetch
-  // fetches new data from the API.  the count is updated with a new
-  // count based on the results of the api call
-    /**
-   * fetches new data from the API
-   * the count is updated with a new count based on the results of the api call
-   * @param  {string}  search_string  value to search for
-   */
-  fetch: function(search_string){
-    // update the model's search string attribute
-    this.set("search_string",search_string);
-
-    // set up API call parameters
-    search_string = (search_string[0] === "*") ? search_string.replace("*",".*") : search_string;
-    var params = {q:'{"' + this.get("search_field") + '":{"$regex":"^' + search_string + '","$options":"i"}}',
-              c:true};
-    if (this.get("distinct")){
-        _.extend(params,{d:this.get("search_field")});
-    }
-
-    // run the api request
-    var self = this;
-    var count;
-    $.getJSON(this.get("url"),params,function(res) {
-      if (res === 0){
-        count = 0;
-      }else{
-        count = res.count;
-      }
-      var t = (new Date()).getTime();
-      self.set({count: count,last_update: t});
-    });
+/**
+ * add description
+ */
+  setListeners: function() {
+    var source = this.get('source');
+    if (source) {
+      this.listenTo(source,'update',function(){
+        if(attrs.source.getCount(attrs.key)) {
+          this.set('count',attrs.source.getCount(attrs.key));
+        } else {
+          this.set('count',0);
+        }
+      });
+    };
   }
 });
 
-// # **GenericMongoModel**
+Barista.Models.GenericSourceModel = Backbone.Model.extend({
 
-// A Backbone.Model that represents a generic MongoDB object.  All fields in the document
-// are passed to the model as normal and a date attribute is set from the _id field of the mongo document
-// `pert_model = new GenericMongoModel()`
+  /**
+   * custom initialization to make sure we have the correct url for jsonp
+   */
+  initialize:function(attrs){
+    this.setKey();
+  },
+
+/**
+ * add description
+ */
+  setKey: function() {
+    var key = this.get('key');
+    this.url = 'http://10.125.171.42:8080/' + key;
+  },
+
+/**
+ * add description
+ * @param  {[type]} inputKey [description]
+ */
+  getCount:function(inputKey){
+    return this.data[inputKey.group][inputKey.name];
+  },
+
+/**
+ * add description
+ */
+  update:function(){
+    var self = this;
+    $.getJSON(this.url,function(data){
+      self.data = data;
+      self.trigger('update');
+    })
+  }
+});
+
+
+/**
+ * A Backbone.Model that represents a generic MongoDB object
+ * All fields in the document are passed to the model as normal and a date attribute is set from the _id
+ * field of the mongo document
+ * `pert_model = new GenericMongoModel()`
+ */
 Barista.Models.GenericMongoModel = Backbone.Model.extend({
-    // ### initialize
-    // Overides the base Model's initialize method to add the models date attribute and set the cid to the mongo _id field
-        /**
-     * Overides the base Model's initialize method to add the models date attribute and set the cid to
-     * the mongo _id field
-     * @param  {string}  attributes
-     * @param  {string}  options
-     */
+    /**
+	 * Overides the base Model's initialize method to add the models date attribute and set the cid to
+   * the mongo _id field
+   * @todo these parameters are never used, consider removing from function
+	 * @param  {string}  attributes
+	 * @param  {string}  options
+	 */
     initialize: function(attributes, options) {
         this.cid = this.get('_id')
         this.set("date", new Date(parseInt(this.cid.substring(0,8), 16)*1000));
   }
 });
 
-// # **HeatmapModel**
+/**
+ * A Backbone.Model that represents the data in a heatmap
+ * The model contains a two dimensional array of numbers, row and columns labels, and a title
+ * example usage:
 
-// A Backbone.Model that represents the data in a heatmap.  The model contains
-// a two dimensional array of numbers, row and columns labels, and a title.
-
-// example usage:
-
-//      heatmap_model = new HeatmapModel();
-
-// optional arguments
-
-// 1.  {Array}  **data**  the data object to use in the heatmap. defualts to *[[1,2],[3,4]]*
-// 2.  {Array}  **rid**  the row labels to use in the heatmap. defualts to *['1','2']*
-// 3.  {Array}  **cid**  the column labels to use in the heatmap. defualts to *['1','2']*
-// 4.  {Array}  **annots**  optional annotations categories to show under the heatmap. defualts to *undefined*
-// 4.  {Array}  **annots_label**  optional label for annotations. defualts to *undefined*
-// 5.  {String}  **title**  the title to use in the plot, defaults to *""*
-
-//      heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
-//                      rid: ['1','2'],
-//                      cid: ['1','2'],
-//                      annots: ['1','2'],
-//                      title: ""});
+ 			heatmap_model = new HeatmapModel();
+ * optional arguments:
+ * @param {array}  data          the data object to use in the heatmap. defualts to [[1,2],[3,4]]
+ * @param {array}  rid           the row labels to use in the heatmap. defualts to ['1','2']
+ * @param {array}  cid           the column labels to use in the heatmap. defualts to ['1','2']
+ * @param {array}  annots        optional annotations categories to show under the heatmap. defualts to
+ *                               undefined
+ * @param {array}  annote_label  optional label for annotations. defualts to undefined
+ * @param {string} title         the title to use in the plot, defaults to ""
+ * heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
+											rid: ['1','2'],
+											cid: ['1','2'],
+											annots: ['1','2'],
+											title: ""});
+ */
 Barista.Models.HeatmapModel = Backbone.Model.extend({
-  // ### defaults
-  // set up defaults for model values
-
-  // 1.  {Array}  **data**  the data object to use in the heatmap. defualts to *[[1,2],[3,4]]*
-  // 2.  {Array}  **rid**  the row labels to use in the heatmap. defualts to *['1','2']*
-  // 3.  {Array}  **cid**  the column labels to use in the heatmap. defualts to *['1','2']*
-  // 4.  {Array}  **annots**  optional annotations categories to show under the heatmap. defualts to *undefined*
-  // 5.  {String}  **title**  the title to use in the plot, defaults to *""*
-   /**
-   * describes the model's default parameters
-   * @param {array}  data    the data object to use in the heatmap. defualts to *[[1,2],[3,4]]*
-   * @param {array}  rid     the row labels to use in the heatmap. defualts to *['1','2']*
-   * @param {array}  cid     the column labels to use in the heatmap. defualts to *['1','2']*
+	/**
+   * set up defaults for model values
+   * @param {array}  data    the data object to use in the heatmap. defualts to [[1,2],[3,4]]
+   * @param {array}  rid     the row labels to use in the heatmap. defualts to ['1','2']
+   * @param {array}  cid     the column labels to use in the heatmap. defualts to ['1','2']
    * @param {array}  annots  optional annotations categories to show under the heatmap. defualts to
-   *                         *undefined*
-   * @param {string} title   the title to use in the plot, defaults to *""*
+   *                         undefined
+   * @param {string} title   the title to use in the plot, defaults to ""
    */
-  defaults: {
-    data: [[1,2],[3,4]],
-    rid: ['1','2'],
-    cid: ['1','2'],
-    annots: undefined,
-    title: "",
-    last_update: (new Date()).getTime()
-  }
+	defaults: {
+		data: [[1,2],[3,4]],
+		rid: ['1','2'],
+		cid: ['1','2'],
+		annots: undefined,
+		title: "",
+		last_update: (new Date()).getTime()
+	}
 })
-// # **PertCellBreakdownModel**
-
-// A Backbone.Model that represents the cell line based breakdown of a set of perturbagens.  The number of
-// perturbagens matching a query is counted for each cell line. Data for all cell lines that contain a match
-// to the query are represented in the model
-
-// `pert_cell_breakdown_model = new PertCellBreakdownModel()`
+/**
+ * A Backbone.Model that represents the cell line based breakdown of a set of perturbagens
+ * the number of perturbagens matching a query is counted for each cell line
+ * Data for all cell lines that contain a match to the query are represented in the model
+ * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
+ */
 Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {String}  **pert\_filter**  the current filter to be used with api calls, defaults to *""*
-  // 2.  {Object}  **tree\_object**  an object that describes the structured tree data representing cell_line counts, defaults to *{children:[]}*
-  /**
+      /**
    * describes the model's default parameters
-   * @param {string} filter       the current filter to be used with api calls, defaults to *""*
-   * @param {object} tree_object  an object that describes the structured tree data representing
-   *                              cell_line counts, defaults to *{children:[]}*
+   * @param {string} filter       the current filter to be used with api calls, defaults to ""
+   * @param {object} tree_object  an object that describes the structured tree data representing cell_line
+   *                              counts, defaults to {children:[]}
    */
   defaults: {
     "filter": "",
     "tree_object": {children:[]}
   },
 
-  // ### fetch
-  // fetches new data from the pert_info api.  the tree_object data is updated
     /**
    * fetches new data from the pert_info api
    * the tree_object data is updated
@@ -674,7 +603,7 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var pert_info = Barista.APIURL + '/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi"){
@@ -705,38 +634,28 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
     });
   }
 });
-// # **PertCountModel**
-
-// A Backbone.Model that represents the count of a set of perturbagens.  The data model
-// captures both the total count of perturbagens that meet a search criteria and the count
-// of each annotation category for the set of perturbagens.
-
-// optional arguments:
-
-// 1.  {string}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-
-// `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+/**
+ * A Backbone.Model that represents the count of a set of perturbagens
+ * The data model captures both the total count of perturbagens that meet a search criteria and the count 
+ * of each annotation category for the set of perturbagens
+ * optional arguments:
+ * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
+ *                              to '["trt_sh","trt_oe"]'
+ * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ */
 
 Barista.Models.PertCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {String}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-  // 2.  {Number}  **pert\_count**  the number of perturbagens matching an api query, defaults to *0*
-  // 3.  {Array}  **pert\_types**  an array of objects representing pert\_type categories to keep track of, defaults to *[{}}]*
-  // 4.  {String}  **pert\_type\_field**  a field name over which to look for pert_types.  This runs an aggregated count over the specified field name in the Connectivity Map database, defaults to *'pert_icollection'*
-  // 5.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
-      /**
+  /**
    * describes the model's default parameters
-   * @param {string} type_string      the string of pert_types that will be search upon fetching data,
-   *                                  defaults to *'["trt_sh","trt_oe"]'*
-   * @param {number} count            the number of perturbagens matching an api query, defaults to *0*
-   * @param {array}  pert_types       an array of objects representing pert\_type categories to keep track
-   *                                  of, defaults to *[{}}]*
-   * @param {string} pert_type_field  a field name over which to look for pert_types.  This runs an
-   *                                  aggregated count over the specified field name in the Connectivity
-   *                                  Map database, defaults to *'pert_icollection'*
-   * @param {date}   last_update      a timestamp of the latest model update, defaults to the current time
+   * @param {string}  type_string      the string of pert_types that will be search upon fetching data,
+   *                                   defaults to '["trt_sh","trt_oe"]'
+   * @param {number}  count            the number of perturbagens matching an api query, defaults to 0
+   * @param {array}   pert_types       an array of objects representing pert_type categories to keep track
+   *                                   of, defaults to [{}}]
+   * @param {string}  pert_type_field  a field name over which to look for pert_types.  This runs an
+   *                                   aggregated count over the specified field name in the Connectivity
+   *                                   Map database, defaults to 'pert_icollection'
+   * @param {date}    last_update      a timestamp of the latest model update, defaults to the current time
    */
   defaults: {
     "type_string": '["trt_cp"]',
@@ -746,11 +665,7 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
     "last_update": (new Date()).getTime()
   },
 
-  // ### fetch
-  // fetches new data from the pert_info api.  the count and pert_types data
-  // is replaced with new data coming from the api call
-
-    /**
+  /**
    * fetches new data from the pert_info api
    * the count and pert_types data is replaced with new data coming from the api call
    * @param  {string}  search_string  value to search for
@@ -760,7 +675,7 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var pert_info = Barista.APIURL + '/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi") {
@@ -793,22 +708,17 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
   }
 });
 
-// # **PertDetailModel**
-
-// A Backbone.Model that represents a single perturbagen's description.  The data
-// model captures annotation data from compounds or genes.  To do this, the model
-// uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their
-// attributes depending on how the model's fetch method is called
-
-// `pert_detail_model = new PertDetailModel()`
+/**
+ * A Backbone.Model that represents a single perturbagen's description
+ * The data model captures annotation data from compounds or genes
+ * To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their
+ * attributes depending on how the model's fetch method is called
+ */
 
 Barista.Models.PertDetailModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters.  This an incomplete list of defaults, only those
-  // that are common to all perturbagens
   /**
    * describes the model's default parameters
-   * This an incomplete list of defaults, only those that are common to all perturbagens
+   * this an incomplete list of defaults, only those that are common to all perturbagens
    */
   defaults: {
     cell_id: [],
@@ -822,24 +732,24 @@ Barista.Models.PertDetailModel = Backbone.Model.extend({
     sig_id_gold: []
   },
 
-  // ### compound_sub_model
-  // a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations
+  /**
+   * a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations
+   * @type {Barista}
+   */
   compound_sub_model: new Barista.Models.CompoundDetailModel(),
 
-  // ### gene_sub_model
-  // a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations
+  /**
+   * a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations
+   * @type {Barista}
+   */
   gene_sub_model: new Barista.Models.GeneDetailModel(),
 
-  // ### fetch
-  // fetches new data from the pert_info API. depending on the model_type parameter,
-  // the method calls the appropriate fetch method for the given sub model type and fills
-  // the PertDetailModel's attributes with that of the sub model
-    /**
+  /**
    * fetches new data from the pert_info api
-   * depending on the model_type parameter, the method calls the appropriate fetch method for the given
-   * sub model type and fills the PertDetailModel's attributes with that of the sub model
+   * depending on the model_type parameter,the method calls the appropriate fetch method for the given sub
+   * model type and fills the PertDetailModel's attributes with that of the sub model
    * @param  {string}  search_string  value to search for
-   * @param  {string}  model_type     one of 'compound' or 'gene'
+   * @param  {string}  search_type    one of 'multi', 'single', or 'cell'
    */
   fetch: function(search_string, model_type){
       var self = this;
@@ -862,100 +772,78 @@ Barista.Models.PertDetailModel = Backbone.Model.extend({
   }
 });
 
-// # **PertModel**
-
-// A Backbone.Model that represents a single perturbagen
-// `pert_model = new PertModel()`
+/**
+ * A Backbone.Model that represents a single perturbagen
+ * `pert_model = new PertModel()`
+ */
 Barista.Models.PertModel = Backbone.Model.extend({
-  // ### initialize
-  // Overides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
-      /**
-     * Overides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
-     * @param  {string}  attributes
-     * @param  {string}  options
-     */
-  initialize: function(attributes, options) {
-    this.cid = this.get('pert_id');
-    var pert_type = this.get('pert_type');
-    switch(pert_type){
-      case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
-      case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
-      case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
-      default: this.set({pert_type_label: '<span class="label" style="background-color: #BDBDBD">' + pert_type + '</span>'});
-    }
+	/**
+  * Overrides the base Model's initialize method to set the model's cid to the pert_id of the perturbagen
+  * @todo these parameters are never used, consider removing from function
+  * @param  {string}  attributes
+  * @param  {string}  options
+  */ 
+	initialize: function(attributes, options) {
+		this.cid = this.get('pert_id');
+		var pert_type = this.get('pert_type');
+		switch(pert_type){
+			case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
+			case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
+			case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
+			default: this.set({pert_type_label: '<span class="label" style="background-color: #BDBDBD">' + pert_type + '</span>'});
+		}
   }
 });
-// # **ScatterPlotModel**
-// A Backbone.Model to hold the information needed to make a simple scatter plot.  The model includes a title,
-// x and y axis titles, x and y data, and an optional object for metadata on the points in the data.  The meta
-// data object should contain attributes for each meta data category and an array of values matching the size
-// of the points in the data.  for example:
-
-//    meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
-
-// usage:
-
-//    summly_result = new SummlyResultModel();
+/**
+ * A Backbone.Model to hold the information needed to make a simple scatter plot
+ * The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on
+ * the points in the data
+ * The meta data object should contain attributes for each meta data category and an array of values
+ * matching the size of the points in the data
+ * for example:
+ * meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
+ * usage:
+ * summly_result = new SummlyResultModel();
+ */
 Barista.Models.ScatterPlotModel = Backbone.Model.extend({
-  // ### defaults
-  // set of model defaults
-
-  // 1.  {String}  **title**  the title of the plot. Defaults to *""*
-  // 2.  {String}  **x_axis_title**  the title of the x_axis. Defaults to *""*
-  // 3.  {String}  **y_axis_title**  the title of the y_axis. Defaults to *""*
-  // 4.  {Array}  **x_data**  an array of data for the x_axis. Defaults to *[]*
-  // 5.  {Array}  **y_data**  an array of data for the y_axis. Defaults to *[]*
-  // 1.  {Object}  **meta_data**  object containing meta data for the points in the plot. Defaults to *{}*
-      /**
+	/**
    * set of model defaults
-   * @param {string} title         the title of the plot. Defaults to *""*
-   * @param {string} x_axis-title  the title of the x_axis. Defaults to *""*
-   * @param {string} y_axis-title  the title of the y_axis. Defaults to *""*
-   * @param {array}  x_data        an array of data for the x_axis. Defaults to *[]*
-   * @param {array}  y_data        an array of data for the y_axis. Defaults to *[]*
-   * @param {object} meta-data     object containing meta data for the points in the plot
-   *                               Defaults to *{}*
+   * @param {string} title         the title of the plot. Defaults to ""
+   * @param {string} x_axis-title  the title of the x_axis. Defaults to ""
+   * @param {string} y_axis-title  the title of the y_axis. Defaults to ""
+   * @param {array}  x_data        an array of data for the x_axis. Defaults to []
+   * @param {array}  y_data        an array of data for the y_axis. Defaults to []
+   * @param {object} meta-data     object containing meta data for the points in the plot. Defaults to {}
    */
-  defaults: {
-    title: "",
-    x_axis_title: "",
-    y_axis_title: "",
-    x_data: [],
-    y_data: [],
-    meta_data: {}
-  }
+	defaults: {
+		title: "",
+		x_axis_title: "",
+		y_axis_title: "",
+		x_data: [],
+		y_data: [],
+		meta_data: {}
+	}
 });
-// # **SigCountModel**
-
-// A Backbone.Model that represents the count of a set of signatures.  The data model
-// captures both the total count of signatures that meet a search criteria and the count
-// of each annotation category for the set of signatures.
-
-// optional arguments:
-
-// 1.  {string}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-
-// `count_model = new SigCountModel({type_string: '["trt_sh","trt_oe"]'})`
+/**
+ * A Backbone.Model that represents the count of a set of signatures
+ * he data model captures both the total count of signatures that meet a search criteria and the count of
+ * each annotation category for the set of signatures
+ * optional arguments:
+ * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
+ *                              to '["trt_sh","trt_oe"]'
+ */
 
 Barista.Models.SigCountModel = Backbone.Model.extend({
-  // ### defaults
-  // describes the model's default parameters
-
-  // 1.  {String}  **type_string**  the string of pert_types that will be search upon fetching data, defaults to *'["trt_sh","trt_oe"]'*
-  // 2.  {Number}  **sig\_count**  the number of perturbagens matching an api query, defaults to *0*
-  // 3.  {Array}  **sig\_types**  an array of objects representing sig\_type categories to keep track of, defaults to *[{}}]*
-  // 4.  {String}  **sig\_type\_field**  a field name over which to look for pert_types.  This runs an aggregated count over the specified field name in the Connectivity Map database, defaults to *'pert_icollection'*
-  // 5.  {Date}  **last\_update**  a timestamp of the latest model update, defaults to the current time
-   /**
+  /**
    * describes the model's default parameters
    * @param {string} type_string      the string of pert_types that will be search upon fetching data,
-   *                                  defaults to *'["trt_sh","trt_oe"]'*
-   * @param {number} count            the number of perturbagens matching an api query, defaults to *0*
+   *                                  defaults to '["trt_sh","trt_oe"]'
+   * @param {number} count            the number of perturbagens matching an api query, defaults to 0
    * @param {array}  pert_types       an array of objects representing pert\_type categories to keep track
-   *                                  of, defaults to *[{}}]*
+   *                                  of, defaults to [{}}]
    * @param {string} pert_type_field  a field name over which to look for pert_types.  This runs an
    *                                  aggregated count over the specified field name in the Connectivity
-   *                                  Map database, defaults to *'pert_icollection'*
+   *                                  Map database, defaults to 'pert_icollection'
    * @param {date}   last_update      a timestamp of the latest model update, defaults to the current time
    */
   defaults: {
@@ -966,10 +854,7 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
     "last_update": (new Date()).getTime()
   },
 
-  // ### fetch
-  // fetches new data from the sig_info api.  the count and sig_types data
-  // is replaced with new data coming from the api call
-   /**
+  /**
    * fetches new data from the sig_info api
    * the count and sig_types data is replaced with new data coming from the api call
    * @param  {string}  search_string  value to search for
@@ -979,7 +864,7 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
     // depending on the type of query we are making, set up the q param for the api call.
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
-    // cell\_ids
+    // cell_ids
     var sig_info = Barista.APIURL + '/a2/siginfo?callback=?';
     var params = {};
     if (search_type === "multi") {
@@ -1011,59 +896,47 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
     });
   }
 });
-// # **SignatureModel**
-
-// A Backbone.Model that represents a single signature
-// `pert_model = new SignatureModel()`
+/**
+ * A Backbone.Model that represents a single signature
+ * `pert_model = new SignatureModel()`
+ */
 Barista.Models.SignatureModel = Backbone.Model.extend({
-  // ### initialize
-  // Overides the base Model's initialize method to set the model's cid to the sig_id of the perturbagen
-      /**
-     * Overides the base Model's initialize method to set the model's cid to the sig_id of the perturbagen
+	/**
+     * Overides the base Model's initialize method to add the model's cid to the sig_id of the perturbagen
+     * @todo these parameters are never used, consider removing from function
      * @param  {string}  attributes
      * @param  {string}  options
      */
-  initialize: function(attributes, options) {
-    // set the unique collection identifier to match the sig_id
-    this.cid = this.get('sig_id');
-    
-    // generate an html label for pert_type
-    var pert_type = this.get('pert_type');
-    switch(pert_type){
-      case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
-      case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
-      case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
-      this.set({pert_type_label: '<span class="label" style="background-color: #BDBDBD">' + pert_type + '</span>'});
-    }
+	initialize: function(attributes, options) {
+		// set the unique collection identifier to match the sig_id
+		this.cid = this.get('sig_id');
+		
+		// generate an html label for pert_type
+		var pert_type = this.get('pert_type');
+		switch(pert_type){
+			case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
+			case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
+			case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
+			this.set({pert_type_label: '<span class="label" style="background-color: #BDBDBD">' + pert_type + '</span>'});
+		}
 
-    // generate an html label for is_gold
-    var is_gold = this.get('is_gold');
-    if (is_gold){
-      this.set({is_gold_label: '<span class="label" style="background-color: #F0E442; color:gray">Gold</span>'});
-    }else{
-      this.set({is_gold_label: '<span class="label">Not Gold</span>'});
-    }
+		// generate an html label for is_gold
+		var is_gold = this.get('is_gold');
+		if (is_gold){
+			this.set({is_gold_label: '<span class="label" style="background-color: #F0E442; color:gray">Gold</span>'});
+		}else{
+			this.set({is_gold_label: '<span class="label">Not Gold</span>'});
+		}
   }
 });
-// # **SummlyResultModel**
-
-// A Backbone.Model that represents the a single CMap Summly result. A single
-// result is composed of the connection between two pert_inames (a query and a target), 
-// the component data that went into computing the summly result, and the statistics 
-// of the summly computation
-
-//    summly_result = new SummlyResultModel();
+/**
+ * A Backbone.Model that represents the a single CMap Summly result
+ * A single result is composed of the connection between two pert_inames (a query and a target), the
+ * component data that went into computing the summly result, and the statistics  of the summly computation
+ * summly_result = new SummlyResultModel();
+ */
 Barista.Models.SummlyResultModel = Backbone.Model.extend({
-  // ### defaults
-  // set up defaults for model values
-
-  // 1.  {String}  **query**  the query perturbagen (pert_iname), defaults to *""*
-  // 2.  {String}  **target**  the target perturbagen (pert_iname), defaults to *""*
-  // 3.  {Number}  **summly_score**   summarized connectivity score across cell types, defaults to *-666*
-  // 4.  {Number}  **summly_rank**  summarized percent rank across cell types, defaults to *-666*
-  // 5.  {Number}  **specificity**  fraction of background queries that score/rank higher than the observed connection, defaults to *-666*
-  // 6.  {Object}  **cell_line_scores**  the connectivity map scores in each cell line for the target perturbagen , defaults to *{}*
-    /**
+	/**
    * set up defaults for model values
    * @param {string} query             the query perturbagen (pert_iname), defaults to *""*
    * @param {string} target            the target perturbagen (pert_iname), defaults to *""*
@@ -1072,68 +945,63 @@ Barista.Models.SummlyResultModel = Backbone.Model.extend({
    * @param {number} specificity       fraction of background queries that score/rank higher than the
    *                                   observed connection, defaults to *-666*
    * @param {object} cell_line_scores  the connectivity map scores in each cell line for the target
-   *                                   perturbagen , defaults to *{}*
+   *                                   perturbagen, defaults to *{}*
    */
-  defaults: {
-    query: "",
-    target: "",
-    summly_score: -666,
-    summly_rank: -666,
-    specificity: -666,
-    cell_line_scores: {}
-  },
+	defaults: {
+		query: "",
+		target: "",
+		summly_score: -666,
+		summly_rank: -666,
+		specificity: -666,
+		cell_line_scores: {}
+	},
 
-  // ### initialize
-  // overides the base model's initialize method to set the model's cid to 
-  // the summly_id
-      /**
-     * overides the base model's initialize method to set the model's cid to the summly_id
+	/**
+     * Overides the base Model's initialize method to add the model's cid to the summly_id
+     * @todo these parameters are never used, consider removing from function
      * @param  {string}  attributes
      * @param  {string}  options
      */
-  initialize: function(attributes,options){
-    this.cid = this.get('target');
-    var pert_type = this.get('pert_type');
-    switch(pert_type){
-      case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
-      case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
-      case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
-      default: this.set({pert_type_label: '<span class="label">' + pert_type + '</span>'});
-    }
-  }
+	initialize: function(attributes,options){
+		this.cid = this.get('target');
+		var pert_type = this.get('pert_type');
+		switch(pert_type){
+			case "trt_cp": this.set({pert_type_label: '<span class="label" style="background-color: #E69F00">SMC</span>'}); break;
+			case "trt_oe": this.set({pert_type_label: '<span class="label" style="background-color: #D55E00">OE</span>'}); break;
+			case "trt_sh": this.set({pert_type_label: '<span class="label" style="background-color: #56B4E9">KD</span>'}); break;
+			default: this.set({pert_type_label: '<span class="label">' + pert_type + '</span>'});
+		}
+	}
 });
-// # **TickModel**
+/**
+ * A Backbone.Model that represents the data required to build a CMapTickView
+ * The model contains a data object that has keys for each row to display in the view and array values for
+ * each tick to display in each row
+ * An example data object might look like this:
 
-// A Backbone.Model that represents the data required to build a CMapTickView.  The model contains
-// a data object that has keys for each row to display in the view and array values for each tick
-// to display in each row. An example data object might look like this:
-
-//      {PC3: [.23,-.28], MCF7: [-0.6]}
-
-// example usage
-
-//      tick_model = new TickModel();
+			{PC3: [.23,-.28], MCF7: [-0.6]}
+ * example usage:
+ * tick_model = new TickModel();
+ */
 Barista.Models.TickModel = Backbone.Model.extend({
-  // ### defaults
-  // set up defaults for model values
-
-  // 1.  {String}  **title**  the title to use in the plot, defaults to *""*
-  // 2.  {Object}  **data_object**  the data object to use when plotting. defualts to *{}*
-  /**
+	/**
    * set up defaults for model values
-   * @param {string} title        the title to use in the plot, defaults to *""*
-   * @param {object} data_object  the data object to use when plotting. defualts to *{}*
+   * @param {string} title        the title to use in the plot, defaults to ""
+   * @param {object} data_object  the data object to use when plotting. defualts to {}
    */
-  defaults: {
-    title: "",
-    data_object: {}
-  }
+	defaults: {
+		title: "",
+		data_object: {}
+	}
 });
 /**
  * Model to represent a sequence and the modifications on that sequence
  */
 Barista.Models.SequenceModel = Backbone.Model.extend({
 
+  /**
+   * the default options for the model
+   */
   defaults: {
     sequence: '',
     displaySequence: '',
@@ -1148,7 +1016,7 @@ Barista.Models.SequenceModel = Backbone.Model.extend({
   },
 
   /**
-   * add description
+   * function to populate the derived model attributes of displaySequence and modifications
    */
   parseSequence: function() {
     var sequence = this.get('sequence'),
