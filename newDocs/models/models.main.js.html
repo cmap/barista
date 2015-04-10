@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -272,7 +272,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -305,7 +304,6 @@
             </tbody>
           </table>
           <div class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
     this.cid = this.get('_id')
@@ -329,7 +327,6 @@
           </section>
           <div class="description"><p>A Backbone.Model to hold the information needed to make a simple bar plot<br />The model includes a title, axis title, data, data_labels, and an optional object for metadata on the<br />points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}</p><p>   usage:</p><pre><code>    summly_result = new SummlyResultModel();
 </code></pre> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.BarPlotModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -377,7 +374,6 @@
             </tbody>
           </table>
           <div class="description"><p>set of model defaults</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
@@ -412,7 +408,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -450,7 +445,6 @@
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   count: 0,
@@ -488,7 +482,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the pert_params for the api call.
@@ -560,7 +553,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a cell line<br /><code>pert_model = new CellModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.CellModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -593,7 +585,6 @@
             </tbody>
           </table>
           <div class="description"><p>Overides the base Model&#39;s initialize method to set the model&#39;s cid to the cell_id of the perturbagen</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('cell_id');
@@ -608,7 +599,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -656,7 +646,6 @@
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   pert_id: &quot;&quot;,
@@ -698,7 +687,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
@@ -799,7 +787,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -847,7 +834,6 @@
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   cell_id: [],
@@ -878,7 +864,6 @@
             </p>
           </section>
           <div class="description"><p>kd specific model fields</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre>
           </button>
@@ -890,7 +875,6 @@
             </p>
           </section>
           <div class="description"><p>fields that are arrays</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre>
           </button>
@@ -918,7 +902,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
@@ -1008,7 +991,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
     // set up a deferred object that we can use in the fetch function above
@@ -1068,7 +1050,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
@@ -1085,7 +1066,6 @@
             </p>
           </section>
           <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
@@ -1099,7 +1079,6 @@
             </p>
           </section>
           <div class="description"><p>add description</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
@@ -1125,7 +1104,6 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
             </p>
           </section>
           <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
@@ -1139,7 +1117,6 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
             </p>
           </section>
           <div class="description"><p>add description</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
@@ -1237,7 +1214,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
           </table>
           <div class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
 </code></pre><p>optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1285,7 +1261,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>set up defaults for model values</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
 	data: [[1,2],[3,4]],
@@ -1305,7 +1280,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1338,7 +1312,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   &quot;filter&quot;: &quot;&quot;,
@@ -1374,7 +1347,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
@@ -1436,7 +1408,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set of perturbagens<br />The data model captures both the total count of perturbagens that meet a search criteria and the count<br />of each annotation category for the set of perturbagens<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.PertCountModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1484,7 +1455,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_cp&quot;]',
@@ -1523,7 +1493,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
@@ -1570,7 +1539,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1582,7 +1550,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   cell_id: [],
@@ -1604,7 +1571,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre>
           </button>
@@ -1616,7 +1582,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre>
           </button>
@@ -1649,7 +1614,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string, model_type){
     var self = this;
@@ -1680,7 +1644,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single perturbagen<br /><code>pert_model = new PertModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.PertModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1713,7 +1676,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>Overrides the base Model&#39;s initialize method to set the model&#39;s cid to the pert_id of the perturbagen</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('pert_id');
@@ -1735,7 +1697,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1788,7 +1749,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>set of model defaults</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
@@ -1824,7 +1784,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set of signatures<br />he data model captures both the total count of signatures that meet a search criteria and the count of<br />each annotation category for the set of signatures<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.SigCountModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1872,7 +1831,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_oe.mut&quot;]',
@@ -1911,7 +1869,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the sig_info api<br />the count and sig_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
@@ -1958,7 +1915,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single signature<br /><code>pert_model = new SignatureModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.SignatureModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -1991,7 +1947,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the sig_id of the perturbagen</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
 	// set the unique collection identifier to match the sig_id
@@ -2024,7 +1979,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -2077,7 +2031,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>set up defaults for model values</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
@@ -2117,7 +2070,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
@@ -2140,7 +2092,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
           </section>
           <div class="description"><p>A Backbone.Model that represents the data required to build a CMapTickView<br />The model contains a data object that has keys for each row to display in the view and array values for<br />each tick to display in each row<br />An example data object might look like this:</p><pre><code>        {PC3: [.23,-.28], MCF7: [-0.6]}
 </code></pre><p>example usage:<br />tick_model = new TickModel();</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.TickModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -2173,7 +2124,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>set up defaults for model values</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
@@ -2189,7 +2139,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -2201,7 +2150,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>the default options for the model</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   sequence: '',
@@ -2217,7 +2165,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>initialize the model to listen to its own model changes</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function() {
   this.listenTo(this, 'change:sequence', this.parseSequence);
@@ -2231,7 +2178,6 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">parseSequence: function() {
   var sequence = this.get('sequence'),

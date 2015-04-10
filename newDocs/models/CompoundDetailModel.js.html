@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -272,7 +272,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -320,7 +319,6 @@
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   pert_id: &quot;&quot;,
@@ -362,7 +360,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be

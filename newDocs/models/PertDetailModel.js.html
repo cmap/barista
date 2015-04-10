@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -272,7 +272,6 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -284,7 +283,6 @@
             </p>
           </section>
           <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   cell_id: [],
@@ -306,7 +304,6 @@
             </p>
           </section>
           <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre>
           </button>
@@ -318,7 +315,6 @@
             </p>
           </section>
           <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre>
           </button>
@@ -351,7 +347,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string, model_type){
     var self = this;

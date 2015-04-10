@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -293,7 +293,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
@@ -310,7 +309,6 @@
             </p>
           </section>
           <div class="description"><p>custom initialization to set the listeners</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
@@ -324,7 +322,6 @@
             </p>
           </section>
           <div class="description"><p>add description</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
@@ -350,7 +347,6 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
             </p>
           </section>
           <div class="description"><p>custom initialization to set the key</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
@@ -364,7 +360,6 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
             </p>
           </section>
           <div class="description"><p>add description</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">setKey: function() {
   var key = this.get('key');

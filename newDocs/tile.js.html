@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -318,7 +318,6 @@
             </tbody>
           </table>
           <div class="description"><p>Tile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function Tile(options){
 	options = (options !== undefined) ? options : {};
@@ -345,7 +344,6 @@
             </p>
           </section>
           <div class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.init = function() {
 	// build the html to inject into the DOM
@@ -373,7 +371,6 @@
             </p>
           </section>
           <div class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.build_html = function() {
 	if (this.tile_type == &quot;small&quot;){
@@ -395,7 +392,6 @@
             </p>
           </section>
           <div class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.inject = function() {
 	$(this.div_target).append(this.html);
@@ -409,7 +405,6 @@
             </p>
           </section>
           <div class="description"><p>draws the tiles background using d3.js</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.draw_bg = function() {
 	// get the correct height and width to draw
@@ -487,7 +482,6 @@
             </tbody>
           </table>
           <div class="description"><p>hides the tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.hide = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
@@ -520,7 +514,6 @@
             </tbody>
           </table>
           <div class="description"><p>shows the tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Tile.prototype.show = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
@@ -582,7 +575,6 @@
             </tbody>
           </table>
           <div class="description"><p>ImageTile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function ImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
@@ -602,7 +594,6 @@ ImageTile.prototype.constructor = ImageTile;</code></pre>
             </p>
           </section>
           <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">ImageTile.prototype.draw = function() {
 	this.draw_bg();
@@ -617,7 +608,6 @@ ImageTile.prototype.constructor = ImageTile;</code></pre>
             </p>
           </section>
           <div class="description"><p>draws the tile&#39;s image using d3.js</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
 	// get the correct height and width to draw
@@ -703,7 +693,6 @@ ImageTile.prototype.constructor = ImageTile;</code></pre>
             </tbody>
           </table>
           <div class="description"><p>AnimatedImageTextTile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function AnimatedImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
@@ -724,7 +713,6 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre>
             </p>
           </section>
           <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
 	this.draw_bg();
@@ -760,7 +748,6 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre>
             </tbody>
           </table>
           <div class="description"><p>starts periodic animation of the Image on the Tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
 	duration = (duration !== undefined) ? duration : 2000;
@@ -835,7 +822,6 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre>
             </tbody>
           </table>
           <div class="description"><p>ImageTextTile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function ImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
@@ -855,7 +841,6 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre>
             </p>
           </section>
           <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -871,7 +856,6 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre>
             </p>
           </section>
           <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
@@ -981,7 +965,6 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre>
             </tbody>
           </table>
           <div class="description"><p>AnimatedImageTextTile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function AnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
@@ -1003,7 +986,6 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -1023,7 +1005,6 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div class="description"><p>show the text in the Tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimating){
@@ -1042,7 +1023,6 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div class="description"><p>hide the text in the Tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimating){
@@ -1061,7 +1041,6 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
@@ -1168,7 +1147,6 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </tbody>
           </table>
           <div class="description"><p>FullAnimatedImageTextTile constructor</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">function FullAnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
@@ -1191,7 +1169,6 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -1211,7 +1188,6 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div class="description"><p>show the text in the Tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimatingIn){
@@ -1230,7 +1206,6 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div class="description"><p>hide the text in the Tile</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimatingOut){
@@ -1249,7 +1224,6 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw

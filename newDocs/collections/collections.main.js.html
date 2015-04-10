@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -303,7 +303,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents a set of analysis history objects<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -315,7 +314,6 @@
             </p>
           </section>
           <div class="description"><p>fetch model data from assigned url</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
@@ -330,7 +328,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for the collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.AnalysisHistoryModel,</code></pre>
           </button>
@@ -342,7 +339,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -354,7 +350,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -366,7 +361,6 @@
             </p>
           </section>
           <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">maxCount: Infinity,</code></pre>
           </button>
@@ -378,7 +372,6 @@
             </p>
           </section>
           <div class="description"><p>the user_id to search jobs for<br />Forcing this to be set prevents us from searching other users jobs</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">user: undefined,</code></pre>
           </button>
@@ -416,7 +409,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br /><code>AnalysisHistoryCollection.getData(search_string,search_type,limit)</code><br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
@@ -527,7 +519,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents a set of cell types<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.CellCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -539,7 +530,6 @@
             </p>
           </section>
           <div class="description"><p>fetch model data from assigned url</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
@@ -554,7 +544,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for the collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.CellModel,</code></pre>
           </button>
@@ -566,7 +555,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -578,7 +566,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -616,7 +603,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_column,limit){
     var self = this;
@@ -692,7 +678,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file<br />The JSON file is assumed to contain a top level array containing objects<br />Each object in the array is modeled as a base Backbone.Model inside of the collection<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -704,7 +689,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre>
           </button>
@@ -716,7 +700,6 @@
             </p>
           </section>
           <div class="description"><p>the url from which model data is fetched</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">url: 'data.json',</code></pre>
           </button>
@@ -728,7 +711,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -740,7 +722,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -752,7 +733,6 @@
             </p>
           </section>
           <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">maxCount: Infinity,</code></pre>
           </button>
@@ -790,7 +770,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>GenericJSONCollection.getData(search_string,search_type,limit)</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
@@ -863,7 +842,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents a set of perturbagens<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.PertCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -875,7 +853,6 @@
             </p>
           </section>
           <div class="description"><p>fetch model data from assigned url</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
@@ -890,7 +867,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for the collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre>
           </button>
@@ -902,7 +878,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -914,7 +889,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -926,7 +900,6 @@
             </p>
           </section>
           <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">maxCount: Infinity,</code></pre>
           </button>
@@ -964,7 +937,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
@@ -1066,7 +1038,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents a set of signatures<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.SignatureCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -1078,7 +1049,6 @@
             </p>
           </section>
           <div class="description"><p>fetch model data from assigned url</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
@@ -1093,7 +1063,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for the collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.SignatureModel,</code></pre>
           </button>
@@ -1105,7 +1074,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -1117,7 +1085,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -1129,7 +1096,6 @@
             </p>
           </section>
           <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">maxCount: Infinity,</code></pre>
           </button>
@@ -1141,7 +1107,6 @@
             </p>
           </section>
           <div class="description"><p>boolean flag telling the collection to only include gold Connectivity Map signatures</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">gold_only: true,</code></pre>
           </button>
@@ -1179,7 +1144,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>SignatureCollection.getData(search_string,search_type,limit)</code></p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
@@ -1293,7 +1257,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Collection that represents a set of CMap Summly results<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({</code></pre>
           </button>
@@ -1305,7 +1268,6 @@
             </p>
           </section>
           <div class="description"><p>fetch model data from assigned url</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">initialize: function(){
 	// the url from which model data is fetched
@@ -1320,7 +1282,6 @@
             </p>
           </section>
           <div class="description"><p>the model used for collection objects</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">model: Barista.Models.SummlyResultModel,</code></pre>
           </button>
@@ -1332,7 +1293,6 @@
             </p>
           </section>
           <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">skip: 0,</code></pre>
           </button>
@@ -1344,7 +1304,6 @@
             </p>
           </section>
           <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">isLoading: false,</code></pre>
           </button>
@@ -1356,7 +1315,6 @@
             </p>
           </section>
           <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">maxCount: Infinity,</code></pre>
           </button>
@@ -1394,7 +1352,6 @@
             </tbody>
           </table>
           <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">getData: function(search_string,search_type,limit){
 		var self = this;

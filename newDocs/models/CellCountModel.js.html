@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -288,7 +288,6 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre>
           </button>
@@ -326,7 +325,6 @@
             </tbody>
           </table>
           <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">defaults: {
   count: 0,
@@ -364,7 +362,6 @@
             </tbody>
           </table>
           <div class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the pert_params for the api call.

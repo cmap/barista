@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
     <script src="outline.js">
     </script>
-    <!-- @todo need to fix script, only works for first code snippet--><script src="jquery-2.1.3.min.js"></script>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -272,7 +272,6 @@
             </p>
           </section>
           <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellHistologyDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ 	CellHistology:
@@ -286,7 +285,6 @@
             </p>
           </section>
           <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">limit: 6,</code></pre>
           </button>
@@ -298,7 +296,6 @@
             </p>
           </section>
           <div class="description"><p>provide a name for the default typeahead data source</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">name: 'CellHistology',</code></pre>
           </button>
@@ -310,7 +307,6 @@
             </p>
           </section>
           <div class="description"><p>the template to render for all results</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre>
           </button>
@@ -322,7 +318,6 @@
             </p>
           </section>
           <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">engine: Hogan,
 
@@ -358,7 +353,6 @@ remote: {
             </tbody>
           </table>
           <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
@@ -394,7 +388,6 @@ dataType: 'jsonp',</code></pre>
             </tbody>
           </table>
           <div class="description"><p>returns the processed list of data for the autocomplete</p> </div>
-          <!-- @todo this section controls the code snippets, consider making it collapsible-->
           <button>CLICK TO TOGGLE CODE
             <pre style="display: none"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
