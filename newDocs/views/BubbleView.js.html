@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- @todo if in first directory, regular script syntax, else add ../-->
+    <!-- using workaround for now-->
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>barista</title>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
+    <script src="outline.js">
+    </script>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+       var x = event.target;
+       $(x).click(function() {
+         $(event.target).find("pre").toggle(400);
+       });
+      });
+    </script>
+    <style>
+      body > .navbar .brand {
+        float:left;
+        text-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px, rgba(255, 255, 255, 0.4) 0px 0px 30px;
+        color: white;
+        margin-left:0px;
+        font-weight:normal;
+      }
+      .bs-docs-sidenav.affix {
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+      .bs-docs-sidenav i{
+        width: 8px;
+        height: 8px;
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+        margin-right:0.5em;
+      }
+      .bs-docs-sidenav > li > a {
+          word-wrap: break-word;
+      }
+      .bs-docs-sidenav > li:first-child > a {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+      }
+      code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}
+      div.description {margin: 14px 0; padding-top: 14px; border-bottom:1px solid #eee; }
+      .tags {}
+      .ctx-type {
+        display:inline-block;
+        margin-right:0.5em;
+        //- float:right; margin-top:8px
+      }
+      footer iframe{vertical-align:middle;}
+    </style>
+  </head>
+  <body onLoad="outlineInit()" data-spy="scroll" data-target=".scrollspy">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container"><a class="brand">Doxx</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right sponsored"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header id="overview" class="jumbotron subhead">
+      <div class="container">
+        <h1>barista</h1>
+        <p class="lead"></p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="span3 bs-docs-sidebar">
+          <ul class="nav nav-list bs-docs-sidenav affix-top outline">
+            <li><a href="../index.html">Main</a></li>
+            <li><a href="../afterword.js.html">afterword.js</a></li>
+            <li><a href="../preamble.js.html">preamble.js</a></li>
+            <li><a href="../tile.js.html">tile.js</a></li>
+            <li style="cursor: pointer;" class="navbar nav-list">Collections
+              <ul style="display: none">
+                <li><a href="../collections/AnalysisHistoryCollection.js.html">AnalysisHistoryCollection.js</a></li>
+                <li><a href="../collections/CellCollection.js.html">CellCollection.js</a></li>
+                <li><a href="../collections/GenericJSONCollection.js.html">GenericJSONCollection.js</a></li>
+                <li><a href="../collections/PertCollection.js.html">PertCollection.js</a></li>
+                <li><a href="../collections/SignatureCollection.js.html">SignatureCollection.js</a></li>
+                <li><a href="../collections/SummlyResultCollection.js.html">SummlyResultCollection.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Datasets
+              <ul style="display: none">
+                <li><a href="../datasets/CellHistologyDataset.js.html">CellHistologyDataset.js</a></li>
+                <li><a href="../datasets/CellIDDataset.js.html">CellIDDataset.js</a></li>
+                <li><a href="../datasets/CellLineageDataset.js.html">CellLineageDataset.js</a></li>
+                <li><a href="../datasets/CellMutationDataset.js.html">CellMutationDataset.js</a></li>
+                <li><a href="../datasets/CompoundPertINameDataset.js.html">CompoundPertINameDataset.js</a></li>
+                <li><a href="../datasets/GeneticPertINameDataset.js.html">GeneticPertINameDataset.js</a></li>
+                <li><a href="../datasets/JobIDDataset.js.html">JobIDDataset.js</a></li>
+                <li><a href="../datasets/JobNameDataset.js.html">JobNameDataset.js</a></li>
+                <li><a href="../datasets/JobStatusDataset.js.html">JobStatusDataset.js</a></li>
+                <li><a href="../datasets/P100PertINameDataset.js.html">P100PertINameDataset.js</a></li>
+                <li><a href="../datasets/PRISMPertINameDataset.js.html">PRISMPertINameDataset.js</a></li>
+                <li><a href="../datasets/PertINameDataset.js.html">PertINameDataset.js</a></li>
+                <li><a href="../datasets/ToolIDDataset.js.html">ToolIDDataset.js</a></li>
+                <li><a href="../datasets/UserIDDataset.js.html">UserIDDataset.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Models
+              <ul style="display: none">
+                <li><a href="../models/AnalysisHistoryModel.js.html">AnalysisHistoryModel.js</a></li>
+                <li><a href="../models/BarPlotModel.js.html">BarPlotModel.js</a></li>
+                <li><a href="../models/CellCountModel.js.html">CellCountModel.js</a></li>
+                <li><a href="../models/CellModel.js.html">CellModel.js</a></li>
+                <li><a href="../models/CompoundDetailModel.js.html">CompoundDetailModel.js</a></li>
+                <li><a href="../models/GeneDetailModel.js.html">GeneDetailModel.js</a></li>
+                <li><a href="../models/GenericCountModel.js.html">GenericCountModel.js</a></li>
+                <li><a href="../models/GenericMongoModel.js.html">GenericMongoModel.js</a></li>
+                <li><a href="../models/HeatmapModel.js.html">HeatmapModel.js</a></li>
+                <li><a href="../models/PertCellBreakdownModel.js.html">PertCellBreakdownModel.js</a></li>
+                <li><a href="../models/PertCountModel.js.html">PertCountModel.js</a></li>
+                <li><a href="../models/PertDetailModel.js.html">PertDetailModel.js</a></li>
+                <li><a href="../models/PertModel.js.html">PertModel.js</a></li>
+                <li><a href="../models/ScatterPlotModel.js.html">ScatterPlotModel.js</a></li>
+                <li><a href="../models/SigCountModel.js.html">SigCountModel.js</a></li>
+                <li><a href="../models/SignatureModel.js.html">SignatureModel.js</a></li>
+                <li><a href="../models/SummlyResultModel.js.html">SummlyResultModel.js</a></li>
+                <li><a href="../models/TickModel.js.html">TickModel.js</a></li>
+                <li><a href="../models/sequenceModel.js.html">sequenceModel.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Utils
+              <ul style="display: none">
+                <li><a href="../utils/CMapTypeAlias.js.html">CMapTypeAlias.js</a></li>
+                <li><a href="../utils/NumbersToSubscript.js.html">NumbersToSubscript.js</a></li>
+                <li><a href="../utils/arrayAverage.js.html">arrayAverage.js</a></li>
+                <li><a href="../utils/getEmSizeInPixels.js.html">getEmSizeInPixels.js</a></li>
+                <li><a href="../utils/getQueryVariable.js.html">getQueryVariable.js</a></li>
+                <li><a href="../utils/numberWithCommas.js.html">numberWithCommas.js</a></li>
+                <li><a href="../utils/setAPIPrefilter.js.html">setAPIPrefilter.js</a></li>
+                <li><a href="../utils/setAPIURL.js.html">setAPIURL.js</a></li>
+                <li><a href="../utils/setUserKey.js.html">setUserKey.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Views
+              <ul style="display: none">
+                <li><a href="../views/BarPlotView.js.html">BarPlotView.js</a></li>
+                <li><a href="../views/BaristaBaseView.js.html">BaristaBaseView.js</a></li>
+                <li><a href="../views/BaristaCardView.js.html">BaristaCardView.js</a></li>
+                <li><a href="../views/BaristaUserCardView.js.html">BaristaUserCardView.js</a></li>
+                <li class="active"><a href="../views/BubbleView.js.html">BubbleView.js</a></li>
+                <li><a href="../views/CMapFooterView.js.html">CMapFooterView.js</a></li>
+                <li><a href="../views/CMapHeaderView.js.html">CMapHeaderView.js</a></li>
+                <li><a href="../views/CMapNavigationView.js.html">CMapNavigationView.js</a></li>
+                <li><a href="../views/CellSearchBar.js.html">CellSearchBar.js</a></li>
+                <li><a href="../views/CompoundDetailView.js.html">CompoundDetailView.js</a></li>
+                <li><a href="../views/CompoundSearchBar.js.html">CompoundSearchBar.js</a></li>
+                <li><a href="../views/FlatTreeMapView.js.html">FlatTreeMapView.js</a></li>
+                <li><a href="../views/GenericCountView.js.html">GenericCountView.js</a></li>
+                <li><a href="../views/GridView.js.html">GridView.js</a></li>
+                <li><a href="../views/HTMLCellView.js.html">HTMLCellView.js</a></li>
+                <li><a href="../views/HeatMapView.js.html">HeatMapView.js</a></li>
+                <li><a href="../views/LDMapView.js.html">LDMapView.js</a></li>
+                <li><a href="../views/PertCountView.js.html">PertCountView.js</a></li>
+                <li><a href="../views/PertDetailView.js.html">PertDetailView.js</a></li>
+                <li><a href="../views/PertSearchBar.js.html">PertSearchBar.js</a></li>
+                <li><a href="../views/PlatformSummaryView.js.html">PlatformSummaryView.js</a></li>
+                <li><a href="../views/ScatterPlotView.js.html">ScatterPlotView.js</a></li>
+                <li><a href="../views/TagListView.js.html">TagListView.js</a></li>
+                <li><a href="../views/TickView.js.html">TickView.js</a></li>
+                <li><a href="../views/ViolinPlotView.js.html">ViolinPlotView.js</a></li>
+                <li><a href="../views/sequenceView.js.html">sequenceView.js</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- @todo consider getting rid of scrollspy, currently broken-->
+          <!--removed scrollspy-->
+        </div>
+        <div class="span9">
+          <section id="BubbleView">
+            <h1>BubbleView</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BubbleView</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>fg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the foreground color of the view, defaults to                             #1b9e77</p></td>
+              </tr>
+              <tr>
+                <td>span_class</td>
+                <td>string</td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span4&quot; bubble_view = new BubbleView({el: $(&quot;target_selector&quot;),<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;});</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre>
+          </button>
+          <section id="name">
+            <h1>name</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>name</span>
+            </p>
+          </section>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre>
+          </button>
+          <section id="model">
+            <h1>model</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>model</span>
+            </p>
+          </section>
+          <div class="description"><p>set up the view&#39;s default model</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre>
+          </button>
+          <section id="initialize">
+            <h1>initialize</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
+            </p>
+          </section>
+          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
+	// set up color options.  default if not specified
+	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
+
+	// set up the span size
+	this.span_class = (this.options.span_class !== undefined) ? this.options.span_class : &quot;span4&quot;;
+
+	// set up the plot height
+	this.plot_height = (this.options.plot_height !== undefined) ? this.options.plot_height : 120;
+
+	// set up the bubble minimum and maximum scale values
+	this.min_val = (this.options.min_val !== undefined) ? this.options.min_val : undefined;
+	this.max_val = (this.options.max_val !== undefined) ? this.options.max_val : undefined;
+
+	// set up splitting categories
+	this.v_split = (this.options.v_split !== undefined) ? this.options.v_split : undefined;
+	this.h_split = (this.options.h_split !== undefined) ? this.options.h_split : undefined;
+
+	// set up splitting category centers
+	this.category_centers = (this.options.category_centers !== undefined) ? this.options.category_centers : {up: {x:0,y:-10},dn: {x:0,y:10}};
+
+	// set up category colors
+	this.category_colors = (this.options.category_colors !== undefined) ? this.options.category_colors : {up: &quot;#D55E00&quot;,dn: &quot;#56B4E9&quot;};
+
+	// bind render to model changes
+	this.listenTo(this.model,'change', this.update);
+
+	// compile the default template for the view
+	this.compile_template();
+
+	// define the location where d3 will build its plot
+	this.width = $(&quot;#&quot; + this.div_string).outerWidth();
+	this.height = $(&quot;#&quot; + this.div_string).outerHeight();
+	this.vis = d3.select(&quot;#&quot; + this.div_string).append(&quot;svg&quot;)
+					.attr(&quot;width&quot;,this.width)
+					.attr(&quot;height&quot;,this.height);
+
+	// render the vis
+	this.render();
+
+	// bind window resize events to redraw
+	var self = this;
+	$(window).resize(function() {self.render();} );
+},</code></pre>
+          </button>
+          <section id="compile_template">
+            <h1>compile_template</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
+            </p>
+          </section>
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+	this.div_string = 'd3_target' + new Date().getTime();;
+	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
+											span_class: this.span_class,
+											height: this.plot_height}));
+},</code></pre>
+          </button>
+          <section id="render">
+            <h1>render</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>render()</span>
+            </p>
+          </section>
+          <div class="description"><p>draw the view from scratch</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">render: function(){
+	// stuff this into a variable for later use
+	var self = this;
+
+	// set up the panel's width and height
+	this.width = $(&quot;#&quot; + this.div_string).outerWidth();
+	this.height = $(&quot;#&quot; + this.div_string).outerHeight();
+	this.v_center = this.height / 2;
+	this.h_center = this.width / 2;
+
+	// rescale the width of the vis
+	this.vis.transition().duration(1).attr(&quot;width&quot;,this.width);
+
+	// grab the data from the model
+	this.data = this.model.get('tree_object').children;
+
+	// set up some data scaling
+	var max_count, min_count;
+	if (this.max_val !== undefined){
+		max_count = this.max_val;
+	}else{
+		max_count = _.max(_.pluck(this.data,'count'));
+	}
+	if (this.min_val !== undefined){
+		min_count = this.min_val;
+	}else{
+		min_count = _.min(_.pluck(this.data,'count'));
+	}
+	this.data_scale = d3.scale.linear().domain([min_count,max_count])
+					.range([5,30]);
+
+	// define the force directed graph layout
+	this.force = d3.layout.force()
+					.nodes(this.data)
+					.gravity(0.1)
+					.friction(0.9)
+					.size([this.width, this.height])
+					.on(&quot;tick&quot;,function(e){tick(e);})
+					.charge(function(d){return -Math.pow(self.data_scale(d.count),2)/6;})
+					.start();
+
+	// draw the initial layout
+	this.vis.selectAll(&quot;circle&quot;).data(this.force.nodes()).exit().remove();
+	this.vis.selectAll(&quot;circle&quot;).data(this.force.nodes())
+			.enter().append(&quot;circle&quot;)
+			.attr(&quot;class&quot;,this.div_string + &quot;_circle&quot;)
+			.attr(&quot;fill&quot;,function(d){
+				if (self.category_colors[d[self.v_split]] !== undefined){
+					return self.category_colors[d[self.v_split]];
+				}else{
+					return self.fg_color;
+				}
+			})
+			.attr(&quot;v_category&quot;,function(d){
+				if (self.v_split !== undefined){
+					return d[self.v_split];
+				}else{
+					return null;
+				}
+			})
+			.attr(&quot;cx&quot;, Math.random() * 300)
+			.attr(&quot;cy&quot;, Math.random() * 300)
+			.attr(&quot;stroke&quot;,&quot;white&quot;)
+			.attr(&quot;_id&quot;,function(d){return d._id;})
+			.attr(&quot;r&quot;,function(d){return Math.sqrt(self.data_scale(d.count)/Math.PI);});
+
+	// specify the nodes selection so we don't have to repeat the selection on each tick
+        this.nodes = this.vis.selectAll(&quot;circle&quot;);
+        this.nodes.call(this.force.drag());
+
+	// reset a dampening variable for simulation
+	this.damp = 0.1;</code></pre>
+          </button>
+          <section id="tick">
+            <h1>tick</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>tick()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>e</td>
+                <td>object</td>
+                <td><p>data from tick event</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function tick(e){
+	self.vertical_split(e.alpha);
+	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
+                .attr(&quot;cy&quot;, function(d) {return d.y;})
+                // .attr(&quot;r&quot;,function(d){return self.data_scale(d.count);});
+
+        }
+	},</code></pre>
+          </button>
+          <section id="vertical_split">
+            <h1>vertical_split</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>vertical_split()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>alpha</td>
+                <td>number</td>
+                <td><p>in combination with damp value, creates spring constant for bubble animation</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>push bubbles vertically based on an attribute property</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">vertical_split: function(alpha){
+	var self = this;
+	//select all circles on the page
+	bubble_selection = this.vis.selectAll('circle');
+	bubble_selection
+	//edit the center y attribute
+		.attr(&quot;cy&quot;,function(d){
+			//if the vertical split category is undefined, return the y value of d
+			if (self.category_centers[d[self.v_split]] === undefined){
+				return(d.y);
+			}
+			//if the value of the vertical split category is 0, return the y value of d
+			var category_y = self.category_centers[d[self.v_split]].y;
+			if (category_y === 0){
+				return(d.y);
+			}
+			//otherwise, add the current d.y value to the product of equations involving the vertical
+			//center, vertical split category, dampening value, and alpha value
+			else{
+				d.y = d.y + (self.v_center + category_y - d.y) * (self.damp + 0.03) * alpha * 1.1;
+				return(d.y);
+			}
+		})
+		//edit the center x attribute
+		.attr(&quot;cx&quot;,function(d){
+			//if the vertical split category is undefined, return the y value of d
+			if (self.category_centers[d[self.v_split]] === undefined){
+				return(d.x);
+			}
+			//if the value of the vertical split category is 0, return the x value of d
+			var category_x = self.category_centers[d[self.v_split]].x;
+			if (category_x === 0){
+				return(d.x);
+			}
+			//otherwise, add the current d.x value to the product of equations involving the horizontal
+			//center, vertical split category, dampening value, and alpha value
+			else{
+				d.x = d.x + (self.h_center - category_x - d.x) * (self.damp + 0.03) * alpha * 1.1;
+				return (d.x);
+			}
+		});
+},</code></pre>
+          </button>
+          <section id="update">
+            <h1>update</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>update()</span>
+            </p>
+          </section>
+          <div class="description"><p>update the plot with new data</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">update: function(){
+	// stuff this into a variable for later use
+	var self = this;
+
+	// grab the data from the model
+	var new_data = this.model.get('tree_object').children;
+
+	// grab the current nodes
+	var nodes = this.force.nodes();
+
+	// update the nodes in this.force
+	if (this.force.nodes().length &lt;= new_data.length){
+		this.force.nodes().forEach(function(o,i){
+			_.extend(o,new_data[i]);
+			_.extend(o,{x:nodes[i]['x'],y:nodes[i]['y']});
+		});
+		if (this.force.nodes().length &lt; new_data.length){
+			this.force.nodes(this.force.nodes().concat(new_data.slice(this.force.nodes().length,new_data.length)));
+		}
+	}else{
+		this.force.nodes(this.force.nodes().slice(0,new_data.length));
+		this.force.nodes().forEach(function(o,i){
+			_.extend(o,new_data[i]);
+			_.extend(o,{x:nodes[i]['x'],y:nodes[i]['y']});
+		});
+	}
+
+	// draw the initial layout for new bubbles
+	bubble_selection = this.vis.selectAll(&quot;circle&quot;).data(this.force.nodes());
+	bubble_selection.enter()
+			.append(&quot;circle&quot;)
+			.attr(&quot;class&quot;,this.div_string + &quot;_circle&quot;)
+			.attr(&quot;fill&quot;,function(d){
+				if (self.category_colors[d[self.v_split]] !== undefined){
+					return self.category_colors[d[self.v_split]];
+				}else{
+					return self.fg_color;
+				}
+			})
+			.attr(&quot;cx&quot;, function(d){return d.x;})
+			.attr(&quot;cy&quot;, function(d){return d.y;})
+			.attr(&quot;stroke&quot;,&quot;white&quot;)
+			.attr(&quot;_id&quot;,function(d){return d._id;})
+			.attr(&quot;r&quot;,0);
+
+	// transition bubbles
+	bubble_selection.transition().duration(500)
+			.attr(&quot;r&quot;,function(d){return self.data_scale(d.count);});
+
+	// remove bubbles with no data
+	bubble_selection.exit().remove();
+
+	// start the simulation again
+	this.force.start();
+
+	// specify the nodes selection so we don't have to repeat the selection on each tick
+        this.nodes = this.vis.selectAll(&quot;circle&quot;);
+        this.nodes.call(this.force.drag());</code></pre>
+          </button>
+          <section id="tick">
+            <h1>tick</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">function</div><span>tick()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>e</td>
+                <td>object</td>
+                <td><p>data from tick event</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function tick(e){
+	self.vertical_split(e.alpha);
+	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
+                .attr(&quot;cy&quot;, function(d) {return d.y;})
+                .attr(&quot;r&quot;,function(d){return self.data_scale(d.count);});
+
+        }
+
+	}
+});</code></pre>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p>Documentation generated with <a href="https://github.com/FGRibreau/doxx">Doxx </a> created by <a href="https://twitter.com/FGRibreau" data-show-count="false" class="twitter-follow-button">Francois-Guillaume Ribreau </a></p>
+        <p>Doxx is sponsored by <a href="http://bringr.net/?btt" title="Outil d'analyse des réseaux sociaux" class="bringr">Bringr </a> and <a href="https://redsmin.com/?btt" title="Full Redis GUI" class="redsmin">Redsmin</a></p>
+        <p>Theme borrowed from Twitter Bootstrap</p>
+      </div>
+    </footer>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="http://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
+    <script>
+      /**
+       * Prism: Lightweight, robust, elegant syntax highlighting
+       * MIT license http://www.opensource.org/licenses/mit-license.php/
+       * @author Lea Verou http://lea.verou.me
+       */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]"){for(var r=0;r<e.length;r++)e[r]=n.stringify(e[r]);return e.join("")}var i={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};i.type=="comment"&&(i.attributes.spellcheck="true");t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+      Prism.languages.markup={comment:/&lt;!--[\w\W]*?--(&gt;|&gt;)/g,prolog:/&lt;\?.+?\?&gt;/,doctype:/&lt;!DOCTYPE.+?&gt;/,cdata:/&lt;!\[CDATA\[[\w\W]+?]]&gt;/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?&gt;/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|&gt;|"/g}},punctuation:/\/?&gt;/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+      Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+      Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,number:/\b-?(0x)?\d*\.?[\da-f]+\b/g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+      Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b(-?(0x)?\d*\.?[\da-f]+|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+    </script>
+    <!-- App js-->
+    <script>
+      $(function(){
+        var $window = $(window);
+        $('.scrollspy .nav').affix({
+          offset: {
+            top: function () { return $window.width() <= 980 ? 480 : 400 }
+          , bottom: 50
+          }
+        });
+      })
+    </script>
+  </body>
+</html>

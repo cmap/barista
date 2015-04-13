@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- @todo if in first directory, regular script syntax, else add ../-->
+    <!-- using workaround for now-->
+    <meta name="viewport" content="width=device-width" charset="utf-8">
+    <title>barista</title>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href="outline.css" rel="stylesheet" type="text/css">
+    <script src="outline.js">
+    </script>
+    <script src="jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+       var x = event.target;
+       $(x).click(function() {
+         $(event.target).find("pre").toggle(400);
+       });
+      });
+    </script>
+    <style>
+      body > .navbar .brand {
+        float:left;
+        text-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px, rgba(255, 255, 255, 0.4) 0px 0px 30px;
+        color: white;
+        margin-left:0px;
+        font-weight:normal;
+      }
+      .bs-docs-sidenav.affix {
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+      .bs-docs-sidenav i{
+        width: 8px;
+        height: 8px;
+        padding: 0px;
+        margin: 0px;
+        display: inline-block;
+        margin-right:0.5em;
+      }
+      .bs-docs-sidenav > li > a {
+          word-wrap: break-word;
+      }
+      .bs-docs-sidenav > li:first-child > a {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+      }
+      code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,'Andale Mono',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*="language-"],pre[class*="language-"]{background:#f5f2f0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.namespace{opacity:.7}.token.property,.token.tag,.token.boolean,.token.number{color:#905}.token.selector,.token.attr-name,.token.string{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}
+      div.description {margin: 14px 0; padding-top: 14px; border-bottom:1px solid #eee; }
+      .tags {}
+      .ctx-type {
+        display:inline-block;
+        margin-right:0.5em;
+        //- float:right; margin-top:8px
+      }
+      footer iframe{vertical-align:middle;}
+    </style>
+  </head>
+  <body onLoad="outlineInit()" data-spy="scroll" data-target=".scrollspy">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container"><a class="brand">Doxx</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right sponsored"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header id="overview" class="jumbotron subhead">
+      <div class="container">
+        <h1>barista</h1>
+        <p class="lead"></p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="span3 bs-docs-sidebar">
+          <ul class="nav nav-list bs-docs-sidenav affix-top outline">
+            <li><a href="../index.html">Main</a></li>
+            <li><a href="../afterword.js.html">afterword.js</a></li>
+            <li><a href="../preamble.js.html">preamble.js</a></li>
+            <li><a href="../tile.js.html">tile.js</a></li>
+            <li style="cursor: pointer;" class="navbar nav-list">Collections
+              <ul style="display: none">
+                <li><a href="../collections/AnalysisHistoryCollection.js.html">AnalysisHistoryCollection.js</a></li>
+                <li><a href="../collections/CellCollection.js.html">CellCollection.js</a></li>
+                <li><a href="../collections/GenericJSONCollection.js.html">GenericJSONCollection.js</a></li>
+                <li><a href="../collections/PertCollection.js.html">PertCollection.js</a></li>
+                <li><a href="../collections/SignatureCollection.js.html">SignatureCollection.js</a></li>
+                <li><a href="../collections/SummlyResultCollection.js.html">SummlyResultCollection.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Datasets
+              <ul style="display: none">
+                <li><a href="../datasets/CellHistologyDataset.js.html">CellHistologyDataset.js</a></li>
+                <li><a href="../datasets/CellIDDataset.js.html">CellIDDataset.js</a></li>
+                <li><a href="../datasets/CellLineageDataset.js.html">CellLineageDataset.js</a></li>
+                <li><a href="../datasets/CellMutationDataset.js.html">CellMutationDataset.js</a></li>
+                <li><a href="../datasets/CompoundPertINameDataset.js.html">CompoundPertINameDataset.js</a></li>
+                <li><a href="../datasets/GeneticPertINameDataset.js.html">GeneticPertINameDataset.js</a></li>
+                <li><a href="../datasets/JobIDDataset.js.html">JobIDDataset.js</a></li>
+                <li><a href="../datasets/JobNameDataset.js.html">JobNameDataset.js</a></li>
+                <li><a href="../datasets/JobStatusDataset.js.html">JobStatusDataset.js</a></li>
+                <li><a href="../datasets/P100PertINameDataset.js.html">P100PertINameDataset.js</a></li>
+                <li><a href="../datasets/PRISMPertINameDataset.js.html">PRISMPertINameDataset.js</a></li>
+                <li><a href="../datasets/PertINameDataset.js.html">PertINameDataset.js</a></li>
+                <li><a href="../datasets/ToolIDDataset.js.html">ToolIDDataset.js</a></li>
+                <li><a href="../datasets/UserIDDataset.js.html">UserIDDataset.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Models
+              <ul style="display: none">
+                <li><a href="../models/AnalysisHistoryModel.js.html">AnalysisHistoryModel.js</a></li>
+                <li><a href="../models/BarPlotModel.js.html">BarPlotModel.js</a></li>
+                <li><a href="../models/CellCountModel.js.html">CellCountModel.js</a></li>
+                <li><a href="../models/CellModel.js.html">CellModel.js</a></li>
+                <li><a href="../models/CompoundDetailModel.js.html">CompoundDetailModel.js</a></li>
+                <li><a href="../models/GeneDetailModel.js.html">GeneDetailModel.js</a></li>
+                <li><a href="../models/GenericCountModel.js.html">GenericCountModel.js</a></li>
+                <li><a href="../models/GenericMongoModel.js.html">GenericMongoModel.js</a></li>
+                <li><a href="../models/HeatmapModel.js.html">HeatmapModel.js</a></li>
+                <li><a href="../models/PertCellBreakdownModel.js.html">PertCellBreakdownModel.js</a></li>
+                <li><a href="../models/PertCountModel.js.html">PertCountModel.js</a></li>
+                <li><a href="../models/PertDetailModel.js.html">PertDetailModel.js</a></li>
+                <li><a href="../models/PertModel.js.html">PertModel.js</a></li>
+                <li><a href="../models/ScatterPlotModel.js.html">ScatterPlotModel.js</a></li>
+                <li><a href="../models/SigCountModel.js.html">SigCountModel.js</a></li>
+                <li><a href="../models/SignatureModel.js.html">SignatureModel.js</a></li>
+                <li><a href="../models/SummlyResultModel.js.html">SummlyResultModel.js</a></li>
+                <li><a href="../models/TickModel.js.html">TickModel.js</a></li>
+                <li><a href="../models/sequenceModel.js.html">sequenceModel.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Utils
+              <ul style="display: none">
+                <li><a href="../utils/CMapTypeAlias.js.html">CMapTypeAlias.js</a></li>
+                <li><a href="../utils/NumbersToSubscript.js.html">NumbersToSubscript.js</a></li>
+                <li><a href="../utils/arrayAverage.js.html">arrayAverage.js</a></li>
+                <li><a href="../utils/getEmSizeInPixels.js.html">getEmSizeInPixels.js</a></li>
+                <li><a href="../utils/getQueryVariable.js.html">getQueryVariable.js</a></li>
+                <li><a href="../utils/numberWithCommas.js.html">numberWithCommas.js</a></li>
+                <li><a href="../utils/setAPIPrefilter.js.html">setAPIPrefilter.js</a></li>
+                <li><a href="../utils/setAPIURL.js.html">setAPIURL.js</a></li>
+                <li><a href="../utils/setUserKey.js.html">setUserKey.js</a></li>
+              </ul>
+            </li>
+            <li style="cursor: pointer;" class="navbar nav-list">Views
+              <ul style="display: none">
+                <li><a href="../views/BarPlotView.js.html">BarPlotView.js</a></li>
+                <li><a href="../views/BaristaBaseView.js.html">BaristaBaseView.js</a></li>
+                <li><a href="../views/BaristaCardView.js.html">BaristaCardView.js</a></li>
+                <li><a href="../views/BaristaUserCardView.js.html">BaristaUserCardView.js</a></li>
+                <li><a href="../views/BubbleView.js.html">BubbleView.js</a></li>
+                <li><a href="../views/CMapFooterView.js.html">CMapFooterView.js</a></li>
+                <li><a href="../views/CMapHeaderView.js.html">CMapHeaderView.js</a></li>
+                <li><a href="../views/CMapNavigationView.js.html">CMapNavigationView.js</a></li>
+                <li><a href="../views/CellSearchBar.js.html">CellSearchBar.js</a></li>
+                <li><a href="../views/CompoundDetailView.js.html">CompoundDetailView.js</a></li>
+                <li><a href="../views/CompoundSearchBar.js.html">CompoundSearchBar.js</a></li>
+                <li><a href="../views/FlatTreeMapView.js.html">FlatTreeMapView.js</a></li>
+                <li><a href="../views/GenericCountView.js.html">GenericCountView.js</a></li>
+                <li class="active"><a href="../views/GridView.js.html">GridView.js</a></li>
+                <li><a href="../views/HTMLCellView.js.html">HTMLCellView.js</a></li>
+                <li><a href="../views/HeatMapView.js.html">HeatMapView.js</a></li>
+                <li><a href="../views/LDMapView.js.html">LDMapView.js</a></li>
+                <li><a href="../views/PertCountView.js.html">PertCountView.js</a></li>
+                <li><a href="../views/PertDetailView.js.html">PertDetailView.js</a></li>
+                <li><a href="../views/PertSearchBar.js.html">PertSearchBar.js</a></li>
+                <li><a href="../views/PlatformSummaryView.js.html">PlatformSummaryView.js</a></li>
+                <li><a href="../views/ScatterPlotView.js.html">ScatterPlotView.js</a></li>
+                <li><a href="../views/TagListView.js.html">TagListView.js</a></li>
+                <li><a href="../views/TickView.js.html">TickView.js</a></li>
+                <li><a href="../views/ViolinPlotView.js.html">ViolinPlotView.js</a></li>
+                <li><a href="../views/sequenceView.js.html">sequenceView.js</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- @todo consider getting rid of scrollspy, currently broken-->
+          <!--removed scrollspy-->
+        </div>
+        <div class="span9">
+          <section id="name">
+            <h1>name</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">property</div><span>name</span>
+            </p>
+          </section>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre>
+          </button>
+          <section id="initialize">
+            <h1>initialize</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
+            </p>
+          </section>
+          <div class="description"><p>overrides the default Backbone.View initialize method</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
+	var self = this;
+	// default search value
+	this.search_val = &quot;&quot;;
+	this.search_type = &quot;single&quot;;
+
+	// set up grid options
+	this.span_class = (this.options.span_class !== undefined) ? this.options.span_class : &quot;col_lg_12&quot;;
+	this.legend = (this.options.legend !== undefined) ? this.options.legend :null;
+	this.no_download = (this.options.no_download !== undefined) ? this.options.no_download :null;
+	this.no_slice = (this.options.no_slice !== undefined) ? this.options.no_slice :null;
+	this.no_legend = (this.options.no_legend !== undefined) ? this.options.no_legend :null;
+	this.edit = (this.options.edit !== undefined) ? this.options.edit : false;
+	this.limit = (this.options.limit !== undefined) ? this.options.limit : 30;
+
+
+
+	// set up a default collection and column definition for the grid to operate on
+	this.collection = (this.options.collection !== undefined) ? this.options.collection : new Barista.Collections.PertCollection();
+	this.columns = (this.options.columns !== undefined) ? this.options.columns : [{name: &quot;pert_iname&quot;, label: &quot;Reagent Name&quot;, cell: &quot;string&quot;, editable: false},
+																					{name: &quot;pert_type_label&quot;, label: &quot;Pert Type&quot;, cell: Barista.HTMLCell, editable: false},
+																					{name: &quot;num_inst&quot;, label: &quot;Experiments&quot;, cell: &quot;integer&quot;, editable: false}];
+
+	// build the template
+	this.compile_template();
+
+	// build the grid on the template using a clickable row.  If a row is clicked, a grid:RowClick event
+	// is fired with the row's model as the passed data.
+	// build the clickable row
+	var ClickableRow = Backgrid.Row.extend({
+		events: {
+			&quot;click&quot;: &quot;onClick&quot;
+		},</code></pre>
+          </button>
+          <section id="onClick">
+            <h1>onClick</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>onClick()</span>
+            </p>
+          </section>
+          <div class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">onClick: function () {
+	self.trigger(&quot;grid:RowClick&quot;, this.model);
+},</code></pre>
+          </button>
+          <section id="render">
+            <h1>render</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>render()</span>
+            </p>
+          </section>
+          <div class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">render: function () {
+	this.$el.empty();
+	var fragment = document.createDocumentFragment();
+	for (var i = 0; i &lt; this.cells.length; i++) {
+		fragment.appendChild(this.cells[i].render().el);
+	}
+	this.el.appendChild(fragment);
+	this.delegateEvents();
+
+	this.$el.css(&quot;opacity&quot;,0);
+	this.$el.animate({&quot;opacity&quot;:1},1000);
+
+	return this;
+},</code></pre>
+          </button>
+          <section id="remove">
+            <h1>remove</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>remove()</span>
+            </p>
+          </section>
+          <div class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">remove: function () {
+	this.$el.addClass(&quot;cmap-active-grid-row&quot;);
+	this.$el.animate({&quot;opacity&quot;:0},1000);
+	var self = this;
+	setTimeout(function(){
+		for (var i = 0; i &lt; self.cells.length; i++) {
+			var cell = self.cells[i];
+			cell.remove.apply(cell, arguments);
+		}
+		return Backbone.View.prototype.remove.apply(self, arguments);
+	},1000);
+}
+		});
+
+		// build the grid
+		this.grid = new Backgrid.Grid({
+row: ClickableRow,
+columns: this.columns,
+collection: this.collection
+		});
+		$(&quot;#&quot; + this.div_string).append(this.grid.render().$el);
+
+		// add a button to scroll to the top of the grid once it is scroll down
+		this.add_scroll_to_top_button();
+
+		//bind the table to a function to check for scroll boundaries
+		$(&quot;#&quot; + this.div_string,this.el).scroll(function(){self.checkscroll();});
+
+		// bind the download text to a function to download the data in the table
+		$(&quot;#&quot; + this.div_string + &quot;_download&quot;,this.el).click(function(){self.download_table();});
+
+		// bind the edit text to a function to edit the data in the table
+		$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).click(function(){self.open_edit_table();});
+
+		// bind the download text to a function to slice the data in the table out of the
+		// Connectivity Map database.
+		self.change_slice_button_state(&quot;slice&quot;);
+	},
+
+	checkscroll: _.debounce(function(){
+		if ($(&quot;#&quot; + this.div_string).scrollTop() &gt; 30) {
+this.show_scroll_to_top_button();
+		}else{
+this.hide_scroll_to_top_button();
+		}
+
+		var triggerPoint = 100;
+		var pos = $(&quot;#&quot; + this.div_string).scrollTop() + $(&quot;#&quot; + this.div_string).height() + triggerPoint;
+		if (!this.collection.isLoading &amp;&amp; pos &gt; $(&quot;#&quot; + this.div_string)[0].scrollHeight){
+this.collection.skip += this.limit;
+this.update_collection(this.search_val,this.search_type,this.limit);
+		}
+	},100),</code></pre>
+          </button>
+          <section id="add_scroll_to_top_button">
+            <h1>add_scroll_to_top_button</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>add_scroll_to_top_button()</span>
+            </p>
+          </section>
+          <div class="description"><p>adds a UI control to scroll the top of the grid</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">add_scroll_to_top_button: function(){
+	var self = this;
+	this.scroll_to_top_button_id = this.div_string + 'scroll_button';
+	this.$el.append('&lt;button id=&quot;' + this.scroll_to_top_button_id + '&quot; class=&quot;cmap_grid_to_top_button&quot;&gt;Scroll to Top&lt;/button&gt;');
+	$(&quot;#&quot; + this.scroll_to_top_button_id).click(function(){self.scroll_to_top();});
+	this.hide_scroll_to_top_button();
+},</code></pre>
+          </button>
+          <section id="scroll_to_top">
+            <h1>scroll_to_top</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>scroll_to_top()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>scrolls the grid to the top of its container</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">scroll_to_top: function(duration){
+	duration = (duration !== undefined) ? duration : 500;
+	$(&quot;#&quot; + this.div_string).animate({scrollTop:0},duration);
+	this.hide_scroll_to_top_button();
+},</code></pre>
+          </button>
+          <section id="show_scroll_to_top_button">
+            <h1>show_scroll_to_top_button</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>show_scroll_to_top_button()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>scrolls the grid to the bottom of its container</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">show_scroll_to_top_button: function(duration){
+	duration = (duration !== undefined) ? duration : 500;
+	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
+	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:1},duration);
+},</code></pre>
+          </button>
+          <section id="hide_scroll_to_top_button">
+            <h1>hide_scroll_to_top_button</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>hide_scroll_to_top_button()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>hides the scroll to top button</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
+	var self= this;
+	duration = (duration !== undefined) ? duration : 500;
+	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
+	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:0},duration);
+},</code></pre>
+          </button>
+          <section id="replace_collection">
+            <h1>replace_collection</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>replace_collection()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>search_val</td>
+                <td>string</td>
+                <td><p>the value to search for</p></td>
+              </tr>
+              <tr>
+                <td>search_type</td>
+                <td>string</td>
+                <td><p>the type of search that will be performed by getData</p></td>
+              </tr>
+              <tr>
+                <td>limit</td>
+                <td>number</td>
+                <td><p>the number of models to be fetched</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>changes the visible collection data and rejects the slice</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
+	var getData_promise;
+	var self = this;
+	this.search_val = (search_val !== undefined) ? search_val : this.search_val;
+	this.search_type = (search_type !== undefined) ? search_type : this.search_type;
+	this.limit = (limit !== undefined) ? limit : this.limit;
+	$(&quot;#&quot; + this.div_string).show();
+	$(&quot;#&quot; + this.div_string).animate({opacity:1},500);
+	this.collection.reset();
+	this.collection.skip = 0;
+	self.collection.maxCount = Infinity;
+	getData_promise =  this.collection.getData(this.search_val,this.search_type,this.limit);
+	this.listenToOnce(this.collection,&quot;add&quot;, function(){
+		this.trigger(&quot;grid:ReplaceCollection&quot;);
+		this.trigger(&quot;grid:Add&quot;);
+		this.resize_div();
+		// reset the slice all data button and reject the slice
+		// deferred if it is present
+		self.change_slice_button_state(&quot;slice&quot;);
+		if (self.slice_defer){
+			self.slice_defer.reject();
+		}
+	});
+	return getData_promise;
+},</code></pre>
+          </button>
+          <section id="update_collection">
+            <h1>update_collection</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>update_collection()</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>search_val</td>
+                <td>string</td>
+                <td><p>the value to search for</p></td>
+              </tr>
+              <tr>
+                <td>search_type</td>
+                <td>string</td>
+                <td><p>the type of search that will be performed by getData</p></td>
+              </tr>
+              <tr>
+                <td>limit</td>
+                <td>number</td>
+                <td><p>the number of models to be fetched</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>changes the visible collection data</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
+	var getData_promise;
+	if (this.collection.models.length &lt; this.collection.maxCount){
+		var self = this;
+		this.search_val = (search_val !== undefined) ? search_val : this.search_val;
+		this.search_type = (search_type !== undefined) ? search_type : this.search_type;
+		this.limit = (limit !== undefined) ? limit : this.limit;
+		$(&quot;#&quot; + this.div_string).show();
+		$(&quot;#&quot; + this.div_string).animate({opacity:1},500);
+		getData_promise = this.collection.getData(this.search_val,this.search_type,this.limit);
+		this.resize_div();
+		this.listenToOnce(this.collection,&quot;add&quot;, function(){
+			this.trigger(&quot;grid:UpdateCollection&quot;);
+			this.trigger(&quot;grid:Add&quot;);
+		});
+		return getData_promise;
+	}
+},</code></pre>
+          </button>
+          <section id="clear_collection">
+            <h1>clear_collection</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>clear_collection()</span>
+            </p>
+          </section>
+          <div class="description"><p>hides the visible data and rejects the slice</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">clear_collection: function(){
+	var self = this;
+	this.collection.skip = 0;
+	$(&quot;#&quot; + this.div_string).animate({opacity:0},500);
+	window.setTimeout(function(){
+		self.collection.reset();
+		self.collection.maxCount = Infinity;
+		$(&quot;#&quot; + this.div_string).hide();
+
+		// reset the slice all data button and reject the slice
+		// deferred if it is present
+		self.change_slice_button_state(&quot;slice&quot;);
+		if (self.slice_defer){
+			self.slice_defer.reject();
+		}
+
+	},500);
+},</code></pre>
+          </button>
+          <section id="resize_div">
+            <h1>resize_div</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>resize_div()</span>
+            </p>
+          </section>
+          <div class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">resize_div: function(){
+	var self = this;
+	var container_height =  $(&quot;#&quot; + this.div_string).height();
+	setTimeout(function(){
+		var data_height = self.collection.length * 30 + 40;
+		var target_height = (data_height &gt; 300) ? 300 : data_height;
+
+		$(&quot;#&quot; + self.div_string).stop();
+		$(&quot;#&quot; + self.div_string).animate({height:target_height},500);
+	},500);
+},</code></pre>
+          </button>
+          <section id="compile_template">
+            <h1>compile_template</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
+            </p>
+          </section>
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+	this.div_string = 'backgrid_target' + new Date().getTime();;
+	this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
+												   span_class: this.span_class,
+												   legend: this.legend,
+												   no_download: this.no_download,
+												   no_slice: this.no_slice,
+												   no_legend: this.no_legend,
+												   edit: this.edit,
+												}));
+},</code></pre>
+          </button>
+          <section id="slice_all_table_data">
+            <h1>slice_all_table_data</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>slice_all_table_data()</span>
+            </p>
+          </section>
+          <div class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div>
+          <button>CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">slice_all_table_data: function(){
+	var self = this;
+	// change the button state to progress
+	this.change_slice_button_state(&quot;progress&quot;);
+
+	// create a Deferred on the object to handle interaction with the slicing
+	// operation.  This allows us to resolve the Deffered later in another
+	// method before the ajax call returns if we need to
+	this.slice_defer = $.Deferred();
+
+	// If the Deferred resolves successfully, leave the button alone and let other the ajax call
+	// below manipulate it.  If it is rejected, set the button back up to its original state.
+	this.slice_defer.fail(function() {
+			self.change_slice_button_state(&quot;slice&quot;);
+		}
+	);
+
+	// grab the API 'q' query parameter from the grid's collection and send it
+	// to sig_slice API.  if the slice job completes, check the return for a
+	// file_url attribute and change the link in the slice button to expose the
+	// link.  If it does not exist, the slice failed and we display a failure
+	// message asking the user to try again
+	sig_slice = '//prefix:8080/a2/sigslice?callback=?';
+	$.ajax({
+		dataType: 'json',
+		url: sig_slice,
+		data: {q: self.collection.q_param,l: 1000},
+		
+		success: function(res){
+			if (res.file_url){
+				self.change_slice_button_state(&quot;link&quot;,res.file_url);
+			}else{
+				self.change_slice_button_state(&quot;fail&quot;);
+			}
+		},
+
+		error: function(){
+			self.change_slice_button_state(&quot;fail&quot;);
+		}
+	});
+
+	// if 60s pass, we assume that is too long and we
+	// update the button with an error message and
+	// resolve the deferred to indicate we finished the
+	// ajax call normally.  This is a hack to emulate a 404 error in jsonp
+	this.slice_timeout = setTimeout(function(){
+		self.change_slice_button_state(&quot;fail&quot;);
+	},60000);
+},
+/**
+ * changes the state of the slice button based on the current state
+ * @param  {string} state  current state of the slice button (i.e. slice, progress, or link)
+ * @param  {string} link   link to the slice
+ */
+change_slice_button_state: function (state,link){
+	var self = this;
+	// unbind any handlers on the button
+	$(&quot;#&quot; + self.div_string + &quot;_slice&quot;,self.el).unbind();
+
+	// handle the re-binding of handlers and update the button text and icon
+	switch (state){
+		case &quot;slice&quot;:
+			// update the slice button to show an available data slice
+			$(&quot;#&quot; + self.div_string + &quot;_slice&quot;,self.el).html('&lt;font color=&quot;#0072B2&quot;&gt;&lt;i class=&quot;icon-cogs&quot;&gt;&lt;/i&gt; slice all data&lt;/font&gt;');
+
+			// rebind the click event and clear a timeout if present
+			$(&quot;#&quot; + this.div_string + &quot;_slice&quot;,this.el).click(function(){self.slice_all_table_data();});
+			clearTimeout(self.slice_timeout);
+			break;
+
+		case &quot;progress&quot;:
+			// indicate that we are making a data slice
+			$(&quot;#&quot; + this.div_string + &quot;_slice&quot;,this.el).html('&lt;font color=&quot;#0072B2&quot;&gt;&lt;i class=&quot;icon-cog icon-spin&quot;&gt;&lt;/i&gt; slicing&lt;/font&gt;');
+
+			// unbind all handlers so that we can't click the while while we are slicing
+			$(&quot;#&quot; + this.div_string + &quot;_slice&quot;,this.el).unbind();
+			break;
+
+		case &quot;link&quot;:
+			// construct an html string to expose the link
+			var html_string = ['&lt;a href=&quot;',
+							   link,
+							   '&quot; class=&quot;cmap-link&quot;&gt;',
+							   '&lt;font color=&quot;#0072B2&quot;&gt;&lt;i class=&quot;icon-download&quot;&gt;&lt;/i&gt; download slice&lt;/font&gt;&lt;/a&gt;'].join('');
+
+			// update the button and resolve the deferred to
+			// indicate we finished the ajax call normally
+			$(&quot;#&quot; + self.div_string + &quot;_slice&quot;,self.el).html(html_string);
+			self.slice_defer.resolve();
+			clearTimeout(self.slice_timeout);
+			break;
+
+		case &quot;fail&quot;:
+			// update the button with an error message,
+			// resolve the deferred and clear the Timeout
+			$(&quot;#&quot; + self.div_string + &quot;_slice&quot;,self.el).html('&lt;font color=&quot;#D55E00&quot;&gt;&lt;i class=&quot;icon-exclamation&quot;&gt;&lt;/i&gt; slice failed. try again?&lt;/font&gt;');
+			$(&quot;#&quot; + self.div_string + &quot;_slice&quot;,self.el).click(function(){self.slice_all_table_data();});
+			self.slice_defer.resolve();
+			clearTimeout(self.slice_timeout);
+			break;
+	}
+
+},
+/**
+ * download the backing data that matches the current model state
+ */
+download_table: function(){
+	var self = this;
+	// indicate we are downloading something
+	$(&quot;#&quot; + this.div_string + &quot;_download&quot;,this.el).html('&lt;font color=&quot;#0072B2&quot;&gt;&lt;i class=&quot;icon-refresh icon-spin&quot;&gt;&lt;/i&gt; exporting&lt;/font&gt;');
+
+	// set up api call parameters
+	var url = this.collection.url;
+	var params = {q: this.collection.q_param,
+            l:0,
+            s:this.collection.s_param};
+
+        // grab column header names
+        var headers = _.pluck(this.columns,'label').join('\t');
+
+        // grab column data names
+        var names = _.pluck(this.columns,'name');
+
+        // make a JSON API call to grab data for the table
+	$.getJSON(url,params,function(res){
+		var lines = [headers];
+		res.forEach(function(r){
+			var line_data = [];
+			// for each data name in the table, grab the data. translate html
+			// content to plain text where required
+			names.forEach(function(n){
+				switch (n){
+				case &quot;pert_type_label&quot;:
+					line_data.push(Barista.CMapPertTypeAlias(r[&quot;pert_type&quot;]).acronym);
+					break;
+				case &quot;view_result_link&quot;:
+					line_data.push(r[&quot;standard_result&quot;]);
+					break;
+				case &quot;rpt&quot;:
+					line_data.push(r.params.rpt);
+					break;
+				case &quot;tool_id&quot;:
+					line_data.push(r.params.tool_id);
+					break;
+				case &quot;date&quot;:
+					line_data.push(String(new Date(parseInt(r[&quot;_id&quot;].substring(0,8), 16)*1000)));
+					break
+				default:
+					line_data.push(String(r[n]));
+				}
+			});
+			line_string = line_data.join('\t');
+			lines.push(line_string);
+		});
+		var lines_string = lines.join(&quot;\n&quot;);
+		var blob = new Blob([lines_string], {type: &quot;text/plain;charset=utf-8&quot;});
+		var timestamp = new Date().getTime();
+		saveAs(blob, &quot;CMapTable&quot; + timestamp + &quot;.txt&quot;);
+		$(&quot;#&quot; + self.div_string + &quot;_download&quot;,self.el).html('&lt;font color=&quot;#0072B2&quot;&gt;&lt;i class=&quot;icon-share&quot;&gt;&lt;/i&gt; export table&lt;/font&gt;');
+	});
+},
+
+/**
+ * open up a column to show editing buttons
+ */
+open_edit_table: function(){
+	var self = this;
+	console.log(&quot;opening edit&quot;);
+	this.grid.columns.unshift(({name: &quot;edit&quot;, label: &quot;Edit&quot;, cell: Barista.HTMLCell, editable: false}));
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).html('&lt;font color=&quot;#e51c23&quot;&gt;&lt;i class=&quot;fa fa-times-circle&quot;&gt;&lt;/i&gt; done editing &lt;/font&gt;');
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).unbind();
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).click(function(){self.close_edit_table();});
+},
+
+/**
+ * close column showing editing buttons
+ */
+close_edit_table: function(){
+	var self = this;
+	var idCol = this.grid.columns.where({ name: &quot;edit&quot; });
+	this.grid.removeColumn(idCol);
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).html('&lt;font color=&quot;#e51c23&quot;&gt;&lt;i class=&quot;fa fa-times-circle&quot;&gt;&lt;/i&gt; edit &lt;/font&gt;');
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).unbind();
+	$(&quot;#&quot; + this.div_string + &quot;_edit&quot;,this.el).click(function(){self.open_edit_table();});
+},
+
+/**
+ * hides the view by dimming the opacity and hiding it in the DOM
+ * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+ * pert_detail_view.hide(duration);
+ */
+hide: function(duration){
+	var self = this;
+	this.$el.animate({opacity:0},duration);
+	setTimeout(function(){self.$el.hide();},duration);
+},
+
+/**
+ * shows the view by brightening the opacity and showing it in the DOM
+ * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+ * pert_detail_view.show(duration);
+ */
+show: function(duration){
+	this.$el.show();
+	this.$el.animate({opacity:1},duration);
+}
+});</code></pre>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p>Documentation generated with <a href="https://github.com/FGRibreau/doxx">Doxx </a> created by <a href="https://twitter.com/FGRibreau" data-show-count="false" class="twitter-follow-button">Francois-Guillaume Ribreau </a></p>
+        <p>Doxx is sponsored by <a href="http://bringr.net/?btt" title="Outil d'analyse des réseaux sociaux" class="bringr">Bringr </a> and <a href="https://redsmin.com/?btt" title="Full Redis GUI" class="redsmin">Redsmin</a></p>
+        <p>Theme borrowed from Twitter Bootstrap</p>
+      </div>
+    </footer>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="http://leaverou.github.com/prefixfree/prefixfree.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-affix.js"></script>
+    <script>
+      /**
+       * Prism: Lightweight, robust, elegant syntax highlighting
+       * MIT license http://www.opensource.org/licenses/mit-license.php/
+       * @author Lea Verou http://lea.verou.me
+       */(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]"){for(var r=0;r<e.length;r++)e[r]=n.stringify(e[r]);return e.join("")}var i={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};i.type=="comment"&&(i.attributes.spellcheck="true");t.hooks.run("wrap",i);var s="";for(var o in i.attributes)s+=o+'="'+(i.attributes[o]||"")+'"';return"<"+i.tag+' class="'+i.classes.join(" ")+'" '+s+">"+i.content+"</"+i.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));self.close()},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+      Prism.languages.markup={comment:/&lt;!--[\w\W]*?--(&gt;|&gt;)/g,prolog:/&lt;\?.+?\?&gt;/,doctype:/&lt;!DOCTYPE.+?&gt;/,cdata:/&lt;!\[CDATA\[[\w\W]+?]]&gt;/i,tag:{pattern:/&lt;\/?[\w:-]+\s*(?:\s+[\w:-]+(?:=(?:("|')(\\?[\w\W])*?\1|\w+))?\s*)*\/?&gt;/gi,inside:{tag:{pattern:/^&lt;\/?[\w:-]+/i,inside:{punctuation:/^&lt;\/?/,namespace:/^[\w-]+?:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/gi,inside:{punctuation:/=|&gt;|"/g}},punctuation:/\/?&gt;/g,"attr-name":{pattern:/[\w:-]+/g,inside:{namespace:/^[\w-]+?:/}}}},entity:/&amp;#?[\da-z]{1,8};/gi};Prism.hooks.add("wrap",function(e){e.type==="entity"&&(e.attributes.title=e.content.replace(/&amp;/,"&"))});;
+      Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.css}}});;
+      Prism.languages.clike={comment:{pattern:/(^|[^\\])(\/\*[\w\W]*?\*\/|\/\/.*?(\r?\n|$))/g,lookbehind:!0},string:/("|')(\\?.)*?\1/g,keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|catch|finally|null|break|continue)\b/g,"boolean":/\b(true|false)\b/g,number:/\b-?(0x)?\d*\.?[\da-f]+\b/g,operator:/[-+]{1,2}|!|=?&lt;|=?&gt;|={1,2}|(&amp;){1,2}|\|?\||\?|\*|\//g,ignore:/&(lt|gt|amp);/gi,punctuation:/[{}[\];(),.:]/g};;
+      Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(var|let|if|else|while|do|for|return|in|instanceof|function|new|with|typeof|try|catch|finally|null|break|continue)\b/g,number:/\b(-?(0x)?\d*\.?[\da-f]+|NaN|-?Infinity)\b/g});Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/g,lookbehind:!0}});Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/script(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)script[\w\W]*?(>|&gt;)|(&lt;|<)\/script(>|&gt;)/ig,inside:Prism.languages.markup.tag.inside},rest:Prism.languages.javascript}}});;
+    </script>
+    <!-- App js-->
+    <script>
+      $(function(){
+        var $window = $(window);
+        $('.scrollspy .nav').affix({
+          offset: {
+            top: function () { return $window.width() <= 980 ? 480 : 400 }
+          , bottom: 50
+          }
+        });
+      })
+    </script>
+  </body>
+</html>
