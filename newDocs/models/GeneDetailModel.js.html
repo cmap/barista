@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GeneDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -234,9 +232,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   cell_id: [],
   clone_name: null,
   has_kd: false,
@@ -255,8 +252,7 @@
   target_region: null,
   target_seq: null,
   vector_id: null
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="kd_fields">
             <h1>kd_fields</h1>
             <h5 class="subheader"></h5>
@@ -264,10 +260,8 @@
               <div class="label label-success radius ctx-type">property</div><span>kd_fields</span>
             </p>
           </section>
-          <div class="description"><p>kd specific model fields</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre>
-          </button>
+          <div class="description"><p>kd specific model fields</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre></span>
           <section id="array_fields">
             <h1>array_fields</h1>
             <h5 class="subheader"></h5>
@@ -275,10 +269,8 @@
               <div class="label label-success radius ctx-type">property</div><span>array_fields</span>
             </p>
           </section>
-          <div class="description"><p>fields that are arrays</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre>
-          </button>
+          <div class="description"><p>fields that are arrays</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -302,9 +294,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
+          <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -361,8 +352,7 @@
         }
       });
       return deferred;
-  },</code></pre>
-          </button>
+  },</code></pre></span>
           <section id="fetch_pert_type">
             <h1>fetch_pert_type</h1>
             <h5 class="subheader"></h5>
@@ -391,9 +381,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
+          <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
     // set up a deferred object that we can use in the fetch function above
     var deferred = $.Deferred();
 
@@ -420,8 +409,7 @@
 
     return deferred;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

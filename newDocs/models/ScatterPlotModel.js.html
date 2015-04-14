@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.ScatterPlotModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -239,9 +237,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set of model defaults</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set of model defaults</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	x_axis_title: &quot;&quot;,
 	y_axis_title: &quot;&quot;,
@@ -249,8 +246,7 @@
 	y_data: [],
 	meta_data: {}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

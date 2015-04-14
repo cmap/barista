@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -208,10 +208,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -219,10 +217,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -230,10 +226,8 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre>
-          </button>
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -241,9 +235,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
 
@@ -286,8 +279,7 @@
 	// bind window resize events to redraw
 	var self = this;
 	$(window).resize(function() {self.render();} );
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="compile_template">
             <h1>compile_template</h1>
             <h5 class="subheader"></h5>
@@ -295,15 +287,13 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
 											height: this.plot_height}));
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -311,9 +301,8 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>draw the view from scratch</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>draw the view from scratch</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -384,8 +373,7 @@
         this.nodes.call(this.force.drag());
 
 	// reset a dampening variable for simulation
-	this.damp = 0.1;</code></pre>
-          </button>
+	this.damp = 0.1;</code></pre></span>
           <section id="tick">
             <h1>tick</h1>
             <h5 class="subheader"></h5>
@@ -409,17 +397,15 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">function tick(e){
+          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
                 .attr(&quot;cy&quot;, function(d) {return d.y;})
                 // .attr(&quot;r&quot;,function(d){return self.data_scale(d.count);});
 
         }
-	},</code></pre>
-          </button>
+	},</code></pre></span>
           <section id="vertical_split">
             <h1>vertical_split</h1>
             <h5 class="subheader"></h5>
@@ -443,9 +429,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>push bubbles vertically based on an attribute property</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">vertical_split: function(alpha){
+          <div class="description"><p>push bubbles vertically based on an attribute property</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">vertical_split: function(alpha){
 	var self = this;
 	//select all circles on the page
 	bubble_selection = this.vis.selectAll('circle');
@@ -486,8 +471,7 @@
 				return (d.x);
 			}
 		});
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="update">
             <h1>update</h1>
             <h5 class="subheader"></h5>
@@ -495,9 +479,8 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the plot with new data</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+          <div class="description"><p>update the plot with new data</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -554,8 +537,7 @@
 
 	// specify the nodes selection so we don't have to repeat the selection on each tick
         this.nodes = this.vis.selectAll(&quot;circle&quot;);
-        this.nodes.call(this.force.drag());</code></pre>
-          </button>
+        this.nodes.call(this.force.drag());</code></pre></span>
           <section id="tick">
             <h1>tick</h1>
             <h5 class="subheader"></h5>
@@ -579,9 +561,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">function tick(e){
+          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
                 .attr(&quot;cy&quot;, function(d) {return d.y;})
@@ -590,8 +571,7 @@
         }
 
 	}
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

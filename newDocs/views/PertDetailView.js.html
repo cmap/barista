@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -208,10 +208,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -219,10 +217,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertDetailView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;PertDetailView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -230,10 +226,8 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertDetailModel(),</code></pre>
-          </button>
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertDetailModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -241,9 +235,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// set up the plot height
 	this.options.plot_height = 260;
@@ -259,8 +252,7 @@
 		self.base_initialize();
 	});
 
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -268,9 +260,8 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// keep track of our scope at this level
 	var self = this;
 
@@ -918,8 +909,7 @@ clear_summary: function(){
 clear_label_and_text: function(){
 	this.fg_layer.selectAll('.label_and_text').data([]).exit().remove();
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -203,9 +203,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>utility function to grab url parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.getQueryVariable = function(variable)
+          <div class="description"><p>utility function to grab url parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.getQueryVariable = function(variable)
 {
        var query = window.location.search.substring(1);
        var vars = query.split(&quot;&amp;&quot;);
@@ -214,8 +213,7 @@
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
-}</code></pre>
-          </button>
+}</code></pre></span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -228,10 +228,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -239,10 +237,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -250,10 +246,8 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre>
-          </button>
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -261,9 +255,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -317,8 +310,7 @@
 	// bind window resize events to redraw.
 	var self = this;
 	$(window).resize(function() {self.redraw();} );
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="compile_template">
             <h1>compile_template</h1>
             <h5 class="subheader"></h5>
@@ -326,15 +318,13 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
 											height: this.plot_height}));
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="redraw">
             <h1>redraw</h1>
             <h5 class="subheader"></h5>
@@ -342,13 +332,11 @@
               <div class="label label-info radius ctx-type">method</div><span>redraw()</span>
             </p>
           </section>
-          <div class="description"><p>completely redraw the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+          <div class="description"><p>completely redraw the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="init_panel">
             <h1>init_panel</h1>
             <h5 class="subheader"></h5>
@@ -356,9 +344,8 @@
               <div class="label label-info radius ctx-type">method</div><span>init_panel()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_panel: function(){
+          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -473,8 +460,7 @@
 		.on(&quot;mouseover&quot;,function(){d3.select(this).transition().duration(500).attr(&quot;opacity&quot;,1).attr(&quot;fill&quot;,&quot;#56B4E9&quot;);})
 		.on(&quot;mouseout&quot;,function(){d3.select(this).transition().duration(500).attr(&quot;opacity&quot;,0.25).attr(&quot;fill&quot;,&quot;#000000&quot;);})
 		.on(&quot;click&quot;,function(){self.save_png();});
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -482,9 +468,8 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic potions of the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -538,8 +523,7 @@
 		      this.textContent = Barista.numberWithCommas(Math.round(i(t)));
 		    };
 		});
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="save_png">
             <h1>save_png</h1>
             <h5 class="subheader"></h5>
@@ -547,9 +531,8 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png()</span>
             </p>
           </section>
-          <div class="description"><p>save the current state of the view into a png image</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">save_png: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;
@@ -585,8 +568,7 @@
 	// make the png label on the image visible again
 	png_selection.attr(&quot;opacity&quot;,png_opacity);
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

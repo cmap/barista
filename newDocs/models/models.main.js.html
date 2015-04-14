@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.AnalysisHistoryModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -219,9 +217,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
+          <div class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
     this.cid = this.get('_id')
     this.set(&quot;date&quot;, new Date(parseInt(this.cid.substring(0,8), 16)*1000));
     this.set(&quot;rpt&quot;,this.get(&quot;params&quot;).rpt);
@@ -232,8 +229,7 @@
     }
     this.set({edit: '&lt;i class=&quot;fa fa-times-circle cmap-grid-delete-button&quot; onclick=&quot;Backbone.trigger(' + &quot;'AnalysisHistoryModel:delete'&quot; + ',' + &quot;'&quot; +  this.get(&quot;job_id&quot;) + &quot;'&quot; + ')&quot;&gt;&lt;/i&gt;'});
   }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="BarPlotModel">
             <h1>BarPlotModel</h1>
             <h5 class="subheader"></h5>
@@ -242,10 +238,8 @@
             </p>
           </section>
           <div class="description"><p>A Backbone.Model to hold the information needed to make a simple bar plot<br />The model includes a title, axis title, data, data_labels, and an optional object for metadata on the<br />points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}</p><p>   usage:</p><pre><code>    summly_result = new SummlyResultModel();
-</code></pre> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.BarPlotModel = Backbone.Model.extend({</code></pre>
-          </button>
+</code></pre> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.BarPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -289,17 +283,15 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set of model defaults</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set of model defaults</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	axis_title: &quot;&quot;,
 	data: [],
 	data_labels: [],
 	meta_data: {}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="CellCountModel">
             <h1>CellCountModel</h1>
             <h5 class="subheader"></h5>
@@ -323,10 +315,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -360,15 +350,13 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   count: 0,
   pert_types: [{}],
   g: &quot;cell_type&quot;,
   last_update: (new Date()).getTime()
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -397,9 +385,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the pert_params for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -459,8 +446,7 @@
     });
    }
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="CellModel">
             <h1>CellModel</h1>
             <h5 class="subheader"></h5>
@@ -468,10 +454,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CellModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a cell line<br /><code>pert_model = new CellModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.CellModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a cell line<br /><code>pert_model = new CellModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CellModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -500,13 +484,11 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to set the model&#39;s cid to the cell_id of the perturbagen</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
+          <div class="description"><p>Overides the base Model&#39;s initialize method to set the model&#39;s cid to the cell_id of the perturbagen</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('cell_id');
   }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="CompoundDetailModel">
             <h1>CompoundDetailModel</h1>
             <h5 class="subheader"></h5>
@@ -514,10 +496,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CompoundDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -561,9 +541,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   pert_id: &quot;&quot;,
   pert_iname: &quot;&quot;,
   pert_summary: null,
@@ -577,8 +556,7 @@
   cell_id: [],
   inchi_key: &quot;&quot;,
   structure_url: &quot;&quot;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -602,9 +580,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
+          <div class="description"><p>fetches new data from the pert_info api</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -693,8 +670,7 @@
   });
   return deferred;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="GeneDetailModel">
             <h1>GeneDetailModel</h1>
             <h5 class="subheader"></h5>
@@ -702,10 +678,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GeneDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -749,9 +723,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   cell_id: [],
   clone_name: null,
   has_kd: false,
@@ -770,8 +743,7 @@
   target_region: null,
   target_seq: null,
   vector_id: null
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="kd_fields">
             <h1>kd_fields</h1>
             <h5 class="subheader"></h5>
@@ -779,10 +751,8 @@
               <div class="label label-success radius ctx-type">property</div><span>kd_fields</span>
             </p>
           </section>
-          <div class="description"><p>kd specific model fields</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre>
-          </button>
+          <div class="description"><p>kd specific model fields</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre></span>
           <section id="array_fields">
             <h1>array_fields</h1>
             <h5 class="subheader"></h5>
@@ -790,10 +760,8 @@
               <div class="label label-success radius ctx-type">property</div><span>array_fields</span>
             </p>
           </section>
-          <div class="description"><p>fields that are arrays</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre>
-          </button>
+          <div class="description"><p>fields that are arrays</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -817,9 +785,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
+          <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -876,8 +843,7 @@
         }
       });
       return deferred;
-  },</code></pre>
-          </button>
+  },</code></pre></span>
           <section id="fetch_pert_type">
             <h1>fetch_pert_type</h1>
             <h5 class="subheader"></h5>
@@ -906,9 +872,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
+          <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
     // set up a deferred object that we can use in the fetch function above
     var deferred = $.Deferred();
 
@@ -935,8 +900,7 @@
 
     return deferred;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="GenericCountModel">
             <h1>GenericCountModel</h1>
             <h5 class="subheader"></h5>
@@ -965,15 +929,13 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
+          <div class="description"><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
   defaults:{
     count:0,
 
-  },</code></pre>
-          </button>
+  },</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -981,12 +943,10 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
+          <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="setListeners">
             <h1>setListeners</h1>
             <h5 class="subheader"></h5>
@@ -994,9 +954,8 @@
               <div class="label label-info radius ctx-type">method</div><span>setListeners()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setListeners: function() {
+          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
   if (source) {
     this.listenTo(source,'update',function(){
@@ -1010,8 +969,7 @@
 }
 });
 
-Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
-          </button>
+Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1019,12 +977,10 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
+          <div class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="setKey">
             <h1>setKey</h1>
             <h5 class="subheader"></h5>
@@ -1032,9 +988,8 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
               <div class="label label-info radius ctx-type">method</div><span>setKey()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setKey: function() {
+          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
   this.url = 'http://10.125.171.42:8080/' + key;
 },
@@ -1078,8 +1033,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
       this.cid = this.get('_id')
       this.set(&quot;date&quot;, new Date(parseInt(this.cid.substring(0,8), 16)*1000));
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="HeatmapModel">
             <h1>HeatmapModel</h1>
             <h5 class="subheader"></h5>
@@ -1129,10 +1083,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
-</code></pre><p>optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre>
-          </button>
+</code></pre><p>optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1176,9 +1128,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set up defaults for model values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	data: [[1,2],[3,4]],
 	rid: ['1','2'],
 	cid: ['1','2'],
@@ -1186,8 +1137,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 	title: &quot;&quot;,
 	last_update: (new Date()).getTime()
 }
-})</code></pre>
-          </button>
+})</code></pre></span>
           <section id="PertCellBreakdownModel">
             <h1>PertCellBreakdownModel</h1>
             <h5 class="subheader"></h5>
@@ -1195,10 +1145,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertCellBreakdownModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1227,13 +1175,11 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   &quot;filter&quot;: &quot;&quot;,
   &quot;tree_object&quot;: {children:[]}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -1262,9 +1208,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1298,8 +1243,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
     self.set({tree_object: {name:&quot;root&quot;, children:children}, last_update: t});
   });
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="PertCountModel">
             <h1>PertCountModel</h1>
             <h5 class="subheader"></h5>
@@ -1323,10 +1267,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set of perturbagens<br />The data model captures both the total count of perturbagens that meet a search criteria and the count<br />of each annotation category for the set of perturbagens<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.PertCountModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the count of a set of perturbagens<br />The data model captures both the total count of perturbagens that meet a search criteria and the count<br />of each annotation category for the set of perturbagens<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1370,16 +1312,14 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_cp&quot;]',
   &quot;count&quot;: 0,
   &quot;pert_types&quot;: [{}],
   &quot;pert_type_field&quot;: &quot;pert_icollection&quot;,
   &quot;last_update&quot;: (new Date()).getTime()
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -1408,9 +1348,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div class="description"><p>fetches new data from the pert_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1445,8 +1384,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
     });
   });
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="PertDetailModel">
             <h1>PertDetailModel</h1>
             <h5 class="subheader"></h5>
@@ -1454,10 +1392,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1465,9 +1401,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   cell_id: [],
   num_gold: null,
   num_inst: null,
@@ -1477,8 +1412,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   pert_type: null,
   sig_id: [],
   sig_id_gold: []
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="compound_sub_model">
             <h1>compound_sub_model</h1>
             <h5 class="subheader"></h5>
@@ -1486,10 +1420,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>compound_sub_model</span>
             </p>
           </section>
-          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre>
-          </button>
+          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
           <section id="gene_sub_model">
             <h1>gene_sub_model</h1>
             <h5 class="subheader"></h5>
@@ -1497,10 +1429,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>gene_sub_model</span>
             </p>
           </section>
-          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre>
-          </button>
+          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -1529,9 +1459,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string, model_type){
+          <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string, model_type){
     var self = this;
     var deferred = $.Deferred();
     switch (model_type){
@@ -1550,8 +1479,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
     }
     return deferred;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="PertModel">
             <h1>PertModel</h1>
             <h5 class="subheader"></h5>
@@ -1559,10 +1487,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single perturbagen<br /><code>pert_model = new PertModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.PertModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single perturbagen<br /><code>pert_model = new PertModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1591,9 +1517,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overrides the base Model&#39;s initialize method to set the model&#39;s cid to the pert_id of the perturbagen</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
+          <div class="description"><p>Overrides the base Model&#39;s initialize method to set the model&#39;s cid to the pert_id of the perturbagen</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('pert_id');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){
@@ -1603,8 +1528,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 		default: this.set({pert_type_label: '&lt;span class=&quot;label&quot; style=&quot;background-color: #BDBDBD&quot;&gt;' + pert_type + '&lt;/span&gt;'});
 	}
   }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="ScatterPlotModel">
             <h1>ScatterPlotModel</h1>
             <h5 class="subheader"></h5>
@@ -1612,10 +1536,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.ScatterPlotModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1664,9 +1586,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set of model defaults</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set of model defaults</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	x_axis_title: &quot;&quot;,
 	y_axis_title: &quot;&quot;,
@@ -1674,8 +1595,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 	y_data: [],
 	meta_data: {}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="SigCountModel">
             <h1>SigCountModel</h1>
             <h5 class="subheader"></h5>
@@ -1699,10 +1619,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set of signatures<br />he data model captures both the total count of signatures that meet a search criteria and the count of<br />each annotation category for the set of signatures<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.SigCountModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the count of a set of signatures<br />he data model captures both the total count of signatures that meet a search criteria and the count of<br />each annotation category for the set of signatures<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SigCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1746,16 +1664,14 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_oe.mut&quot;]',
   &quot;count&quot;: 0,
   &quot;pert_types&quot;: [{}],
   &quot;pert_type_field&quot;: &quot;pert_icollection&quot;,
   &quot;last_update&quot;: (new Date()).getTime()
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -1784,9 +1700,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the sig_info api<br />the count and sig_types data is replaced with new data coming from the api call</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div class="description"><p>fetches new data from the sig_info api<br />the count and sig_types data is replaced with new data coming from the api call</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1821,8 +1736,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
     });
   });
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="SignatureModel">
             <h1>SignatureModel</h1>
             <h5 class="subheader"></h5>
@@ -1830,10 +1744,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SignatureModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single signature<br /><code>pert_model = new SignatureModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.SignatureModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single signature<br /><code>pert_model = new SignatureModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SignatureModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1862,9 +1774,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the sig_id of the perturbagen</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes, options) {
+          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the sig_id of the perturbagen</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
 	// set the unique collection identifier to match the sig_id
 	this.cid = this.get('sig_id');
 	
@@ -1885,8 +1796,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 		this.set({is_gold_label: '&lt;span class=&quot;label&quot;&gt;Not Gold&lt;/span&gt;'});
 	}
   }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="SummlyResultModel">
             <h1>SummlyResultModel</h1>
             <h5 class="subheader"></h5>
@@ -1894,10 +1804,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SummlyResultModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -1946,17 +1854,15 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set up defaults for model values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
 	target: &quot;&quot;,
 	summly_score: -666,
 	summly_rank: -666,
 	specificity: -666,
 	cell_line_scores: {}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1985,9 +1891,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes,options){
+          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){
@@ -1997,8 +1902,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 		default: this.set({pert_type_label: '&lt;span class=&quot;label&quot;&gt;' + pert_type + '&lt;/span&gt;'});
 	}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="TickModel">
             <h1>TickModel</h1>
             <h5 class="subheader"></h5>
@@ -2007,10 +1911,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </p>
           </section>
           <div class="description"><p>A Backbone.Model that represents the data required to build a CMapTickView<br />The model contains a data object that has keys for each row to display in the view and array values for<br />each tick to display in each row<br />An example data object might look like this:</p><pre><code>        {PC3: [.23,-.28], MCF7: [-0.6]}
-</code></pre><p>example usage:<br />tick_model = new TickModel();</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.TickModel = Backbone.Model.extend({</code></pre>
-          </button>
+</code></pre><p>example usage:<br />tick_model = new TickModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.TickModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -2039,14 +1941,12 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set up defaults for model values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	data_object: {}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="SequenceModel">
             <h1>SequenceModel</h1>
             <h5 class="subheader"></h5>
@@ -2054,10 +1954,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SequenceModel</span>
             </p>
           </section>
-          <div class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -2065,14 +1963,12 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div class="description"><p>the default options for the model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>the default options for the model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   sequence: '',
   displaySequence: '',
   modifications: new Backbone.Collection()
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -2080,12 +1976,10 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the model to listen to its own model changes</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function() {
+          <div class="description"><p>initialize the model to listen to its own model changes</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function() {
   this.listenTo(this, 'change:sequence', this.parseSequence);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="parseSequence">
             <h1>parseSequence</h1>
             <h5 class="subheader"></h5>
@@ -2093,9 +1987,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               <div class="label label-info radius ctx-type">method</div><span>parseSequence()</span>
             </p>
           </section>
-          <div class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">parseSequence: function() {
+          <div class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">parseSequence: function() {
   var sequence = this.get('sequence'),
       modifications = this.get('modifications'),
       indices = [],
@@ -2131,8 +2024,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   // set the derived attributes on the model
   this.set({'modifications': modifications, 'displaySequence': sequence});
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

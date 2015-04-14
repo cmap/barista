@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -203,9 +203,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to convert standard perturbagen type descriptors into more human friendly strings<br />Given an input type string, an object is returned with field names of &#39;name&#39; and &#39;acronym&#39;<br />If the passed string is not a recoqnized type, the &#39;name&#39; and &#39;acronym&#39; fields are set to the passed<br />string</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.CMapPertTypeAlias = function(input_type){
+          <div class="description"><p>a utility function to convert standard perturbagen type descriptors into more human friendly strings<br />Given an input type string, an object is returned with field names of &#39;name&#39; and &#39;acronym&#39;<br />If the passed string is not a recoqnized type, the &#39;name&#39; and &#39;acronym&#39; fields are set to the passed<br />string</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.CMapPertTypeAlias = function(input_type){
 	switch(input_type){
 		case &quot;trt_cp&quot;:
 			return {name: &quot;small molecule compound&quot;, acronym: &quot;SMC&quot;};
@@ -222,8 +221,7 @@
 		default:
 			return {name: input_type, acronym: input_type};
 	}
-};</code></pre>
-          </button>
+};</code></pre></span>
           <section id="NumbersToSubscript">
             <h1>NumbersToSubscript</h1>
             <h5 class="subheader"></h5>
@@ -247,9 +245,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility to map numbers in an input string to subscript</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.NumbersToSubscript = function(s) {
+          <div class="description"><p>a utility to map numbers in an input string to subscript</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.NumbersToSubscript = function(s) {
     if (!s){
         return s;
     }
@@ -264,8 +261,7 @@
         }
     });
     return new_s;
-}</code></pre>
-          </button>
+}</code></pre></span>
           <section id="arrayAverage">
             <h1>arrayAverage</h1>
             <h5 class="subheader"></h5>
@@ -289,14 +285,12 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to take the average of an array of numeric values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.arrayAverage = function arrayAverage (arr){
+          <div class="description"><p>a utility function to take the average of an array of numeric values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.arrayAverage = function arrayAverage (arr){
 	return _.reduce(arr, function(memo, num){
 		return memo + num;
 	}, 0) / arr.length;
-};</code></pre>
-          </button>
+};</code></pre></span>
           <section id="getEmSizeInPixels">
             <h1>getEmSizeInPixels</h1>
             <h5 class="subheader"></h5>
@@ -320,13 +314,11 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to find the size of 1em for the given element id</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.getEmSizeInPixels = function(id) {
+          <div class="description"><p>a utility function to find the size of 1em for the given element id</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.getEmSizeInPixels = function(id) {
     var el = document.body;
     return Number(getComputedStyle(el, &quot;&quot;).fontSize.match(/(\d+)px/)[1]);
-}</code></pre>
-          </button>
+}</code></pre></span>
           <section id="getQueryVariable">
             <h1>getQueryVariable</h1>
             <h5 class="subheader"></h5>
@@ -350,9 +342,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>utility function to grab url parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.getQueryVariable = function(variable)
+          <div class="description"><p>utility function to grab url parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.getQueryVariable = function(variable)
 {
        var query = window.location.search.substring(1);
        var vars = query.split(&quot;&amp;&quot;);
@@ -361,8 +352,7 @@
                if(pair[0] == variable){return pair[1];}
        }
        return(false);
-}</code></pre>
-          </button>
+}</code></pre></span>
           <section id="numberWithCommas">
             <h1>numberWithCommas</h1>
             <h5 class="subheader"></h5>
@@ -386,9 +376,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to return a number with commas every three digits</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.numberWithCommas = function(x){
+          <div class="description"><p>a utility function to return a number with commas every three digits</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.numberWithCommas = function(x){
     // first check to see if something was passed. if so, convert it
     if (x){
       if (x == 0) {
@@ -399,8 +388,7 @@
     } else {
       return '0';
     }
-};</code></pre>
-          </button>
+};</code></pre></span>
           <section id="setAPIPrefilter">
             <h1>setAPIPrefilter</h1>
             <h5 class="subheader"></h5>
@@ -424,9 +412,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.setAPIPrefilter = function(api_endpoint) {
+          <div class="description"><p>a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.setAPIPrefilter = function(api_endpoint) {
     api_endpoint = (api_endpoint !== undefined) ? api_endpoint : 'api.lincscloud.org';
     // configure ajax calls to add the user key parameter on calls to api.lincscloud.org
     $.ajaxPrefilter(function( options, originalOptions, jqXHR ){
@@ -436,8 +423,7 @@
             options.data = $.param($.extend(originalOptions.data,{user_key:Barista.user_key}));
         }
     });
-};</code></pre>
-          </button>
+};</code></pre></span>
           <section id="setAPIURL">
             <h1>setAPIURL</h1>
             <h5 class="subheader"></h5>
@@ -461,9 +447,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to set an APIURL attribute on the Barista object</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.setAPIURL = function(url) {
+          <div class="description"><p>a utility function to set an APIURL attribute on the Barista object</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.setAPIURL = function(url) {
     url = (url !== undefined) ? url : '//api.lincscloud.org';
     // truncate explicit protocols
     url.replace('https://','//');
@@ -498,8 +483,7 @@ Barista.setUserKey = function(key) {
 		Barista.user_key = key;
 		return null;
 	});
-};</code></pre>
-          </button>
+};</code></pre></span>
         </div>
       </div>
     </div>

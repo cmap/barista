@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SummlyResultModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -239,17 +237,15 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set up defaults for model values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
 	target: &quot;&quot;,
 	summly_score: -666,
 	summly_rank: -666,
 	specificity: -666,
 	cell_line_scores: {}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -278,9 +274,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(attributes,options){
+          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){
@@ -290,8 +285,7 @@
 		default: this.set({pert_type_label: '&lt;span class=&quot;label&quot;&gt;' + pert_type + '&lt;/span&gt;'});
 	}
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

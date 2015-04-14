@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -180,9 +180,8 @@
           <!--removed scrollspy-->
         </div>
         <div class="span9">
-          <div class="description"> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">//wrap all of our afterword code so we keep the global namespace clean.  All 'global' variables
+          <div class="description"> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">//wrap all of our afterword code so we keep the global namespace clean.  All 'global' variables
 //will be exposed in the Barista object
 (function (){
 
@@ -246,8 +245,7 @@
             });
         }
     });
-}());</code></pre>
-          </button>
+}());</code></pre></span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.SequenceView</span>
             </p>
           </section>
-          <div class="description"><p>A view the displays both sequence structure and modifications</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre>
-          </button>
+          <div class="description"><p>A view the displays both sequence structure and modifications</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -198,10 +196,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -209,10 +205,8 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the default model for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre>
-          </button>
+          <div class="description"><p>the default model for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -220,9 +214,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>Overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>Overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
   // set up modification colors
   this.modificationColors = (this.options.modificationColors !== undefined) ? this.options.modificationColors : undefined;
   if (this.modificationColors === undefined) {
@@ -241,8 +234,7 @@
   // add a class to denote the widget type
   var $div = $(&quot;#&quot; + this.div_string);
   $div.addClass(&quot;barista-sequence-view&quot;);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -250,9 +242,8 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span> -><span>SequenceView</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
   var self = this;
   // call BaristaBaseView's render function first so we can layer on top of it
   this.base_render();
@@ -270,8 +261,7 @@
   this.setupZoom();
 
   return this;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="update">
             <h1>update</h1>
             <h5 class="subheader"></h5>
@@ -279,14 +269,12 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span> -><span>SequenceView</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic potions of the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
   this.render();
 
   return this;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="getRenderLength">
             <h1>getRenderLength</h1>
             <h5 class="subheader"></h5>
@@ -294,16 +282,14 @@
               <div class="label label-info radius ctx-type">method</div><span>getRenderLength()</span> -><span>float</span>
             </p>
           </section>
-          <div class="description"><p>calculate the length of the sequence in pixels</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">getRenderLength: function() {
+          <div class="description"><p>calculate the length of the sequence in pixels</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">getRenderLength: function() {
   if (this.sequenceUnitSize * this.model.get('displaySequence').length &gt; this.width - 20) {
     return this.width -20;
   }
   return this.sequenceUnitSize * this.model.get('displaySequence').length;
 
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="renderSequenceLine">
             <h1>renderSequenceLine</h1>
             <h5 class="subheader"></h5>
@@ -311,9 +297,8 @@
               <div class="label label-info radius ctx-type">method</div><span>renderSequenceLine()</span> -><span>SequenceView</span>
             </p>
           </section>
-          <div class="description"><p>render the line depicting the base sequence</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderSequenceLine: function() {
+          <div class="description"><p>render the line depicting the base sequence</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">renderSequenceLine: function() {
   var renderLength = this.getRenderLength();
   this.fg_layer.selectAll('.sequenceLine').data([]).exit().remove();
   this.fg_layer.selectAll('.sequenceLine').data([1]).enter()
@@ -326,8 +311,7 @@
     .attr(&quot;fill&quot;,&quot;#BFBFBF&quot;);
 
   return this;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="renderModifications">
             <h1>renderModifications</h1>
             <h5 class="subheader"></h5>
@@ -335,9 +319,8 @@
               <div class="label label-info radius ctx-type">method</div><span>renderModifications()</span>
             </p>
           </section>
-          <div class="description"><p>render the modifications on the sequence</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModifications: function() {
+          <div class="description"><p>render the modifications on the sequence</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">renderModifications: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -390,8 +373,7 @@
       .attr('font-weight', 'bold');
 
     });
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="renderModificationsText">
             <h1>renderModificationsText</h1>
             <h5 class="subheader"></h5>
@@ -399,9 +381,8 @@
               <div class="label label-info radius ctx-type">method</div><span>renderModificationsText()</span>
             </p>
           </section>
-          <div class="description"><p>renders text overlays for modifications</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModificationsText: function() {
+          <div class="description"><p>renders text overlays for modifications</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">renderModificationsText: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -429,8 +410,7 @@
     .attr('fill','white')
     .attr('font-family','Open Sans')
     .attr('font-weight', 'bold');
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="setupZoom">
             <h1>setupZoom</h1>
             <h5 class="subheader"></h5>
@@ -438,9 +418,8 @@
               <div class="label label-info radius ctx-type">method</div><span>setupZoom()</span>
             </p>
           </section>
-          <div class="description"><p>configure zoom behavior</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setupZoom: function () {
+          <div class="description"><p>configure zoom behavior</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">setupZoom: function () {
   var self = this;
   // create the zoom listener
   var zoomListener = d3.behavior.zoom()
@@ -456,8 +435,7 @@
   zoomListener(this.vis);
 }
 
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

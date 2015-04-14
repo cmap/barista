@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -283,10 +283,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />scatter_plot_view = new ScatterPlotView();<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />scatter_plot_view = new ScatterPlotView();<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -294,10 +292,8 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre>
-          </button>
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -305,9 +301,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>override the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>override the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
 	this.y_range = (this.options.y_range !== undefined) ? this.options.y_range : undefined;
@@ -347,8 +342,7 @@
 	// run BaristaBaseView's base_initialize method to handle boilerplate view construction
 	// and initial view rendering
 	this.base_initialize();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -356,14 +350,12 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="init_plot">
             <h1>init_plot</h1>
             <h5 class="subheader"></h5>
@@ -371,9 +363,8 @@
               <div class="label label-info radius ctx-type">method</div><span>init_plot()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -456,8 +447,7 @@
 		.attr(&quot;y&quot;,this.margin/2)
 		.style(&quot;text-anchor&quot;,&quot;middle&quot;)
 		.text(this.model.get('title'));
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="update">
             <h1>update</h1>
             <h5 class="subheader"></h5>
@@ -465,9 +455,8 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic potions of the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 var self = this;
 
 // get model data
@@ -514,8 +503,7 @@ this.points_selection.exit().remove();
 this.vis.selectAll('.x-axis').transition().duration(500).call(this.xAxis);
 this.vis.selectAll('.y-axis').transition().duration(500).call(this.yAxis);
 this.style_axes();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="set_ranges">
             <h1>set_ranges</h1>
             <h5 class="subheader"></h5>
@@ -523,9 +511,8 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>set_ranges()</span>
             </p>
           </section>
-          <div class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_ranges: function(){
+          <div class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">set_ranges: function(){
 	var x_data,y_data,min,max;
 	// calculate the x_range. If we need to caluclate it dynamically, check the lock and expand
 	// parameters for the axis
@@ -598,8 +585,7 @@ this.style_axes();
 			this.y_range = [0,0];
 		}
 	}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="set_scales">
             <h1>set_scales</h1>
             <h5 class="subheader"></h5>
@@ -607,9 +593,8 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>set_scales()</span>
             </p>
           </section>
-          <div class="description"><p>utility function used to get the x and y scales used in the plot</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scales: function(){
+          <div class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">set_scales: function(){
 	if (this.x_log){
 		this.x_scale=d3.scale.log().domain([this.x_range[0],this.x_range[1]]).range([this.margin, this.width - this.margin]);
 	}else{
@@ -620,8 +605,7 @@ this.style_axes();
 	}else{
 		this.y_scale=d3.scale.linear().domain([this.y_range[1],this.y_range[0]]).range([this.margin, this.height - this.margin]);
 	}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="build_axes">
             <h1>build_axes</h1>
             <h5 class="subheader"></h5>
@@ -629,17 +613,15 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>build_axes()</span>
             </p>
           </section>
-          <div class="description"><p>utility function used to build x and y axes</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_axes: function(){
+          <div class="description"><p>utility function used to build x and y axes</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">build_axes: function(){
 	this.xAxis = d3.svg.axis()
 		.scale(this.x_scale)
 		.orient(&quot;bottom&quot;);
 	this.yAxis = d3.svg.axis()
 		.scale(this.y_scale)
 		.orient(&quot;left&quot;);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="set_scaling_function">
             <h1>set_scaling_function</h1>
             <h5 class="subheader"></h5>
@@ -647,9 +629,8 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>set_scaling_function()</span>
             </p>
           </section>
-          <div class="description"><p>utility function to compute a radius scaling funciton to use in plots</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scaling_function: function(){
+          <div class="description"><p>utility function to compute a radius scaling funciton to use in plots</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">set_scaling_function: function(){
 	var self = this;
 	if (this.scale_by !== undefined){
 		this.scale_data = this.model.get('meta_data')[this.scale_by];
@@ -661,8 +642,7 @@ this.style_axes();
 			return self.size_scale(r);
 		};
 	}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="style_axes">
             <h1>style_axes</h1>
             <h5 class="subheader"></h5>
@@ -670,9 +650,8 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>style_axes()</span>
             </p>
           </section>
-          <div class="description"><p>utility function to apply custom styles to axis components</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">style_axes: function(){
+          <div class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)
@@ -687,8 +666,7 @@ this.style_axes();
 		.style(&quot;font-family&quot;,&quot;sans-serif&quot;)
 		.style(&quot;font-size&quot;,&quot;11px&quot;);
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

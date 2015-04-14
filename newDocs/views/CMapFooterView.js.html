@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -223,10 +223,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CMapFooterView = Backbone.View.extend({</code></pre>
-          </button>
+          <div class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.CMapFooterView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -234,10 +232,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CMapFooterView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;CMapFooterView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -245,9 +241,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// store passed parameters as attributes of the view
 	this.organization = (this.options.organization !== undefined) ? this.options.organization : &quot;Broad Institute&quot;;
 	this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : &quot;/terms&quot;;
@@ -260,8 +255,7 @@
 
 	// render the template
 	this.render();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="compile_template">
             <h1>compile_template</h1>
             <h5 class="subheader"></h5>
@@ -269,9 +263,8 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the specified template for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+          <div class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapFooter;
 
@@ -285,8 +278,7 @@
 									logo_objects: logo_objects,
 									year: new Date().getFullYear()}));
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -203,9 +203,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to set a user_key attribute on the Barista object and set up ajax calls to<br />api.lincscloud.org to pass that user_key as a parameter</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.setUserKey = function(key) {
+          <div class="description"><p>a utility function to set a user_key attribute on the Barista object and set up ajax calls to<br />api.lincscloud.org to pass that user_key as a parameter</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.setUserKey = function(key) {
 	Barista.setAPIPrefilter();
 
 	// grab the user_key from the url given by string passed in 'key' or set the string itself
@@ -220,8 +219,7 @@
 		Barista.user_key = key;
 		return null;
 	});
-};</code></pre>
-          </button>
+};</code></pre></span>
         </div>
       </div>
     </div>

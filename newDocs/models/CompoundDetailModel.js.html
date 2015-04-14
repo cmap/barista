@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CompoundDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -234,9 +232,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   pert_id: &quot;&quot;,
   pert_iname: &quot;&quot;,
   pert_summary: null,
@@ -250,8 +247,7 @@
   cell_id: [],
   inchi_key: &quot;&quot;,
   structure_url: &quot;&quot;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -275,9 +271,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string){
+          <div class="description"><p>fetches new data from the pert_info api</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -366,8 +361,7 @@
   });
   return deferred;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

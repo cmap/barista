@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -188,9 +188,7 @@
    columns: this.columns,
    collection: this.collection
  });
-</code></pre> </div>
-          <button>CLICK TO TOGGLE CODE
-          </button>
+</code></pre> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE</span>
           <section id="HTMLFormatter">
             <h1>HTMLFormatter</h1>
             <h5 class="subheader"></h5>
@@ -198,12 +196,10 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.HTMLFormatter</span>
             </p>
           </section>
-          <div class="description"><p>A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the<br />string version of the raw input</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
+          <div class="description"><p>A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the<br />string version of the raw input</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
 Barista.HTMLFormatter.prototype = new Backgrid.CellFormatter();
-_.extend(Barista.HTMLFormatter.prototype, {</code></pre>
-          </button>
+_.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
           <section id="fromRaw">
             <h1>fromRaw</h1>
             <h5 class="subheader"></h5>
@@ -227,14 +223,12 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the raw input value</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fromRaw: function (rawValue) {
+          <div class="description"><p>returns the raw input value</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fromRaw: function (rawValue) {
   if (_.isUndefined(rawValue) || _.isNull(rawValue)) return '';
   return rawValue;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
           <section id="HTMLCell">
             <h1>HTMLCell</h1>
             <h5 class="subheader"></h5>
@@ -242,12 +236,10 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre>
               <div class="label label-success radius ctx-type">property</div><span>Barista.HTMLCell</span>
             </p>
           </section>
-          <div class="description"><p>An extension of Backgrid.Cell to render raw html content into the target element of the cell</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
+          <div class="description"><p>An extension of Backgrid.Cell to render raw html content into the target element of the cell</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   className: &quot;html-cell&quot;,
-  formatter: new Barista.HTMLFormatter(),</code></pre>
-          </button>
+  formatter: new Barista.HTMLFormatter(),</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -255,14 +247,12 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>renders the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function () {
+          <div class="description"><p>renders the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function () {
   this.$el.html(this.formatter.fromRaw(this.model.get(this.column.get(&quot;name&quot;))));
   return this;
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

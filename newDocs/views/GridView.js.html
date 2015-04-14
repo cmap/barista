@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre>
-          </button>
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -198,9 +196,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overrides the default Backbone.View initialize method</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// default search value
 	this.search_val = &quot;&quot;;
@@ -232,8 +229,7 @@
 	var ClickableRow = Backgrid.Row.extend({
 		events: {
 			&quot;click&quot;: &quot;onClick&quot;
-		},</code></pre>
-          </button>
+		},</code></pre></span>
           <section id="onClick">
             <h1>onClick</h1>
             <h5 class="subheader"></h5>
@@ -241,12 +237,10 @@
               <div class="label label-info radius ctx-type">method</div><span>onClick()</span>
             </p>
           </section>
-          <div class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">onClick: function () {
+          <div class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">onClick: function () {
 	self.trigger(&quot;grid:RowClick&quot;, this.model);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -254,9 +248,8 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function () {
+          <div class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function () {
 	this.$el.empty();
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i &lt; this.cells.length; i++) {
@@ -269,8 +262,7 @@
 	this.$el.animate({&quot;opacity&quot;:1},1000);
 
 	return this;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="remove">
             <h1>remove</h1>
             <h5 class="subheader"></h5>
@@ -278,9 +270,8 @@
               <div class="label label-info radius ctx-type">method</div><span>remove()</span>
             </p>
           </section>
-          <div class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">remove: function () {
+          <div class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">remove: function () {
 	this.$el.addClass(&quot;cmap-active-grid-row&quot;);
 	this.$el.animate({&quot;opacity&quot;:0},1000);
 	var self = this;
@@ -332,8 +323,7 @@ this.hide_scroll_to_top_button();
 this.collection.skip += this.limit;
 this.update_collection(this.search_val,this.search_type,this.limit);
 		}
-	},100),</code></pre>
-          </button>
+	},100),</code></pre></span>
           <section id="add_scroll_to_top_button">
             <h1>add_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
@@ -341,16 +331,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>add_scroll_to_top_button()</span>
             </p>
           </section>
-          <div class="description"><p>adds a UI control to scroll the top of the grid</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_scroll_to_top_button: function(){
+          <div class="description"><p>adds a UI control to scroll the top of the grid</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">add_scroll_to_top_button: function(){
 	var self = this;
 	this.scroll_to_top_button_id = this.div_string + 'scroll_button';
 	this.$el.append('&lt;button id=&quot;' + this.scroll_to_top_button_id + '&quot; class=&quot;cmap_grid_to_top_button&quot;&gt;Scroll to Top&lt;/button&gt;');
 	$(&quot;#&quot; + this.scroll_to_top_button_id).click(function(){self.scroll_to_top();});
 	this.hide_scroll_to_top_button();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="scroll_to_top">
             <h1>scroll_to_top</h1>
             <h5 class="subheader"></h5>
@@ -374,14 +362,12 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>scrolls the grid to the top of its container</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">scroll_to_top: function(duration){
+          <div class="description"><p>scrolls the grid to the top of its container</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">scroll_to_top: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.div_string).animate({scrollTop:0},duration);
 	this.hide_scroll_to_top_button();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="show_scroll_to_top_button">
             <h1>show_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
@@ -405,14 +391,12 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>scrolls the grid to the bottom of its container</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">show_scroll_to_top_button: function(duration){
+          <div class="description"><p>scrolls the grid to the bottom of its container</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">show_scroll_to_top_button: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:1},duration);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="hide_scroll_to_top_button">
             <h1>hide_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
@@ -436,15 +420,13 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>hides the scroll to top button</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
+          <div class="description"><p>hides the scroll to top button</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
 	var self= this;
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:0},duration);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="replace_collection">
             <h1>replace_collection</h1>
             <h5 class="subheader"></h5>
@@ -478,9 +460,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>changes the visible collection data and rejects the slice</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
+          <div class="description"><p>changes the visible collection data and rejects the slice</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	var self = this;
 	this.search_val = (search_val !== undefined) ? search_val : this.search_val;
@@ -504,8 +485,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 		}
 	});
 	return getData_promise;
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="update_collection">
             <h1>update_collection</h1>
             <h5 class="subheader"></h5>
@@ -539,9 +519,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>changes the visible collection data</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
+          <div class="description"><p>changes the visible collection data</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	if (this.collection.models.length &lt; this.collection.maxCount){
 		var self = this;
@@ -558,8 +537,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 		});
 		return getData_promise;
 	}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="clear_collection">
             <h1>clear_collection</h1>
             <h5 class="subheader"></h5>
@@ -567,9 +545,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>clear_collection()</span>
             </p>
           </section>
-          <div class="description"><p>hides the visible data and rejects the slice</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">clear_collection: function(){
+          <div class="description"><p>hides the visible data and rejects the slice</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">clear_collection: function(){
 	var self = this;
 	this.collection.skip = 0;
 	$(&quot;#&quot; + this.div_string).animate({opacity:0},500);
@@ -586,8 +563,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 		}
 
 	},500);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="resize_div">
             <h1>resize_div</h1>
             <h5 class="subheader"></h5>
@@ -595,9 +571,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>resize_div()</span>
             </p>
           </section>
-          <div class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">resize_div: function(){
+          <div class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">resize_div: function(){
 	var self = this;
 	var container_height =  $(&quot;#&quot; + this.div_string).height();
 	setTimeout(function(){
@@ -607,8 +582,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 		$(&quot;#&quot; + self.div_string).stop();
 		$(&quot;#&quot; + self.div_string).animate({height:target_height},500);
 	},500);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="compile_template">
             <h1>compile_template</h1>
             <h5 class="subheader"></h5>
@@ -616,9 +590,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'backgrid_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
 												   span_class: this.span_class,
@@ -628,8 +601,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 												   no_legend: this.no_legend,
 												   edit: this.edit,
 												}));
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="slice_all_table_data">
             <h1>slice_all_table_data</h1>
             <h5 class="subheader"></h5>
@@ -637,9 +609,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>slice_all_table_data()</span>
             </p>
           </section>
-          <div class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">slice_all_table_data: function(){
+          <div class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">slice_all_table_data: function(){
 	var self = this;
 	// change the button state to progress
 	this.change_slice_button_state(&quot;progress&quot;);
@@ -845,8 +816,7 @@ show: function(duration){
 	this.$el.show();
 	this.$el.animate({opacity:1},duration);
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

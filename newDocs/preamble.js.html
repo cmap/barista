@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -180,9 +180,8 @@
           <!--removed scrollspy-->
         </div>
         <div class="span9">
-          <div class="description"> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">//		Barista.js 0.2.0
+          <div class="description"> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">//		Barista.js 0.2.0
 //		(c) 2014 Corey Flynn, Broad Institute.
 //		For all documentation:
 //		http://cmap.github.io/barista
@@ -207,8 +206,7 @@ Barista.Datasets = {};
 Barista.APIURL = '//api.lincscloud.org';
 
 // build an object of utilities that we need to make sure are not overwritten
-Barista.Utils = {cookie: $.cookie};</code></pre>
-          </button>
+Barista.Utils = {cookie: $.cookie};</code></pre></span>
         </div>
       </div>
     </div>

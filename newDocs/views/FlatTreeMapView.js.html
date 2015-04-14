@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,12 +187,10 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
 
-	model: new Barista.Models.PertCellBreakdownModel(),</code></pre>
-          </button>
+	model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -200,9 +198,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overrides the default Backbone.View initialize method</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+          <div class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 // set up color options.  default if not specified
 this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#d9d9d9&quot;;
 this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -250,8 +247,7 @@ this.render();
 // bind window resize events to redraw
 var self = this;
 $(window).resize(function() {self.render();} );
-	},</code></pre>
-          </button>
+	},</code></pre></span>
           <section id="compile_template">
             <h1>compile_template</h1>
             <h5 class="subheader"></h5>
@@ -259,15 +255,13 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
 											height: this.plot_height}));
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="render">
             <h1>render</h1>
             <h5 class="subheader"></h5>
@@ -275,9 +269,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>renders the view</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+          <div class="description"><p>renders the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -347,8 +340,7 @@ $(window).resize(function() {self.render();} );
 		.on(&quot;mouseover&quot;,function(){d3.select(this).transition().duration(500).attr(&quot;opacity&quot;,1);})
 		.on(&quot;mouseout&quot;,function(){d3.select(this).transition().duration(500).attr(&quot;opacity&quot;,0.25);})
 		.on(&quot;click&quot;,function(){self.savePng();});
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="update_vis">
             <h1>update_vis</h1>
             <h5 class="subheader"></h5>
@@ -356,9 +348,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>update_vis()</span>
             </p>
           </section>
-          <div class="description"><p>updates the visibility of the element</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_vis: function(){
+          <div class="description"><p>updates the visibility of the element</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">update_vis: function(){
 	var self = this;
 	// grab the data from the model and plot the state of the treemap
 	this.data = this.model.get('tree_object');
@@ -416,8 +407,7 @@ $(window).resize(function() {self.render();} );
 		setTimeout(function(){self.draw_text(); self.add_tooltips();},500);
 	}
 
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="add_tooltips">
             <h1>add_tooltips</h1>
             <h5 class="subheader"></h5>
@@ -425,9 +415,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>add_tooltips()</span>
             </p>
           </section>
-          <div class="description"><p>inserts tooltips that display the cell id and count for non-empty datasets</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_tooltips: function(){
+          <div class="description"><p>inserts tooltips that display the cell id and count for non-empty datasets</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">add_tooltips: function(){
 	// make a selection of all cells in the treemap
 	var cell_selection = $('.' + this.div_string + '_cell');
 
@@ -448,8 +437,7 @@ $(window).resize(function() {self.render();} );
 			});
 		});
 	}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="clear_text">
             <h1>clear_text</h1>
             <h5 class="subheader"></h5>
@@ -457,14 +445,12 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>clear_text()</span>
             </p>
           </section>
-          <div class="description"><p>clear visible text in fields</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">clear_text: function(){
+          <div class="description"><p>clear visible text in fields</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">clear_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.count&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="draw_foreignObject">
             <h1>draw_foreignObject</h1>
             <h5 class="subheader"></h5>
@@ -472,9 +458,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>draw_foreignObject()</span>
             </p>
           </section>
-          <div class="description"><p>add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM<br />snippets</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_foreignObject: function(){
+          <div class="description"><p>add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM<br />snippets</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">draw_foreignObject: function(){
 	var self = this;
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data(this.treemap.nodes)
@@ -506,8 +491,7 @@ $(window).resize(function() {self.render();} );
 				return &quot;&quot;;
 			}
 		})
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="draw_text">
             <h1>draw_text</h1>
             <h5 class="subheader"></h5>
@@ -515,9 +499,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>draw_text()</span>
             </p>
           </section>
-          <div class="description"><p>draws text to the screen based on treemap data</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_text: function(){
+          <div class="description"><p>draws text to the screen based on treemap data</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">draw_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data(this.treemap.nodes)
 		.enter().append(&quot;text&quot;)
@@ -561,8 +544,7 @@ $(window).resize(function() {self.render();} );
 		.attr(&quot;opacity&quot;,0)
 		.style(&quot;pointer-events&quot;,&quot;none&quot;)
 		.transition().duration(500).attr(&quot;opacity&quot;,1);
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="savePng">
             <h1>savePng</h1>
             <h5 class="subheader"></h5>
@@ -570,9 +552,8 @@ $(window).resize(function() {self.render();} );
               <div class="label label-info radius ctx-type">method</div><span>savePng()</span>
             </p>
           </section>
-          <div class="description"><p>saves the target svg on the screen to a png file</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">savePng: function(){
+          <div class="description"><p>saves the target svg on the screen to a png file</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">savePng: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;
@@ -604,8 +585,7 @@ $(window).resize(function() {self.render();} );
 	// make the png label on the image visible again
 	png_selection.attr(&quot;opacity&quot;,png_opacity);
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -229,10 +229,8 @@
             </tbody>
           </table>
           <div class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
-</code></pre><p>optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre>
-          </button>
+</code></pre><p>optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -276,9 +274,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>set up defaults for model values</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	data: [[1,2],[3,4]],
 	rid: ['1','2'],
 	cid: ['1','2'],
@@ -286,8 +283,7 @@
 	title: &quot;&quot;,
 	last_update: (new Date()).getTime()
 }
-})</code></pre>
-          </button>
+})</code></pre></span>
         </div>
       </div>
     </div>

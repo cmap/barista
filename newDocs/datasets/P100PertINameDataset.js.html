@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,12 +187,10 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available<br />in the Connectivity Map<br />P100PertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available<br />in the Connectivity Map<br />P100PertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ P100PertIName:
-			{</code></pre>
-          </button>
+			{</code></pre></span>
           <section id="limit">
             <h1>limit</h1>
             <h5 class="subheader"></h5>
@@ -200,10 +198,8 @@
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">limit: 6,</code></pre>
-          </button>
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -211,10 +207,8 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: 'P100PertIName',</code></pre>
-          </button>
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">name: 'P100PertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
             <h5 class="subheader"></h5>
@@ -222,10 +216,8 @@
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: #7bd9e4&quot;&gt;P100&lt;/span&gt;&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre>
-          </button>
+          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: #7bd9e4&quot;&gt;P100&lt;/span&gt;&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
             <h5 class="subheader"></h5>
@@ -233,13 +225,11 @@
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">engine: Hogan,
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
-	url: '',</code></pre>
-          </button>
+	url: '',</code></pre></span>
           <section id="replace">
             <h1>replace</h1>
             <h5 class="subheader"></h5>
@@ -268,9 +258,8 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">replace: function(url,query){
+          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return ['//prefix:8080/p100/v1/profileinfo?',
 		'q={&quot;pert_iname&quot;:{&quot;$regex&quot;:&quot;^' + query + '&quot;, &quot;$options&quot;:&quot;i&quot;}}',
@@ -326,8 +315,7 @@ filter: function(response){
 			}
 		}
 	}
-);</code></pre>
-          </button>
+);</code></pre></span>
         </div>
       </div>
     </div>

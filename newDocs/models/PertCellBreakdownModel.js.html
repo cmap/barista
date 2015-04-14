@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -187,10 +187,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertCellBreakdownModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre>
-          </button>
+          <div class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -219,13 +217,11 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">defaults: {
+          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   &quot;filter&quot;: &quot;&quot;,
   &quot;tree_object&quot;: {children:[]}
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
             <h5 class="subheader"></h5>
@@ -254,9 +250,8 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -290,8 +285,7 @@
     self.set({tree_object: {name:&quot;root&quot;, children:children}, last_update: t});
   });
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>

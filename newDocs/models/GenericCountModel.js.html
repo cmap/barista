@@ -14,7 +14,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
-       $(document).on("click", "button", (function() {
+       $(document).on("click", "span", (function() {
          $(event.target).find("pre").toggle(400);
        }));
       });
@@ -208,15 +208,13 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
+          <div class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
   defaults:{
     count:0,
 
-  },</code></pre>
-          </button>
+  },</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -224,12 +222,10 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to set the listeners</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
+          <div class="description"><p>custom initialization to set the listeners</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="setListeners">
             <h1>setListeners</h1>
             <h5 class="subheader"></h5>
@@ -237,9 +233,8 @@
               <div class="label label-info radius ctx-type">method</div><span>setListeners()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setListeners: function() {
+          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
   if (source) {
     this.listenTo(source,'update',function(){
@@ -253,8 +248,7 @@
 }
 });
 
-Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
-          </button>
+Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -262,12 +256,10 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to set the key</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
+          <div class="description"><p>custom initialization to set the key</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
-},</code></pre>
-          </button>
+},</code></pre></span>
           <section id="setKey">
             <h1>setKey</h1>
             <h5 class="subheader"></h5>
@@ -275,9 +267,8 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre>
               <div class="label label-info radius ctx-type">method</div><span>setKey()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div>
-          <button>CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setKey: function() {
+          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
   this.url = 'http://10.125.171.42:8080/' + key;
 },
@@ -300,8 +291,7 @@ update:function(){
     self.trigger('update');
   })
 }
-});</code></pre>
-          </button>
+});</code></pre></span>
         </div>
       </div>
     </div>
