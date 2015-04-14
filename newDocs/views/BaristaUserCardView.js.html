@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -218,7 +218,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone View that displays a card of information about a user<br />basic use:<br />card_view = new BaristaUserCardView();<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone View that displays a card of information about a user<br />basic use:<br />card_view = new BaristaUserCardView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -227,7 +227,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -236,7 +236,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // set up defaults
     this.realName = (this.options.realName !== undefined) ? this.options.realName : &quot;Name&quot;;
@@ -255,7 +255,7 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
     var self = this;
     this.div_string = 'barista_view' + new Date().getTime();;
@@ -272,7 +272,7 @@
               <div class="label label-info radius ctx-type">method</div><span>map_badges()</span>
             </p>
           </section>
-          <div class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">map_badges: function(){
     var self = this;
     this.badge_urls = [];

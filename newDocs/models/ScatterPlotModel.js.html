@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.ScatterPlotModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
@@ -237,7 +237,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set of model defaults</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set of model defaults</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	x_axis_title: &quot;&quot;,

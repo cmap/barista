@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
@@ -196,7 +196,7 @@
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   cell_id: [],
   num_gold: null,
@@ -215,7 +215,7 @@
               <div class="label label-success radius ctx-type">property</div><span>compound_sub_model</span>
             </p>
           </section>
-          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
           <section id="gene_sub_model">
             <h1>gene_sub_model</h1>
@@ -224,7 +224,7 @@
               <div class="label label-success radius ctx-type">property</div><span>gene_sub_model</span>
             </p>
           </section>
-          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre></span>
           <section id="fetch">
             <h1>fetch</h1>
@@ -254,7 +254,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string, model_type){
     var self = this;
     var deferred = $.Deferred();

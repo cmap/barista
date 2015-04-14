@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -203,7 +203,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.setAPIPrefilter = function(api_endpoint) {
     api_endpoint = (api_endpoint !== undefined) ? api_endpoint : 'api.lincscloud.org';
     // configure ajax calls to add the user key parameter on calls to api.lincscloud.org

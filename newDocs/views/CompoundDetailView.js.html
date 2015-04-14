@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -208,7 +208,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -217,7 +217,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;CompoundDetailView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -226,7 +226,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -235,7 +235,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up the plot height
 	this.options.plot_height = 260;
@@ -255,7 +255,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// keep track of our scope at this level
 	var self = this;

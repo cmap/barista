@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -238,7 +238,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -247,7 +247,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -256,7 +256,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up x and y range
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
@@ -306,7 +306,7 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
@@ -322,7 +322,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
@@ -335,7 +335,7 @@
               <div class="label label-info radius ctx-type">method</div><span>init_plot()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -477,7 +477,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	var self = this;
 	// grab data from the model and package it such that we can iterate over it
@@ -523,7 +523,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>internal method used to sort path_data list elements by the x attribute</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>internal method used to sort path_data list elements by the x attribute</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">path_data_sorter: function(a,b) {
 	if (a.x &lt; b.x){
 		return -1;

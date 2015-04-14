@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the<br />Connectivity Map<br />UserIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the<br />Connectivity Map<br />UserIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { UserID:
             {</code></pre></span>
@@ -198,7 +198,7 @@
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -207,7 +207,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'UserID',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -216,7 +216,7 @@
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -225,7 +225,7 @@
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -258,7 +258,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -291,7 +291,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];

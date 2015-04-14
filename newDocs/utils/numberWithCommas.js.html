@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -203,7 +203,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to return a number with commas every three digits</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a utility function to return a number with commas every three digits</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.numberWithCommas = function(x){
     // first check to see if something was passed. if so, convert it
     if (x){

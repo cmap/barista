@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -233,7 +233,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Tile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Tile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function Tile(options){
 	options = (options !== undefined) ? options : {};
 	this.div_target = (options.div_target !== undefined) ? options.div_target : &quot;body&quot;;
@@ -257,7 +257,7 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.init()</span>
             </p>
           </section>
-          <div class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.init = function() {
 	// build the html to inject into the DOM
 	this.build_html();
@@ -282,7 +282,7 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.build_html()</span>
             </p>
           </section>
-          <div class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.build_html = function() {
 	if (this.tile_type == &quot;small&quot;){
 		this.html = '&lt;div id=&quot;' + this.div_id + '&quot; class=&quot;span3&quot; style=&quot;height:150px ' + this.style + '&quot;&gt;&lt;/div&gt;';
@@ -301,7 +301,7 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.inject()</span>
             </p>
           </section>
-          <div class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.inject = function() {
 	$(this.div_target).append(this.html);
 };</code></pre></span>
@@ -312,7 +312,7 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.draw_bg()</span>
             </p>
           </section>
-          <div class="description"><p>draws the tiles background using d3.js</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draws the tiles background using d3.js</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.draw_bg = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
@@ -387,7 +387,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>hides the tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>hides the tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.hide = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).animate({opacity:0,width:0,height:0},duration);
@@ -417,7 +417,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>shows the tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>shows the tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.show = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).show();
@@ -476,7 +476,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>ImageTile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>ImageTile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function ImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
@@ -493,7 +493,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>ImageTile.prototype.draw()</span>
             </p>
           </section>
-          <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">ImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
@@ -505,7 +505,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>ImageTile.prototype.draw_image()</span>
             </p>
           </section>
-          <div class="description"><p>draws the tile&#39;s image using d3.js</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draws the tile&#39;s image using d3.js</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
@@ -588,7 +588,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function AnimatedImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
@@ -606,7 +606,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTile.prototype.draw()</span>
             </p>
           </section>
-          <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
@@ -639,7 +639,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>starts periodic animation of the Image on the Tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>starts periodic animation of the Image on the Tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
 	duration = (duration !== undefined) ? duration : 2000;
 	frequency = (frequency !== undefined) ? frequency : 10000 + Math.random() * 10000;
@@ -711,7 +711,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>ImageTextTile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>ImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function ImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
@@ -728,7 +728,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>ImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
@@ -741,7 +741,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>ImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
@@ -848,7 +848,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function AnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
@@ -867,7 +867,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
@@ -884,7 +884,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.show_text()</span>
             </p>
           </section>
-          <div class="description"><p>show the text in the Tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
@@ -900,7 +900,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.hide_text()</span>
             </p>
           </section>
-          <div class="description"><p>hide the text in the Tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
@@ -916,7 +916,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
@@ -1020,7 +1020,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>FullAnimatedImageTextTile constructor</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>FullAnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function FullAnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
@@ -1040,7 +1040,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
@@ -1057,7 +1057,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.show_text()</span>
             </p>
           </section>
-          <div class="description"><p>show the text in the Tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimatingIn){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
@@ -1073,7 +1073,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.hide_text()</span>
             </p>
           </section>
-          <div class="description"><p>hide the text in the Tile</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimatingOut){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
@@ -1089,7 +1089,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();

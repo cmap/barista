@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellHistologyDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellHistologyDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ 	CellHistology:
 			{</code></pre></span>
@@ -198,7 +198,7 @@
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -207,7 +207,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CellHistology',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -216,7 +216,7 @@
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -225,7 +225,7 @@
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -258,7 +258,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
@@ -291,7 +291,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = [];
@@ -337,7 +337,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellID:
 			{</code></pre></span>
@@ -348,7 +348,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -357,7 +357,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CellID',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -366,7 +366,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -375,7 +375,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -408,7 +408,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url, query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
@@ -441,7 +441,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = [];
@@ -487,7 +487,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellLineageDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular Contexts available<br />in the Connectivity Map<br />CellLineageDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellLineage:
 			{</code></pre></span>
@@ -498,7 +498,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -507,7 +507,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CellLineage',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -516,7 +516,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -525,7 +525,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -558,7 +558,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
@@ -591,7 +591,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = [];
@@ -637,7 +637,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation<br />annotations available in the Connectivity Map<br />CellMutationDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation<br />annotations available in the Connectivity Map<br />CellMutationDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:
 			{</code></pre></span>
@@ -648,7 +648,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -657,7 +657,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CellMutation',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -666,7 +666,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -675,7 +675,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -708,7 +708,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
@@ -740,7 +740,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = response;
@@ -780,7 +780,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available<br />in the Connectivity Map<br />CompoundPertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available<br />in the Connectivity Map<br />CompoundPertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CompoundPertIName:
 			{</code></pre></span>
@@ -791,7 +791,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -800,7 +800,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CompoundPertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -809,7 +809,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -818,7 +818,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -851,7 +851,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/pertinfo?',
@@ -885,7 +885,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var genetic_types = [&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_sh.cgs&quot;];
 	var datum_list = [];
@@ -962,7 +962,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available<br />in the Connectivity Map<br />GeneticPertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available<br />in the Connectivity Map<br />GeneticPertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ GeneticPertIName:
 			{</code></pre></span>
@@ -973,7 +973,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -982,7 +982,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'GeneticPertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -991,7 +991,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1000,7 +1000,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1033,7 +1033,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/pertinfo?',
@@ -1067,7 +1067,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var genetic_types = [&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_sh.cgs&quot;];
 	var datum_list = [];
@@ -1144,7 +1144,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the<br />Connectivity Map<br />JobIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the<br />Connectivity Map<br />JobIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { JobID:
             {</code></pre></span>
@@ -1155,7 +1155,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1164,7 +1164,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'JobID',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1173,7 +1173,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1182,7 +1182,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1215,7 +1215,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -1248,7 +1248,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];
@@ -1294,7 +1294,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the<br />Connectivity Map<br />JobNameDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the<br />Connectivity Map<br />JobNameDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { JobName:
             {</code></pre></span>
@@ -1305,7 +1305,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1314,7 +1314,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'JobName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1323,7 +1323,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1332,7 +1332,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1365,7 +1365,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">remote: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -1398,7 +1398,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];
@@ -1444,7 +1444,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the<br />Connectivity Map<br />JobStatusDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the<br />Connectivity Map<br />JobStatusDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { JobStatus:
             {</code></pre></span>
@@ -1455,7 +1455,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1464,7 +1464,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'JobStatus',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1473,7 +1473,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1482,7 +1482,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1515,7 +1515,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -1548,7 +1548,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];
@@ -1594,7 +1594,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available<br />in the Connectivity Map<br />P100PertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available<br />in the Connectivity Map<br />P100PertINameDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ P100PertIName:
 			{</code></pre></span>
@@ -1605,7 +1605,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1614,7 +1614,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'P100PertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1623,7 +1623,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: #7bd9e4&quot;&gt;P100&lt;/span&gt;&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1632,7 +1632,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1665,7 +1665,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return ['//prefix:8080/p100/v1/profileinfo?',
@@ -1741,7 +1741,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1750,7 +1750,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'PRISMPertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1759,7 +1759,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: #8387e6&quot;&gt;PRISM&lt;/span&gt;&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1768,7 +1768,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1801,7 +1801,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use profileinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/prism/v1/profileinfo?',
@@ -1835,7 +1835,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = [];
@@ -1886,7 +1886,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available in<br />the Connectivity Map<br />PertINameDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Perturbation IDs available in<br />the Connectivity Map<br />PertINameDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets<br />in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ PertIName:
 			{</code></pre></span>
@@ -1897,7 +1897,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -1906,7 +1906,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'PertIName',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -1915,7 +1915,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -1924,7 +1924,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -1957,7 +1957,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use pertinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/pertinfo?',
@@ -1991,7 +1991,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var genetic_types = [&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_sh.cgs&quot;];
 	var datum_list = [];
@@ -2068,7 +2068,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Tool IDs available in the<br />Connectivity Map<br />ToolIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Tool IDs available in the<br />Connectivity Map<br />ToolIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { ToolID:
             {</code></pre></span>
@@ -2079,7 +2079,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -2088,7 +2088,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'ToolID',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -2097,7 +2097,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -2106,7 +2106,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -2139,7 +2139,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -2172,7 +2172,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];
@@ -2218,7 +2218,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the<br />Connectivity Map<br />UserIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for user IDs available in the<br />Connectivity Map<br />UserIDDataset is typically not used directly, rather it&#39;s content is extracted from Barista.Datasets in<br />views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
     { UserID:
             {</code></pre></span>
@@ -2229,7 +2229,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -2238,7 +2238,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'UserID',</code></pre></span>
           <section id="template">
             <h1>template</h1>
@@ -2247,7 +2247,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div class="description"><p>the template to render for all results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
@@ -2256,7 +2256,7 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -2289,7 +2289,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set the remote data source to use compute_status with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
     query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
     return [Barista.APIURL + '/compute_status?',
@@ -2322,7 +2322,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
             var datum_list = [];
             var auto_data = [];

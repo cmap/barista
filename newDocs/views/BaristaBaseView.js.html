@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -226,7 +226,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BaristaBaseView = Backbone.View.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -235,7 +235,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the view<br />Views that extend BaristaBaseView should impliment code overiding this method<br />If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they<br />should call it in their redraw method<br />As an example:<br />initialize: function(){<br />                this.base_initialize();<br />                //your code here<br />                }</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>initialize the view<br />Views that extend BaristaBaseView should impliment code overiding this method<br />If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they<br />should call it in their redraw method<br />As an example:<br />initialize: function(){<br />                this.base_initialize();<br />                //your code here<br />                }</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	this.base_initialize();
 },</code></pre></span>
@@ -246,7 +246,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BaristaBaseView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -255,7 +255,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>default model to Backbone.Model<br />This default is only provided to make the view functional as a un-extended standalone<br />An appropriate data model should be supplied for all views that extend BaristaBaseView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>default model to Backbone.Model<br />This default is only provided to make the view functional as a un-extended standalone<br />An appropriate data model should be supplied for all views that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="base_initialize">
             <h1>base_initialize</h1>
@@ -264,7 +264,7 @@
               <div class="label label-info radius ctx-type">method</div><span>base_initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">base_initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
@@ -311,7 +311,7 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'barista_view' + new Date().getTime();
@@ -327,7 +327,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view<br />Views that extend BaristaBaseView should impliment draw code overiding this method<br />If extended BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should<br />call it in their render method<br />As an example:<br />render: function(){<br />            this.base_render();<br />            //your code here<br />            }</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view<br />Views that extend BaristaBaseView should impliment draw code overiding this method<br />If extended BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should<br />call it in their render method<br />As an example:<br />render: function(){<br />            this.base_render();<br />            //your code here<br />            }</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	this.base_render();
 	return this;
@@ -339,7 +339,7 @@
               <div class="label label-info radius ctx-type">method</div><span>base_render()</span>
             </p>
           </section>
-          <div class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">base_render: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -402,7 +402,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic portions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>update the dynamic portions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	return this;
 },</code></pre></span>
@@ -413,7 +413,7 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png()</span>
             </p>
           </section>
-          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png: function(){
 	// do any pre save work that the child class may require
 	this.save_png_pre();
@@ -463,7 +463,7 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png_pre()</span>
             </p>
           </section>
-          <div class="description"><p>dummy method that should be overridden if there is any work to do before saving the png image of<br />the view<br />For example, removing elements that will not render properly could be done before saving the image<br />This function is called as the first step of save_png</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>dummy method that should be overridden if there is any work to do before saving the png image of<br />the view<br />For example, removing elements that will not render properly could be done before saving the image<br />This function is called as the first step of save_png</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png_pre: function(){},</code></pre></span>
           <section id="save_png_post">
             <h1>save_png_post</h1>
@@ -472,7 +472,7 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png_post()</span>
             </p>
           </section>
-          <div class="description"><p>dummy method that should be overridden if there is any work to do after saving the png image of<br />the view<br />For example, restoring elements that were removed before saving could be done after saving the image<br />This function is called as the last step of save_png</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>dummy method that should be overridden if there is any work to do after saving the png image of<br />the view<br />For example, restoring elements that were removed before saving could be done after saving the image<br />This function is called as the last step of save_png</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png_post: function(){},</code></pre></span>
           <section id="hide">
             <h1>hide</h1>
@@ -497,7 +497,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">hide: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	var self = this;
@@ -527,7 +527,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">show: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	this.$el.show();

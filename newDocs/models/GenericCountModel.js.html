@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -208,7 +208,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
   defaults:{
@@ -222,7 +222,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to set the listeners</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>custom initialization to set the listeners</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
 },</code></pre></span>
@@ -233,7 +233,7 @@
               <div class="label label-info radius ctx-type">method</div><span>setListeners()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>add description</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
   if (source) {
@@ -256,7 +256,7 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>custom initialization to set the key</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>custom initialization to set the key</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
 },</code></pre></span>
@@ -267,7 +267,7 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>setKey()</span>
             </p>
           </section>
-          <div class="description"><p>add description</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>add description</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
   this.url = 'http://10.125.171.42:8080/' + key;

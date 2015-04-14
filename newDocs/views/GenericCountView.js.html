@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>a view that supports a single label and a single count *</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a view that supports a single label and a single count *</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -196,7 +196,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when<br />it needs to know what its class name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when<br />it needs to know what its class name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;GenericCountView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -205,7 +205,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -214,7 +214,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle<br />optional arguments, compile the view template, bind model changes<br />to view updates and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the default Backbone.View initialize method to handle<br />optional arguments, compile the view template, bind model changes<br />to view updates and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
   // set up label, default if not specified
   this.label = (this.options.label !== undefined) ? this.options.label : 'Signatures';
@@ -241,7 +241,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>completely re-render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>completely re-render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function() {
   this.base_render()
     .renderTopBar()
@@ -257,7 +257,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>update only the dynamic portions of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>update only the dynamic portions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function() {
   this.updateCount();
 },</code></pre></span>
@@ -268,7 +268,7 @@
               <div class="label label-info radius ctx-type">method</div><span>renderTopBar()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>draw the top bar of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draw the top bar of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">renderTopBar: function() {
   this.fg_layer.selectAll('.genericCountViewTopBar').data([]).exit().remove();
   this.fg_layer.selectAll('.genericCountViewTopBar').data([1])
@@ -287,7 +287,7 @@
               <div class="label label-info radius ctx-type">method</div><span>renderLabel()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>draw the static label at the top of the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>draw the static label at the top of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">renderLabel: function() {
   this.fg_layer.selectAll('.genericCountViewLabel').data([]).exit().remove();
   this.fg_layer.selectAll('.genericCountViewLabel').data([1])
@@ -335,7 +335,7 @@ renderCount: function() {
               <div class="label label-info radius ctx-type">method</div><span>updateCount()</span> -><span>Barista.Views.GenericCountView</span>
             </p>
           </section>
-          <div class="description"><p>update the count from the model. If if is undefined, assume it is 0</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>update the count from the model. If if is undefined, assume it is 0</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">updateCount: function() {
   // get the count from the model. If it is undefined, assume it is 0
   var count = this.model.get('count');

@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -213,7 +213,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.TickView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -222,7 +222,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;TickView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -231,7 +231,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.TickModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -240,7 +240,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#eeeeee&quot;;
@@ -264,7 +264,7 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template_and_draw()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view and draw it for the first time<br />tick_view.compile_template_and_draw();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>use Handlebars to compile the template for the view and draw it for the first time<br />tick_view.compile_template_and_draw();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template_and_draw: function(){
 	var self = this;
 	this.isCompiling = true;
@@ -289,7 +289,7 @@
               <div class="label label-info radius ctx-type">method</div><span>redraw()</span>
             </p>
           </section>
-          <div class="description"><p>perform a full redraw of the view, including wiping out all d3 drawn components in the view and<br />initializing them again from scratch<br />tick_view.redraw();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>perform a full redraw of the view, including wiping out all d3 drawn components in the view and<br />initializing them again from scratch<br />tick_view.redraw();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">redraw: function(){
 	var self = this;
 	// set up the panel's width and height via animation
@@ -310,7 +310,7 @@
               <div class="label label-info radius ctx-type">method</div><span>init_view()</span>
             </p>
           </section>
-          <div class="description"><p>set up the view from scratch<br />Draw a background panel and place all dynamic content on that panel with defualt values<br />tick_view.init_view();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>set up the view from scratch<br />Draw a background panel and place all dynamic content on that panel with defualt values<br />tick_view.init_view();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">init_view: function(){
 	// stuff &quot;this&quot; into a variable for use inside of scoped funcitons
 	var self = this;
@@ -454,7 +454,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>render the dynamic content of the view based on the current state of the view&#39;s data model<br />tick_view.render();</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>render the dynamic content of the view based on the current state of the view&#39;s data model<br />tick_view.render();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// grab data from the model and sort it according to the values in the object
 	var data_array = _.pairs(this.model.get('data_object'));
@@ -507,7 +507,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">hide: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	var self = this;
@@ -544,7 +544,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">show: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	this.$el.show();
@@ -557,7 +557,7 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png()</span>
             </p>
           </section>
-          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.vis.attr(&quot;width&quot;);

@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapNavigationView</span>
             </p>
           </section>
-          <div class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
@@ -196,7 +196,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -205,7 +205,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
         var self = this;
 
@@ -235,7 +235,7 @@
               <div class="label label-info radius ctx-type">method</div><span>wrap_content()</span>
             </p>
           </section>
-          <div class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">wrap_content: function(){
     $(&quot;body&quot;).children().wrapAll('&lt;div class=&quot;cmap-navigation-content&quot;/&gt;');
     $(&quot;.cmap-navigation-content&quot;).wrapAll('&lt;div class=&quot;cmap-navigation-wrapper&quot;/&gt;');
@@ -247,7 +247,7 @@
               <div class="label label-info radius ctx-type">method</div><span>build_navigation()</span>
             </p>
           </section>
-          <div class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">build_navigation: function(){
     var self = this;
     $(&quot;.cmap-navigation-wrapper&quot;).prepend('&lt;div class=&quot;cmap-navigation-menu&quot;&gt;&lt;/div&gt;');
@@ -289,7 +289,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>adds a new attribute to the element that is comprised of an href with link text, and visible text</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>adds a new attribute to the element that is comprised of an href with link text, and visible text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">addLink: function(text,route) {
 	var $el = $(&quot;.cmap-navigation-menu&quot;);
 	$el.append('&lt;a href=&quot;' + route + '&quot; class=&quot;col-xs-12 cmap-navigation-menu-item&quot;&gt;' + text + '&lt;/a&gt;');

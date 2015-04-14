@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -203,7 +203,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>a utility function to convert standard perturbagen type descriptors into more human friendly strings<br />Given an input type string, an object is returned with field names of &#39;name&#39; and &#39;acronym&#39;<br />If the passed string is not a recoqnized type, the &#39;name&#39; and &#39;acronym&#39; fields are set to the passed<br />string</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>a utility function to convert standard perturbagen type descriptors into more human friendly strings<br />Given an input type string, an object is returned with field names of &#39;name&#39; and &#39;acronym&#39;<br />If the passed string is not a recoqnized type, the &#39;name&#39; and &#39;acronym&#39; fields are set to the passed<br />string</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.CMapPertTypeAlias = function(input_type){
 	switch(input_type){
 		case &quot;trt_cp&quot;:

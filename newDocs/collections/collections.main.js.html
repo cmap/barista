@@ -15,7 +15,7 @@
       $(document).ready(function(){
        var x = event.target;
        $(document).on("click", "span", (function() {
-         $(event.target).find("pre").toggle(400);
+         $(event.target).find("pre").toggle();
        }));
       });
     </script>
@@ -218,7 +218,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents a set of analysis history objects<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents a set of analysis history objects<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -227,7 +227,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>fetch model data from assigned url</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/compute_status?callback=?';
@@ -239,7 +239,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for the collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.AnalysisHistoryModel,</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -248,7 +248,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -257,7 +257,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
             <h1>maxCount</h1>
@@ -266,7 +266,7 @@
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="user">
             <h1>user</h1>
@@ -275,7 +275,7 @@
               <div class="label label-success radius ctx-type">property</div><span>user</span>
             </p>
           </section>
-          <div class="description"><p>the user_id to search jobs for<br />Forcing this to be set prevents us from searching other users jobs</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the user_id to search jobs for<br />Forcing this to be set prevents us from searching other users jobs</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">user: undefined,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -310,7 +310,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br /><code>AnalysisHistoryCollection.getData(search_string,search_type,limit)</code><br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br /><code>AnalysisHistoryCollection.getData(search_string,search_type,limit)</code><br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
@@ -418,7 +418,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents a set of cell types<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents a set of cell types<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.CellCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -427,7 +427,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>fetch model data from assigned url</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/cellinfo?callback=?';
@@ -439,7 +439,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for the collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.CellModel,</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -448,7 +448,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -457,7 +457,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -492,7 +492,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_column,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
@@ -565,7 +565,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file<br />The JSON file is assumed to contain a top level array containing objects<br />Each object in the array is modeled as a base Backbone.Model inside of the collection<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file<br />The JSON file is assumed to contain a top level array containing objects<br />Each object in the array is modeled as a base Backbone.Model inside of the collection<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
@@ -574,7 +574,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
           <section id="url">
             <h1>url</h1>
@@ -583,7 +583,7 @@
               <div class="label label-success radius ctx-type">property</div><span>url</span>
             </p>
           </section>
-          <div class="description"><p>the url from which model data is fetched</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the url from which model data is fetched</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">url: 'data.json',</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -592,7 +592,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -601,7 +601,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
             <h1>maxCount</h1>
@@ -610,7 +610,7 @@
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -645,7 +645,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>GenericJSONCollection.getData(search_string,search_type,limit)</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>GenericJSONCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
@@ -715,7 +715,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents a set of perturbagens<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents a set of perturbagens<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.PertCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -724,7 +724,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>fetch model data from assigned url</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
@@ -736,7 +736,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for the collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -745,7 +745,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -754,7 +754,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
             <h1>maxCount</h1>
@@ -763,7 +763,7 @@
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -798,7 +798,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
@@ -897,7 +897,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents a set of signatures<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents a set of signatures<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.SignatureCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -906,7 +906,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>fetch model data from assigned url</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/siginfo?callback=?';
@@ -918,7 +918,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for the collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.SignatureModel,</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -927,7 +927,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -936,7 +936,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
             <h1>maxCount</h1>
@@ -945,7 +945,7 @@
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="gold_only">
             <h1>gold_only</h1>
@@ -954,7 +954,7 @@
               <div class="label label-success radius ctx-type">property</div><span>gold_only</span>
             </p>
           </section>
-          <div class="description"><p>boolean flag telling the collection to only include gold Connectivity Map signatures</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>boolean flag telling the collection to only include gold Connectivity Map signatures</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">gold_only: true,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -989,7 +989,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>SignatureCollection.getData(search_string,search_type,limit)</code></p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>SignatureCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
@@ -1100,7 +1100,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Collection that represents a set of CMap Summly results<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>A Backbone.Collection that represents a set of CMap Summly results<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
@@ -1109,7 +1109,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>fetch model data from assigned url</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// the url from which model data is fetched
 	this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
@@ -1121,7 +1121,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>the model used for collection objects</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.SummlyResultModel,</code></pre></span>
           <section id="skip">
             <h1>skip</h1>
@@ -1130,7 +1130,7 @@
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
             <h1>isLoading</h1>
@@ -1139,7 +1139,7 @@
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
             <h1>maxCount</h1>
@@ -1148,7 +1148,7 @@
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
             <h1>getData</h1>
@@ -1183,7 +1183,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="outline: 1px solid black;padding: 2px 2px 2px 2px;cursor: pointer">CLICK TO TOGGLE CODE
+          <div class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
 		var self = this;
 		// set isLoading to true so we don't constantly make api calls before the data comes back
