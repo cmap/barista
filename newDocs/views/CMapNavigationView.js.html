@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,31 +170,31 @@
         </div>
         <div class="span9">
           <section id="CMapNavigationView">
-            <h1>CMapNavigationView</h1>
+            <h1 style="font-family: Open Sans">CMapNavigationView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapNavigationView</span>
             </p>
           </section>
-          <div class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
         var self = this;
 
@@ -217,25 +218,25 @@
 
 },</code></pre></span>
           <section id="wrap_content">
-            <h1>wrap_content</h1>
+            <h1 style="font-family: Open Sans">wrap_content</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>wrap_content()</span>
             </p>
           </section>
-          <div class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">wrap_content: function(){
     $(&quot;body&quot;).children().wrapAll('&lt;div class=&quot;cmap-navigation-content&quot;/&gt;');
     $(&quot;.cmap-navigation-content&quot;).wrapAll('&lt;div class=&quot;cmap-navigation-wrapper&quot;/&gt;');
 },</code></pre></span>
           <section id="build_navigation">
-            <h1>build_navigation</h1>
+            <h1 style="font-family: Open Sans">build_navigation</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>build_navigation()</span>
             </p>
           </section>
-          <div class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">build_navigation: function(){
     var self = this;
     $(&quot;.cmap-navigation-wrapper&quot;).prepend('&lt;div class=&quot;cmap-navigation-menu&quot;&gt;&lt;/div&gt;');
@@ -250,7 +251,7 @@
 		});
 	},</code></pre></span>
           <section id="addLink">
-            <h1>addLink</h1>
+            <h1 style="font-family: Open Sans">addLink</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>addLink()</span>
@@ -277,7 +278,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>adds a new attribute to the element that is comprised of an href with link text, and visible text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>adds a new attribute to the element that is comprised of an href with link text, and visible text</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">addLink: function(text,route) {
 	var $el = $(&quot;.cmap-navigation-menu&quot;);
 	$el.append('&lt;a href=&quot;' + route + '&quot; class=&quot;col-xs-12 cmap-navigation-menu-item&quot;&gt;' + text + '&lt;/a&gt;');

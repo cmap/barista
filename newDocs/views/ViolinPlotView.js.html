@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="ViolinPlotView">
-            <h1>ViolinPlotView</h1>
+            <h1 style="font-family: Open Sans">ViolinPlotView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.ViolinPlotView</span>
@@ -226,25 +227,25 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
-            <h1>model</h1>
+            <h1 style="font-family: Open Sans">model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up x and y range
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
@@ -288,13 +289,13 @@
 	$(window).resize(function() {self.render();} );
 },</code></pre></span>
           <section id="compile_template">
-            <h1>compile_template</h1>
+            <h1 style="font-family: Open Sans">compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
@@ -304,26 +305,26 @@
 											height: this.plot_height}));
 },</code></pre></span>
           <section id="render">
-            <h1>render</h1>
+            <h1 style="font-family: Open Sans">render</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
 },</code></pre></span>
           <section id="init_plot">
-            <h1>init_plot</h1>
+            <h1 style="font-family: Open Sans">init_plot</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>init_plot()</span>
             </p>
           </section>
-          <div class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -459,13 +460,13 @@
 
 },</code></pre></span>
           <section id="update">
-            <h1>update</h1>
+            <h1 style="font-family: Open Sans">update</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	var self = this;
 	// grab data from the model and package it such that we can iterate over it
@@ -484,7 +485,7 @@
 	lower.transition().duration(500).attr('d',this.lower_area_generator(this.path_data));
 },</code></pre></span>
           <section id="path_data_sorter">
-            <h1>path_data_sorter</h1>
+            <h1 style="font-family: Open Sans">path_data_sorter</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>path_data_sorter()</span>
@@ -511,7 +512,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>internal method used to sort path_data list elements by the x attribute</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>internal method used to sort path_data list elements by the x attribute</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">path_data_sorter: function(a,b) {
 	if (a.x &lt; b.x){
 		return -1;

@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="BaristaCardView">
-            <h1>BaristaCardView</h1>
+            <h1 style="font-family: Open Sans">BaristaCardView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BaristaCardView</span>
@@ -216,34 +217,34 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone View that displays a card of information wrapped in link<br />The view is meant to be a top level entry point to other pages<br />basic use:<br />        card_view = new BaristaCardView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone View that displays a card of information wrapped in link<br />The view is meant to be a top level entry point to other pages<br />basic use:<br />        card_view = new BaristaCardView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BaristaCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BaristaCardView&quot;,</code></pre></span>
           <section id="model">
-            <h1>model</h1>
+            <h1 style="font-family: Open Sans">model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>supply a base model for the view<br />Overide this if you need to use it for dynamic content</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>supply a base model for the view<br />Overide this if you need to use it for dynamic content</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
@@ -270,13 +271,13 @@
 	this.compile_template();
 },</code></pre></span>
           <section id="compile_template">
-            <h1>compile_template</h1>
+            <h1 style="font-family: Open Sans">compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'barista_view' + new Date().getTime();;

@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,16 +170,16 @@
         </div>
         <div class="span9">
           <section id="GeneDetailModel">
-            <h1>GeneDetailModel</h1>
+            <h1 style="font-family: Open Sans">GeneDetailModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GeneDetailModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1>defaults</h1>
+            <h1 style="font-family: Open Sans">defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -220,7 +221,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   cell_id: [],
   clone_name: null,
@@ -242,25 +243,25 @@
   vector_id: null
 },</code></pre></span>
           <section id="kd_fields">
-            <h1>kd_fields</h1>
+            <h1 style="font-family: Open Sans">kd_fields</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>kd_fields</span>
             </p>
           </section>
-          <div class="description"><p>kd specific model fields</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>kd specific model fields</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre></span>
           <section id="array_fields">
-            <h1>array_fields</h1>
+            <h1 style="font-family: Open Sans">array_fields</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>array_fields</span>
             </p>
           </section>
-          <div class="description"><p>fields that are arrays</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>fields that are arrays</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre></span>
           <section id="fetch">
-            <h1>fetch</h1>
+            <h1 style="font-family: Open Sans">fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -282,7 +283,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
@@ -342,7 +343,7 @@
       return deferred;
   },</code></pre></span>
           <section id="fetch_pert_type">
-            <h1>fetch_pert_type</h1>
+            <h1 style="font-family: Open Sans">fetch_pert_type</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch_pert_type()</span>
@@ -369,7 +370,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
     // set up a deferred object that we can use in the fetch function above
     var deferred = $.Deferred();

@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="PertDetailView">
-            <h1>PertDetailView</h1>
+            <h1 style="font-family: Open Sans">PertDetailView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.PertDetailView</span>
@@ -196,34 +197,34 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;PertDetailView&quot;,</code></pre></span>
           <section id="model">
-            <h1>model</h1>
+            <h1 style="font-family: Open Sans">model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertDetailModel(),</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// set up the plot height
@@ -242,13 +243,13 @@
 
 },</code></pre></span>
           <section id="render">
-            <h1>render</h1>
+            <h1 style="font-family: Open Sans">render</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// keep track of our scope at this level
 	var self = this;

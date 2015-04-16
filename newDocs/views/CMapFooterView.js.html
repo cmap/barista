@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="CMapFooterView">
-            <h1>CMapFooterView</h1>
+            <h1 style="font-family: Open Sans">CMapFooterView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapFooterView</span>
@@ -211,25 +212,25 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.CMapFooterView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;CMapFooterView&quot;,</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// store passed parameters as attributes of the view
 	this.organization = (this.options.organization !== undefined) ? this.options.organization : &quot;Broad Institute&quot;;
@@ -245,13 +246,13 @@
 	this.render();
 },</code></pre></span>
           <section id="compile_template">
-            <h1>compile_template</h1>
+            <h1 style="font-family: Open Sans">compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapFooter;

@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="BaristaUserCardView">
-            <h1>BaristaUserCardView</h1>
+            <h1 style="font-family: Open Sans">BaristaUserCardView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BaristaUserCardView</span>
@@ -206,25 +207,25 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone View that displays a card of information about a user<br />basic use:<br />card_view = new BaristaUserCardView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone View that displays a card of information about a user<br />basic use:<br />card_view = new BaristaUserCardView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
     // set up defaults
     this.realName = (this.options.realName !== undefined) ? this.options.realName : &quot;Name&quot;;
@@ -237,13 +238,13 @@
     this.compile_template();
 },</code></pre></span>
           <section id="compile_template">
-            <h1>compile_template</h1>
+            <h1 style="font-family: Open Sans">compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
     var self = this;
     this.div_string = 'barista_view' + new Date().getTime();;
@@ -254,13 +255,13 @@
                                             badges: this.badge_urls}));
 },</code></pre></span>
           <section id="map_badges">
-            <h1>map_badges</h1>
+            <h1 style="font-family: Open Sans">map_badges</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>map_badges()</span>
             </p>
           </section>
-          <div class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">map_badges: function(){
     var self = this;
     this.badge_urls = [];

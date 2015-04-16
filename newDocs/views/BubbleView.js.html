@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="BubbleView">
-            <h1>BubbleView</h1>
+            <h1 style="font-family: Open Sans">BubbleView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BubbleView</span>
@@ -196,34 +197,34 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre></span>
           <section id="model">
-            <h1>model</h1>
+            <h1 style="font-family: Open Sans">model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
@@ -269,13 +270,13 @@
 	$(window).resize(function() {self.render();} );
 },</code></pre></span>
           <section id="compile_template">
-            <h1>compile_template</h1>
+            <h1 style="font-family: Open Sans">compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
@@ -283,13 +284,13 @@
 											height: this.plot_height}));
 },</code></pre></span>
           <section id="render">
-            <h1>render</h1>
+            <h1 style="font-family: Open Sans">render</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>draw the view from scratch</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>draw the view from scratch</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -363,7 +364,7 @@
 	// reset a dampening variable for simulation
 	this.damp = 0.1;</code></pre></span>
           <section id="tick">
-            <h1>tick</h1>
+            <h1 style="font-family: Open Sans">tick</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">function</div><span>tick()</span>
@@ -385,7 +386,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
@@ -395,7 +396,7 @@
         }
 	},</code></pre></span>
           <section id="vertical_split">
-            <h1>vertical_split</h1>
+            <h1 style="font-family: Open Sans">vertical_split</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>vertical_split()</span>
@@ -417,7 +418,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>push bubbles vertically based on an attribute property</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>push bubbles vertically based on an attribute property</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">vertical_split: function(alpha){
 	var self = this;
 	//select all circles on the page
@@ -461,13 +462,13 @@
 		});
 },</code></pre></span>
           <section id="update">
-            <h1>update</h1>
+            <h1 style="font-family: Open Sans">update</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div class="description"><p>update the plot with new data</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>update the plot with new data</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -527,7 +528,7 @@
         this.nodes = this.vis.selectAll(&quot;circle&quot;);
         this.nodes.call(this.force.drag());</code></pre></span>
           <section id="tick">
-            <h1>tick</h1>
+            <h1 style="font-family: Open Sans">tick</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">function</div><span>tick()</span>
@@ -549,7 +550,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>tick function for use in the force class, decrements alpha value</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})

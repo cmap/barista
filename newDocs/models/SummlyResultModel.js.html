@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,16 +170,16 @@
         </div>
         <div class="span9">
           <section id="SummlyResultModel">
-            <h1>SummlyResultModel</h1>
+            <h1 style="font-family: Open Sans">SummlyResultModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SummlyResultModel</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1>defaults</h1>
+            <h1 style="font-family: Open Sans">defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -225,7 +226,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
 	target: &quot;&quot;,
@@ -235,7 +236,7 @@
 	cell_line_scores: {}
 },</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -262,7 +263,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
 	var pert_type = this.get('pert_type');

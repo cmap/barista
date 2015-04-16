@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,40 +170,40 @@
         </div>
         <div class="span9">
           <section id="PlatformSummaryView">
-            <h1>PlatformSummaryView</h1>
+            <h1 style="font-family: Open Sans">PlatformSummaryView</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.PlatformSummaryView</span>
             </p>
           </section>
-          <div class="description"><p>A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for<br />a given platform<br />he widget displays a count of the available experiments on the platform, a description of the platform,<br />a widget to extract a listing of the data available, and a link to a platform specific app for viewing<br />the contents of the available data on that platform<br />This view is frequently paired with a PlatformSummaryModel<br />basic use:<br />platform_summary_view = new PlatformSummaryView();<br />optional arguments:<br />...<br />        platform_summary_view = new PlatformSummaryView({<br />                                    ... });</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for<br />a given platform<br />he widget displays a count of the available experiments on the platform, a description of the platform,<br />a widget to extract a listing of the data available, and a link to a platform specific app for viewing<br />the contents of the available data on that platform<br />This view is frequently paired with a PlatformSummaryModel<br />basic use:<br />platform_summary_view = new PlatformSummaryView();<br />optional arguments:<br />...<br />        platform_summary_view = new PlatformSummaryView({<br />                                    ... });</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.PlatformSummaryView = Backbone.View.extend({</code></pre></span>
           <section id="name">
-            <h1>name</h1>
+            <h1 style="font-family: Open Sans">name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;PlatformSummaryView&quot;,</code></pre></span>
           <section id="model">
-            <h1>model</h1>
+            <h1 style="font-family: Open Sans">model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.GenericCountModel(),</code></pre></span>
           <section id="initialize">
-            <h1>initialize</h1>
+            <h1 style="font-family: Open Sans">initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color and font defaults
 	this.white_color = &quot;#ffffff&quot;;
@@ -545,7 +546,7 @@ init_panel: function(){
 						.html(&quot;&lt;a href='&quot;+this.details_url+&quot;' target='&quot;+this.details_target+&quot;' style=\&quot;&quot; + this.control_css_style + &quot;\&quot;&gt;&lt;i class='icon-chevron-sign-right'&gt;&lt;/i&gt; &quot;+this.details_text+&quot;&lt;/a&gt;&quot;);
 },</code></pre></span>
           <section id="render_export_control">
-            <h1>render_export_control</h1>
+            <h1 style="font-family: Open Sans">render_export_control</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render_export_control()</span>
@@ -577,7 +578,7 @@ init_panel: function(){
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>creates the render control object and draws it to the screen</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>creates the render control object and draws it to the screen</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render_export_control: function(message, icon_class, handler) {
 	this.controls_layer.selectAll('.export_text').data([]).exit().remove();
 	return this.controls_layer.selectAll('.export_text').data([1])
@@ -594,13 +595,13 @@ init_panel: function(){
 						.html(&quot;&lt;span style=\&quot;&quot; + this.control_css_style + &quot;\&quot;&gt;&lt;i class='&quot; + icon_class + &quot;' style='margin-right:2px;'&gt;&lt;/i&gt;&quot; + message + &quot;&lt;/span&gt;&quot;);
 },</code></pre></span>
           <section id="download_table">
-            <h1>download_table</h1>
+            <h1 style="font-family: Open Sans">download_table</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>download_table()</span>
             </p>
           </section>
-          <div class="description"><p>download the backing data that matches the current model state</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>download the backing data that matches the current model state</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">download_table: function() {
 	var self = this;
 
@@ -641,13 +642,13 @@ init_panel: function(){
 	});
 },</code></pre></span>
           <section id="render">
-            <h1>render</h1>
+            <h1 style="font-family: Open Sans">render</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -672,7 +673,7 @@ init_panel: function(){
 
 },</code></pre></span>
           <section id="render_description">
-            <h1>render_description</h1>
+            <h1 style="font-family: Open Sans">render_description</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render_description()</span>
@@ -724,7 +725,7 @@ init_panel: function(){
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>utility function to break a long description string into a multiline and draw it at the desired<br />location</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function to break a long description string into a multiline and draw it at the desired<br />location</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render_description: function(options){
 	var self = this;
 
@@ -777,13 +778,13 @@ init_panel: function(){
 			.text(function(d){return d;}));
 },</code></pre></span>
           <section id="save_png">
-            <h1>save_png</h1>
+            <h1 style="font-family: Open Sans">save_png</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>save_png()</span>
             </p>
           </section>
-          <div class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;

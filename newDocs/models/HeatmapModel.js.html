@@ -5,7 +5,8 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><script src="jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="jquery-2.1.3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -71,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" style="color: #00ccff">Main</a></li>
             <li><a href="../afterword.js.html" style="color: #00ccff">afterword.js</a></li>
             <li><a href="../preamble.js.html" style="color: #00ccff">preamble.js</a></li>
@@ -169,7 +170,7 @@
         </div>
         <div class="span9">
           <section id="HeatmapModel">
-            <h1>HeatmapModel</h1>
+            <h1 style="font-family: Open Sans">HeatmapModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.HeatmapModel</span>
@@ -216,11 +217,11 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
 </code></pre><p>optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1>defaults</h1>
+            <h1 style="font-family: Open Sans">defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -262,7 +263,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
 	data: [[1,2],[3,4]],
 	rid: ['1','2'],
