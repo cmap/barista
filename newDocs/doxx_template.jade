@@ -82,7 +82,11 @@ html
                 unless ((ti.indexOf("collections") > -1 ) || (ti.indexOf("datasets") > -1 ) || (ti.indexOf("models") > -1 ) || (ti.indexOf("utils") > -1 ) || (ti.indexOf("views") > -1 ))
                   unless (su > -1 || su2 > -1)
                     li(class=(file.name !== currentName ? "":"active"))
-                      a(href=file.relName style="color: #00ccff") #{file.name}
+                      - var su3 = file.name.indexOf(".js")
+                      if (su3 > -1)
+                        a(href=file.relName style="color: #00ccff") #{file.name.substring(0, su3)}
+                      else
+                        a(href=file.relName style="color: #00ccff") #{file.name}
             li#collections(style="cursor: pointer;")
               a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Collections
                 ul(style="display: none;list-style-type: none")
@@ -92,7 +96,7 @@ html
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(13, ti.length - 1)}
+                        a(href=file.relName style="color: #00ccff") #{ti.substring(13, ti.length - 4)}
             li#datasets(style='cursor: pointer;')
               a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Datasets
                 ul(style="display: none;list-style-type: none")
@@ -102,7 +106,7 @@ html
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(10, ti.length - 1)}
+                        a(href=file.relName style="color: #00ccff") #{ti.substring(10, ti.length - 4)}
             li#models(style='cursor: pointer;')
               a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Models
                 ul(style="display: none;list-style-type: none")
@@ -112,7 +116,7 @@ html
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(8, ti.length - 1)}
+                        a(href=file.relName style="color: #00ccff") #{ti.substring(8, ti.length - 4)}
             li#utils(style='cursor: pointer;')
               a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Utils
                 ul(style="display: none;list-style-type: none")
@@ -122,7 +126,7 @@ html
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 1)}
+                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 4)}
             li#views(style='cursor: pointer;')
               a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Views
                 ul(style="display: none;list-style-type: none")
@@ -132,7 +136,7 @@ html
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 1)}
+                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 4)}
         .span9
           if locals.readme
             section(id=name) !{readme}
