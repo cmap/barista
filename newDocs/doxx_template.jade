@@ -14,6 +14,7 @@ html
     link(rel="stylesheet", href="http://getbootstrap.com/2.3.2/assets/css/docs.css")
     | <link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     | <script src="jquery-2.1.3.min.js"></script>
+    | <script src="collapse.js"></script>
     script(type='text/javascript')
       |$(document).ready(function(){
       |  var x = event.target;
@@ -88,7 +89,7 @@ html
                       else
                         a(href=file.relName style="color: #00ccff") #{file.name}
             li#collections(style="cursor: pointer;")
-              a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Collections
+              a(onclick="listCollapse(this)" style="color: #ff9933") Collections
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
@@ -98,7 +99,7 @@ html
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
                         a(href=file.relName style="color: #00ccff") #{ti.substring(13, ti.length - 4)}
             li#datasets(style='cursor: pointer;')
-              a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Datasets
+              a(onclick="listCollapse(this)" style="color: #ff9933") Datasets
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
@@ -108,7 +109,7 @@ html
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
                         a(href=file.relName style="color: #00ccff") #{ti.substring(10, ti.length - 4)}
             li#models(style='cursor: pointer;')
-              a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Models
+              a(onclick="listCollapse(this)" style="color: #ff9933") Models
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
@@ -118,7 +119,7 @@ html
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
                         a(href=file.relName style="color: #00ccff") #{ti.substring(8, ti.length - 4)}
             li#utils(style='cursor: pointer;')
-              a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Utils
+              a(onclick="listCollapse(this)" style="color: #ff9933") Utils
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
@@ -128,7 +129,7 @@ html
                       li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
                         a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 4)}
             li#views(style='cursor: pointer;')
-              a(onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933") Views
+              a(onclick="listCollapse(this)" style="color: #ff9933") Views
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)

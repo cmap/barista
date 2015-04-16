@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="jquery-2.1.3.min.js"></script>
+    <script src="collapse.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -81,7 +82,7 @@
             </li>
             <li><a href="../tile.js.html" style="color: #00ccff">tile</a>
             </li>
-            <li id="collections" style="cursor: pointer;"><a onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933">Collections
+            <li id="collections" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Collections
                 <ul style="display: none;list-style-type: none">
                   <li style="margin: 15px 0 15px 0"><a href="../collections/AnalysisHistoryCollection.js.html" style="color: #00ccff">AnalysisHistoryCollection</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../collections/CellCollection.js.html" style="color: #00ccff">CellCollection</a></li>
@@ -90,7 +91,7 @@
                   <li style="margin: 15px 0 15px 0"><a href="../collections/SignatureCollection.js.html" style="color: #00ccff">SignatureCollection</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../collections/SummlyResultCollection.js.html" style="color: #00ccff">SummlyResultCollection</a></li>
                 </ul></a></li>
-            <li id="datasets" style="cursor: pointer;"><a onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933">Datasets
+            <li id="datasets" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Datasets
                 <ul style="display: none;list-style-type: none">
                   <li style="margin: 15px 0 15px 0"><a href="../datasets/CellHistologyDataset.js.html" style="color: #00ccff">CellHistologyDataset</a></li>
                   <li style="margin: 15px 0 15px 0" class="active"><a href="../datasets/CellIDDataset.js.html" style="color: #00ccff">CellIDDataset</a></li>
@@ -107,7 +108,7 @@
                   <li style="margin: 15px 0 15px 0"><a href="../datasets/ToolIDDataset.js.html" style="color: #00ccff">ToolIDDataset</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../datasets/UserIDDataset.js.html" style="color: #00ccff">UserIDDataset</a></li>
                 </ul></a></li>
-            <li id="models" style="cursor: pointer;"><a onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933">Models
+            <li id="models" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Models
                 <ul style="display: none;list-style-type: none">
                   <li style="margin: 15px 0 15px 0"><a href="../models/AnalysisHistoryModel.js.html" style="color: #00ccff">AnalysisHistoryModel</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../models/BarPlotModel.js.html" style="color: #00ccff">BarPlotModel</a></li>
@@ -129,7 +130,7 @@
                   <li style="margin: 15px 0 15px 0"><a href="../models/TickModel.js.html" style="color: #00ccff">TickModel</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../models/sequenceModel.js.html" style="color: #00ccff">sequenceModel</a></li>
                 </ul></a></li>
-            <li id="utils" style="cursor: pointer;"><a onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933">Utils
+            <li id="utils" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Utils
                 <ul style="display: none;list-style-type: none">
                   <li style="margin: 15px 0 15px 0"><a href="../utils/CMapTypeAlias.js.html" style="color: #00ccff">CMapTypeAlias</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../utils/NumbersToSubscript.js.html" style="color: #00ccff">NumbersToSubscript</a></li>
@@ -141,7 +142,7 @@
                   <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIURL.js.html" style="color: #00ccff">setAPIURL</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../utils/setUserKey.js.html" style="color: #00ccff">setUserKey</a></li>
                 </ul></a></li>
-            <li id="views" style="cursor: pointer;"><a onclick="if(this.nextSibling.style.display=='none')this.nextSibling.style.display='block'; else this.nextSibling.style.display='none'" style="color: #ff9933">Views
+            <li id="views" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Views
                 <ul style="display: none;list-style-type: none">
                   <li style="margin: 15px 0 15px 0"><a href="../views/BarPlotView.js.html" style="color: #00ccff">BarPlotView</a></li>
                   <li style="margin: 15px 0 15px 0"><a href="../views/BaristaBaseView.js.html" style="color: #00ccff">BaristaBaseView</a></li>
