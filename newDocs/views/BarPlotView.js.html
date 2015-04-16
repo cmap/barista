@@ -242,7 +242,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1 style="font-family: Open Sans">model</h1>
@@ -251,7 +251,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.BarPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1 style="font-family: Open Sans">initialize</h1>
@@ -260,7 +260,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.range = (this.options.range !== undefined) ? this.options.x_range : undefined;
@@ -303,7 +303,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
@@ -316,7 +316,7 @@
               <div class="label label-info radius ctx-type">method</div><span>init_plot()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -356,7 +356,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	var self = this;
 	
@@ -386,7 +386,7 @@
               <div class="label label-info radius ctx-type">method</div><span>set_ranges()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">set_ranges: function(){
 	var data,min,max;
 	// calculate the range. If we need to caluclate it dynamically, check the lock and expand
@@ -432,7 +432,7 @@
               <div class="label label-info radius ctx-type">method</div><span>set_scales()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">set_scales: function(){
 	if (this.log){
 		this.x_scale=d3.scale.log().domain([this.range[0],this.range[1]]).range([this.margin, this.width - this.margin]);
@@ -452,7 +452,7 @@
               <div class="label label-info radius ctx-type">method</div><span>build_axes()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">build_axes: function(){
 	var self = this;
 
@@ -484,7 +484,7 @@
               <div class="label label-info radius ctx-type">method</div><span>style_axes()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
@@ -507,7 +507,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render_vertical_bars()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws bars in vertical mode</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>draws bars in vertical mode</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render_vertical_bars: function(){
 	var self = this;
 	// get the model's data
@@ -562,7 +562,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render_horizontal_bars()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws bars in horizontal mode</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>draws bars in horizontal mode</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render_horizontal_bars: function(){
 	var self = this;
 	// get the model's data
@@ -600,7 +600,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update_vertical_bars()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update_vertical_bars: function(){
 	var self = this;
 	// build Axes
@@ -668,7 +668,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update_horizontal_bars()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update_horizontal_bars: function(){
 	var self = this;
 	// figure out how tall each bar will be

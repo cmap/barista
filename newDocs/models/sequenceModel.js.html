@@ -176,7 +176,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SequenceModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1 style="font-family: Open Sans">defaults</h1>
@@ -185,7 +185,7 @@
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the default options for the model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>the default options for the model</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
   sequence: '',
   displaySequence: '',
@@ -198,7 +198,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>initialize the model to listen to its own model changes</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>initialize the model to listen to its own model changes</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function() {
   this.listenTo(this, 'change:sequence', this.parseSequence);
 },</code></pre></span>
@@ -209,7 +209,7 @@
               <div class="label label-info radius ctx-type">method</div><span>parseSequence()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">parseSequence: function() {
   var sequence = this.get('sequence'),
       modifications = this.get('modifications'),

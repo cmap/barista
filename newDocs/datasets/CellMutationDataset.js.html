@@ -176,7 +176,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Datasets</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation<br />annotations available in the Connectivity Map<br />CellMutationDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation<br />annotations available in the Connectivity Map<br />CellMutationDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:
 			{</code></pre></span>
@@ -187,7 +187,7 @@
               <div class="label label-success radius ctx-type">property</div><span>limit</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1 style="font-family: Open Sans">name</h1>
@@ -196,7 +196,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: 'CellMutation',</code></pre></span>
           <section id="template">
             <h1 style="font-family: Open Sans">template</h1>
@@ -205,7 +205,7 @@
               <div class="label label-success radius ctx-type">property</div><span>template</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1 style="font-family: Open Sans">engine</h1>
@@ -214,7 +214,7 @@
               <div class="label label-success radius ctx-type">property</div><span>engine</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">engine: Hogan,
 
 remote: {
@@ -247,7 +247,7 @@ remote: {
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
@@ -279,7 +279,7 @@ dataType: 'jsonp',</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = response;

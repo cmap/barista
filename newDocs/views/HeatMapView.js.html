@@ -227,7 +227,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.HeatmapView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1 style="font-family: Open Sans">name</h1>
@@ -236,7 +236,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;HeatMapView&quot;,</code></pre></span>
           <section id="model">
             <h1 style="font-family: Open Sans">model</h1>
@@ -245,7 +245,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
           <section id="initialize">
             <h1 style="font-family: Open Sans">initialize</h1>
@@ -254,7 +254,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
@@ -298,7 +298,7 @@
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
@@ -313,7 +313,7 @@
               <div class="label label-info radius ctx-type">method</div><span>redraw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view. Updates both static and dynamic content in the view.</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view. Updates both static and dynamic content in the view.</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
@@ -325,7 +325,7 @@
               <div class="label label-info radius ctx-type">method</div><span>init_panel()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
@@ -497,7 +497,7 @@
               <div class="label label-info radius ctx-type">method</div><span>add_lookup_table()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>adds a simple color lookup table based on the heatmap&#39;s color_scale</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>adds a simple color lookup table based on the heatmap&#39;s color_scale</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">add_lookup_table: function(){
 	var self, data, scale_range, scale_domain, scale_unit, domain_unit;
 	self = this;
@@ -523,7 +523,7 @@
               <div class="label label-info radius ctx-type">method</div><span>set_scale()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the y scale used in the plot</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the y scale used in the plot</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">set_scale: function(){
 		var domain, range_min, range_max, range;
 		// get the current data domain from this.color
@@ -544,7 +544,7 @@
               <div class="label label-info radius ctx-type">method</div><span>build_axis()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function used to build y axis for the look up table</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function used to build y axis for the look up table</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">build_axis: function(){
 	this.yAxis = d3.svg.axis()
 		.scale(this.y_scale)
@@ -557,7 +557,7 @@
               <div class="label label-info radius ctx-type">method</div><span>style_axes()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
@@ -580,7 +580,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	var self = this;
 	// determine the height and width of cells in the heatmap
@@ -746,7 +746,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>internal utility function to express 2D array data as a flat data array of objects with array<br />coordinates and data value as attributes</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>internal utility function to express 2D array data as a flat data array of objects with array<br />coordinates and data value as attributes</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">unravel_data: function(data){
 	unraveled_data = [];
 	data.forEach(function(i_e,i){
@@ -763,7 +763,7 @@
               <div class="label label-info radius ctx-type">method</div><span>save_png()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;

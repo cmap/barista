@@ -217,7 +217,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1 style="font-family: Open Sans">name</h1>
@@ -226,7 +226,7 @@
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;TagListView&quot;,</code></pre></span>
           <section id="model">
             <h1 style="font-family: Open Sans">model</h1>
@@ -235,7 +235,7 @@
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>set of the default model for the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set of the default model for the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="collection">
             <h1 style="font-family: Open Sans">collection</h1>
@@ -244,7 +244,7 @@
               <div class="label label-success radius ctx-type">property</div><span>collection</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>set up a default collection for the view to work with</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>set up a default collection for the view to work with</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">collection: new Backbone.Collection(),</code></pre></span>
           <section id="initialize">
             <h1 style="font-family: Open Sans">initialize</h1>
@@ -253,7 +253,7 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
 	// initialize the base view
 	this.base_initialize();
@@ -289,7 +289,7 @@
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">render: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
@@ -316,7 +316,7 @@
               <div class="label label-info radius ctx-type">method</div><span>update()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">update: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
@@ -343,7 +343,7 @@
               <div class="label label-info radius ctx-type">method</div><span>fit_height()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fits the view height to the height taken by the tags displayed</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>fits the view height to the height taken by the tags displayed</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">fit_height: function(){
 	// set the view's height attribute based on the number of rows in the
 	// vis
@@ -365,7 +365,7 @@
               <div class="label label-info radius ctx-type">method</div><span>draw_tags()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function to draw tags diven a data set</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>utility function to draw tags diven a data set</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">draw_tags: function(){
 	var self = this;
 	// draw the foreground text of all the tags

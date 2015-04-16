@@ -176,7 +176,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.AnalysisHistoryModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
             <h1 style="font-family: Open Sans">initialize</h1>
@@ -206,7 +206,7 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div><span style="cursor: pointer;color: blue">CLICK TO TOGGLE CODE
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
             <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
     this.cid = this.get('_id')
     this.set(&quot;date&quot;, new Date(parseInt(this.cid.substring(0,8), 16)*1000));
