@@ -36,7 +36,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                   /**
                     * set the remote data source to use compute_status with custom query params
                     * @param  {string}  url    @todo this parameter is never used, consider removing
-                    * from function
+                    *                          from function
                     * @param  {string}  query  custom query
                     */ 
                 replace: function(url,query){

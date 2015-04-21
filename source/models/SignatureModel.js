@@ -1,6 +1,7 @@
 /**
- * A Backbone.Model that represents a single signature
  * `pert_model = new SignatureModel()`
+ * 
+ * A Backbone.Model that represents a single signature
  */
 Barista.Models.SignatureModel = Backbone.Model.extend({
 	/**

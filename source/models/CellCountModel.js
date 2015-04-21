@@ -1,11 +1,12 @@
 /**
+ * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of cell_lines
  * The data model captures both the total count of cell lines that meet a search criteria and the count of
  * each annotation category for the set of cell lines
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 Barista.Models.CellCountModel = Backbone.Model.extend({
   /**

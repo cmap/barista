@@ -2,13 +2,13 @@
  * A Backbone.Collection that represents a set of analysis history objects
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to PertModel
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to PertModel
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
  * @param {string}         skip       the skip parameter used in api calls when the collection is updated
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
+ *                                    operation, defaults to false
  */
 
 Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({

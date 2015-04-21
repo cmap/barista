@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -187,7 +187,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -196,7 +196,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// default search value
 	this.search_val = &quot;&quot;;
@@ -237,7 +237,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">onClick: function () {
+            <pre style="display: none"><code class="language-javascript">onClick: function () {
 	self.trigger(&quot;grid:RowClick&quot;, this.model);
 },</code></pre></span>
           <section id="render">
@@ -248,7 +248,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function () {
+            <pre style="display: none"><code class="language-javascript">render: function () {
 	this.$el.empty();
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i &lt; this.cells.length; i++) {
@@ -270,7 +270,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">remove: function () {
+            <pre style="display: none"><code class="language-javascript">remove: function () {
 	this.$el.addClass(&quot;cmap-active-grid-row&quot;);
 	this.$el.animate({&quot;opacity&quot;:0},1000);
 	var self = this;
@@ -331,7 +331,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>adds a UI control to scroll the top of the grid</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">add_scroll_to_top_button: function(){
+            <pre style="display: none"><code class="language-javascript">add_scroll_to_top_button: function(){
 	var self = this;
 	this.scroll_to_top_button_id = this.div_string + 'scroll_button';
 	this.$el.append('&lt;button id=&quot;' + this.scroll_to_top_button_id + '&quot; class=&quot;cmap_grid_to_top_button&quot;&gt;Scroll to Top&lt;/button&gt;');
@@ -345,24 +345,24 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>scroll_to_top()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the top of its container</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">duration</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the top of its container</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">scroll_to_top: function(duration){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">scroll_to_top: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.div_string).animate({scrollTop:0},duration);
 	this.hide_scroll_to_top_button();
@@ -374,24 +374,24 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>show_scroll_to_top_button()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the bottom of its container</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">duration</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the bottom of its container</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">show_scroll_to_top_button: function(duration){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">show_scroll_to_top_button: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:1},duration);
@@ -403,24 +403,24 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>hide_scroll_to_top_button()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>hides the scroll to top button</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">duration</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the duration of the scroll animation in ms, defaults to 500</p></td>
+                <td>duration</td>
+                <td>number</td>
+                <td><p>the duration of the scroll animation in ms, defaults to 500</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the scroll to top button</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
 	var self= this;
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
@@ -433,34 +433,34 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>replace_collection()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data and rejects the slice</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">search_val</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the value to search for</p></td>
+                <td>search_val</td>
+                <td>string</td>
+                <td><p>the value to search for</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">search_type</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the type of search that will be performed by getData</p></td>
+                <td>search_type</td>
+                <td>string</td>
+                <td><p>the type of search that will be performed by getData</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">limit</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the number of models to be fetched</p></td>
+                <td>limit</td>
+                <td>number</td>
+                <td><p>the number of models to be fetched</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data and rejects the slice</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	var self = this;
 	this.search_val = (search_val !== undefined) ? search_val : this.search_val;
@@ -492,34 +492,34 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               <div class="label label-info radius ctx-type">method</div><span>update_collection()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">search_val</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the value to search for</p></td>
+                <td>search_val</td>
+                <td>string</td>
+                <td><p>the value to search for</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">search_type</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the type of search that will be performed by getData</p></td>
+                <td>search_type</td>
+                <td>string</td>
+                <td><p>the type of search that will be performed by getData</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">limit</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the number of models to be fetched</p></td>
+                <td>limit</td>
+                <td>number</td>
+                <td><p>the number of models to be fetched</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	if (this.collection.models.length &lt; this.collection.maxCount){
 		var self = this;
@@ -545,7 +545,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>hides the visible data and rejects the slice</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">clear_collection: function(){
+            <pre style="display: none"><code class="language-javascript">clear_collection: function(){
 	var self = this;
 	this.collection.skip = 0;
 	$(&quot;#&quot; + this.div_string).animate({opacity:0},500);
@@ -571,7 +571,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">resize_div: function(){
+            <pre style="display: none"><code class="language-javascript">resize_div: function(){
 	var self = this;
 	var container_height =  $(&quot;#&quot; + this.div_string).height();
 	setTimeout(function(){
@@ -590,7 +590,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">compile_template: function(){
+            <pre style="display: none"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'backgrid_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
 												   span_class: this.span_class,
@@ -609,7 +609,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">slice_all_table_data: function(){
+            <pre style="display: none"><code class="language-javascript">slice_all_table_data: function(){
 	var self = this;
 	// change the button state to progress
 	this.change_slice_button_state(&quot;progress&quot;);

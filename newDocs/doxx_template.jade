@@ -80,7 +80,7 @@ html
     .container
       .row
         .span3.bs-docs-sidebar
-          ul.nav.nav-list.bs-docs-sidenav.affix-top(style="font-family: Open Sans")
+          ul.nav.nav-list.bs-docs-sidenav.affix-top
             each file in files
                 - var ti = JSON.stringify(file.name)
                 - var su = ti.indexOf("barista.js")
@@ -95,7 +95,7 @@ html
                         a(href=file.relName class="upper") #{file.name}
             li
               a(onclick="listCollapse(this)" class="lower_outer") Collections
-                ul(style="display: none;list-style-type: none")
+                ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("collections/")
@@ -105,7 +105,7 @@ html
                         a(href=file.relName class="lower_inner") #{ti.substring(13, ti.length - 4)}
             li
               a(onclick="listCollapse(this)" class="lower_outer") Datasets
-                ul(style="display: none;list-style-type: none")
+                ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("datasets/")
@@ -115,7 +115,7 @@ html
                         a(href=file.relName class="lower_inner") #{ti.substring(10, ti.length - 4)}
             li
               a(onclick="listCollapse(this)" class="lower_outer") Models
-                ul(style="display: none;list-style-type: none")
+                ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("models/")
@@ -125,7 +125,7 @@ html
                         a(href=file.relName class="lower_inner") #{ti.substring(8, ti.length - 4)}
             li
               a(onclick="listCollapse(this)" class="lower_outer") Utils
-                ul(style="display: none;list-style-type: none")
+                ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("utils/")
@@ -135,7 +135,7 @@ html
                         a(href=file.relName class="lower_inner") #{ti.substring(7, ti.length - 4)}
             li
               a(onclick="listCollapse(this)" class="lower_outer") Views
-                ul(style="display: none;list-style-type: none")
+                ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("views/")
@@ -163,30 +163,30 @@ html
                         |  ->
                         span= symbol.return
 
+            .description(style="font-family:Roboto Slab") !{symbol.description.full} !{symbol.description.extra}
+
             if symbol.hasParams
               table.table.table-bordered.table-striped
                 thead
                   tr
-                    th(style="width:20%;font-family:Roboto Slab") Option name
-                    th(style="width:20%;font-family:Roboto Slab") Type
-                    th(style="font-family:Roboto Slab") Description
+                    th(style="width:20%") Option name
+                    th(style="width:20%") Type
+                    th Description
                 tbody
                   each tag in symbol.tags
                     if tag.type == 'param'
                       tr
-                        td(style="font-family:Roboto Slab")= tag.name
-                        td(style="font-family:Roboto Slab")= tag.types
-                        td(style="font-family:Roboto Slab")!= tag.description
+                        td= tag.name
+                        td= tag.types
+                        td!= tag.description
                     if tag.type == 'return'
                       tr
-                        td(style="font-family:Roboto Slab")= tag.type
-                        td(style="font-family:Roboto Slab")= tag.types
-                        td(style="font-family:Roboto Slab")= tag.Description
-
-            .description(style="font-family:Roboto Slab") !{symbol.description.full} !{symbol.description.extra}
+                        td= tag.type
+                        td= tag.types
+                        td= tag.Description
             span(style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold") CLICK TO TOGGLE CODE
               if symbol.code
-                pre(style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace")
+                pre(style="display: none")
                   code.language-javascript
                     = symbol.code
               if symbol.jsfiddle

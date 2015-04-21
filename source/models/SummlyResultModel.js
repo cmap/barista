@@ -1,8 +1,8 @@
 /**
+ * summly_result = new SummlyResultModel();
  * A Backbone.Model that represents the a single CMap Summly result
  * A single result is composed of the connection between two pert_inames (a query and a target), the
  * component data that went into computing the summly result, and the statistics  of the summly computation
- * summly_result = new SummlyResultModel();
  */
 Barista.Models.SummlyResultModel = Backbone.Model.extend({
 	/**

@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,54 +186,54 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.LDMapView</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple LDMap<br />The view is normally paired with a HeatMapModel, but works with any model that provides <em>data</em>,<em>cid</em>,<br />and title attributes<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">tenplate</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>The handlebars template to use. Defaults to BaristaTemplates.d3_target</p></td>
+                <td>tenplate</td>
+                <td>string</td>
+                <td><p>The handlebars template to use. Defaults to BaristaTemplates.d3_target</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">bg_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the backgound of the view, defaults to                                #ffffff</p></td>
+                <td>bg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the backgound of the view, defaults to                                #ffffff</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">low_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as lowest value color in the LDMap, defaults to                                #0000ff</p></td>
+                <td>low_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as lowest value color in the LDMap, defaults to                                #0000ff</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">high_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as highest value color in the LDMap, defaults                                to #ff0000</p></td>
+                <td>high_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as highest value color in the LDMap, defaults                                to #ff0000</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">color_scale</td>
-                <td style="font-family:Roboto Slab">d3.scale</td>
-                <td style="font-family:Roboto Slab"><p>custom color scale to use in the LDMap. If supplied, low_color and                                high_color are ignored, defaults to undefined</p></td>
+                <td>color_scale</td>
+                <td>d3.scale</td>
+                <td><p>custom color scale to use in the LDMap. If supplied, low_color and                                high_color are ignored, defaults to undefined</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">plot_height</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the height of the LDMap to generate in pixels, defaults to 300</p></td>
+                <td>plot_height</td>
+                <td>number</td>
+                <td><p>the height of the LDMap to generate in pixels, defaults to 300</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">span_class</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>a bootstrap span class to size the width of the view, defaults to                                &quot;span12&quot;<br />example usage:<br />LDMap_view = new LDMapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td>span_class</td>
+                <td>string</td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                                &quot;span12&quot;<br />example usage:<br />LDMap_view = new LDMapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple LDMap<br />The view is normally paired with a HeatMapModel, but works with any model that provides <em>data</em>,<em>cid</em>,<br />and title attributes<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Views.LDMapView = Backbone.View.extend({</code></pre></span>
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Views.LDMapView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -242,7 +242,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;LDMapView&quot;,</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">name: &quot;LDMapView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -251,7 +251,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -260,7 +260,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.low_color = (this.options.low_color !== undefined) ? this.options.low_color : &quot;#0000ff&quot;;
@@ -303,7 +303,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">compile_template: function(){
+            <pre style="display: none"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(this.template({div_string: this.div_string,
@@ -318,7 +318,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view. Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">redraw: function(){
+            <pre style="display: none"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
 },</code></pre></span>
@@ -330,7 +330,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">init_panel: function(){
+            <pre style="display: none"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -446,7 +446,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function(){
+            <pre style="display: none"><code class="language-javascript">render: function(){
 	var self = this;
 	// determine the height and width of cells in the heatmap
 	var usable_height = this.height - this.margin;
@@ -525,24 +525,24 @@
               <div class="label label-info radius ctx-type">method</div><span>unravel_data()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>internal utility function to express 2D array data as a flat data array of objects with array<br />coordinates and data value as attributes</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">data</td>
-                <td style="font-family:Roboto Slab">array</td>
-                <td style="font-family:Roboto Slab"><p>2D array of data</p></td>
+                <td>data</td>
+                <td>array</td>
+                <td><p>2D array of data</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>internal utility function to express 2D array data as a flat data array of objects with array<br />coordinates and data value as attributes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">unravel_data: function(data){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">unravel_data: function(data){
 	unraveled_data = [];
 	data.forEach(function(i_e,i){
 		i_e.forEach(function(j_e,j){
@@ -561,7 +561,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">save_png: function(){
+            <pre style="display: none"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;
 	var height = this.height;

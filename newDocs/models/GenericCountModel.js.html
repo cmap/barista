@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,29 +186,29 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GenericCountModel</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p><code>generic_count_model = new GenericCountModel()</code></p><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">search_field</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the document field the model with count over upon fetching data,                               defaults to &quot;pert_iname&quot;</p></td>
+                <td>search_field</td>
+                <td>string</td>
+                <td><p>the document field the model with count over upon fetching data,                               defaults to &quot;pert_iname&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">url</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url of the api service to fetch data from, defaults to                               &quot;//api.lincscloud.org/a2/pertinfo&quot;<br /><code>generic_count_model = new GenericCountModel()</code></p></td>
+                <td>url</td>
+                <td>string</td>
+                <td><p>the url of the api service to fetch data from, defaults to                               &quot;//api.lincscloud.org/a2/pertinfo&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set CMap database items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
   defaults:{
     count:0,
@@ -221,8 +221,8 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to set the listeners</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize:function(attrs){
+          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
 },</code></pre></span>
           <section id="setListeners">
@@ -233,7 +233,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">setListeners: function() {
+            <pre style="display: none"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
   if (source) {
     this.listenTo(source,'update',function(){
@@ -255,8 +255,8 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to set the key</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize:function(attrs){
+          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
 },</code></pre></span>
           <section id="setKey">
@@ -267,14 +267,14 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">setKey: function() {
+            <pre style="display: none"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
   this.url = 'http://10.125.171.42:8080/' + key;
 },
 
 /**
  * add description
- * @param  {string} inputKey tbd
+ * @param  {[type]} inputKey [description]
  */
 getCount:function(inputKey){
   return this.data[inputKey.group][inputKey.name];

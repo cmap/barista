@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -187,7 +187,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for<br />a given platform<br />he widget displays a count of the available experiments on the platform, a description of the platform,<br />a widget to extract a listing of the data available, and a link to a platform specific app for viewing<br />the contents of the available data on that platform<br />This view is frequently paired with a PlatformSummaryModel<br />basic use:<br />platform_summary_view = new PlatformSummaryView();<br />optional arguments:<br />...<br />        platform_summary_view = new PlatformSummaryView({<br />                                    ... });</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Views.PlatformSummaryView = Backbone.View.extend({</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">Barista.Views.PlatformSummaryView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -196,7 +196,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;PlatformSummaryView&quot;,</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">name: &quot;PlatformSummaryView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -205,7 +205,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: new Barista.Models.GenericCountModel(),</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.GenericCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -214,7 +214,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 	// set up color and font defaults
 	this.white_color = &quot;#ffffff&quot;;
 	this.black_color = &quot;#000000&quot;;
@@ -562,34 +562,34 @@ init_panel: function(){
               <div class="label label-info radius ctx-type">method</div><span>render_export_control()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>creates the render control object and draws it to the screen</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">message</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>visible text</p></td>
+                <td>message</td>
+                <td>string</td>
+                <td><p>visible text</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">icon_class</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>value of the class attribute</p></td>
+                <td>icon_class</td>
+                <td>string</td>
+                <td><p>value of the class attribute</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">handler</td>
-                <td style="font-family:Roboto Slab">function</td>
-                <td style="font-family:Roboto Slab"><p>function associated with click</p></td>
+                <td>handler</td>
+                <td>function</td>
+                <td><p>function associated with click</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>creates the render control object and draws it to the screen</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render_export_control: function(message, icon_class, handler) {
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">render_export_control: function(message, icon_class, handler) {
 	this.controls_layer.selectAll('.export_text').data([]).exit().remove();
 	return this.controls_layer.selectAll('.export_text').data([1])
 						.enter().append(&quot;foreignObject&quot;)
@@ -612,7 +612,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>download the backing data that matches the current model state</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">download_table: function() {
+            <pre style="display: none"><code class="language-javascript">download_table: function() {
 	var self = this;
 
 	// indicate that we are downloading something
@@ -659,7 +659,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function(){
+            <pre style="display: none"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -689,54 +689,54 @@ init_panel: function(){
               <div class="label label-info radius ctx-type">method</div><span>render_description()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>utility function to break a long description string into a multiline and draw it at the desired<br />location</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">options</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>describes the options for drawing a string to the screen arguments for options:</p></td>
+                <td>options</td>
+                <td>object</td>
+                <td><p>describes the options for drawing a string to the screen arguments for options:</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">description_string</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the string to be displayed, defaults to &quot;&quot;</p></td>
+                <td>description_string</td>
+                <td>string</td>
+                <td><p>the string to be displayed, defaults to &quot;&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">right</td>
-                <td style="font-family:Roboto Slab">right</td>
-                <td style="font-family:Roboto Slab"><p>the x position to place the right edge of text, defaults                                         to this.width</p></td>
+                <td>right</td>
+                <td>right</td>
+                <td><p>the x position to place the right edge of text, defaults                                         to this.width</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">left</td>
-                <td style="font-family:Roboto Slab">left</td>
-                <td style="font-family:Roboto Slab"><p>the x position to place the left edge of text, defaults                                         to this.width - 500</p></td>
+                <td>left</td>
+                <td>left</td>
+                <td><p>the x position to place the left edge of text, defaults                                         to this.width - 500</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">top</td>
-                <td style="font-family:Roboto Slab">top</td>
-                <td style="font-family:Roboto Slab"><p>the y position to place the top edge of text, defaults to 0</p></td>
+                <td>top</td>
+                <td>top</td>
+                <td><p>the y position to place the top edge of text, defaults to 0</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">bottom</td>
-                <td style="font-family:Roboto Slab">bottom</td>
-                <td style="font-family:Roboto Slab"><p>the y position to place the <strong>bottom</strong> edge of text,                                         defaults to 100</p></td>
+                <td>bottom</td>
+                <td>bottom</td>
+                <td><p>the y position to place the <strong>bottom</strong> edge of text,                                         defaults to 100</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">node_class</td>
-                <td style="font-family:Roboto Slab">node_class</td>
-                <td style="font-family:Roboto Slab"><p>the class used for locating the text node within fg_layer,                                         defaults to &quot;&quot;</p></td>
+                <td>node_class</td>
+                <td>node_class</td>
+                <td><p>the class used for locating the text node within fg_layer,                                         defaults to &quot;&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>utility function to break a long description string into a multiline and draw it at the desired<br />location</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render_description: function(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">render_description: function(options){
 	var self = this;
 
 	// default arguments if they are not present
@@ -795,7 +795,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">save_png: function(){
+            <pre style="display: none"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;
 	var height = this.height;

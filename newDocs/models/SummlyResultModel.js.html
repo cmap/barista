@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,8 +186,8 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SummlyResultModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>summly_result = new SummlyResultModel();<br />A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
             <h1>defaults</h1>
             <h5 class="subheader"></h5>
@@ -195,49 +195,49 @@
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">query</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the query perturbagen (pert_iname), defaults to <em>&quot;&quot;</em></p></td>
+                <td>query</td>
+                <td>string</td>
+                <td><p>the query perturbagen (pert_iname), defaults to <em>&quot;&quot;</em></p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">target</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the target perturbagen (pert_iname), defaults to <em>&quot;&quot;</em></p></td>
+                <td>target</td>
+                <td>string</td>
+                <td><p>the target perturbagen (pert_iname), defaults to <em>&quot;&quot;</em></p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">summly_score</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>summarized connectivity score across cell types, defaults to <em>-666</em></p></td>
+                <td>summly_score</td>
+                <td>number</td>
+                <td><p>summarized connectivity score across cell types, defaults to <em>-666</em></p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">summly_rank</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>summarized percent rank across cell types, defaults to <em>-666</em></p></td>
+                <td>summly_rank</td>
+                <td>number</td>
+                <td><p>summarized percent rank across cell types, defaults to <em>-666</em></p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">specificity</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>fraction of background queries that score/rank higher than the                                   observed connection, defaults to <em>-666</em></p></td>
+                <td>specificity</td>
+                <td>number</td>
+                <td><p>fraction of background queries that score/rank higher than the                                   observed connection, defaults to <em>-666</em></p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">cell_line_scores</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>the connectivity map scores in each cell line for the target                                   perturbagen, defaults to <em>{}</em></p></td>
+                <td>cell_line_scores</td>
+                <td>object</td>
+                <td><p>the connectivity map scores in each cell line for the target                                   perturbagen, defaults to <em>{}</em></p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
 	target: &quot;&quot;,
 	summly_score: -666,
@@ -252,29 +252,29 @@
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">attributes</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"></td>
+                <td>attributes</td>
+                <td>string</td>
+                <td></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">options</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"></td>
+                <td>options</td>
+                <td>string</td>
+                <td></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes,options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){

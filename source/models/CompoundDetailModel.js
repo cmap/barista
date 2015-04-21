@@ -1,7 +1,8 @@
 /**
+ * `pert_detail_model = new CompoundDetailModel()`
+ * 
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
- * `pert_detail_model = new CompoundDetailModel()`
  */
 
 Barista.Models.CompoundDetailModel = Backbone.Model.extend({

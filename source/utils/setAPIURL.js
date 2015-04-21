@@ -1,6 +1,6 @@
 /**
  * a utility function to set an APIURL attribute on the Barista object
- * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls
+ * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls,
  *                      defaults to '//api.lincscloud.org'
  */
 Barista.setAPIURL = function(url) {

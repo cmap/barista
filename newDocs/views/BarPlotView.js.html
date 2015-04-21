@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,74 +186,74 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BarPlotView</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">bg_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the backgound of the view, defaults to                               #ffffff</p></td>
+                <td>bg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the backgound of the view, defaults to                               #ffffff</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">fg_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the foreground color of the view, defaults to                               #1b9e77</p></td>
+                <td>fg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the foreground color of the view, defaults to                               #1b9e77</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">span_class</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>a bootstrap span class to size the width of the view, defaults to                               &quot;span12&quot;</p></td>
+                <td>span_class</td>
+                <td>string</td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                               &quot;span12&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">range</td>
-                <td style="font-family:Roboto Slab">array</td>
-                <td style="font-family:Roboto Slab"><p>a two element array specifying the plotting bounds of the plot, defaults                               to [min(data),max(data)]</p></td>
+                <td>range</td>
+                <td>array</td>
+                <td><p>a two element array specifying the plotting bounds of the plot, defaults                               to [min(data),max(data)]</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">log</td>
-                <td style="font-family:Roboto Slab">boolean</td>
-                <td style="font-family:Roboto Slab"><p>if set to true, plots the data on a log scale, defaults to false</p></td>
+                <td>log</td>
+                <td>boolean</td>
+                <td><p>if set to true, plots the data on a log scale, defaults to false</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">min_lock</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>if set, locks the minimum of the range at the given value. Ignored if                               range is set. defaults to undefined</p></td>
+                <td>min_lock</td>
+                <td>number</td>
+                <td><p>if set, locks the minimum of the range at the given value. Ignored if                               range is set. defaults to undefined</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">max_lock</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>if set, locks the maximum of the range at the given value. Ignored if                               range is set. defaults to undefined</p></td>
+                <td>max_lock</td>
+                <td>number</td>
+                <td><p>if set, locks the maximum of the range at the given value. Ignored if                               range is set. defaults to undefined</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">min_expand</td>
-                <td style="font-family:Roboto Slab">boolean</td>
-                <td style="font-family:Roboto Slab"><p>if set, allows the minimum of the range to expand if data is found below                               it. defaults to false</p></td>
+                <td>min_expand</td>
+                <td>boolean</td>
+                <td><p>if set, allows the minimum of the range to expand if data is found below                               it. defaults to false</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">max_expand</td>
-                <td style="font-family:Roboto Slab">boolean</td>
-                <td style="font-family:Roboto Slab"><p>if set, allows the maximum of the range to expand if data is found above                               it. defaults to false</p></td>
+                <td>max_expand</td>
+                <td>boolean</td>
+                <td><p>if set, allows the maximum of the range to expand if data is found above                               it. defaults to false</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">orientation</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>sets the orientation of the bar plot. options are &#39;horizontal&#39; or                               &#39;vertical&#39;. defaults to &#39;vertical&#39;</p></td>
+                <td>orientation</td>
+                <td>string</td>
+                <td><p>sets the orientation of the bar plot. options are &#39;horizontal&#39; or                               &#39;vertical&#39;. defaults to &#39;vertical&#39;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">plot_height</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the height of the plot in pixels, defaults to <em>120</em> bar_plot_view = new BarPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    range: undefined,<br />                                    log: false,<br />                                    min_lock: undefined,<br />                                    max_lock: undefined,<br />                                    min_expand: false,<br />                                    max_expand: false,<br />                                    plot_height: 120});</p></td>
+                <td>plot_height</td>
+                <td>number</td>
+                <td><p>the height of the plot in pixels, defaults to <em>120</em> bar_plot_view = new BarPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    range: undefined,<br />                                    log: false,<br />                                    min_lock: undefined,<br />                                    max_lock: undefined,<br />                                    min_expand: false,<br />                                    max_expand: false,<br />                                    plot_height: 120});</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -262,7 +262,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: new Barista.Models.BarPlotModel(),</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.BarPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -271,7 +271,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.range = (this.options.range !== undefined) ? this.options.x_range : undefined;
 	this.dynamic_range = (this.range === undefined) ? true : false;
@@ -314,7 +314,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function(){
+            <pre style="display: none"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -327,7 +327,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">init_plot: function(){
+            <pre style="display: none"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -367,7 +367,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update: function(){
+            <pre style="display: none"><code class="language-javascript">update: function(){
 	var self = this;
 	
 	// get model data
@@ -397,7 +397,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">set_ranges: function(){
+            <pre style="display: none"><code class="language-javascript">set_ranges: function(){
 	var data,min,max;
 	// calculate the range. If we need to caluclate it dynamically, check the lock and expand
 	// parameters for the axis
@@ -443,7 +443,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">set_scales: function(){
+            <pre style="display: none"><code class="language-javascript">set_scales: function(){
 	if (this.log){
 		this.x_scale=d3.scale.log().domain([this.range[0],this.range[1]]).range([this.margin, this.width - this.margin]);
 	}else{
@@ -463,7 +463,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">build_axes: function(){
+            <pre style="display: none"><code class="language-javascript">build_axes: function(){
 	var self = this;
 
 	this.xAxis = d3.svg.axis()
@@ -495,7 +495,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">style_axes: function(){
+            <pre style="display: none"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)
@@ -518,7 +518,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws bars in vertical mode</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render_vertical_bars: function(){
+            <pre style="display: none"><code class="language-javascript">render_vertical_bars: function(){
 	var self = this;
 	// get the model's data
 	this.data = this.model.get('data');
@@ -573,7 +573,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws bars in horizontal mode</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render_horizontal_bars: function(){
+            <pre style="display: none"><code class="language-javascript">render_horizontal_bars: function(){
 	var self = this;
 	// get the model's data
 	this.data = this.model.get('data');
@@ -611,7 +611,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update_vertical_bars: function(){
+            <pre style="display: none"><code class="language-javascript">update_vertical_bars: function(){
 	var self = this;
 	// build Axes
 	this.build_axes();
@@ -679,7 +679,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update_horizontal_bars: function(){
+            <pre style="display: none"><code class="language-javascript">update_horizontal_bars: function(){
 	var self = this;
 	// figure out how tall each bar will be
 	this.y_domain = this.y_scale.range();

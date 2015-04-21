@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -187,7 +187,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
+            <pre style="display: none"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
 
 	model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
@@ -198,7 +198,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 // set up color options.  default if not specified
 this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#d9d9d9&quot;;
 this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -255,7 +255,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">compile_template: function(){
+            <pre style="display: none"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -269,7 +269,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function(){
+            <pre style="display: none"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -348,7 +348,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the visibility of the element</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update_vis: function(){
+            <pre style="display: none"><code class="language-javascript">update_vis: function(){
 	var self = this;
 	// grab the data from the model and plot the state of the treemap
 	this.data = this.model.get('tree_object');
@@ -415,7 +415,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>inserts tooltips that display the cell id and count for non-empty datasets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">add_tooltips: function(){
+            <pre style="display: none"><code class="language-javascript">add_tooltips: function(){
 	// make a selection of all cells in the treemap
 	var cell_selection = $('.' + this.div_string + '_cell');
 
@@ -445,7 +445,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>clear visible text in fields</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">clear_text: function(){
+            <pre style="display: none"><code class="language-javascript">clear_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.count&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
@@ -458,7 +458,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM<br />snippets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">draw_foreignObject: function(){
+            <pre style="display: none"><code class="language-javascript">draw_foreignObject: function(){
 	var self = this;
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data(this.treemap.nodes)
@@ -499,7 +499,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws text to the screen based on treemap data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">draw_text: function(){
+            <pre style="display: none"><code class="language-javascript">draw_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data(this.treemap.nodes)
 		.enter().append(&quot;text&quot;)
@@ -552,7 +552,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>saves the target svg on the screen to a png file</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">savePng: function(){
+            <pre style="display: none"><code class="language-javascript">savePng: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;

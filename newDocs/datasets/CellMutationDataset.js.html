@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -187,7 +187,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>An object that extends Barista.Datasets to specify a backing dataset for Cellular mutation<br />annotations available in the Connectivity Map<br />CellMutationDataset is typically not used directly, rather it&#39;s content is extracted from<br />Barista.Datasets in views such as CMapSearchView</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
+            <pre style="display: none"><code class="language-javascript">Barista.Datasets = _.extend(Barista.Datasets,
 	{ CellMutation:
 			{</code></pre></span>
           <section id="limit">
@@ -198,7 +198,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>only return 6 items at a time in the autocomplete dropdown</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">limit: 6,</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">limit: 6,</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -207,7 +207,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>provide a name for the default typeahead data source</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: 'CellMutation',</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">name: 'CellMutation',</code></pre></span>
           <section id="template">
             <h1>template</h1>
             <h5 class="subheader"></h5>
@@ -216,7 +216,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>the template to render for all results</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">template: '&lt;span class=&quot;label&quot; style=&quot;background-color: {{ color }}&quot;&gt;{{ type }}&lt;/span&gt; {{ value }}',</code></pre></span>
           <section id="engine">
             <h1>engine</h1>
             <h5 class="subheader"></h5>
@@ -225,7 +225,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use twitter&#39;s hogan.js to compile the template for the typeahead results</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">engine: Hogan,
+            <pre style="display: none"><code class="language-javascript">engine: Hogan,
 
 remote: {
 	url: '',</code></pre></span>
@@ -236,29 +236,29 @@ remote: {
               <div class="label label-info radius ctx-type">method</div><span>replace()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">url</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>@todo this parameter is never used, consider removing                          from function</p></td>
+                <td>url</td>
+                <td>string</td>
+                <td><p>@todo this parameter is never used, consider removing                          from function</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">query</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>custom query</p></td>
+                <td>query</td>
+                <td>string</td>
+                <td><p>custom query</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set the remote data source to use cellinfo with custom query params</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">replace: function(url,query){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">replace: function(url,query){
 	query = (query[0] === &quot;*&quot;) ? query.replace(&quot;*&quot;,&quot;.*&quot;) : query;
 	return [Barista.APIURL + '/a2/cellinfo?',
 		'q={&quot;lincs_status&quot;:{&quot;$in&quot;:[&quot;core_cline&quot;,&quot;core_pline&quot;,&quot;DIVR&quot;]}}',
@@ -273,24 +273,24 @@ dataType: 'jsonp',</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>filter()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>returns the processed list of data for the autocomplete</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">response</td>
-                <td style="font-family:Roboto Slab">array</td>
-                <td style="font-family:Roboto Slab"><p>array of data to extract mutation data from</p></td>
+                <td>response</td>
+                <td>array</td>
+                <td><p>array of data to extract mutation data from</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>returns the processed list of data for the autocomplete</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">filter: function(response){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = response;
 

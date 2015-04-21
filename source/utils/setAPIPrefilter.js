@@ -1,6 +1,6 @@
 /**
  * a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter
- * @param {string} api_endpoint  The location of the API endpoint to prefilter call from. defaults to
+ * @param {string} api_endpoint  The location of the API endpoint to prefilter call from, defaults to
  *                               "api.lincscloud.org"
  */
 Barista.setAPIPrefilter = function(api_endpoint) {

@@ -1,6 +1,7 @@
 /**
- * A Backbone.Model that represents a single perturbagen
  * `pert_model = new PertModel()`
+ * 
+ * A Backbone.Model that represents a single perturbagen
  */
 Barista.Models.PertModel = Backbone.Model.extend({
 	/**

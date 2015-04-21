@@ -1,8 +1,9 @@
 /**
+ * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
+ * 
  * A Backbone.Model that represents the cell line based breakdown of a set of perturbagens
  * the number of perturbagens matching a query is counted for each cell line
  * Data for all cell lines that contain a match to the query are represented in the model
- * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
  */
 Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
       /**

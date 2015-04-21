@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="../index.html" class="upper">Main</a>
             </li>
             <li><a href="../afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,49 +186,49 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.TagListView</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">bg_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the backgound of the view, defaults to                                #ffffff</p></td>
+                <td>bg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the backgound of the view, defaults to                                #ffffff</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">fg_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the foreground color of the view, defaults                                to white</p></td>
+                <td>fg_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the foreground color of the view, defaults                                to white</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">tag_color</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the hex color code to use as the tag color of the view, defaults to gray</p></td>
+                <td>tag_color</td>
+                <td>string</td>
+                <td><p>the hex color code to use as the tag color of the view, defaults to gray</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">span_class</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>a bootstrap span class to size the width of the view, defaults to                                &quot;col-lg-12&quot;</p></td>
+                <td>span_class</td>
+                <td>string</td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                                &quot;col-lg-12&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">plot_height</td>
-                <td style="font-family:Roboto Slab">number</td>
-                <td style="font-family:Roboto Slab"><p>the height of the plot in pixels, defaults to 120</p></td>
+                <td>plot_height</td>
+                <td>number</td>
+                <td><p>the height of the plot in pixels, defaults to 120</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">display_field</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;<br />tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p></td>
+                <td>display_field</td>
+                <td>string</td>
+                <td><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;<br />tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -237,7 +237,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;TagListView&quot;,</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">name: &quot;TagListView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -246,7 +246,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set of the default model for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="collection">
             <h1>collection</h1>
             <h5 class="subheader"></h5>
@@ -255,7 +255,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up a default collection for the view to work with</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">collection: new Backbone.Collection(),</code></pre></span>
+            <pre style="display: none"><code class="language-javascript">collection: new Backbone.Collection(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -264,7 +264,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
+            <pre style="display: none"><code class="language-javascript">initialize: function(){
 	// initialize the base view
 	this.base_initialize();
 
@@ -300,7 +300,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function(){
+            <pre style="display: none"><code class="language-javascript">render: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
 	this.base_render();
@@ -327,7 +327,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update: function(){
+            <pre style="display: none"><code class="language-javascript">update: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
 	this.base_render();
@@ -354,7 +354,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>fits the view height to the height taken by the tags displayed</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fit_height: function(){
+            <pre style="display: none"><code class="language-javascript">fit_height: function(){
 	// set the view's height attribute based on the number of rows in the
 	// vis
 	var EmSize = Barista.getEmSizeInPixels(this.div_string);
@@ -376,7 +376,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to draw tags diven a data set</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">draw_tags: function(){
+            <pre style="display: none"><code class="language-javascript">draw_tags: function(){
 	var self = this;
 	// draw the foreground text of all the tags
 	this.fg_layer.selectAll('.tag_list_text').data([]).exit().remove();

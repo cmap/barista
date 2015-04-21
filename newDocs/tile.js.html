@@ -78,7 +78,7 @@
     <div class="container">
       <div class="row">
         <div class="span3 bs-docs-sidebar">
-          <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
+          <ul class="nav nav-list bs-docs-sidenav affix-top">
             <li><a href="index.html" class="upper">Main</a>
             </li>
             <li><a href="afterword.js.html" class="upper">afterword</a>
@@ -88,7 +88,7 @@
             <li class="active"><a href="tile.js.html" class="upper">tile</a>
             </li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Collections
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
                   <li class="inner"><a href="collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
                   <li class="inner"><a href="collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
@@ -97,7 +97,7 @@
                   <li class="inner"><a href="collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
                   <li class="inner"><a href="datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
                   <li class="inner"><a href="datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
@@ -114,7 +114,7 @@
                   <li class="inner"><a href="datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Models
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
                   <li class="inner"><a href="models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
                   <li class="inner"><a href="models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
@@ -136,7 +136,7 @@
                   <li class="inner"><a href="models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Utils
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
                   <li class="inner"><a href="utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
                   <li class="inner"><a href="utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
@@ -148,7 +148,7 @@
                   <li class="inner"><a href="utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
             <li><a onclick="listCollapse(this)" class="lower_outer">Views
-                <ul style="display: none;list-style-type: none">
+                <ul style="display: none">
                   <li class="inner"><a href="views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
                   <li class="inner"><a href="views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
                   <li class="inner"><a href="views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
@@ -186,54 +186,54 @@
               <div class="label label-success radius ctx-type">constructor</div><span>Tile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>Tile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#bdbdbd&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#bdbdbd&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.display]</td>
-                <td style="font-family:Roboto Slab">bool</td>
-                <td style="font-family:Roboto Slab"><p>true to render the tile on object creation, false not to, defaults to true</p></td>
+                <td>[options.display]</td>
+                <td>bool</td>
+                <td><p>true to render the tile on object creation, false not to, defaults to true</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Tile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function Tile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function Tile(options){
 	options = (options !== undefined) ? options : {};
 	this.div_target = (options.div_target !== undefined) ? options.div_target : &quot;body&quot;;
 	this.div_id = (options.div_id !== undefined) ? options.div_id : &quot;Tile&quot; + Math.floor(Math.random()*1000000000);
@@ -257,7 +257,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.init = function() {
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.init = function() {
 	// build the html to inject into the DOM
 	this.build_html();
 
@@ -282,7 +282,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.build_html = function() {
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.build_html = function() {
 	if (this.tile_type == &quot;small&quot;){
 		this.html = '&lt;div id=&quot;' + this.div_id + '&quot; class=&quot;span3&quot; style=&quot;height:150px ' + this.style + '&quot;&gt;&lt;/div&gt;';
 	}
@@ -301,7 +301,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.inject = function() {
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.inject = function() {
 	$(this.div_target).append(this.html);
 };</code></pre></span>
           <section id="draw_bg">
@@ -312,7 +312,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws the tiles background using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.draw_bg = function() {
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.draw_bg = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -370,24 +370,24 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.hide()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>hides the tile</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[duration=0]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>the duration of a fade out animation applied before hiding the tile</p></td>
+                <td>[duration=0]</td>
+                <td>object</td>
+                <td><p>the duration of a fade out animation applied before hiding the tile</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.hide = function(duration) {
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.hide = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).animate({opacity:0,width:0,height:0},duration);
 	var self = this;
@@ -400,24 +400,24 @@
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.show()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>shows the tile</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[duration=0]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>the duration of a fade out animation applied after showing the tile</p></td>
+                <td>[duration=0]</td>
+                <td>object</td>
+                <td><p>the duration of a fade out animation applied after showing the tile</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>shows the tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.show = function(duration) {
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">Tile.prototype.show = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).show();
 	$(&quot;#&quot; + this.div_id).animate({opacity:1,width:this.width,height:this.height},duration);
@@ -429,54 +429,54 @@
               <div class="label label-success radius ctx-type">constructor</div><span>ImageTile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>ImageTile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.image]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
+                <td>[options.image]</td>
+                <td>string</td>
+                <td><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>ImageTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function ImageTile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function ImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
 	var self = this;
@@ -493,7 +493,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTile.prototype.draw = function() {
+            <pre style="display: none"><code class="language-javascript">ImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 };</code></pre></span>
@@ -505,7 +505,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s image using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
+            <pre style="display: none"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -541,54 +541,54 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
               <div class="label label-success radius ctx-type">constructor</div><span>AnimatedImageTile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.image]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
+                <td>[options.image]</td>
+                <td>string</td>
+                <td><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function AnimatedImageTile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function AnimatedImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
 	var self = this;
@@ -606,7 +606,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 };</code></pre></span>
@@ -617,29 +617,29 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTile.prototype.start_animation()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>starts periodic animation of the Image on the Tile</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[duration=2000]</td>
-                <td style="font-family:Roboto Slab">int</td>
-                <td style="font-family:Roboto Slab"><p>duration the length of the animation in milliseconds</p></td>
+                <td>[duration=2000]</td>
+                <td>int</td>
+                <td><p>duration the length of the animation in milliseconds</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[frequency=</td>
-                <td style="font-family:Roboto Slab">int</td>
-                <td style="font-family:Roboto Slab"><p>10000 to 20000] frequency the frequency of the animation in milliseconds</p></td>
+                <td>[frequency=</td>
+                <td>int</td>
+                <td><p>10000 to 20000] frequency the frequency of the animation in milliseconds</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>starts periodic animation of the Image on the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
 	duration = (duration !== undefined) ? duration : 2000;
 	frequency = (frequency !== undefined) ? frequency : 10000 + Math.random() * 10000;
 	var self = this;
@@ -659,59 +659,59 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               <div class="label label-success radius ctx-type">constructor</div><span>ImageTextTile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>ImageTextTile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.image]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
+                <td>[options.image]</td>
+                <td>string</td>
+                <td><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.text]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
+                <td>[options.text]</td>
+                <td>string</td>
+                <td><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>ImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function ImageTextTile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function ImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -728,7 +728,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
+            <pre style="display: none"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
@@ -741,7 +741,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
+            <pre style="display: none"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -796,59 +796,59 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
               <div class="label label-success radius ctx-type">constructor</div><span>AnimatedImageTextTile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.image]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
+                <td>[options.image]</td>
+                <td>string</td>
+                <td><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.text]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
+                <td>[options.text]</td>
+                <td>string</td>
+                <td><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function AnimatedImageTextTile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function AnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -867,7 +867,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
@@ -884,7 +884,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
 	}
@@ -900,7 +900,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
 	}
@@ -916,7 +916,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
+            <pre style="display: none"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -968,59 +968,59 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               <div class="label label-success radius ctx-type">constructor</div><span>FullAnimatedImageTextTile()</span>
             </p>
           </section>
+          <div style="font-family:Roboto Slab" class="description"><p>FullAnimatedImageTextTile constructor</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th style="width:20%;font-family:Roboto Slab">Option name</th>
-                <th style="width:20%;font-family:Roboto Slab">Type</th>
-                <th style="font-family:Roboto Slab">Description</th>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-family:Roboto Slab">[options={}]</td>
-                <td style="font-family:Roboto Slab">object</td>
-                <td style="font-family:Roboto Slab"><p>options object to set properties</p></td>
+                <td>[options={}]</td>
+                <td>object</td>
+                <td><p>options object to set properties</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.image]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
+                <td>[options.image]</td>
+                <td>string</td>
+                <td><p>the url to use as the image,defaults to &quot;../Bellhop/img.two_circles.png&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_target]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
+                <td>[options.div_target]</td>
+                <td>string</td>
+                <td><p>the div id into which to inject html, defaults to &quot;body&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.div_id]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
+                <td>[options.div_id]</td>
+                <td>string</td>
+                <td><p>the div id for generated html, defaults to &quot;Tile&quot; plus a random number</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.text]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
+                <td>[options.text]</td>
+                <td>string</td>
+                <td><p>the text to display on the panel, defaults to &quot;Title&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.style]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
+                <td>[options.style]</td>
+                <td>string</td>
+                <td><p>inline style specification, defaults to &quot;#f0f0f0&quot;</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.color]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>the background color of the tile, defuaults to</p></td>
+                <td>[options.color]</td>
+                <td>string</td>
+                <td><p>the background color of the tile, defuaults to</p></td>
               </tr>
               <tr>
-                <td style="font-family:Roboto Slab">[options.tile_type]</td>
-                <td style="font-family:Roboto Slab">string</td>
-                <td style="font-family:Roboto Slab"><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
+                <td>[options.tile_type]</td>
+                <td>string</td>
+                <td><p>tile type, can be &quot;small&quot;, &quot;medium&quot;, or &quot;wide&quot;, defaults to &quot;medium&quot;</p></td>
               </tr>
             </tbody>
-          </table>
-          <div style="font-family:Roboto Slab" class="description"><p>FullAnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function FullAnimatedImageTextTile(options){
+          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none"><code class="language-javascript">function FullAnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -1040,7 +1040,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
+            <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
@@ -1057,7 +1057,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
+            <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimatingIn){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
 	}
@@ -1073,7 +1073,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
+            <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimatingOut){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
 	}
@@ -1089,7 +1089,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
+            <pre style="display: none"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){

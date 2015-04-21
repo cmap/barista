@@ -1,6 +1,7 @@
 /**
- * A Backbone.Model that represents a cell line
  * `pert_model = new CellModel()`
+ * 
+ * A Backbone.Model that represents a cell line
  */
 Barista.Models.CellModel = Backbone.Model.extend({
 	/**

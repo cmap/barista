@@ -1,6 +1,7 @@
 /**
- * A Backbone.Model that represents an analysis history object.
  * `pert_model = new AnalysisHistoryModel()`
+ * 
+ * A Backbone.Model that represents an analysis history object.
  */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
     /**

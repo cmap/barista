@@ -1,11 +1,12 @@
 /**
+ * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of perturbagens
  * The data model captures both the total count of perturbagens that meet a search criteria and the count 
  * of each annotation category for the set of perturbagens
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 
 Barista.Models.PertCountModel = Backbone.Model.extend({

@@ -1,4 +1,6 @@
 /**
+ * `generic_count_model = new GenericCountModel()`
+ * 
  * A Backbone.Model that represents the count of a set CMap databbase items
  * The data model captures the total count of perturbagens that meet a search criteria
  * optional arguments:
@@ -6,7 +8,6 @@
  *                               defaults to "pert_iname"
  * @param {string} url           the url of the api service to fetch data from, defaults to
  *                               "//api.lincscloud.org/a2/pertinfo"
- * `generic_count_model = new GenericCountModel()`
  */
 
 Barista.Models.GenericCountModel = Backbone.Model.extend({
