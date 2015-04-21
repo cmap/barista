@@ -5,9 +5,11 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
+    <link rel="stylesheet" href="./doxx_template.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="jquery-2.1.3.min.js"></script>
     <script src="collapse.js"></script>
+    <!--| <script src="makeList.js"></script>-->
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -64,7 +66,10 @@
         </div>
       </div>
     </div>
-    <header id="overview" class="jumbotron subhead">
+    <!-- getting rid of this gets rid of the entire header area-->
+    <!-- removing subhead class centers everything-->
+    <!-- @todo look into using a different image for the header-->
+    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -74,117 +79,117 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
-            <li><a href="../index.html" style="color: #00ccff">Main</a>
+            <li><a href="../index.html" class="upper">Main</a>
             </li>
-            <li><a href="../afterword.js.html" style="color: #00ccff">afterword</a>
+            <li><a href="../afterword.js.html" class="upper">afterword</a>
             </li>
-            <li><a href="../preamble.js.html" style="color: #00ccff">preamble</a>
+            <li><a href="../preamble.js.html" class="upper">preamble</a>
             </li>
-            <li><a href="../tile.js.html" style="color: #00ccff">tile</a>
+            <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
-            <li id="collections" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Collections
+            <li><a onclick="listCollapse(this)" class="lower_outer">Collections
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/AnalysisHistoryCollection.js.html" style="color: #00ccff">AnalysisHistoryCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/CellCollection.js.html" style="color: #00ccff">CellCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/GenericJSONCollection.js.html" style="color: #00ccff">GenericJSONCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/PertCollection.js.html" style="color: #00ccff">PertCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SignatureCollection.js.html" style="color: #00ccff">SignatureCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SummlyResultCollection.js.html" style="color: #00ccff">SummlyResultCollection</a></li>
+                  <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
+                  <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
+                  <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
+                  <li class="inner"><a href="../collections/PertCollection.js.html" class="lower_inner">PertCollection</a></li>
+                  <li class="inner"><a href="../collections/SignatureCollection.js.html" class="lower_inner">SignatureCollection</a></li>
+                  <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
-            <li id="datasets" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Datasets
+            <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellHistologyDataset.js.html" style="color: #00ccff">CellHistologyDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellIDDataset.js.html" style="color: #00ccff">CellIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellLineageDataset.js.html" style="color: #00ccff">CellLineageDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellMutationDataset.js.html" style="color: #00ccff">CellMutationDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CompoundPertINameDataset.js.html" style="color: #00ccff">CompoundPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/GeneticPertINameDataset.js.html" style="color: #00ccff">GeneticPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobIDDataset.js.html" style="color: #00ccff">JobIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobNameDataset.js.html" style="color: #00ccff">JobNameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobStatusDataset.js.html" style="color: #00ccff">JobStatusDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/P100PertINameDataset.js.html" style="color: #00ccff">P100PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PRISMPertINameDataset.js.html" style="color: #00ccff">PRISMPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PertINameDataset.js.html" style="color: #00ccff">PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/ToolIDDataset.js.html" style="color: #00ccff">ToolIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/UserIDDataset.js.html" style="color: #00ccff">UserIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellMutationDataset.js.html" class="lower_inner">CellMutationDataset</a></li>
+                  <li class="inner"><a href="../datasets/CompoundPertINameDataset.js.html" class="lower_inner">CompoundPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/GeneticPertINameDataset.js.html" class="lower_inner">GeneticPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobIDDataset.js.html" class="lower_inner">JobIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobNameDataset.js.html" class="lower_inner">JobNameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobStatusDataset.js.html" class="lower_inner">JobStatusDataset</a></li>
+                  <li class="inner"><a href="../datasets/P100PertINameDataset.js.html" class="lower_inner">P100PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PRISMPertINameDataset.js.html" class="lower_inner">PRISMPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PertINameDataset.js.html" class="lower_inner">PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/ToolIDDataset.js.html" class="lower_inner">ToolIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
-            <li id="models" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Models
+            <li><a onclick="listCollapse(this)" class="lower_outer">Models
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../models/AnalysisHistoryModel.js.html" style="color: #00ccff">AnalysisHistoryModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/BarPlotModel.js.html" style="color: #00ccff">BarPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellCountModel.js.html" style="color: #00ccff">CellCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellModel.js.html" style="color: #00ccff">CellModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CompoundDetailModel.js.html" style="color: #00ccff">CompoundDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GeneDetailModel.js.html" style="color: #00ccff">GeneDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericCountModel.js.html" style="color: #00ccff">GenericCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericMongoModel.js.html" style="color: #00ccff">GenericMongoModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/HeatmapModel.js.html" style="color: #00ccff">HeatmapModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCellBreakdownModel.js.html" style="color: #00ccff">PertCellBreakdownModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCountModel.js.html" style="color: #00ccff">PertCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertDetailModel.js.html" style="color: #00ccff">PertDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertModel.js.html" style="color: #00ccff">PertModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/ScatterPlotModel.js.html" style="color: #00ccff">ScatterPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SigCountModel.js.html" style="color: #00ccff">SigCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SignatureModel.js.html" style="color: #00ccff">SignatureModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SummlyResultModel.js.html" style="color: #00ccff">SummlyResultModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/TickModel.js.html" style="color: #00ccff">TickModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/sequenceModel.js.html" style="color: #00ccff">sequenceModel</a></li>
+                  <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
+                  <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
+                  <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
+                  <li class="inner"><a href="../models/CellModel.js.html" class="lower_inner">CellModel</a></li>
+                  <li class="inner"><a href="../models/CompoundDetailModel.js.html" class="lower_inner">CompoundDetailModel</a></li>
+                  <li class="inner"><a href="../models/GeneDetailModel.js.html" class="lower_inner">GeneDetailModel</a></li>
+                  <li class="inner"><a href="../models/GenericCountModel.js.html" class="lower_inner">GenericCountModel</a></li>
+                  <li class="inner"><a href="../models/GenericMongoModel.js.html" class="lower_inner">GenericMongoModel</a></li>
+                  <li class="inner"><a href="../models/HeatmapModel.js.html" class="lower_inner">HeatmapModel</a></li>
+                  <li class="inner"><a href="../models/PertCellBreakdownModel.js.html" class="lower_inner">PertCellBreakdownModel</a></li>
+                  <li class="inner"><a href="../models/PertCountModel.js.html" class="lower_inner">PertCountModel</a></li>
+                  <li class="inner"><a href="../models/PertDetailModel.js.html" class="lower_inner">PertDetailModel</a></li>
+                  <li class="inner"><a href="../models/PertModel.js.html" class="lower_inner">PertModel</a></li>
+                  <li class="inner"><a href="../models/ScatterPlotModel.js.html" class="lower_inner">ScatterPlotModel</a></li>
+                  <li class="inner"><a href="../models/SigCountModel.js.html" class="lower_inner">SigCountModel</a></li>
+                  <li class="inner"><a href="../models/SignatureModel.js.html" class="lower_inner">SignatureModel</a></li>
+                  <li class="inner"><a href="../models/SummlyResultModel.js.html" class="lower_inner">SummlyResultModel</a></li>
+                  <li class="inner"><a href="../models/TickModel.js.html" class="lower_inner">TickModel</a></li>
+                  <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
-            <li id="utils" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Utils
+            <li><a onclick="listCollapse(this)" class="lower_outer">Utils
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/CMapTypeAlias.js.html" style="color: #00ccff">CMapTypeAlias</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/NumbersToSubscript.js.html" style="color: #00ccff">NumbersToSubscript</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/arrayAverage.js.html" style="color: #00ccff">arrayAverage</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getEmSizeInPixels.js.html" style="color: #00ccff">getEmSizeInPixels</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getQueryVariable.js.html" style="color: #00ccff">getQueryVariable</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/numberWithCommas.js.html" style="color: #00ccff">numberWithCommas</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIPrefilter.js.html" style="color: #00ccff">setAPIPrefilter</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIURL.js.html" style="color: #00ccff">setAPIURL</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setUserKey.js.html" style="color: #00ccff">setUserKey</a></li>
+                  <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
+                  <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
+                  <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
+                  <li class="inner"><a href="../utils/getEmSizeInPixels.js.html" class="lower_inner">getEmSizeInPixels</a></li>
+                  <li class="inner"><a href="../utils/getQueryVariable.js.html" class="lower_inner">getQueryVariable</a></li>
+                  <li class="inner"><a href="../utils/numberWithCommas.js.html" class="lower_inner">numberWithCommas</a></li>
+                  <li class="inner"><a href="../utils/setAPIPrefilter.js.html" class="lower_inner">setAPIPrefilter</a></li>
+                  <li class="inner"><a href="../utils/setAPIURL.js.html" class="lower_inner">setAPIURL</a></li>
+                  <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
-            <li id="views" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Views
+            <li><a onclick="listCollapse(this)" class="lower_outer">Views
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BarPlotView.js.html" style="color: #00ccff">BarPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaBaseView.js.html" style="color: #00ccff">BaristaBaseView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaCardView.js.html" style="color: #00ccff">BaristaCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaUserCardView.js.html" style="color: #00ccff">BaristaUserCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BubbleView.js.html" style="color: #00ccff">BubbleView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapFooterView.js.html" style="color: #00ccff">CMapFooterView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapHeaderView.js.html" style="color: #00ccff">CMapHeaderView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapNavigationView.js.html" style="color: #00ccff">CMapNavigationView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CellSearchBar.js.html" style="color: #00ccff">CellSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundDetailView.js.html" style="color: #00ccff">CompoundDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundSearchBar.js.html" style="color: #00ccff">CompoundSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/FlatTreeMapView.js.html" style="color: #00ccff">FlatTreeMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/GenericCountView.js.html" style="color: #00ccff">GenericCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/GridView.js.html" style="color: #00ccff">GridView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HTMLCellView.js.html" style="color: #00ccff">HTMLCellView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HeatMapView.js.html" style="color: #00ccff">HeatMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/LDMapView.js.html" style="color: #00ccff">LDMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertCountView.js.html" style="color: #00ccff">PertCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertDetailView.js.html" style="color: #00ccff">PertDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertSearchBar.js.html" style="color: #00ccff">PertSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PlatformSummaryView.js.html" style="color: #00ccff">PlatformSummaryView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ScatterPlotView.js.html" style="color: #00ccff">ScatterPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TagListView.js.html" style="color: #00ccff">TagListView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TickView.js.html" style="color: #00ccff">TickView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ViolinPlotView.js.html" style="color: #00ccff">ViolinPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/sequenceView.js.html" style="color: #00ccff">sequenceView</a></li>
+                  <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
+                  <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
+                  <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
+                  <li class="inner"><a href="../views/BaristaUserCardView.js.html" class="lower_inner">BaristaUserCardView</a></li>
+                  <li class="inner"><a href="../views/BubbleView.js.html" class="lower_inner">BubbleView</a></li>
+                  <li class="inner"><a href="../views/CMapFooterView.js.html" class="lower_inner">CMapFooterView</a></li>
+                  <li class="inner"><a href="../views/CMapHeaderView.js.html" class="lower_inner">CMapHeaderView</a></li>
+                  <li class="inner"><a href="../views/CMapNavigationView.js.html" class="lower_inner">CMapNavigationView</a></li>
+                  <li class="inner"><a href="../views/CellSearchBar.js.html" class="lower_inner">CellSearchBar</a></li>
+                  <li class="inner"><a href="../views/CompoundDetailView.js.html" class="lower_inner">CompoundDetailView</a></li>
+                  <li class="inner"><a href="../views/CompoundSearchBar.js.html" class="lower_inner">CompoundSearchBar</a></li>
+                  <li class="inner"><a href="../views/FlatTreeMapView.js.html" class="lower_inner">FlatTreeMapView</a></li>
+                  <li class="inner"><a href="../views/GenericCountView.js.html" class="lower_inner">GenericCountView</a></li>
+                  <li class="inner"><a href="../views/GridView.js.html" class="lower_inner">GridView</a></li>
+                  <li class="inner"><a href="../views/HTMLCellView.js.html" class="lower_inner">HTMLCellView</a></li>
+                  <li class="inner"><a href="../views/HeatMapView.js.html" class="lower_inner">HeatMapView</a></li>
+                  <li class="inner"><a href="../views/LDMapView.js.html" class="lower_inner">LDMapView</a></li>
+                  <li class="inner"><a href="../views/PertCountView.js.html" class="lower_inner">PertCountView</a></li>
+                  <li class="inner"><a href="../views/PertDetailView.js.html" class="lower_inner">PertDetailView</a></li>
+                  <li class="inner"><a href="../views/PertSearchBar.js.html" class="lower_inner">PertSearchBar</a></li>
+                  <li class="inner"><a href="../views/PlatformSummaryView.js.html" class="lower_inner">PlatformSummaryView</a></li>
+                  <li class="inner"><a href="../views/ScatterPlotView.js.html" class="lower_inner">ScatterPlotView</a></li>
+                  <li class="inner"><a href="../views/TagListView.js.html" class="lower_inner">TagListView</a></li>
+                  <li class="inner"><a href="../views/TickView.js.html" class="lower_inner">TickView</a></li>
+                  <li class="inner"><a href="../views/ViolinPlotView.js.html" class="lower_inner">ViolinPlotView</a></li>
+                  <li class="inner"><a href="../views/sequenceView.js.html" class="lower_inner">sequenceView</a></li>
                 </ul></a></li>
           </ul>
         </div>
         <div class="span9">
           <section id="AnalysisHistoryModel">
-            <h1 style="font-family: Open Sans">AnalysisHistoryModel</h1>
+            <h1>AnalysisHistoryModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.AnalysisHistoryModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents an analysis history object.<br /><code>pert_model = new AnalysisHistoryModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -211,8 +216,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the models date attribute and set the cid to the<br />mongo _id field</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes, options) {
     this.cid = this.get('_id')
     this.set(&quot;date&quot;, new Date(parseInt(this.cid.substring(0,8), 16)*1000));
     this.set(&quot;rpt&quot;,this.get(&quot;params&quot;).rpt);
@@ -225,17 +230,17 @@
   }
 });</code></pre></span>
           <section id="BarPlotModel">
-            <h1 style="font-family: Open Sans">BarPlotModel</h1>
+            <h1>BarPlotModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.BarPlotModel</span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model to hold the information needed to make a simple bar plot<br />The model includes a title, axis title, data, data_labels, and an optional object for metadata on the<br />points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}</p><p>   usage:</p><pre><code>    summly_result = new SummlyResultModel();
-</code></pre> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.BarPlotModel = Backbone.Model.extend({</code></pre></span>
+</code></pre> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.BarPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -277,8 +282,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set of model defaults</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>set of model defaults</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	axis_title: &quot;&quot;,
 	data: [],
@@ -287,7 +292,7 @@
 }
 });</code></pre></span>
           <section id="CellCountModel">
-            <h1 style="font-family: Open Sans">CellCountModel</h1>
+            <h1>CellCountModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CellCountModel</span>
@@ -309,10 +314,10 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of cell_lines<br />The data model captures both the total count of cell lines that meet a search criteria and the count of<br />each annotation category for the set of cell lines<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.CellCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -344,15 +349,15 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   count: 0,
   pert_types: [{}],
   g: &quot;cell_type&quot;,
   last_update: (new Date()).getTime()
 },</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -379,8 +384,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the cell_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the pert_params for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -442,16 +447,16 @@
 }
 });</code></pre></span>
           <section id="CellModel">
-            <h1 style="font-family: Open Sans">CellModel</h1>
+            <h1>CellModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CellModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a cell line<br /><code>pert_model = new CellModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CellModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a cell line<br /><code>pert_model = new CellModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.CellModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -478,22 +483,22 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to set the model&#39;s cid to the cell_id of the perturbagen</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to set the model&#39;s cid to the cell_id of the perturbagen</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('cell_id');
   }
 });</code></pre></span>
           <section id="CompoundDetailModel">
-            <h1 style="font-family: Open Sans">CompoundDetailModel</h1>
+            <h1>CompoundDetailModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.CompoundDetailModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new CompoundDetailModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.CompoundDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -535,8 +540,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   pert_id: &quot;&quot;,
   pert_iname: &quot;&quot;,
   pert_summary: null,
@@ -552,7 +557,7 @@
   structure_url: &quot;&quot;
 },</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -574,8 +579,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -666,16 +671,16 @@
 }
 });</code></pre></span>
           <section id="GeneDetailModel">
-            <h1 style="font-family: Open Sans">GeneDetailModel</h1>
+            <h1>GeneDetailModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GeneDetailModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single compound&#39;s description<br />The data model captures a number of fields including<br /><code>pert_detail_model = new GeneDetailModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.GeneDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -717,8 +722,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   cell_id: [],
   clone_name: null,
   has_kd: false,
@@ -739,25 +744,25 @@
   vector_id: null
 },</code></pre></span>
           <section id="kd_fields">
-            <h1 style="font-family: Open Sans">kd_fields</h1>
+            <h1>kd_fields</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>kd_fields</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>kd specific model fields</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>kd specific model fields</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">kd_fields: ['clone_name','oligo_seq','seed_seq6','seed_seq7','target_region','target_seq','vector_id'],</code></pre></span>
           <section id="array_fields">
-            <h1 style="font-family: Open Sans">array_fields</h1>
+            <h1>array_fields</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>array_fields</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fields that are arrays</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>fields that are arrays</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">array_fields: ['cell_id','sig_id','sig_id_gold'],</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -779,8 +784,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />All fields are replaced by the first item that matches the api search_string</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string){
   // set up a deferred object that can be used by outside functions.  This deferred will be
   // resolved with the contents of the model attributes
   var deferred = $.Deferred();
@@ -839,7 +844,7 @@
       return deferred;
   },</code></pre></span>
           <section id="fetch_pert_type">
-            <h1 style="font-family: Open Sans">fetch_pert_type</h1>
+            <h1>fetch_pert_type</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch_pert_type()</span>
@@ -866,8 +871,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info API for the given pert_type</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch_pert_type: function(search_string,pert_type){
     // set up a deferred object that we can use in the fetch function above
     var deferred = $.Deferred();
 
@@ -896,7 +901,7 @@
 }
 });</code></pre></span>
           <section id="GenericCountModel">
-            <h1 style="font-family: Open Sans">GenericCountModel</h1>
+            <h1>GenericCountModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.GenericCountModel</span>
@@ -923,33 +928,33 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set CMap databbase items<br />The data model captures the total count of perturbagens that meet a search criteria<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.GenericCountModel = Backbone.Model.extend({
 
   defaults:{
     count:0,
 
   },</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
+          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize:function(attrs){
   this.setListeners();
 },</code></pre></span>
           <section id="setListeners">
-            <h1 style="font-family: Open Sans">setListeners</h1>
+            <h1>setListeners</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>setListeners()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">setListeners: function() {
+          <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">setListeners: function() {
   var source = this.get('source');
   if (source) {
     this.listenTo(source,'update',function(){
@@ -965,25 +970,25 @@
 
 Barista.Models.GenericSourceModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize:function(attrs){
+          <div style="font-family:Roboto Slab" class="description"><p>custom initialization to make sure we have the correct url for jsonp</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize:function(attrs){
   this.setKey();
 },</code></pre></span>
           <section id="setKey">
-            <h1 style="font-family: Open Sans">setKey</h1>
+            <h1>setKey</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>setKey()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">setKey: function() {
+          <div style="font-family:Roboto Slab" class="description"><p>add description</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">setKey: function() {
   var key = this.get('key');
   this.url = 'http://10.125.171.42:8080/' + key;
 },
@@ -1029,7 +1034,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="HeatmapModel">
-            <h1 style="font-family: Open Sans">HeatmapModel</h1>
+            <h1>HeatmapModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.HeatmapModel</span>
@@ -1077,10 +1082,10 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
             </tbody>
           </table>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the data in a heatmap<br />The model contains a two dimensional array of numbers, row and columns labels, and a title<br />example usage:</p><pre><code>         heatmap_model = new HeatmapModel();
-</code></pre><p>optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre></span>
+</code></pre><p>optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.HeatmapModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1122,8 +1127,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
 	data: [[1,2],[3,4]],
 	rid: ['1','2'],
 	cid: ['1','2'],
@@ -1133,16 +1138,16 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 })</code></pre></span>
           <section id="PertCellBreakdownModel">
-            <h1 style="font-family: Open Sans">PertCellBreakdownModel</h1>
+            <h1>PertCellBreakdownModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertCellBreakdownModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the cell line based breakdown of a set of perturbagens<br />the number of perturbagens matching a query is counted for each cell line<br />Data for all cell lines that contain a match to the query are represented in the model<br /><code>pert_cell_breakdown_model = new PertCellBreakdownModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1169,13 +1174,13 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   &quot;filter&quot;: &quot;&quot;,
   &quot;tree_object&quot;: {children:[]}
 },</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -1202,8 +1207,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />the tree_object data is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1239,7 +1244,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="PertCountModel">
-            <h1 style="font-family: Open Sans">PertCountModel</h1>
+            <h1>PertCountModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertCountModel</span>
@@ -1261,10 +1266,10 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of perturbagens<br />The data model captures both the total count of perturbagens that meet a search criteria and the count<br />of each annotation category for the set of perturbagens<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertCountModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of perturbagens<br />The data model captures both the total count of perturbagens that meet a search criteria and the count<br />of each annotation category for the set of perturbagens<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.PertCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1306,8 +1311,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_cp&quot;]',
   &quot;count&quot;: 0,
   &quot;pert_types&quot;: [{}],
@@ -1315,7 +1320,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   &quot;last_update&quot;: (new Date()).getTime()
 },</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -1342,8 +1347,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1380,23 +1385,23 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="PertDetailModel">
-            <h1 style="font-family: Open Sans">PertDetailModel</h1>
+            <h1>PertDetailModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertDetailModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single perturbagen&#39;s description<br />The data model captures annotation data from compounds or genes<br />To do this, the model uses CompoundDetailModel and GeneDetailModel under the hood and pulls in their<br />attributes depending on how the model&#39;s fetch method is called</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.PertDetailModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters<br />this an incomplete list of defaults, only those that are common to all perturbagens</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   cell_id: [],
   num_gold: null,
   num_inst: null,
@@ -1408,25 +1413,25 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   sig_id_gold: []
 },</code></pre></span>
           <section id="compound_sub_model">
-            <h1 style="font-family: Open Sans">compound_sub_model</h1>
+            <h1>compound_sub_model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>compound_sub_model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Compound annotations</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">compound_sub_model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
           <section id="gene_sub_model">
-            <h1 style="font-family: Open Sans">gene_sub_model</h1>
+            <h1>gene_sub_model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>gene_sub_model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>a sub-model to be used when the PertDetailModel model needs to fetch Gene annotations</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">gene_sub_model: new Barista.Models.GeneDetailModel(),</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -1453,8 +1458,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string, model_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the pert_info api<br />depending on the model_type parameter,the method calls the appropriate fetch method for the given sub<br />model type and fills the PertDetailModel&#39;s attributes with that of the sub model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string, model_type){
     var self = this;
     var deferred = $.Deferred();
     switch (model_type){
@@ -1475,16 +1480,16 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="PertModel">
-            <h1 style="font-family: Open Sans">PertModel</h1>
+            <h1>PertModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.PertModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single perturbagen<br /><code>pert_model = new PertModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.PertModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single perturbagen<br /><code>pert_model = new PertModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.PertModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -1511,8 +1516,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overrides the base Model&#39;s initialize method to set the model&#39;s cid to the pert_id of the perturbagen</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
+          <div style="font-family:Roboto Slab" class="description"><p>Overrides the base Model&#39;s initialize method to set the model&#39;s cid to the pert_id of the perturbagen</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes, options) {
 	this.cid = this.get('pert_id');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){
@@ -1524,16 +1529,16 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   }
 });</code></pre></span>
           <section id="ScatterPlotModel">
-            <h1 style="font-family: Open Sans">ScatterPlotModel</h1>
+            <h1>ScatterPlotModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.ScatterPlotModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model to hold the information needed to make a simple scatter plot<br />The model includes a title, x and y axis titles, x and y data, and an optional object for metadata on<br />the points in the data<br />The meta data object should contain attributes for each meta data category and an array of values<br />matching the size of the points in the data<br />for example:<br />meta_data = {&#39;dose: [1,2,3]&#39;, timepoint: [&#39;6H&#39;,&#39;6H&#39;,&#39;6H&#39;]}<br />usage:<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.ScatterPlotModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1580,8 +1585,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set of model defaults</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>set of model defaults</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	x_axis_title: &quot;&quot;,
 	y_axis_title: &quot;&quot;,
@@ -1591,7 +1596,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="SigCountModel">
-            <h1 style="font-family: Open Sans">SigCountModel</h1>
+            <h1>SigCountModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SigCountModel</span>
@@ -1613,10 +1618,10 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of signatures<br />he data model captures both the total count of signatures that meet a search criteria and the count of<br />each annotation category for the set of signatures<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SigCountModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the count of a set of signatures<br />he data model captures both the total count of signatures that meet a search criteria and the count of<br />each annotation category for the set of signatures<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.SigCountModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1658,8 +1663,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>describes the model&#39;s default parameters</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   &quot;type_string&quot;: '[&quot;trt_sh&quot;,&quot;trt_oe&quot;,&quot;trt_oe.mut&quot;]',
   &quot;count&quot;: 0,
   &quot;pert_types&quot;: [{}],
@@ -1667,7 +1672,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   &quot;last_update&quot;: (new Date()).getTime()
 },</code></pre></span>
           <section id="fetch">
-            <h1 style="font-family: Open Sans">fetch</h1>
+            <h1>fetch</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>fetch()</span>
@@ -1694,8 +1699,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the sig_info api<br />the count and sig_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">fetch: function(search_string,search_type){
+          <div style="font-family:Roboto Slab" class="description"><p>fetches new data from the sig_info api<br />the count and sig_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">fetch: function(search_string,search_type){
   // depending on the type of query we are making, set up the q param for the api call.
   // if we are doing a single query, match that query as a regular expression. If we are
   // doing a multi query, match exact names. If we are doing a cell line query, only match
@@ -1732,16 +1737,16 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="SignatureModel">
-            <h1 style="font-family: Open Sans">SignatureModel</h1>
+            <h1>SignatureModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SignatureModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single signature<br /><code>pert_model = new SignatureModel()</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SignatureModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents a single signature<br /><code>pert_model = new SignatureModel()</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.SignatureModel = Backbone.Model.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -1768,8 +1773,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the sig_id of the perturbagen</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes, options) {
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the sig_id of the perturbagen</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes, options) {
 	// set the unique collection identifier to match the sig_id
 	this.cid = this.get('sig_id');
 	
@@ -1792,16 +1797,16 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
   }
 });</code></pre></span>
           <section id="SummlyResultModel">
-            <h1 style="font-family: Open Sans">SummlyResultModel</h1>
+            <h1>SummlyResultModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SummlyResultModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the a single CMap Summly result<br />A single result is composed of the connection between two pert_inames (a query and a target), the<br />component data that went into computing the summly result, and the statistics  of the summly computation<br />summly_result = new SummlyResultModel();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.SummlyResultModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1848,8 +1853,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
 	query: &quot;&quot;,
 	target: &quot;&quot;,
 	summly_score: -666,
@@ -1858,7 +1863,7 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 	cell_line_scores: {}
 },</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
@@ -1885,8 +1890,8 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(attributes,options){
+          <div style="font-family:Roboto Slab" class="description"><p>Overides the base Model&#39;s initialize method to add the model&#39;s cid to the summly_id</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(attributes,options){
 	this.cid = this.get('target');
 	var pert_type = this.get('pert_type');
 	switch(pert_type){
@@ -1898,17 +1903,17 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 }
 });</code></pre></span>
           <section id="TickModel">
-            <h1 style="font-family: Open Sans">TickModel</h1>
+            <h1>TickModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.TickModel</span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Model that represents the data required to build a CMapTickView<br />The model contains a data object that has keys for each row to display in the view and array values for<br />each tick to display in each row<br />An example data object might look like this:</p><pre><code>        {PC3: [.23,-.28], MCF7: [-0.6]}
-</code></pre><p>example usage:<br />tick_model = new TickModel();</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.TickModel = Backbone.Model.extend({</code></pre></span>
+</code></pre><p>example usage:<br />tick_model = new TickModel();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.TickModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
@@ -1935,54 +1940,54 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>set up defaults for model values</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
 	title: &quot;&quot;,
 	data_object: {}
 }
 });</code></pre></span>
           <section id="SequenceModel">
-            <h1 style="font-family: Open Sans">SequenceModel</h1>
+            <h1>SequenceModel</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Models.SequenceModel</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>Model to represent a sequence and the modifications on that sequence</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Models.SequenceModel = Backbone.Model.extend({</code></pre></span>
           <section id="defaults">
-            <h1 style="font-family: Open Sans">defaults</h1>
+            <h1>defaults</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>defaults</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the default options for the model</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">defaults: {
+          <div style="font-family:Roboto Slab" class="description"><p>the default options for the model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">defaults: {
   sequence: '',
   displaySequence: '',
   modifications: new Backbone.Collection()
 },</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>initialize the model to listen to its own model changes</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function() {
+          <div style="font-family:Roboto Slab" class="description"><p>initialize the model to listen to its own model changes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function() {
   this.listenTo(this, 'change:sequence', this.parseSequence);
 },</code></pre></span>
           <section id="parseSequence">
-            <h1 style="font-family: Open Sans">parseSequence</h1>
+            <h1>parseSequence</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>parseSequence()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">parseSequence: function() {
+          <div style="font-family:Roboto Slab" class="description"><p>function to populate the derived model attributes of displaySequence and modifications</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">parseSequence: function() {
   var sequence = this.get('sequence'),
       modifications = this.get('modifications'),
       indices = [],

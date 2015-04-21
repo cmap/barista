@@ -1,0 +1,21 @@
+h1{
+	font-family: Open Sans;
+}
+
+a.lower_outer{
+	font-weight: bold;
+	color: #ff9933;
+}
+
+a.lower_inner, a.upper{
+	font-weight: bold;
+	color: #00ccff;
+}
+
+li{
+	cursor: pointer;
+}
+
+li.inner{
+	margin: 15px 0 15px 0;
+}

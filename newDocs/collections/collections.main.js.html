@@ -5,9 +5,11 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
+    <link rel="stylesheet" href="./doxx_template.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="jquery-2.1.3.min.js"></script>
     <script src="collapse.js"></script>
+    <!--| <script src="makeList.js"></script>-->
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -64,7 +66,10 @@
         </div>
       </div>
     </div>
-    <header id="overview" class="jumbotron subhead">
+    <!-- getting rid of this gets rid of the entire header area-->
+    <!-- removing subhead class centers everything-->
+    <!-- @todo look into using a different image for the header-->
+    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -74,108 +79,108 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
-            <li><a href="../index.html" style="color: #00ccff">Main</a>
+            <li><a href="../index.html" class="upper">Main</a>
             </li>
-            <li><a href="../afterword.js.html" style="color: #00ccff">afterword</a>
+            <li><a href="../afterword.js.html" class="upper">afterword</a>
             </li>
-            <li><a href="../preamble.js.html" style="color: #00ccff">preamble</a>
+            <li><a href="../preamble.js.html" class="upper">preamble</a>
             </li>
-            <li><a href="../tile.js.html" style="color: #00ccff">tile</a>
+            <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
-            <li id="collections" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Collections
+            <li><a onclick="listCollapse(this)" class="lower_outer">Collections
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/AnalysisHistoryCollection.js.html" style="color: #00ccff">AnalysisHistoryCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/CellCollection.js.html" style="color: #00ccff">CellCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/GenericJSONCollection.js.html" style="color: #00ccff">GenericJSONCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/PertCollection.js.html" style="color: #00ccff">PertCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SignatureCollection.js.html" style="color: #00ccff">SignatureCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SummlyResultCollection.js.html" style="color: #00ccff">SummlyResultCollection</a></li>
+                  <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
+                  <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
+                  <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
+                  <li class="inner"><a href="../collections/PertCollection.js.html" class="lower_inner">PertCollection</a></li>
+                  <li class="inner"><a href="../collections/SignatureCollection.js.html" class="lower_inner">SignatureCollection</a></li>
+                  <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
-            <li id="datasets" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Datasets
+            <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellHistologyDataset.js.html" style="color: #00ccff">CellHistologyDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellIDDataset.js.html" style="color: #00ccff">CellIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellLineageDataset.js.html" style="color: #00ccff">CellLineageDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellMutationDataset.js.html" style="color: #00ccff">CellMutationDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CompoundPertINameDataset.js.html" style="color: #00ccff">CompoundPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/GeneticPertINameDataset.js.html" style="color: #00ccff">GeneticPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobIDDataset.js.html" style="color: #00ccff">JobIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobNameDataset.js.html" style="color: #00ccff">JobNameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobStatusDataset.js.html" style="color: #00ccff">JobStatusDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/P100PertINameDataset.js.html" style="color: #00ccff">P100PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PRISMPertINameDataset.js.html" style="color: #00ccff">PRISMPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PertINameDataset.js.html" style="color: #00ccff">PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/ToolIDDataset.js.html" style="color: #00ccff">ToolIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/UserIDDataset.js.html" style="color: #00ccff">UserIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellMutationDataset.js.html" class="lower_inner">CellMutationDataset</a></li>
+                  <li class="inner"><a href="../datasets/CompoundPertINameDataset.js.html" class="lower_inner">CompoundPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/GeneticPertINameDataset.js.html" class="lower_inner">GeneticPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobIDDataset.js.html" class="lower_inner">JobIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobNameDataset.js.html" class="lower_inner">JobNameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobStatusDataset.js.html" class="lower_inner">JobStatusDataset</a></li>
+                  <li class="inner"><a href="../datasets/P100PertINameDataset.js.html" class="lower_inner">P100PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PRISMPertINameDataset.js.html" class="lower_inner">PRISMPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PertINameDataset.js.html" class="lower_inner">PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/ToolIDDataset.js.html" class="lower_inner">ToolIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
-            <li id="models" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Models
+            <li><a onclick="listCollapse(this)" class="lower_outer">Models
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../models/AnalysisHistoryModel.js.html" style="color: #00ccff">AnalysisHistoryModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/BarPlotModel.js.html" style="color: #00ccff">BarPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellCountModel.js.html" style="color: #00ccff">CellCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellModel.js.html" style="color: #00ccff">CellModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CompoundDetailModel.js.html" style="color: #00ccff">CompoundDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GeneDetailModel.js.html" style="color: #00ccff">GeneDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericCountModel.js.html" style="color: #00ccff">GenericCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericMongoModel.js.html" style="color: #00ccff">GenericMongoModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/HeatmapModel.js.html" style="color: #00ccff">HeatmapModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCellBreakdownModel.js.html" style="color: #00ccff">PertCellBreakdownModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCountModel.js.html" style="color: #00ccff">PertCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertDetailModel.js.html" style="color: #00ccff">PertDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertModel.js.html" style="color: #00ccff">PertModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/ScatterPlotModel.js.html" style="color: #00ccff">ScatterPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SigCountModel.js.html" style="color: #00ccff">SigCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SignatureModel.js.html" style="color: #00ccff">SignatureModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SummlyResultModel.js.html" style="color: #00ccff">SummlyResultModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/TickModel.js.html" style="color: #00ccff">TickModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/sequenceModel.js.html" style="color: #00ccff">sequenceModel</a></li>
+                  <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
+                  <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
+                  <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
+                  <li class="inner"><a href="../models/CellModel.js.html" class="lower_inner">CellModel</a></li>
+                  <li class="inner"><a href="../models/CompoundDetailModel.js.html" class="lower_inner">CompoundDetailModel</a></li>
+                  <li class="inner"><a href="../models/GeneDetailModel.js.html" class="lower_inner">GeneDetailModel</a></li>
+                  <li class="inner"><a href="../models/GenericCountModel.js.html" class="lower_inner">GenericCountModel</a></li>
+                  <li class="inner"><a href="../models/GenericMongoModel.js.html" class="lower_inner">GenericMongoModel</a></li>
+                  <li class="inner"><a href="../models/HeatmapModel.js.html" class="lower_inner">HeatmapModel</a></li>
+                  <li class="inner"><a href="../models/PertCellBreakdownModel.js.html" class="lower_inner">PertCellBreakdownModel</a></li>
+                  <li class="inner"><a href="../models/PertCountModel.js.html" class="lower_inner">PertCountModel</a></li>
+                  <li class="inner"><a href="../models/PertDetailModel.js.html" class="lower_inner">PertDetailModel</a></li>
+                  <li class="inner"><a href="../models/PertModel.js.html" class="lower_inner">PertModel</a></li>
+                  <li class="inner"><a href="../models/ScatterPlotModel.js.html" class="lower_inner">ScatterPlotModel</a></li>
+                  <li class="inner"><a href="../models/SigCountModel.js.html" class="lower_inner">SigCountModel</a></li>
+                  <li class="inner"><a href="../models/SignatureModel.js.html" class="lower_inner">SignatureModel</a></li>
+                  <li class="inner"><a href="../models/SummlyResultModel.js.html" class="lower_inner">SummlyResultModel</a></li>
+                  <li class="inner"><a href="../models/TickModel.js.html" class="lower_inner">TickModel</a></li>
+                  <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
-            <li id="utils" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Utils
+            <li><a onclick="listCollapse(this)" class="lower_outer">Utils
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/CMapTypeAlias.js.html" style="color: #00ccff">CMapTypeAlias</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/NumbersToSubscript.js.html" style="color: #00ccff">NumbersToSubscript</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/arrayAverage.js.html" style="color: #00ccff">arrayAverage</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getEmSizeInPixels.js.html" style="color: #00ccff">getEmSizeInPixels</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getQueryVariable.js.html" style="color: #00ccff">getQueryVariable</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/numberWithCommas.js.html" style="color: #00ccff">numberWithCommas</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIPrefilter.js.html" style="color: #00ccff">setAPIPrefilter</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIURL.js.html" style="color: #00ccff">setAPIURL</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setUserKey.js.html" style="color: #00ccff">setUserKey</a></li>
+                  <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
+                  <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
+                  <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
+                  <li class="inner"><a href="../utils/getEmSizeInPixels.js.html" class="lower_inner">getEmSizeInPixels</a></li>
+                  <li class="inner"><a href="../utils/getQueryVariable.js.html" class="lower_inner">getQueryVariable</a></li>
+                  <li class="inner"><a href="../utils/numberWithCommas.js.html" class="lower_inner">numberWithCommas</a></li>
+                  <li class="inner"><a href="../utils/setAPIPrefilter.js.html" class="lower_inner">setAPIPrefilter</a></li>
+                  <li class="inner"><a href="../utils/setAPIURL.js.html" class="lower_inner">setAPIURL</a></li>
+                  <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
-            <li id="views" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Views
+            <li><a onclick="listCollapse(this)" class="lower_outer">Views
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BarPlotView.js.html" style="color: #00ccff">BarPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaBaseView.js.html" style="color: #00ccff">BaristaBaseView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaCardView.js.html" style="color: #00ccff">BaristaCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaUserCardView.js.html" style="color: #00ccff">BaristaUserCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BubbleView.js.html" style="color: #00ccff">BubbleView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapFooterView.js.html" style="color: #00ccff">CMapFooterView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapHeaderView.js.html" style="color: #00ccff">CMapHeaderView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapNavigationView.js.html" style="color: #00ccff">CMapNavigationView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CellSearchBar.js.html" style="color: #00ccff">CellSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundDetailView.js.html" style="color: #00ccff">CompoundDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundSearchBar.js.html" style="color: #00ccff">CompoundSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/FlatTreeMapView.js.html" style="color: #00ccff">FlatTreeMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/GenericCountView.js.html" style="color: #00ccff">GenericCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/GridView.js.html" style="color: #00ccff">GridView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HTMLCellView.js.html" style="color: #00ccff">HTMLCellView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HeatMapView.js.html" style="color: #00ccff">HeatMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/LDMapView.js.html" style="color: #00ccff">LDMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertCountView.js.html" style="color: #00ccff">PertCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertDetailView.js.html" style="color: #00ccff">PertDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertSearchBar.js.html" style="color: #00ccff">PertSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PlatformSummaryView.js.html" style="color: #00ccff">PlatformSummaryView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ScatterPlotView.js.html" style="color: #00ccff">ScatterPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TagListView.js.html" style="color: #00ccff">TagListView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TickView.js.html" style="color: #00ccff">TickView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ViolinPlotView.js.html" style="color: #00ccff">ViolinPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/sequenceView.js.html" style="color: #00ccff">sequenceView</a></li>
+                  <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
+                  <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
+                  <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
+                  <li class="inner"><a href="../views/BaristaUserCardView.js.html" class="lower_inner">BaristaUserCardView</a></li>
+                  <li class="inner"><a href="../views/BubbleView.js.html" class="lower_inner">BubbleView</a></li>
+                  <li class="inner"><a href="../views/CMapFooterView.js.html" class="lower_inner">CMapFooterView</a></li>
+                  <li class="inner"><a href="../views/CMapHeaderView.js.html" class="lower_inner">CMapHeaderView</a></li>
+                  <li class="inner"><a href="../views/CMapNavigationView.js.html" class="lower_inner">CMapNavigationView</a></li>
+                  <li class="inner"><a href="../views/CellSearchBar.js.html" class="lower_inner">CellSearchBar</a></li>
+                  <li class="inner"><a href="../views/CompoundDetailView.js.html" class="lower_inner">CompoundDetailView</a></li>
+                  <li class="inner"><a href="../views/CompoundSearchBar.js.html" class="lower_inner">CompoundSearchBar</a></li>
+                  <li class="inner"><a href="../views/FlatTreeMapView.js.html" class="lower_inner">FlatTreeMapView</a></li>
+                  <li class="inner"><a href="../views/GenericCountView.js.html" class="lower_inner">GenericCountView</a></li>
+                  <li class="inner"><a href="../views/GridView.js.html" class="lower_inner">GridView</a></li>
+                  <li class="inner"><a href="../views/HTMLCellView.js.html" class="lower_inner">HTMLCellView</a></li>
+                  <li class="inner"><a href="../views/HeatMapView.js.html" class="lower_inner">HeatMapView</a></li>
+                  <li class="inner"><a href="../views/LDMapView.js.html" class="lower_inner">LDMapView</a></li>
+                  <li class="inner"><a href="../views/PertCountView.js.html" class="lower_inner">PertCountView</a></li>
+                  <li class="inner"><a href="../views/PertDetailView.js.html" class="lower_inner">PertDetailView</a></li>
+                  <li class="inner"><a href="../views/PertSearchBar.js.html" class="lower_inner">PertSearchBar</a></li>
+                  <li class="inner"><a href="../views/PlatformSummaryView.js.html" class="lower_inner">PlatformSummaryView</a></li>
+                  <li class="inner"><a href="../views/ScatterPlotView.js.html" class="lower_inner">ScatterPlotView</a></li>
+                  <li class="inner"><a href="../views/TagListView.js.html" class="lower_inner">TagListView</a></li>
+                  <li class="inner"><a href="../views/TickView.js.html" class="lower_inner">TickView</a></li>
+                  <li class="inner"><a href="../views/ViolinPlotView.js.html" class="lower_inner">ViolinPlotView</a></li>
+                  <li class="inner"><a href="../views/sequenceView.js.html" class="lower_inner">sequenceView</a></li>
                 </ul></a></li>
           </ul>
         </div>
         <div class="span9">
           <section id="AnalysisHistoryCollection">
-            <h1 style="font-family: Open Sans">AnalysisHistoryCollection</h1>
+            <h1>AnalysisHistoryCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.AnalysisHistoryCollection</span>
@@ -212,67 +217,67 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of analysis history objects<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of analysis history objects<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/compute_status?callback=?';
 },</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.AnalysisHistoryModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.AnalysisHistoryModel,</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
-            <h1 style="font-family: Open Sans">maxCount</h1>
+            <h1>maxCount</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="user">
-            <h1 style="font-family: Open Sans">user</h1>
+            <h1>user</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>user</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the user_id to search jobs for<br />Forcing this to be set prevents us from searching other users jobs</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">user: undefined,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the user_id to search jobs for<br />Forcing this to be set prevents us from searching other users jobs</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">user: undefined,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -304,8 +309,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br /><code>AnalysisHistoryCollection.getData(search_string,search_type,limit)</code><br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br /><code>AnalysisHistoryCollection.getData(search_string,search_type,limit)</code><br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
     this.isLoading = true;
@@ -372,7 +377,7 @@
 }
 });</code></pre></span>
           <section id="CellCollection">
-            <h1 style="font-family: Open Sans">CellCollection</h1>
+            <h1>CellCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.CellCollection</span>
@@ -412,49 +417,49 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of cell types<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.CellCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of cell types<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.CellCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/cellinfo?callback=?';
 },</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.CellModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.CellModel,</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -486,8 +491,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_column,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_column,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
     this.isLoading = true;
@@ -522,7 +527,7 @@
 }
 });</code></pre></span>
           <section id="GenericJSONCollection">
-            <h1 style="font-family: Open Sans">GenericJSONCollection</h1>
+            <h1>GenericJSONCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.GenericJSONCollection</span>
@@ -559,55 +564,55 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file<br />The JSON file is assumed to contain a top level array containing objects<br />Each object in the array is modeled as a base Backbone.Model inside of the collection<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file<br />The JSON file is assumed to contain a top level array containing objects<br />Each object in the array is modeled as a base Backbone.Model inside of the collection<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
           <section id="url">
-            <h1 style="font-family: Open Sans">url</h1>
+            <h1>url</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>url</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the url from which model data is fetched</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">url: 'data.json',</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the url from which model data is fetched</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">url: 'data.json',</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
-            <h1 style="font-family: Open Sans">maxCount</h1>
+            <h1>maxCount</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -639,8 +644,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>GenericJSONCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>GenericJSONCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
     this.isLoading = true;
@@ -669,7 +674,7 @@
 	}
 });</code></pre></span>
           <section id="PertCollection">
-            <h1 style="font-family: Open Sans">PertCollection</h1>
+            <h1>PertCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.PertCollection</span>
@@ -709,58 +714,58 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of perturbagens<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.PertCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of perturbagens<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.PertCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
 },</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.PertModel,</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
-            <h1 style="font-family: Open Sans">maxCount</h1>
+            <h1>maxCount</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -792,8 +797,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>PertCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
     this.isLoading = true;
@@ -851,7 +856,7 @@
 }
 });</code></pre></span>
           <section id="SignatureCollection">
-            <h1 style="font-family: Open Sans">SignatureCollection</h1>
+            <h1>SignatureCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.SignatureCollection</span>
@@ -891,67 +896,67 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of signatures<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.SignatureCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of signatures<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.SignatureCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
     // the url from which model data is fetched
     this.url =  Barista.APIURL + '/a2/siginfo?callback=?';
 },</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.SignatureModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for the collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.SignatureModel,</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
-            <h1 style="font-family: Open Sans">maxCount</h1>
+            <h1>maxCount</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="gold_only">
-            <h1 style="font-family: Open Sans">gold_only</h1>
+            <h1>gold_only</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>gold_only</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>boolean flag telling the collection to only include gold Connectivity Map signatures</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">gold_only: true,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>boolean flag telling the collection to only include gold Connectivity Map signatures</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">gold_only: true,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -983,8 +988,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>SignatureCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call<br /><code>SignatureCollection.getData(search_string,search_type,limit)</code></p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_type,limit){
     var self = this;
     // set isLoading to true so we don't constantly make api calls before the data comes back
     this.isLoading = true;
@@ -1057,7 +1062,7 @@
 }
 });</code></pre></span>
           <section id="SummlyResultCollection">
-            <h1 style="font-family: Open Sans">SummlyResultCollection</h1>
+            <h1>SummlyResultCollection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Collections.SummlyResultCollection</span>
@@ -1094,58 +1099,58 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of CMap Summly results<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.Collection that represents a set of CMap Summly results<br />This collection is suitable for internal use in GridView<br />optional arguments:</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>fetch model data from assigned url</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
 	// the url from which model data is fetched
 	this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
 },</code></pre></span>
           <section id="model">
-            <h1 style="font-family: Open Sans">model</h1>
+            <h1>model</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>model</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">model: Barista.Models.SummlyResultModel,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the model used for collection objects</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">model: Barista.Models.SummlyResultModel,</code></pre></span>
           <section id="skip">
-            <h1 style="font-family: Open Sans">skip</h1>
+            <h1>skip</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>skip</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">skip: 0,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the skip parameter used in api calls when the collection is updated</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">skip: 0,</code></pre></span>
           <section id="isLoading">
-            <h1 style="font-family: Open Sans">isLoading</h1>
+            <h1>isLoading</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>isLoading</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">isLoading: false,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>indicates wether or not the collection is in the middle of a fetch operation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">isLoading: false,</code></pre></span>
           <section id="maxCount">
-            <h1 style="font-family: Open Sans">maxCount</h1>
+            <h1>maxCount</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>maxCount</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>the maximum size of the collection<br />defaults to Infinity</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">maxCount: Infinity,</code></pre></span>
           <section id="getData">
-            <h1 style="font-family: Open Sans">getData</h1>
+            <h1>getData</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>getData()</span>
@@ -1177,8 +1182,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">getData: function(search_string,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>Gets additional data from the specified url and stores them as models in the collection<br />the count and pert_types data is replaced with new data coming from the api call</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">getData: function(search_string,search_type,limit){
 		var self = this;
 		// set isLoading to true so we don't constantly make api calls before the data comes back
 		this.isLoading = true;

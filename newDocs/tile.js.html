@@ -5,9 +5,11 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
+    <link rel="stylesheet" href="./doxx_template.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="jquery-2.1.3.min.js"></script>
     <script src="collapse.js"></script>
+    <!--| <script src="makeList.js"></script>-->
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -64,7 +66,10 @@
         </div>
       </div>
     </div>
-    <header id="overview" class="jumbotron subhead">
+    <!-- getting rid of this gets rid of the entire header area-->
+    <!-- removing subhead class centers everything-->
+    <!-- @todo look into using a different image for the header-->
+    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -74,108 +79,108 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
-            <li><a href="index.html" style="color: #00ccff">Main</a>
+            <li><a href="index.html" class="upper">Main</a>
             </li>
-            <li><a href="afterword.js.html" style="color: #00ccff">afterword</a>
+            <li><a href="afterword.js.html" class="upper">afterword</a>
             </li>
-            <li><a href="preamble.js.html" style="color: #00ccff">preamble</a>
+            <li><a href="preamble.js.html" class="upper">preamble</a>
             </li>
-            <li class="active"><a href="tile.js.html" style="color: #00ccff">tile</a>
+            <li class="active"><a href="tile.js.html" class="upper">tile</a>
             </li>
-            <li id="collections" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Collections
+            <li><a onclick="listCollapse(this)" class="lower_outer">Collections
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="collections/AnalysisHistoryCollection.js.html" style="color: #00ccff">AnalysisHistoryCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="collections/CellCollection.js.html" style="color: #00ccff">CellCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="collections/GenericJSONCollection.js.html" style="color: #00ccff">GenericJSONCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="collections/PertCollection.js.html" style="color: #00ccff">PertCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="collections/SignatureCollection.js.html" style="color: #00ccff">SignatureCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="collections/SummlyResultCollection.js.html" style="color: #00ccff">SummlyResultCollection</a></li>
+                  <li class="inner"><a href="collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
+                  <li class="inner"><a href="collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
+                  <li class="inner"><a href="collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
+                  <li class="inner"><a href="collections/PertCollection.js.html" class="lower_inner">PertCollection</a></li>
+                  <li class="inner"><a href="collections/SignatureCollection.js.html" class="lower_inner">SignatureCollection</a></li>
+                  <li class="inner"><a href="collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
-            <li id="datasets" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Datasets
+            <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/CellHistologyDataset.js.html" style="color: #00ccff">CellHistologyDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/CellIDDataset.js.html" style="color: #00ccff">CellIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/CellLineageDataset.js.html" style="color: #00ccff">CellLineageDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/CellMutationDataset.js.html" style="color: #00ccff">CellMutationDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/CompoundPertINameDataset.js.html" style="color: #00ccff">CompoundPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/GeneticPertINameDataset.js.html" style="color: #00ccff">GeneticPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/JobIDDataset.js.html" style="color: #00ccff">JobIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/JobNameDataset.js.html" style="color: #00ccff">JobNameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/JobStatusDataset.js.html" style="color: #00ccff">JobStatusDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/P100PertINameDataset.js.html" style="color: #00ccff">P100PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/PRISMPertINameDataset.js.html" style="color: #00ccff">PRISMPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/PertINameDataset.js.html" style="color: #00ccff">PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/ToolIDDataset.js.html" style="color: #00ccff">ToolIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="datasets/UserIDDataset.js.html" style="color: #00ccff">UserIDDataset</a></li>
+                  <li class="inner"><a href="datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
+                  <li class="inner"><a href="datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
+                  <li class="inner"><a href="datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
+                  <li class="inner"><a href="datasets/CellMutationDataset.js.html" class="lower_inner">CellMutationDataset</a></li>
+                  <li class="inner"><a href="datasets/CompoundPertINameDataset.js.html" class="lower_inner">CompoundPertINameDataset</a></li>
+                  <li class="inner"><a href="datasets/GeneticPertINameDataset.js.html" class="lower_inner">GeneticPertINameDataset</a></li>
+                  <li class="inner"><a href="datasets/JobIDDataset.js.html" class="lower_inner">JobIDDataset</a></li>
+                  <li class="inner"><a href="datasets/JobNameDataset.js.html" class="lower_inner">JobNameDataset</a></li>
+                  <li class="inner"><a href="datasets/JobStatusDataset.js.html" class="lower_inner">JobStatusDataset</a></li>
+                  <li class="inner"><a href="datasets/P100PertINameDataset.js.html" class="lower_inner">P100PertINameDataset</a></li>
+                  <li class="inner"><a href="datasets/PRISMPertINameDataset.js.html" class="lower_inner">PRISMPertINameDataset</a></li>
+                  <li class="inner"><a href="datasets/PertINameDataset.js.html" class="lower_inner">PertINameDataset</a></li>
+                  <li class="inner"><a href="datasets/ToolIDDataset.js.html" class="lower_inner">ToolIDDataset</a></li>
+                  <li class="inner"><a href="datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
-            <li id="models" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Models
+            <li><a onclick="listCollapse(this)" class="lower_outer">Models
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="models/AnalysisHistoryModel.js.html" style="color: #00ccff">AnalysisHistoryModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/BarPlotModel.js.html" style="color: #00ccff">BarPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/CellCountModel.js.html" style="color: #00ccff">CellCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/CellModel.js.html" style="color: #00ccff">CellModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/CompoundDetailModel.js.html" style="color: #00ccff">CompoundDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/GeneDetailModel.js.html" style="color: #00ccff">GeneDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/GenericCountModel.js.html" style="color: #00ccff">GenericCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/GenericMongoModel.js.html" style="color: #00ccff">GenericMongoModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/HeatmapModel.js.html" style="color: #00ccff">HeatmapModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/PertCellBreakdownModel.js.html" style="color: #00ccff">PertCellBreakdownModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/PertCountModel.js.html" style="color: #00ccff">PertCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/PertDetailModel.js.html" style="color: #00ccff">PertDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/PertModel.js.html" style="color: #00ccff">PertModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/ScatterPlotModel.js.html" style="color: #00ccff">ScatterPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/SigCountModel.js.html" style="color: #00ccff">SigCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/SignatureModel.js.html" style="color: #00ccff">SignatureModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/SummlyResultModel.js.html" style="color: #00ccff">SummlyResultModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/TickModel.js.html" style="color: #00ccff">TickModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="models/sequenceModel.js.html" style="color: #00ccff">sequenceModel</a></li>
+                  <li class="inner"><a href="models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
+                  <li class="inner"><a href="models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
+                  <li class="inner"><a href="models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
+                  <li class="inner"><a href="models/CellModel.js.html" class="lower_inner">CellModel</a></li>
+                  <li class="inner"><a href="models/CompoundDetailModel.js.html" class="lower_inner">CompoundDetailModel</a></li>
+                  <li class="inner"><a href="models/GeneDetailModel.js.html" class="lower_inner">GeneDetailModel</a></li>
+                  <li class="inner"><a href="models/GenericCountModel.js.html" class="lower_inner">GenericCountModel</a></li>
+                  <li class="inner"><a href="models/GenericMongoModel.js.html" class="lower_inner">GenericMongoModel</a></li>
+                  <li class="inner"><a href="models/HeatmapModel.js.html" class="lower_inner">HeatmapModel</a></li>
+                  <li class="inner"><a href="models/PertCellBreakdownModel.js.html" class="lower_inner">PertCellBreakdownModel</a></li>
+                  <li class="inner"><a href="models/PertCountModel.js.html" class="lower_inner">PertCountModel</a></li>
+                  <li class="inner"><a href="models/PertDetailModel.js.html" class="lower_inner">PertDetailModel</a></li>
+                  <li class="inner"><a href="models/PertModel.js.html" class="lower_inner">PertModel</a></li>
+                  <li class="inner"><a href="models/ScatterPlotModel.js.html" class="lower_inner">ScatterPlotModel</a></li>
+                  <li class="inner"><a href="models/SigCountModel.js.html" class="lower_inner">SigCountModel</a></li>
+                  <li class="inner"><a href="models/SignatureModel.js.html" class="lower_inner">SignatureModel</a></li>
+                  <li class="inner"><a href="models/SummlyResultModel.js.html" class="lower_inner">SummlyResultModel</a></li>
+                  <li class="inner"><a href="models/TickModel.js.html" class="lower_inner">TickModel</a></li>
+                  <li class="inner"><a href="models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
-            <li id="utils" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Utils
+            <li><a onclick="listCollapse(this)" class="lower_outer">Utils
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="utils/CMapTypeAlias.js.html" style="color: #00ccff">CMapTypeAlias</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/NumbersToSubscript.js.html" style="color: #00ccff">NumbersToSubscript</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/arrayAverage.js.html" style="color: #00ccff">arrayAverage</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/getEmSizeInPixels.js.html" style="color: #00ccff">getEmSizeInPixels</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/getQueryVariable.js.html" style="color: #00ccff">getQueryVariable</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/numberWithCommas.js.html" style="color: #00ccff">numberWithCommas</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/setAPIPrefilter.js.html" style="color: #00ccff">setAPIPrefilter</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/setAPIURL.js.html" style="color: #00ccff">setAPIURL</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="utils/setUserKey.js.html" style="color: #00ccff">setUserKey</a></li>
+                  <li class="inner"><a href="utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
+                  <li class="inner"><a href="utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
+                  <li class="inner"><a href="utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
+                  <li class="inner"><a href="utils/getEmSizeInPixels.js.html" class="lower_inner">getEmSizeInPixels</a></li>
+                  <li class="inner"><a href="utils/getQueryVariable.js.html" class="lower_inner">getQueryVariable</a></li>
+                  <li class="inner"><a href="utils/numberWithCommas.js.html" class="lower_inner">numberWithCommas</a></li>
+                  <li class="inner"><a href="utils/setAPIPrefilter.js.html" class="lower_inner">setAPIPrefilter</a></li>
+                  <li class="inner"><a href="utils/setAPIURL.js.html" class="lower_inner">setAPIURL</a></li>
+                  <li class="inner"><a href="utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
-            <li id="views" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Views
+            <li><a onclick="listCollapse(this)" class="lower_outer">Views
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="views/BarPlotView.js.html" style="color: #00ccff">BarPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/BaristaBaseView.js.html" style="color: #00ccff">BaristaBaseView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/BaristaCardView.js.html" style="color: #00ccff">BaristaCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/BaristaUserCardView.js.html" style="color: #00ccff">BaristaUserCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/BubbleView.js.html" style="color: #00ccff">BubbleView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CMapFooterView.js.html" style="color: #00ccff">CMapFooterView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CMapHeaderView.js.html" style="color: #00ccff">CMapHeaderView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CMapNavigationView.js.html" style="color: #00ccff">CMapNavigationView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CellSearchBar.js.html" style="color: #00ccff">CellSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CompoundDetailView.js.html" style="color: #00ccff">CompoundDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/CompoundSearchBar.js.html" style="color: #00ccff">CompoundSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/FlatTreeMapView.js.html" style="color: #00ccff">FlatTreeMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/GenericCountView.js.html" style="color: #00ccff">GenericCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/GridView.js.html" style="color: #00ccff">GridView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/HTMLCellView.js.html" style="color: #00ccff">HTMLCellView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/HeatMapView.js.html" style="color: #00ccff">HeatMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/LDMapView.js.html" style="color: #00ccff">LDMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/PertCountView.js.html" style="color: #00ccff">PertCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/PertDetailView.js.html" style="color: #00ccff">PertDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/PertSearchBar.js.html" style="color: #00ccff">PertSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/PlatformSummaryView.js.html" style="color: #00ccff">PlatformSummaryView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/ScatterPlotView.js.html" style="color: #00ccff">ScatterPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/TagListView.js.html" style="color: #00ccff">TagListView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/TickView.js.html" style="color: #00ccff">TickView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/ViolinPlotView.js.html" style="color: #00ccff">ViolinPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="views/sequenceView.js.html" style="color: #00ccff">sequenceView</a></li>
+                  <li class="inner"><a href="views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
+                  <li class="inner"><a href="views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
+                  <li class="inner"><a href="views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
+                  <li class="inner"><a href="views/BaristaUserCardView.js.html" class="lower_inner">BaristaUserCardView</a></li>
+                  <li class="inner"><a href="views/BubbleView.js.html" class="lower_inner">BubbleView</a></li>
+                  <li class="inner"><a href="views/CMapFooterView.js.html" class="lower_inner">CMapFooterView</a></li>
+                  <li class="inner"><a href="views/CMapHeaderView.js.html" class="lower_inner">CMapHeaderView</a></li>
+                  <li class="inner"><a href="views/CMapNavigationView.js.html" class="lower_inner">CMapNavigationView</a></li>
+                  <li class="inner"><a href="views/CellSearchBar.js.html" class="lower_inner">CellSearchBar</a></li>
+                  <li class="inner"><a href="views/CompoundDetailView.js.html" class="lower_inner">CompoundDetailView</a></li>
+                  <li class="inner"><a href="views/CompoundSearchBar.js.html" class="lower_inner">CompoundSearchBar</a></li>
+                  <li class="inner"><a href="views/FlatTreeMapView.js.html" class="lower_inner">FlatTreeMapView</a></li>
+                  <li class="inner"><a href="views/GenericCountView.js.html" class="lower_inner">GenericCountView</a></li>
+                  <li class="inner"><a href="views/GridView.js.html" class="lower_inner">GridView</a></li>
+                  <li class="inner"><a href="views/HTMLCellView.js.html" class="lower_inner">HTMLCellView</a></li>
+                  <li class="inner"><a href="views/HeatMapView.js.html" class="lower_inner">HeatMapView</a></li>
+                  <li class="inner"><a href="views/LDMapView.js.html" class="lower_inner">LDMapView</a></li>
+                  <li class="inner"><a href="views/PertCountView.js.html" class="lower_inner">PertCountView</a></li>
+                  <li class="inner"><a href="views/PertDetailView.js.html" class="lower_inner">PertDetailView</a></li>
+                  <li class="inner"><a href="views/PertSearchBar.js.html" class="lower_inner">PertSearchBar</a></li>
+                  <li class="inner"><a href="views/PlatformSummaryView.js.html" class="lower_inner">PlatformSummaryView</a></li>
+                  <li class="inner"><a href="views/ScatterPlotView.js.html" class="lower_inner">ScatterPlotView</a></li>
+                  <li class="inner"><a href="views/TagListView.js.html" class="lower_inner">TagListView</a></li>
+                  <li class="inner"><a href="views/TickView.js.html" class="lower_inner">TickView</a></li>
+                  <li class="inner"><a href="views/ViolinPlotView.js.html" class="lower_inner">ViolinPlotView</a></li>
+                  <li class="inner"><a href="views/sequenceView.js.html" class="lower_inner">sequenceView</a></li>
                 </ul></a></li>
           </ul>
         </div>
         <div class="span9">
           <section id="Tile">
-            <h1 style="font-family: Open Sans">Tile</h1>
+            <h1>Tile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>Tile()</span>
@@ -227,8 +232,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>Tile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function Tile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>Tile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function Tile(options){
 	options = (options !== undefined) ? options : {};
 	this.div_target = (options.div_target !== undefined) ? options.div_target : &quot;body&quot;;
 	this.div_id = (options.div_id !== undefined) ? options.div_id : &quot;Tile&quot; + Math.floor(Math.random()*1000000000);
@@ -245,14 +250,14 @@
 	}
 }</code></pre></span>
           <section id="init">
-            <h1 style="font-family: Open Sans">init</h1>
+            <h1>init</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.init()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.init = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>Initializes Tile by building the appropriate html and injecting it into the DOM</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.init = function() {
 	// build the html to inject into the DOM
 	this.build_html();
 
@@ -270,14 +275,14 @@
 	$(window).resize(function() {self.draw_bg();} );
 };</code></pre></span>
           <section id="build_html">
-            <h1 style="font-family: Open Sans">build_html</h1>
+            <h1>build_html</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.build_html()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.build_html = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>Builds the html for the tile based on the tile_type given in the constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.build_html = function() {
 	if (this.tile_type == &quot;small&quot;){
 		this.html = '&lt;div id=&quot;' + this.div_id + '&quot; class=&quot;span3&quot; style=&quot;height:150px ' + this.style + '&quot;&gt;&lt;/div&gt;';
 	}
@@ -289,25 +294,25 @@
 	}
 };</code></pre></span>
           <section id="inject">
-            <h1 style="font-family: Open Sans">inject</h1>
+            <h1>inject</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.inject()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.inject = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>Injects the Tile&#39;s html into the DOM at the target id given in the constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.inject = function() {
 	$(this.div_target).append(this.html);
 };</code></pre></span>
           <section id="draw_bg">
-            <h1 style="font-family: Open Sans">draw_bg</h1>
+            <h1>draw_bg</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.draw_bg()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws the tiles background using d3.js</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.draw_bg = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>draws the tiles background using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.draw_bg = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -359,7 +364,7 @@
 			.attr(&quot;fill&quot;, this.color);
 };</code></pre></span>
           <section id="hide">
-            <h1 style="font-family: Open Sans">hide</h1>
+            <h1>hide</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.hide()</span>
@@ -381,15 +386,15 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.hide = function(duration) {
+          <div style="font-family:Roboto Slab" class="description"><p>hides the tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.hide = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).animate({opacity:0,width:0,height:0},duration);
 	var self = this;
 	setTimeout(function(){$(&quot;#&quot; + self.div_id).hide();},duration);
 };</code></pre></span>
           <section id="show">
-            <h1 style="font-family: Open Sans">show</h1>
+            <h1>show</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>Tile.prototype.show()</span>
@@ -411,14 +416,14 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>shows the tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">Tile.prototype.show = function(duration) {
+          <div style="font-family:Roboto Slab" class="description"><p>shows the tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">Tile.prototype.show = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
 	$(&quot;#&quot; + this.div_id).show();
 	$(&quot;#&quot; + this.div_id).animate({opacity:1,width:this.width,height:this.height},duration);
 };</code></pre></span>
           <section id="ImageTile">
-            <h1 style="font-family: Open Sans">ImageTile</h1>
+            <h1>ImageTile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>ImageTile()</span>
@@ -470,8 +475,8 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>ImageTile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function ImageTile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>ImageTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function ImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
 	var self = this;
@@ -481,26 +486,26 @@
 ImageTile.prototype = new Tile({display:false});
 ImageTile.prototype.constructor = ImageTile;</code></pre></span>
           <section id="draw">
-            <h1 style="font-family: Open Sans">draw</h1>
+            <h1>draw</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>ImageTile.prototype.draw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">ImageTile.prototype.draw = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 };</code></pre></span>
           <section id="draw_image">
-            <h1 style="font-family: Open Sans">draw_image</h1>
+            <h1>draw_image</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>ImageTile.prototype.draw_image()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s image using d3.js</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s image using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTile.prototype.draw_image = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -530,7 +535,7 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
 		.attr(&quot;width&quot;,this.image_size);
 };</code></pre></span>
           <section id="AnimatedImageTile">
-            <h1 style="font-family: Open Sans">AnimatedImageTile</h1>
+            <h1>AnimatedImageTile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>AnimatedImageTile()</span>
@@ -582,8 +587,8 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function AnimatedImageTile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function AnimatedImageTile(options){
 	this.image = (options.image !== undefined) ? options.image : &quot;../Bellhop/img/CMap_Logo_gray.png&quot;;
 	Tile.apply(this,arguments);
 	var self = this;
@@ -594,19 +599,19 @@ ImageTile.prototype.constructor = ImageTile;</code></pre></span>
 AnimatedImageTile.prototype = new ImageTile({display:false});
 AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
           <section id="draw">
-            <h1 style="font-family: Open Sans">draw</h1>
+            <h1>draw</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTile.prototype.draw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 };</code></pre></span>
           <section id="start_animation">
-            <h1 style="font-family: Open Sans">start_animation</h1>
+            <h1>start_animation</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTile.prototype.start_animation()</span>
@@ -633,8 +638,8 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>starts periodic animation of the Image on the Tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
+          <div style="font-family:Roboto Slab" class="description"><p>starts periodic animation of the Image on the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
 	duration = (duration !== undefined) ? duration : 2000;
 	frequency = (frequency !== undefined) ? frequency : 10000 + Math.random() * 10000;
 	var self = this;
@@ -648,7 +653,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
 	},frequency);
 };</code></pre></span>
           <section id="ImageTextTile">
-            <h1 style="font-family: Open Sans">ImageTextTile</h1>
+            <h1>ImageTextTile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>ImageTextTile()</span>
@@ -705,8 +710,8 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>ImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function ImageTextTile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>ImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function ImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -716,27 +721,27 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;</code></pre></span>
 ImageTextTile.prototype = new ImageTile({display:false});
 ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
           <section id="draw">
-            <h1 style="font-family: Open Sans">draw</h1>
+            <h1>draw</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>ImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
 };</code></pre></span>
           <section id="draw_text">
-            <h1 style="font-family: Open Sans">draw_text</h1>
+            <h1>draw_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>ImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">ImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -785,7 +790,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
 
 };</code></pre></span>
           <section id="AnimatedImageTextTile">
-            <h1 style="font-family: Open Sans">AnimatedImageTextTile</h1>
+            <h1>AnimatedImageTextTile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>AnimatedImageTextTile()</span>
@@ -842,8 +847,8 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function AnimatedImageTextTile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>AnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function AnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -855,14 +860,14 @@ ImageTextTile.prototype.constructor = ImageTextTile;</code></pre></span>
 AnimatedImageTextTile.prototype = new ImageTile({display:false});
 AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre></span>
           <section id="draw">
-            <h1 style="font-family: Open Sans">draw</h1>
+            <h1>draw</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
@@ -872,14 +877,14 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
 	this.link_selection.on('mouseout',function(){self.hide_text();});
 };</code></pre></span>
           <section id="show_text">
-            <h1 style="font-family: Open Sans">show_text</h1>
+            <h1>show_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.show_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
 	}
@@ -888,14 +893,14 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
 	setTimeout(function(){self.TextIsAnimatingIn = false;},500);
 };</code></pre></span>
           <section id="hide_text">
-            <h1 style="font-family: Open Sans">hide_text</h1>
+            <h1>hide_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.hide_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimating){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
 	}
@@ -904,14 +909,14 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
 	setTimeout(function(){self.TextIsAnimatingOut = false;},500);
 };</code></pre></span>
           <section id="draw_text">
-            <h1 style="font-family: Open Sans">draw_text</h1>
+            <h1>draw_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>AnimatedImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">AnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){
@@ -957,7 +962,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
 
 };</code></pre></span>
           <section id="FullAnimatedImageTextTile">
-            <h1 style="font-family: Open Sans">FullAnimatedImageTextTile</h1>
+            <h1>FullAnimatedImageTextTile</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">constructor</div><span>FullAnimatedImageTextTile()</span>
@@ -1014,8 +1019,8 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>FullAnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">function FullAnimatedImageTextTile(options){
+          <div style="font-family:Roboto Slab" class="description"><p>FullAnimatedImageTextTile constructor</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">function FullAnimatedImageTextTile(options){
 	this.title = (options.title !== undefined) ? options.title : &quot;Title&quot;;
 	ImageTile.apply(this,arguments);
 	var self = this;
@@ -1028,14 +1033,14 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;</code></pre
 FullAnimatedImageTextTile.prototype = new AnimatedImageTile({display:false});
 FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</code></pre></span>
           <section id="draw">
-            <h1 style="font-family: Open Sans">draw</h1>
+            <h1>draw</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.draw()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>top level draw wrapper around draw_bg and draw_image and draw_text</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
 	this.draw_image();
 	this.draw_text();
@@ -1045,14 +1050,14 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
 	this.link_selection.on('mouseout',function(){self.hide_text();});
 };</code></pre></span>
           <section id="show_text">
-            <h1 style="font-family: Open Sans">show_text</h1>
+            <h1>show_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.show_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>show the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.show_text = function() {
 	if (!this.TextIsAnimatingIn){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:1},500);
 	}
@@ -1061,14 +1066,14 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
 	setTimeout(function(){self.TextIsAnimatingIn = false;},500);
 };</code></pre></span>
           <section id="hide_text">
-            <h1 style="font-family: Open Sans">hide_text</h1>
+            <h1>hide_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.hide_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>hide the text in the Tile</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimatingOut){
 		$(&quot;#&quot; + this.div_id + &quot;_tile_text&quot;).animate({opacity:0},500);
 	}
@@ -1077,14 +1082,14 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;</co
 	setTimeout(function(){self.TextIsAnimatingOut = false;},500);
 };</code></pre></span>
           <section id="draw_text">
-            <h1 style="font-family: Open Sans">draw_text</h1>
+            <h1>draw_text</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>FullAnimatedImageTextTile.prototype.draw_text()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
+          <div style="font-family:Roboto Slab" class="description"><p>draws the tile&#39;s text using d3.js</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">FullAnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
 	this.width = $(&quot;#&quot; + this.div_id).outerWidth();
 	if (this.tile_type == &quot;small&quot;){

@@ -12,9 +12,11 @@ html
     link(rel="stylesheet", href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css")
     link(rel="stylesheet", href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css")
     link(rel="stylesheet", href="http://getbootstrap.com/2.3.2/assets/css/docs.css")
+    link(rel="stylesheet", href="./doxx_template.css")
     | <link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     | <script src="jquery-2.1.3.min.js"></script>
     | <script src="collapse.js"></script>
+    //| <script src="makeList.js"></script>
     script(type='text/javascript')
       |$(document).ready(function(){
       |  var x = event.target;
@@ -66,8 +68,11 @@ html
           div.nav-collapse.collapse
             ul.nav.pull-right.sponsored
 
-
-    header.jumbotron.subhead#overview
+    // getting rid of this gets rid of the entire header area
+    // removing subhead class centers everything
+    // @todo look into using a different image for the header
+    header.jumbotron#overview
+      img(src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png")
       div.container
         h1= title
         p.lead
@@ -85,66 +90,66 @@ html
                     li(class=(file.name !== currentName ? "":"active"))
                       - var su3 = file.name.indexOf(".js")
                       if (su3 > -1)
-                        a(href=file.relName style="color: #00ccff") #{file.name.substring(0, su3)}
+                        a(href=file.relName class="upper") #{file.name.substring(0, su3)}
                       else
-                        a(href=file.relName style="color: #00ccff") #{file.name}
-            li#collections(style="cursor: pointer;")
-              a(onclick="listCollapse(this)" style="color: #ff9933") Collections
+                        a(href=file.relName class="upper") #{file.name}
+            li
+              a(onclick="listCollapse(this)" class="lower_outer") Collections
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("collections/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(13, ti.length - 4)}
-            li#datasets(style='cursor: pointer;')
-              a(onclick="listCollapse(this)" style="color: #ff9933") Datasets
+                      li(class="inner")
+                        a(href=file.relName class="lower_inner") #{ti.substring(13, ti.length - 4)}
+            li
+              a(onclick="listCollapse(this)" class="lower_outer") Datasets
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("datasets/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(10, ti.length - 4)}
-            li#models(style='cursor: pointer;')
-              a(onclick="listCollapse(this)" style="color: #ff9933") Models
+                      li(class="inner")
+                        a(href=file.relName class="lower_inner") #{ti.substring(10, ti.length - 4)}
+            li
+              a(onclick="listCollapse(this)" class="lower_outer") Models
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("models/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(8, ti.length - 4)}
-            li#utils(style='cursor: pointer;')
-              a(onclick="listCollapse(this)" style="color: #ff9933") Utils
+                      li(class="inner")
+                        a(href=file.relName class="lower_inner") #{ti.substring(8, ti.length - 4)}
+            li
+              a(onclick="listCollapse(this)" class="lower_outer") Utils
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("utils/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 4)}
-            li#views(style='cursor: pointer;')
-              a(onclick="listCollapse(this)" style="color: #ff9933") Views
+                      li(class="inner")
+                        a(href=file.relName class="lower_inner") #{ti.substring(7, ti.length - 4)}
+            li
+              a(onclick="listCollapse(this)" class="lower_outer") Views
                 ul(style="display: none;list-style-type: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("views/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class=(file.name !== currentName ? "":"active") style="margin: 15px 0 15px 0")
-                        a(href=file.relName style="color: #00ccff") #{ti.substring(7, ti.length - 4)}
+                      li(class="inner")
+                        a(href=file.relName class="lower_inner") #{ti.substring(7, ti.length - 4)}
         .span9
           if locals.readme
             section(id=name) !{readme}
           each symbol in dox
             if symbol.ctx.name
               section(id=symbol.ctx.name)
-                  h1(style="font-family: Open Sans")= symbol.ctx.name
+                  h1= symbol.ctx.name
                   h5.subheader
                   if !symbol.gtype && symbol.type
                     p
@@ -179,9 +184,9 @@ html
                         td(style="font-family:Roboto Slab")= tag.Description
 
             .description(style="font-family:Roboto Slab") !{symbol.description.full} !{symbol.description.extra}
-            span(style="cursor: pointer;color: blue;font-family: Helvetica Neue") CLICK TO TOGGLE CODE
+            span(style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold") CLICK TO TOGGLE CODE
               if symbol.code
-                pre(style="display: none;cursor: text")
+                pre(style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace")
                   code.language-javascript
                     = symbol.code
               if symbol.jsfiddle

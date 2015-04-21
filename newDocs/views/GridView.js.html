@@ -5,9 +5,11 @@
     <title>barista</title>
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://getbootstrap.com/2.3.2/assets/css/docs.css">
+    <link rel="stylesheet" href="./doxx_template.css"><link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="jquery-2.1.3.min.js"></script>
     <script src="collapse.js"></script>
+    <!--| <script src="makeList.js"></script>-->
     <script type="text/javascript">
       $(document).ready(function(){
        var x = event.target;
@@ -64,7 +66,10 @@
         </div>
       </div>
     </div>
-    <header id="overview" class="jumbotron subhead">
+    <!-- getting rid of this gets rid of the entire header area-->
+    <!-- removing subhead class centers everything-->
+    <!-- @todo look into using a different image for the header-->
+    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -74,124 +79,124 @@
       <div class="row">
         <div class="span3 bs-docs-sidebar">
           <ul style="font-family: Open Sans" class="nav nav-list bs-docs-sidenav affix-top">
-            <li><a href="../index.html" style="color: #00ccff">Main</a>
+            <li><a href="../index.html" class="upper">Main</a>
             </li>
-            <li><a href="../afterword.js.html" style="color: #00ccff">afterword</a>
+            <li><a href="../afterword.js.html" class="upper">afterword</a>
             </li>
-            <li><a href="../preamble.js.html" style="color: #00ccff">preamble</a>
+            <li><a href="../preamble.js.html" class="upper">preamble</a>
             </li>
-            <li><a href="../tile.js.html" style="color: #00ccff">tile</a>
+            <li><a href="../tile.js.html" class="upper">tile</a>
             </li>
-            <li id="collections" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Collections
+            <li><a onclick="listCollapse(this)" class="lower_outer">Collections
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/AnalysisHistoryCollection.js.html" style="color: #00ccff">AnalysisHistoryCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/CellCollection.js.html" style="color: #00ccff">CellCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/GenericJSONCollection.js.html" style="color: #00ccff">GenericJSONCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/PertCollection.js.html" style="color: #00ccff">PertCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SignatureCollection.js.html" style="color: #00ccff">SignatureCollection</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../collections/SummlyResultCollection.js.html" style="color: #00ccff">SummlyResultCollection</a></li>
+                  <li class="inner"><a href="../collections/AnalysisHistoryCollection.js.html" class="lower_inner">AnalysisHistoryCollection</a></li>
+                  <li class="inner"><a href="../collections/CellCollection.js.html" class="lower_inner">CellCollection</a></li>
+                  <li class="inner"><a href="../collections/GenericJSONCollection.js.html" class="lower_inner">GenericJSONCollection</a></li>
+                  <li class="inner"><a href="../collections/PertCollection.js.html" class="lower_inner">PertCollection</a></li>
+                  <li class="inner"><a href="../collections/SignatureCollection.js.html" class="lower_inner">SignatureCollection</a></li>
+                  <li class="inner"><a href="../collections/SummlyResultCollection.js.html" class="lower_inner">SummlyResultCollection</a></li>
                 </ul></a></li>
-            <li id="datasets" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Datasets
+            <li><a onclick="listCollapse(this)" class="lower_outer">Datasets
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellHistologyDataset.js.html" style="color: #00ccff">CellHistologyDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellIDDataset.js.html" style="color: #00ccff">CellIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellLineageDataset.js.html" style="color: #00ccff">CellLineageDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CellMutationDataset.js.html" style="color: #00ccff">CellMutationDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/CompoundPertINameDataset.js.html" style="color: #00ccff">CompoundPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/GeneticPertINameDataset.js.html" style="color: #00ccff">GeneticPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobIDDataset.js.html" style="color: #00ccff">JobIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobNameDataset.js.html" style="color: #00ccff">JobNameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/JobStatusDataset.js.html" style="color: #00ccff">JobStatusDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/P100PertINameDataset.js.html" style="color: #00ccff">P100PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PRISMPertINameDataset.js.html" style="color: #00ccff">PRISMPertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/PertINameDataset.js.html" style="color: #00ccff">PertINameDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/ToolIDDataset.js.html" style="color: #00ccff">ToolIDDataset</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../datasets/UserIDDataset.js.html" style="color: #00ccff">UserIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellHistologyDataset.js.html" class="lower_inner">CellHistologyDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellIDDataset.js.html" class="lower_inner">CellIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellLineageDataset.js.html" class="lower_inner">CellLineageDataset</a></li>
+                  <li class="inner"><a href="../datasets/CellMutationDataset.js.html" class="lower_inner">CellMutationDataset</a></li>
+                  <li class="inner"><a href="../datasets/CompoundPertINameDataset.js.html" class="lower_inner">CompoundPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/GeneticPertINameDataset.js.html" class="lower_inner">GeneticPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobIDDataset.js.html" class="lower_inner">JobIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobNameDataset.js.html" class="lower_inner">JobNameDataset</a></li>
+                  <li class="inner"><a href="../datasets/JobStatusDataset.js.html" class="lower_inner">JobStatusDataset</a></li>
+                  <li class="inner"><a href="../datasets/P100PertINameDataset.js.html" class="lower_inner">P100PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PRISMPertINameDataset.js.html" class="lower_inner">PRISMPertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/PertINameDataset.js.html" class="lower_inner">PertINameDataset</a></li>
+                  <li class="inner"><a href="../datasets/ToolIDDataset.js.html" class="lower_inner">ToolIDDataset</a></li>
+                  <li class="inner"><a href="../datasets/UserIDDataset.js.html" class="lower_inner">UserIDDataset</a></li>
                 </ul></a></li>
-            <li id="models" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Models
+            <li><a onclick="listCollapse(this)" class="lower_outer">Models
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../models/AnalysisHistoryModel.js.html" style="color: #00ccff">AnalysisHistoryModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/BarPlotModel.js.html" style="color: #00ccff">BarPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellCountModel.js.html" style="color: #00ccff">CellCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CellModel.js.html" style="color: #00ccff">CellModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/CompoundDetailModel.js.html" style="color: #00ccff">CompoundDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GeneDetailModel.js.html" style="color: #00ccff">GeneDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericCountModel.js.html" style="color: #00ccff">GenericCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/GenericMongoModel.js.html" style="color: #00ccff">GenericMongoModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/HeatmapModel.js.html" style="color: #00ccff">HeatmapModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCellBreakdownModel.js.html" style="color: #00ccff">PertCellBreakdownModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertCountModel.js.html" style="color: #00ccff">PertCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertDetailModel.js.html" style="color: #00ccff">PertDetailModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/PertModel.js.html" style="color: #00ccff">PertModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/ScatterPlotModel.js.html" style="color: #00ccff">ScatterPlotModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SigCountModel.js.html" style="color: #00ccff">SigCountModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SignatureModel.js.html" style="color: #00ccff">SignatureModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/SummlyResultModel.js.html" style="color: #00ccff">SummlyResultModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/TickModel.js.html" style="color: #00ccff">TickModel</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../models/sequenceModel.js.html" style="color: #00ccff">sequenceModel</a></li>
+                  <li class="inner"><a href="../models/AnalysisHistoryModel.js.html" class="lower_inner">AnalysisHistoryModel</a></li>
+                  <li class="inner"><a href="../models/BarPlotModel.js.html" class="lower_inner">BarPlotModel</a></li>
+                  <li class="inner"><a href="../models/CellCountModel.js.html" class="lower_inner">CellCountModel</a></li>
+                  <li class="inner"><a href="../models/CellModel.js.html" class="lower_inner">CellModel</a></li>
+                  <li class="inner"><a href="../models/CompoundDetailModel.js.html" class="lower_inner">CompoundDetailModel</a></li>
+                  <li class="inner"><a href="../models/GeneDetailModel.js.html" class="lower_inner">GeneDetailModel</a></li>
+                  <li class="inner"><a href="../models/GenericCountModel.js.html" class="lower_inner">GenericCountModel</a></li>
+                  <li class="inner"><a href="../models/GenericMongoModel.js.html" class="lower_inner">GenericMongoModel</a></li>
+                  <li class="inner"><a href="../models/HeatmapModel.js.html" class="lower_inner">HeatmapModel</a></li>
+                  <li class="inner"><a href="../models/PertCellBreakdownModel.js.html" class="lower_inner">PertCellBreakdownModel</a></li>
+                  <li class="inner"><a href="../models/PertCountModel.js.html" class="lower_inner">PertCountModel</a></li>
+                  <li class="inner"><a href="../models/PertDetailModel.js.html" class="lower_inner">PertDetailModel</a></li>
+                  <li class="inner"><a href="../models/PertModel.js.html" class="lower_inner">PertModel</a></li>
+                  <li class="inner"><a href="../models/ScatterPlotModel.js.html" class="lower_inner">ScatterPlotModel</a></li>
+                  <li class="inner"><a href="../models/SigCountModel.js.html" class="lower_inner">SigCountModel</a></li>
+                  <li class="inner"><a href="../models/SignatureModel.js.html" class="lower_inner">SignatureModel</a></li>
+                  <li class="inner"><a href="../models/SummlyResultModel.js.html" class="lower_inner">SummlyResultModel</a></li>
+                  <li class="inner"><a href="../models/TickModel.js.html" class="lower_inner">TickModel</a></li>
+                  <li class="inner"><a href="../models/sequenceModel.js.html" class="lower_inner">sequenceModel</a></li>
                 </ul></a></li>
-            <li id="utils" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Utils
+            <li><a onclick="listCollapse(this)" class="lower_outer">Utils
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/CMapTypeAlias.js.html" style="color: #00ccff">CMapTypeAlias</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/NumbersToSubscript.js.html" style="color: #00ccff">NumbersToSubscript</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/arrayAverage.js.html" style="color: #00ccff">arrayAverage</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getEmSizeInPixels.js.html" style="color: #00ccff">getEmSizeInPixels</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/getQueryVariable.js.html" style="color: #00ccff">getQueryVariable</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/numberWithCommas.js.html" style="color: #00ccff">numberWithCommas</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIPrefilter.js.html" style="color: #00ccff">setAPIPrefilter</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setAPIURL.js.html" style="color: #00ccff">setAPIURL</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../utils/setUserKey.js.html" style="color: #00ccff">setUserKey</a></li>
+                  <li class="inner"><a href="../utils/CMapTypeAlias.js.html" class="lower_inner">CMapTypeAlias</a></li>
+                  <li class="inner"><a href="../utils/NumbersToSubscript.js.html" class="lower_inner">NumbersToSubscript</a></li>
+                  <li class="inner"><a href="../utils/arrayAverage.js.html" class="lower_inner">arrayAverage</a></li>
+                  <li class="inner"><a href="../utils/getEmSizeInPixels.js.html" class="lower_inner">getEmSizeInPixels</a></li>
+                  <li class="inner"><a href="../utils/getQueryVariable.js.html" class="lower_inner">getQueryVariable</a></li>
+                  <li class="inner"><a href="../utils/numberWithCommas.js.html" class="lower_inner">numberWithCommas</a></li>
+                  <li class="inner"><a href="../utils/setAPIPrefilter.js.html" class="lower_inner">setAPIPrefilter</a></li>
+                  <li class="inner"><a href="../utils/setAPIURL.js.html" class="lower_inner">setAPIURL</a></li>
+                  <li class="inner"><a href="../utils/setUserKey.js.html" class="lower_inner">setUserKey</a></li>
                 </ul></a></li>
-            <li id="views" style="cursor: pointer;"><a onclick="listCollapse(this)" style="color: #ff9933">Views
+            <li><a onclick="listCollapse(this)" class="lower_outer">Views
                 <ul style="display: none;list-style-type: none">
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BarPlotView.js.html" style="color: #00ccff">BarPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaBaseView.js.html" style="color: #00ccff">BaristaBaseView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaCardView.js.html" style="color: #00ccff">BaristaCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BaristaUserCardView.js.html" style="color: #00ccff">BaristaUserCardView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/BubbleView.js.html" style="color: #00ccff">BubbleView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapFooterView.js.html" style="color: #00ccff">CMapFooterView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapHeaderView.js.html" style="color: #00ccff">CMapHeaderView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CMapNavigationView.js.html" style="color: #00ccff">CMapNavigationView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CellSearchBar.js.html" style="color: #00ccff">CellSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundDetailView.js.html" style="color: #00ccff">CompoundDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/CompoundSearchBar.js.html" style="color: #00ccff">CompoundSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/FlatTreeMapView.js.html" style="color: #00ccff">FlatTreeMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/GenericCountView.js.html" style="color: #00ccff">GenericCountView</a></li>
-                  <li style="margin: 15px 0 15px 0" class="active"><a href="../views/GridView.js.html" style="color: #00ccff">GridView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HTMLCellView.js.html" style="color: #00ccff">HTMLCellView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/HeatMapView.js.html" style="color: #00ccff">HeatMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/LDMapView.js.html" style="color: #00ccff">LDMapView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertCountView.js.html" style="color: #00ccff">PertCountView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertDetailView.js.html" style="color: #00ccff">PertDetailView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PertSearchBar.js.html" style="color: #00ccff">PertSearchBar</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/PlatformSummaryView.js.html" style="color: #00ccff">PlatformSummaryView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ScatterPlotView.js.html" style="color: #00ccff">ScatterPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TagListView.js.html" style="color: #00ccff">TagListView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/TickView.js.html" style="color: #00ccff">TickView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/ViolinPlotView.js.html" style="color: #00ccff">ViolinPlotView</a></li>
-                  <li style="margin: 15px 0 15px 0"><a href="../views/sequenceView.js.html" style="color: #00ccff">sequenceView</a></li>
+                  <li class="inner"><a href="../views/BarPlotView.js.html" class="lower_inner">BarPlotView</a></li>
+                  <li class="inner"><a href="../views/BaristaBaseView.js.html" class="lower_inner">BaristaBaseView</a></li>
+                  <li class="inner"><a href="../views/BaristaCardView.js.html" class="lower_inner">BaristaCardView</a></li>
+                  <li class="inner"><a href="../views/BaristaUserCardView.js.html" class="lower_inner">BaristaUserCardView</a></li>
+                  <li class="inner"><a href="../views/BubbleView.js.html" class="lower_inner">BubbleView</a></li>
+                  <li class="inner"><a href="../views/CMapFooterView.js.html" class="lower_inner">CMapFooterView</a></li>
+                  <li class="inner"><a href="../views/CMapHeaderView.js.html" class="lower_inner">CMapHeaderView</a></li>
+                  <li class="inner"><a href="../views/CMapNavigationView.js.html" class="lower_inner">CMapNavigationView</a></li>
+                  <li class="inner"><a href="../views/CellSearchBar.js.html" class="lower_inner">CellSearchBar</a></li>
+                  <li class="inner"><a href="../views/CompoundDetailView.js.html" class="lower_inner">CompoundDetailView</a></li>
+                  <li class="inner"><a href="../views/CompoundSearchBar.js.html" class="lower_inner">CompoundSearchBar</a></li>
+                  <li class="inner"><a href="../views/FlatTreeMapView.js.html" class="lower_inner">FlatTreeMapView</a></li>
+                  <li class="inner"><a href="../views/GenericCountView.js.html" class="lower_inner">GenericCountView</a></li>
+                  <li class="inner"><a href="../views/GridView.js.html" class="lower_inner">GridView</a></li>
+                  <li class="inner"><a href="../views/HTMLCellView.js.html" class="lower_inner">HTMLCellView</a></li>
+                  <li class="inner"><a href="../views/HeatMapView.js.html" class="lower_inner">HeatMapView</a></li>
+                  <li class="inner"><a href="../views/LDMapView.js.html" class="lower_inner">LDMapView</a></li>
+                  <li class="inner"><a href="../views/PertCountView.js.html" class="lower_inner">PertCountView</a></li>
+                  <li class="inner"><a href="../views/PertDetailView.js.html" class="lower_inner">PertDetailView</a></li>
+                  <li class="inner"><a href="../views/PertSearchBar.js.html" class="lower_inner">PertSearchBar</a></li>
+                  <li class="inner"><a href="../views/PlatformSummaryView.js.html" class="lower_inner">PlatformSummaryView</a></li>
+                  <li class="inner"><a href="../views/ScatterPlotView.js.html" class="lower_inner">ScatterPlotView</a></li>
+                  <li class="inner"><a href="../views/TagListView.js.html" class="lower_inner">TagListView</a></li>
+                  <li class="inner"><a href="../views/TickView.js.html" class="lower_inner">TickView</a></li>
+                  <li class="inner"><a href="../views/ViolinPlotView.js.html" class="lower_inner">ViolinPlotView</a></li>
+                  <li class="inner"><a href="../views/sequenceView.js.html" class="lower_inner">sequenceView</a></li>
                 </ul></a></li>
           </ul>
         </div>
         <div class="span9">
           <section id="name">
-            <h1 style="font-family: Open Sans">name</h1>
+            <h1>name</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-success radius ctx-type">property</div><span>name</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
+          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
           <section id="initialize">
-            <h1 style="font-family: Open Sans">initialize</h1>
+            <h1>initialize</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>initialize()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">initialize: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// default search value
 	this.search_val = &quot;&quot;;
@@ -225,25 +230,25 @@
 			&quot;click&quot;: &quot;onClick&quot;
 		},</code></pre></span>
           <section id="onClick">
-            <h1 style="font-family: Open Sans">onClick</h1>
+            <h1>onClick</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>onClick()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">onClick: function () {
+          <div style="font-family:Roboto Slab" class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">onClick: function () {
 	self.trigger(&quot;grid:RowClick&quot;, this.model);
 },</code></pre></span>
           <section id="render">
-            <h1 style="font-family: Open Sans">render</h1>
+            <h1>render</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>render()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">render: function () {
+          <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">render: function () {
 	this.$el.empty();
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i &lt; this.cells.length; i++) {
@@ -258,14 +263,14 @@
 	return this;
 },</code></pre></span>
           <section id="remove">
-            <h1 style="font-family: Open Sans">remove</h1>
+            <h1>remove</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>remove()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">remove: function () {
+          <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">remove: function () {
 	this.$el.addClass(&quot;cmap-active-grid-row&quot;);
 	this.$el.animate({&quot;opacity&quot;:0},1000);
 	var self = this;
@@ -319,14 +324,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 		}
 	},100),</code></pre></span>
           <section id="add_scroll_to_top_button">
-            <h1 style="font-family: Open Sans">add_scroll_to_top_button</h1>
+            <h1>add_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>add_scroll_to_top_button()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>adds a UI control to scroll the top of the grid</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">add_scroll_to_top_button: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>adds a UI control to scroll the top of the grid</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">add_scroll_to_top_button: function(){
 	var self = this;
 	this.scroll_to_top_button_id = this.div_string + 'scroll_button';
 	this.$el.append('&lt;button id=&quot;' + this.scroll_to_top_button_id + '&quot; class=&quot;cmap_grid_to_top_button&quot;&gt;Scroll to Top&lt;/button&gt;');
@@ -334,7 +339,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 	this.hide_scroll_to_top_button();
 },</code></pre></span>
           <section id="scroll_to_top">
-            <h1 style="font-family: Open Sans">scroll_to_top</h1>
+            <h1>scroll_to_top</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>scroll_to_top()</span>
@@ -356,14 +361,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the top of its container</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">scroll_to_top: function(duration){
+          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the top of its container</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">scroll_to_top: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.div_string).animate({scrollTop:0},duration);
 	this.hide_scroll_to_top_button();
 },</code></pre></span>
           <section id="show_scroll_to_top_button">
-            <h1 style="font-family: Open Sans">show_scroll_to_top_button</h1>
+            <h1>show_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>show_scroll_to_top_button()</span>
@@ -385,14 +390,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the bottom of its container</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">show_scroll_to_top_button: function(duration){
+          <div style="font-family:Roboto Slab" class="description"><p>scrolls the grid to the bottom of its container</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">show_scroll_to_top_button: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:1},duration);
 },</code></pre></span>
           <section id="hide_scroll_to_top_button">
-            <h1 style="font-family: Open Sans">hide_scroll_to_top_button</h1>
+            <h1>hide_scroll_to_top_button</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>hide_scroll_to_top_button()</span>
@@ -414,15 +419,15 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the scroll to top button</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
+          <div style="font-family:Roboto Slab" class="description"><p>hides the scroll to top button</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
 	var self= this;
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:0},duration);
 },</code></pre></span>
           <section id="replace_collection">
-            <h1 style="font-family: Open Sans">replace_collection</h1>
+            <h1>replace_collection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>replace_collection()</span>
@@ -454,8 +459,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data and rejects the slice</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data and rejects the slice</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	var self = this;
 	this.search_val = (search_val !== undefined) ? search_val : this.search_val;
@@ -481,7 +486,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 	return getData_promise;
 },</code></pre></span>
           <section id="update_collection">
-            <h1 style="font-family: Open Sans">update_collection</h1>
+            <h1>update_collection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>update_collection()</span>
@@ -513,8 +518,8 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table>
-          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
+          <div style="font-family:Roboto Slab" class="description"><p>changes the visible collection data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	if (this.collection.models.length &lt; this.collection.maxCount){
 		var self = this;
@@ -533,14 +538,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 	}
 },</code></pre></span>
           <section id="clear_collection">
-            <h1 style="font-family: Open Sans">clear_collection</h1>
+            <h1>clear_collection</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>clear_collection()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the visible data and rejects the slice</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">clear_collection: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>hides the visible data and rejects the slice</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">clear_collection: function(){
 	var self = this;
 	this.collection.skip = 0;
 	$(&quot;#&quot; + this.div_string).animate({opacity:0},500);
@@ -559,14 +564,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 	},500);
 },</code></pre></span>
           <section id="resize_div">
-            <h1 style="font-family: Open Sans">resize_div</h1>
+            <h1>resize_div</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>resize_div()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">resize_div: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">resize_div: function(){
 	var self = this;
 	var container_height =  $(&quot;#&quot; + this.div_string).height();
 	setTimeout(function(){
@@ -578,14 +583,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 	},500);
 },</code></pre></span>
           <section id="compile_template">
-            <h1 style="font-family: Open Sans">compile_template</h1>
+            <h1>compile_template</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">compile_template: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'backgrid_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
 												   span_class: this.span_class,
@@ -597,14 +602,14 @@ this.update_collection(this.search_val,this.search_type,this.limit);
 												}));
 },</code></pre></span>
           <section id="slice_all_table_data">
-            <h1 style="font-family: Open Sans">slice_all_table_data</h1>
+            <h1>slice_all_table_data</h1>
             <h5 class="subheader"></h5>
             <p>
               <div class="label label-info radius ctx-type">method</div><span>slice_all_table_data()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div><span style="cursor: pointer;color: blue;font-family: Helvetica Neue">CLICK TO TOGGLE CODE
-            <pre style="display: none;cursor: text"><code class="language-javascript">slice_all_table_data: function(){
+          <div style="font-family:Roboto Slab" class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
+            <pre style="display: none;cursor: text;font-weight: normal;font-family: Monaco, Menlo, Consolas, 'Courier New', monospace"><code class="language-javascript">slice_all_table_data: function(){
 	var self = this;
 	// change the button state to progress
 	this.change_slice_button_state(&quot;progress&quot;);
