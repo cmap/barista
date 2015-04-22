@@ -1,4 +1,11 @@
 /**
+ * count_view = new PertCountView({bg_color:"#ffffff",
+									well_color: "#bdbdbd",
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									static_text: "Reagents",
+									categories: []});
+ *
  * A Backbone.View that shows that number of perturbagens matching a given query
  * Optionally, sub-category counts are give for the type of perturbagen queried for
  * This view is frequently paired with a PertCountModel or CellCountModel
@@ -15,12 +22,6 @@
  *                              "col-lg-4"
  * @param {string} static_text  the static text header to use in the view, defaults to "Reagents"
  * @param {array}  categories   an array of objects to use as categories to display, defaults to []
- * count_view = new PertCountView({bg_color:"#ffffff",
-									well_color: "#bdbdbd",
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									static_text: "Reagents",
-									categories: []});
  */
 
 Barista.Views.PertCountView = Backbone.View.extend({

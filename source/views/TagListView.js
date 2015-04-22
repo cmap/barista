@@ -1,4 +1,12 @@
 /**
+ * tag_list_view = new TagListView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "white",
+									tag_color: "gray",
+									span_class: "col-lg-12",
+									plot_height: 120,
+									display_attribute: "cid"});
+ *
  * A Backbone.View that displays a list of objects in a collection as tags
  * The tags are drawn as rounded rectangles with text inside
  * The text corresponds to the cid attributes in the collection by defaul, but can be customized to display
@@ -16,13 +24,6 @@
  * @param {number} plot_height    the height of the plot in pixels, defaults to 120
  * @param {string} display_field  the model attribute to display for each model in the view's colleciton.
  *                                defualts to 'cid'
- * tag_list_view = new TagListView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "white",
-									tag_color: "gray",
-									span_class: "col-lg-12",
-									plot_height: 120,
-									display_attribute: "cid"});
  */
 
 Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({

@@ -1,4 +1,12 @@
 /**
+ * card_view = new BaristaCardView({el: $("target_selector",
+									url:"",
+									title:"",
+									subtitle:"",
+									fg_color: "#1b9e77",
+									image:"",
+									span_class: "col-lg-12"});
+ *
  * A Backbone View that displays a card of information wrapped in link
  * The view is meant to be a top level entry point to other pages
  * basic use:
@@ -12,13 +20,6 @@
  *                             #1b9e77
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
  *                             "col-lg-12"
- * card_view = new BaristaCardView({el: $("target_selector",
-									url:"",
-									title:"",
-									subtitle:"",
-									fg_color: "#1b9e77",
-									image:"",
-									span_class: "col-lg-12"});
  */
 Barista.Views.BaristaCardView = Backbone.View.extend({
 	/**

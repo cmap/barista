@@ -1,4 +1,9 @@
 /**
+ * pert_detail_view = new PertDetailView({el: $("target_selector"),
+ 												model: PertDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ *
  * A Backbone.View that shows information about a small molecule compound or gene
  * This view is frequently paired with a PertDetailModel
  * pert_detail_view = new PertDetailView({el: $("target_selector")});
@@ -6,11 +11,7 @@
  * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
  *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
- *                             "col-lg-12"
- * pert_detail_view = new PertDetailView({el: $("target_selector"),
- 												model: PertDetailModel,
- 												bg_color: "#ffffff",
- 												span_class: "col-lg-12"});                            
+ *                             "col-lg-12"                            
  */
 Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 	/**

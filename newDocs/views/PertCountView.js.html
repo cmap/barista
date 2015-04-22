@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.PertCountView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>count_view = new PertCountView({bg_color:&quot;#ffffff&quot;,<br />                                    well_color: &quot;#bdbdbd&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    static_text: &quot;Reagents&quot;,<br />                                    categories: []});</p><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -224,7 +224,7 @@
               <tr>
                 <td>categories</td>
                 <td>array</td>
-                <td><p>an array of objects to use as categories to display, defaults to [] count_view = new PertCountView({bg_color:&quot;#ffffff&quot;,<br />                                    well_color: &quot;#bdbdbd&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    static_text: &quot;Reagents&quot;,<br />                                    categories: []});</p></td>
+                <td><p>an array of objects to use as categories to display, defaults to []</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

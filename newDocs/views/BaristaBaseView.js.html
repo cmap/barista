@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,10 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BaristaBaseView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>base_view = new BaristaBaseView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120});<br />to extend BaristaBaseView, use</p><pre><code>    extended_view = BaristaBaseView.extend({
+                                    ...
+                                    });
+</code></pre><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -219,10 +222,7 @@
               <tr>
                 <td>png</td>
                 <td>boolean</td>
-                <td><p>show the png export button. defaults to true base_view = new BaristaBaseView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120});<br />to extend BaristaBaseView, use</p><pre><code>    extended_view = BaristaBaseView.extend({
-                                    ...
-                                    });
-</code></pre></td>
+                <td><p>show the png export button. defaults to true</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
@@ -523,7 +523,7 @@
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the hide animation. defualts to <em>1</em> pert_detail_view.show(duration);</p></td>
+                <td><p>the time in ms for the hide animation, defualts to <em>1</em> pert_detail_view.show(duration);</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

@@ -1,4 +1,23 @@
 /**
+ * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									x_min_lock: undefined,
+									y_min_lock: undefined,
+									x_max_lock: undefined,
+									y_max_lock: undefined,
+									x_min_expand: false,
+									y_min_expand: false,
+									x_max_expand: false,
+									y_max_expand: false,
+									plot_height: 120});
+ *
  * A Backbone.View that displays a scatter plot
  * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
  * basic use:
@@ -35,24 +54,6 @@
  * @param {boolean} y_max_expand  if set, allows the maximum of the y_range to expand if data is found
  *                                above it. defaults to false
  * @param {number}  plot_height   the height of the plot in pixels, defaults to 120
- * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									x_range: undefined,
-									y_range: undefined,
-									x_log: false,
-									y_log: false,
-									x_min_lock: undefined,
-									y_min_lock: undefined,
-									x_max_lock: undefined,
-									y_max_lock: undefined,
-									x_min_expand: false,
-									y_min_expand: false,
-									x_max_expand: false,
-									y_max_expand: false,
-									plot_height: 120});
  */
 
 Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({

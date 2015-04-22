@@ -1,4 +1,9 @@
 /**
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
+ 												model: CompoundDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ *
  * A Backbone.View that shows information about a small molecule compound
  * This view is frequently paired with a CompoundDetailModel
  * pert_detail_view = new CompoundDetailView({el: $("target_selector")});
@@ -7,10 +12,6 @@
  *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
  *                             "col-lg-12"
- * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
- 												model: CompoundDetailModel,
- 												bg_color: "#ffffff",
- 												span_class: "col-lg-12"});
  */
 Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 	/**

@@ -1,4 +1,11 @@
 /**
+ * tick_view = new TickView({el: $("target_selector"),
+												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
+												template: "../templates/d3_target.handlebars",
+												bg_color: "#bdbdbd",
+												span_class: "span12"
+												});
+ *
  * A Backbone.View that displays a Connectivity Map tick view
  * The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and
  * the scores of the ticks to show for each row
@@ -14,12 +21,6 @@
  *                             #bdbdbd
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span12"
  * example usage:
- * tick_view = new TickView({el: $("target_selector"),
-												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
-												template: "../templates/d3_target.handlebars",
-												bg_color: "#bdbdbd",
-												span_class: "span12"
-												});
  */
 
 Barista.Views.TickView = Backbone.View.extend({
@@ -275,9 +276,10 @@ Barista.Views.TickView = Backbone.View.extend({
 	},
 
 	/**
+	 * pert_detail_view.hide(duration);
+	 * 
 	 * hides the view by dimming the opacity and hiding it in the DOM
 	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
-	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
@@ -294,9 +296,10 @@ Barista.Views.TickView = Backbone.View.extend({
 	},
 
 	/**
+	 * pert_detail_view.show(duration);
+	 * 
 	 * shows the view by brightening the opacity and showing it in the DOM
 	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
-	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;

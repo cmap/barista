@@ -1,4 +1,17 @@
 /**
+ * bar_plot_view = new BarPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									range: undefined,
+									log: false,
+									min_lock: undefined,
+									max_lock: undefined,
+									min_expand: false,
+									max_expand: false,
+									plot_height: 120});
+ *									
  * A Backbone.View that displays a scatter plot
  * the view's model is assumed to have the same defaults as specified in BarPlotModel
  * basic use:
@@ -24,18 +37,6 @@
  * @param {string}  orientation  sets the orientation of the bar plot. options are 'horizontal' or
  *                               'vertical'. defaults to 'vertical'
  * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
- * bar_plot_view = new BarPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									range: undefined,
-									log: false,
-									min_lock: undefined,
-									max_lock: undefined,
-									min_expand: false,
-									max_expand: false,
-									plot_height: 120});
  */
 
 Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({

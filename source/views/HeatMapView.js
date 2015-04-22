@@ -1,4 +1,16 @@
 /**
+ * heatmap_view = new HeatmapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												annot_color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ *
  * A Backbone.View that displays a simple heatmap
  * The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,
  * and title attributes
@@ -20,17 +32,6 @@
  * @param {string}   span_class         a bootstrap span class to size the width of the view, defaults to
  *                                      "span12"
  * example usage:
- * heatmap_view = new HeatmapView({el: $("target_selector"),
-												model: new HeatmapModel(),
-												template: BaristaTemplates.d3_target,
-												bg_color: "#ffffff",
-												low_color: "#0000ff",
-												high_color: "#ff0000",
-												color_scale: undefined,
-												annot_color_scale: undefined,
-												plot_height: 300,
-												span_class: "span12"
-												});
  */
 
 Barista.Views.HeatmapView = Backbone.View.extend({

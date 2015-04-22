@@ -1,4 +1,15 @@
 /**
+ * base_view = new BaristaBaseView({el: $("target_selector",
+									bg_color:"#ffffff",
+									fg_color: "#1b9e77",
+									span_class: "col-lg-12",
+									plot_height: 120});
+ * to extend BaristaBaseView, use
+
+		extended_view = BaristaBaseView.extend({
+										...
+										});
+ *										
  * A Backbone.View the serves as the base view for other views in the barista library
  * BaristaBaseView provides common functionality for views including standard initialization, redraw,
  * render, template compilation, and png export functions
@@ -15,16 +26,6 @@
  *                               "col-lg-12"
  * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
  * @param {boolean} png          show the png export button. defaults to true
- * base_view = new BaristaBaseView({el: $("target_selector",
-									bg_color:"#ffffff",
-									fg_color: "#1b9e77",
-									span_class: "col-lg-12",
-									plot_height: 120});
- * to extend BaristaBaseView, use
-
-		extended_view = BaristaBaseView.extend({
-										...
-										});
  */
 Barista.Views.BaristaBaseView = Backbone.View.extend({
 	/**
@@ -275,7 +276,7 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 
 	/**
 	 * shows the view by brightening the opacity and showing it in the DOM
-	 * @param  {number} duration  the time in ms for the hide animation. defualts to *1*
+	 * @param  {number} duration  the time in ms for the hide animation, defualts to *1*
 	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){

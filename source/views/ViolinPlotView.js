@@ -1,4 +1,15 @@
 /**
+ * violin_plot_view = new ViolinPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									plot_height: 120});
+ *
  * A Backbone.View that displays a single scatter plot
  * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
  * basic use:
@@ -17,16 +28,6 @@
  * @param {boolean} x_log        if set to true, plots the x axis on a log scale, defaults to false
  * @param {boolean} y_log        if set to true, plots the y axis on a log scale, defaults to false
  * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
- * violin_plot_view = new ViolinPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									x_range: undefined,
-									y_range: undefined,
-									x_log: false,
-									y_log: false,
-									plot_height: 120});
  */
 Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 	/**

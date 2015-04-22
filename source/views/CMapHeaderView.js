@@ -1,4 +1,9 @@
 /**
+ * header = new CMapHeaderView({el:"header_target",
+									title: "",
+									subtitle: "",
+									template: "templates/CMapHeader.handlebars"});
+ *
  * A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
  * the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
  * sharing, settings, and information
@@ -10,10 +15,6 @@
  * @param {string} subtitle  The title of the page. Defaults to Sub Title
  * @param {string} template  The path to a handlebars template to use. Defaults to
  *                           templates/CMapHeader.handlebars
- * header = new CMapHeaderView({el:"header_target",
-									title: "",
-									subtitle: "",
-									template: "templates/CMapHeader.handlebars"});
  */
 Barista.Views.CMapHeaderView = Backbone.View.extend({
 	/**

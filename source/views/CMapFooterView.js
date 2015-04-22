@@ -1,4 +1,11 @@
 /**
+ * header = new CMapFooterView({el:"footer_target",
+									organization: "Broad Institute",
+									terms_url: "//lincscloud.org/terms-and-conditions/",
+ 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
+ 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
+									template: "../templates/CMapFooter.handlebars"});
+ *
  * A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
  * the view provides standard copyright text and customizable organization name, terms and conditions link,
  * and organization logo/link
@@ -16,12 +23,6 @@
  *                               ['//www.broadinstitute.org/','//lincscloud.org/']
  * @param {string} template      The path to a handlebars template to use. Defaults to
  *                               templates/CMapFooter.handlebars
- * header = new CMapFooterView({el:"footer_target",
-									organization: "Broad Institute",
-									terms_url: "//lincscloud.org/terms-and-conditions/",
- 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
- 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
-									template: "../templates/CMapFooter.handlebars"});
  */
 Barista.Views.CMapFooterView = Backbone.View.extend({
 	/**

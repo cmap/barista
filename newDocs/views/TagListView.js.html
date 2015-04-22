@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.TagListView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -224,7 +224,7 @@
               <tr>
                 <td>display_field</td>
                 <td>string</td>
-                <td><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;<br />tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p></td>
+                <td><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

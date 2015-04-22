@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CompoundDetailView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: CompoundDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -204,7 +204,7 @@
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: CompoundDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

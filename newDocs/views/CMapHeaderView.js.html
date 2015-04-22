@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapHeaderView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org<br />the header provides links in the view to navigate back to apps.lincscloud.org as well as links for<br />sharing, settings, and information<br />The view accepts as parameters a page title, subtitle, and handlebars template<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapHeaderView({el:&quot;header_target&quot;,<br />                                    title: &quot;&quot;,<br />                                    subtitle: &quot;&quot;,<br />                                    template: &quot;templates/CMapHeader.handlebars&quot;});</p><p>A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org<br />the header provides links in the view to navigate back to apps.lincscloud.org as well as links for<br />sharing, settings, and information<br />The view accepts as parameters a page title, subtitle, and handlebars template<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -209,7 +209,7 @@
               <tr>
                 <td>template</td>
                 <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                           templates/CMapHeader.handlebars<br />header = new CMapHeaderView({el:&quot;header_target&quot;,<br />                                    title: &quot;&quot;,<br />                                    subtitle: &quot;&quot;,<br />                                    template: &quot;templates/CMapHeader.handlebars&quot;});</p></td>
+                <td><p>The path to a handlebars template to use. Defaults to                           templates/CMapHeader.handlebars</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

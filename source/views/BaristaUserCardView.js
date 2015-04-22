@@ -3,10 +3,10 @@
  * basic use:
  * card_view = new BaristaUserCardView();
  * optional arguments:
- * @param {string} realName  the name to display. defaults to "Name"
- * @param {string} username  the name to display. defaults to "Username"
- * @param {string} email     the email to display. defaults to "user@mail.com"
- * @param {string} badges    an array of badge images to display. defaults to []
+ * @param {string} realName  the name to display, defaults to "Name"
+ * @param {string} username  the name to display, defaults to "Username"
+ * @param {string} email     the email to display, defaults to "user@mail.com"
+ * @param {string} badges    an array of badge images to display, defaults to []
  */
 
 Barista.Views.BaristaUserCardView = Backbone.View.extend({

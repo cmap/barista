@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.HeatmapView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>heatmap_view = new HeatmapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                annot_color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -234,7 +234,7 @@
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                                      &quot;span12&quot;<br />example usage:<br />heatmap_view = new HeatmapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                annot_color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                                      &quot;span12&quot;<br />example usage:</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE

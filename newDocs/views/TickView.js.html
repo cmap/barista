@@ -69,7 +69,7 @@
     <!-- getting rid of this gets rid of the entire header area-->
     <!-- removing subhead class centers everything-->
     <!-- @todo look into using a different image for the header-->
-    <header id="overview" class="jumbotron"><img src="http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png">
+    <header id="overview" class="jumbotron">
       <div class="container">
         <h1>barista</h1>
         <p class="lead"></p>
@@ -186,7 +186,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.TickView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>tick_view = new TickView({el: $(&quot;target_selector&quot;),<br />                                                model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: &quot;example data&quot;}),<br />                                                template: &quot;../templates/d3_target.handlebars&quot;,<br />                                                bg_color: &quot;#bdbdbd&quot;,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -209,7 +209,7 @@
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span12&quot; example usage:<br />tick_view = new TickView({el: $(&quot;target_selector&quot;),<br />                                                model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: &quot;example data&quot;}),<br />                                                template: &quot;../templates/d3_target.handlebars&quot;,<br />                                                bg_color: &quot;#bdbdbd&quot;,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span12&quot; example usage:</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
@@ -490,7 +490,7 @@
               <div class="label label-info radius ctx-type">method</div><span>hide()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view.hide(duration);</p><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -503,7 +503,7 @@
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the hide animation. defualts to 1 pert_detail_view.hide(duration);</p></td>
+                <td><p>the time in ms for the hide animation. defualts to 1</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
@@ -527,7 +527,7 @@
               <div class="label label-info radius ctx-type">method</div><span>show()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view.show(duration);</p><p>shows the view by brightening the opacity and showing it in the DOM</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -540,7 +540,7 @@
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the show animation. defualts to 1 pert_detail_view.show(duration);</p></td>
+                <td><p>the time in ms for the show animation. defualts to 1</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
