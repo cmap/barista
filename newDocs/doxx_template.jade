@@ -89,59 +89,59 @@ html
                     li(class=(file.name !== currentName ? "":"active"))
                       - var su3 = file.name.indexOf(".js")
                       if (su3 > -1)
-                        a(href=file.relName class="upper") #{file.name.substring(0, su3)}
+                        a.upper(href=file.relName) #{file.name.substring(0, su3)}
                       else
-                        a(href=file.relName class="upper") #{file.name}
+                        a.upper(href=file.relName) #{file.name}
             li
-              a(onclick="listCollapse(this)" class="lower_outer") Collections
+              a.lower_outer(onclick="listCollapse(this)") Collections &darr;
                 ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("collections/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class="inner")
-                        a(href=file.relName class="lower_inner") #{ti.substring(13, ti.length - 4)}
+                      li.inner
+                        a.lower_inner(href=file.relName) #{ti.substring(13, ti.length - 4)}
             li
-              a(onclick="listCollapse(this)" class="lower_outer") Datasets
+              a.lower_outer(onclick="listCollapse(this)") Datasets &darr;
                 ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("datasets/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class="inner")
-                        a(href=file.relName class="lower_inner") #{ti.substring(10, ti.length - 4)}
+                      li.inner
+                        a.lower_inner(href=file.relName) #{ti.substring(10, ti.length - 4)}
             li
-              a(onclick="listCollapse(this)" class="lower_outer") Models
+              a.lower_outer(onclick="listCollapse(this)") Models &darr;
                 ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("models/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class="inner")
-                        a(href=file.relName class="lower_inner") #{ti.substring(8, ti.length - 4)}
+                      li.inner
+                        a.lower_inner(href=file.relName) #{ti.substring(8, ti.length - 4)}
             li
-              a(onclick="listCollapse(this)" class="lower_outer") Utils
+              a.lower_outer(onclick="listCollapse(this)") Utils &darr;
                 ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("utils/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class="inner")
-                        a(href=file.relName class="lower_inner") #{ti.substring(7, ti.length - 4)}
+                      li.inner
+                        a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
             li
-              a(onclick="listCollapse(this)" class="lower_outer") Views
+              a.lower_outer(onclick="listCollapse(this)") Views &darr;
                 ul(style="display: none")
                   each file in files
                     - var ti = JSON.stringify(file.name)
                     - var su = ti.indexOf("views/")
                     - var su2 = ti.indexOf(".main")
                     if (su > -1 && su2 < 0)
-                      li(class="inner")
-                        a(href=file.relName class="lower_inner") #{ti.substring(7, ti.length - 4)}
+                      li.inner
+                        a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
         .span9
           if locals.readme
             section(id=name) !{readme}

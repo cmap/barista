@@ -1,3 +1,10 @@
+span.codetoggle{
+	cursor: pointer;
+	color: #ff66cc;
+	font-family: Helvetica Neue;
+	font-weight: bold;
+}
+
 h1{
 	font-family: Open Sans;
 }
@@ -21,7 +28,7 @@ li.inner{
 }
 
 th, td{
-	font-family:Roboto Slab
+	font-family:Roboto Slab;
 }
 
 th{
@@ -32,6 +39,7 @@ pre{
 	cursor: text;
 	font-weight: normal;
 	font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+	display: none;
 }
 
 ul{
