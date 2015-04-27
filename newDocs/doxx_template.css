@@ -1,3 +1,7 @@
+ul.mycoll{
+	display: none;
+}
+
 span.codetoggle{
 	cursor: pointer;
 	color: #ff66cc;
