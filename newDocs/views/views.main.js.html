@@ -193,7 +193,10 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BaristaBaseView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>base_view = new BaristaBaseView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120});<br />to extend BaristaBaseView, use</p><pre><code>    extended_view = BaristaBaseView.extend({
+                                    ...
+                                    });
+</code></pre><p>A Backbone.View the serves as the base view for other views in the barista library<br />BaristaBaseView provides common functionality for views including standard initialization, redraw,<br />render, template compilation, and png export functions<br />This view by itself will construct a single panel with a png export option, but it is meant to be used<br />as the base view that more complex views extend<br />basic use:<br />base_view = new BaristaBaseView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -226,14 +229,11 @@
               <tr>
                 <td>png</td>
                 <td>boolean</td>
-                <td><p>show the png export button. defaults to true base_view = new BaristaBaseView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120});<br />to extend BaristaBaseView, use</p><pre><code>    extended_view = BaristaBaseView.extend({
-                                    ...
-                                    });
-</code></pre></td>
+                <td><p>show the png export button. defaults to true</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BaristaBaseView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BaristaBaseView = Backbone.View.extend({</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -242,7 +242,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the view<br />Views that extend BaristaBaseView should impliment code overiding this method<br />If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they<br />should call it in their redraw method<br />As an example:<br />initialize: function(){<br />                this.base_initialize();<br />                //your code here<br />                }</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	this.base_initialize();
 },</code></pre></span>
           <section id="name">
@@ -253,7 +253,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BaristaBaseView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;BaristaBaseView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -262,7 +262,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>default model to Backbone.Model<br />This default is only provided to make the view functional as a un-extended standalone<br />An appropriate data model should be supplied for all views that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="base_initialize">
             <h1>base_initialize</h1>
             <h5 class="subheader"></h5>
@@ -271,7 +271,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">base_initialize: function(){
+            <pre class="tog"><code class="language-javascript">base_initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
@@ -318,7 +318,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'barista_view' + new Date().getTime();
 	this.compiled_template = BaristaTemplates.d3_target;
@@ -334,7 +334,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view<br />Views that extend BaristaBaseView should impliment draw code overiding this method<br />If extended BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should<br />call it in their render method<br />As an example:<br />render: function(){<br />            this.base_render();<br />            //your code here<br />            }</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	return this;
 },</code></pre></span>
@@ -346,7 +346,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view<br />This method is provided so it can be used in view that extend BaristaBaseView</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">base_render: function(){
+            <pre class="tog"><code class="language-javascript">base_render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -409,7 +409,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic portions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	return this;
 },</code></pre></span>
           <section id="save_png">
@@ -420,7 +420,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// do any pre save work that the child class may require
 	this.save_png_pre();
 
@@ -470,7 +470,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>dummy method that should be overridden if there is any work to do before saving the png image of<br />the view<br />For example, removing elements that will not render properly could be done before saving the image<br />This function is called as the first step of save_png</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png_pre: function(){},</code></pre></span>
+            <pre class="tog"><code class="language-javascript">save_png_pre: function(){},</code></pre></span>
           <section id="save_png_post">
             <h1>save_png_post</h1>
             <h5 class="subheader"></h5>
@@ -479,7 +479,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>dummy method that should be overridden if there is any work to do after saving the png image of<br />the view<br />For example, restoring elements that were removed before saving could be done after saving the image<br />This function is called as the last step of save_png</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png_post: function(){},</code></pre></span>
+            <pre class="tog"><code class="language-javascript">save_png_post: function(){},</code></pre></span>
           <section id="hide">
             <h1>hide</h1>
             <h5 class="subheader"></h5>
@@ -504,7 +504,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">hide: function(duration){
+            <pre class="tog"><code class="language-javascript">hide: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	var self = this;
 	this.$el.animate({opacity:0},duration);
@@ -530,11 +530,11 @@
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the hide animation. defualts to <em>1</em> pert_detail_view.show(duration);</p></td>
+                <td><p>the time in ms for the hide animation, defualts to <em>1</em> pert_detail_view.show(duration);</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">show: function(duration){
+            <pre class="tog"><code class="language-javascript">show: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	this.$el.show();
 	this.$el.animate({opacity:1},duration);
@@ -547,7 +547,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BarPlotView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>bar_plot_view = new BarPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    range: undefined,<br />                                    log: false,<br />                                    min_lock: undefined,<br />                                    max_lock: undefined,<br />                                    min_expand: false,<br />                                    max_expand: false,<br />                                    plot_height: 120});</p><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in BarPlotModel<br />basic use:<br />bar_plot_view = new BarPlotView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -610,11 +610,11 @@
               <tr>
                 <td>plot_height</td>
                 <td>number</td>
-                <td><p>the height of the plot in pixels, defaults to <em>120</em> bar_plot_view = new BarPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    range: undefined,<br />                                    log: false,<br />                                    min_lock: undefined,<br />                                    max_lock: undefined,<br />                                    min_expand: false,<br />                                    max_expand: false,<br />                                    plot_height: 120});</p></td>
+                <td><p>the height of the plot in pixels, defaults to <em>120</em></p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -623,7 +623,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.BarPlotModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.BarPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -632,7 +632,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.range = (this.options.range !== undefined) ? this.options.x_range : undefined;
 	this.dynamic_range = (this.range === undefined) ? true : false;
@@ -675,7 +675,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -688,7 +688,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+            <pre class="tog"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -728,7 +728,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	var self = this;
 	
 	// get model data
@@ -758,7 +758,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_ranges: function(){
+            <pre class="tog"><code class="language-javascript">set_ranges: function(){
 	var data,min,max;
 	// calculate the range. If we need to caluclate it dynamically, check the lock and expand
 	// parameters for the axis
@@ -804,7 +804,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scales: function(){
+            <pre class="tog"><code class="language-javascript">set_scales: function(){
 	if (this.log){
 		this.x_scale=d3.scale.log().domain([this.range[0],this.range[1]]).range([this.margin, this.width - this.margin]);
 	}else{
@@ -824,7 +824,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_axes: function(){
+            <pre class="tog"><code class="language-javascript">build_axes: function(){
 	var self = this;
 
 	this.xAxis = d3.svg.axis()
@@ -856,7 +856,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">style_axes: function(){
+            <pre class="tog"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)
@@ -879,7 +879,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws bars in vertical mode</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render_vertical_bars: function(){
+            <pre class="tog"><code class="language-javascript">render_vertical_bars: function(){
 	var self = this;
 	// get the model's data
 	this.data = this.model.get('data');
@@ -934,7 +934,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws bars in horizontal mode</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render_horizontal_bars: function(){
+            <pre class="tog"><code class="language-javascript">render_horizontal_bars: function(){
 	var self = this;
 	// get the model's data
 	this.data = this.model.get('data');
@@ -972,7 +972,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_vertical_bars: function(){
+            <pre class="tog"><code class="language-javascript">update_vertical_bars: function(){
 	var self = this;
 	// build Axes
 	this.build_axes();
@@ -1040,7 +1040,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the data in the bars in vertical orientation</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_horizontal_bars: function(){
+            <pre class="tog"><code class="language-javascript">update_horizontal_bars: function(){
 	var self = this;
 	// figure out how tall each bar will be
 	this.y_domain = this.y_scale.range();
@@ -1078,7 +1078,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BaristaCardView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone View that displays a card of information wrapped in link<br />The view is meant to be a top level entry point to other pages<br />basic use:<br />        card_view = new BaristaCardView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>card_view = new BaristaCardView({el: $(&quot;target_selector&quot;,<br />                                    url:&quot;&quot;,<br />                                    title:&quot;&quot;,<br />                                    subtitle:&quot;&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    image:&quot;&quot;,<br />                                    span_class: &quot;col-lg-12&quot;});</p><p>A Backbone View that displays a card of information wrapped in link<br />The view is meant to be a top level entry point to other pages<br />basic use:<br />        card_view = new BaristaCardView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1116,11 +1116,11 @@
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;<br />card_view = new BaristaCardView({el: $(&quot;target_selector&quot;,<br />                                    url:&quot;&quot;,<br />                                    title:&quot;&quot;,<br />                                    subtitle:&quot;&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    image:&quot;&quot;,<br />                                    span_class: &quot;col-lg-12&quot;});</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BaristaCardView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BaristaCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1129,7 +1129,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BaristaCardView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;BaristaCardView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -1138,7 +1138,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>supply a base model for the view<br />Overide this if you need to use it for dynamic content</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1147,7 +1147,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
 
@@ -1180,7 +1180,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'barista_view' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.CMapCard({div_string: this.div_string,
@@ -1212,26 +1212,26 @@
               <tr>
                 <td>realName</td>
                 <td>string</td>
-                <td><p>the name to display. defaults to &quot;Name&quot;</p></td>
+                <td><p>the name to display, defaults to &quot;Name&quot;</p></td>
               </tr>
               <tr>
                 <td>username</td>
                 <td>string</td>
-                <td><p>the name to display. defaults to &quot;Username&quot;</p></td>
+                <td><p>the name to display, defaults to &quot;Username&quot;</p></td>
               </tr>
               <tr>
                 <td>email</td>
                 <td>string</td>
-                <td><p>the email to display. defaults to &quot;user@mail.com&quot;</p></td>
+                <td><p>the email to display, defaults to &quot;user@mail.com&quot;</p></td>
               </tr>
               <tr>
                 <td>badges</td>
                 <td>string</td>
-                <td><p>an array of badge images to display. defaults to []</p></td>
+                <td><p>an array of badge images to display, defaults to []</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1240,7 +1240,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1249,7 +1249,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
     // set up defaults
     this.realName = (this.options.realName !== undefined) ? this.options.realName : &quot;Name&quot;;
     this.username = (this.options.username !== undefined) ? this.options.username : &quot;UserName&quot;;
@@ -1268,7 +1268,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
     var self = this;
     this.div_string = 'barista_view' + new Date().getTime();;
     this.$el.append(BaristaTemplates.CMapUserCard({div_string: this.div_string,
@@ -1285,7 +1285,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">map_badges: function(){
+            <pre class="tog"><code class="language-javascript">map_badges: function(){
     var self = this;
     this.badge_urls = [];
     this.badges.forEach(function(badge){
@@ -1310,7 +1310,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.BubbleView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>bubble_view = new BubbleView({el: $(&quot;target_selector&quot;),<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;});</p><p>A Backbone.View that displays a single level tree of data as a bubble plot<br />The view should be bound to a model such as a <strong>PertCellBreakdownModel</strong> that captures tree data in a<br />tree_object attribute<br />basic use:<br />bubble_view = new BubbleView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1328,11 +1328,11 @@
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span4&quot; bubble_view = new BubbleView({el: $(&quot;target_selector&quot;),<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;});</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span4&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BubbleView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1341,7 +1341,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;BubbleView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -1350,7 +1350,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1359,7 +1359,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : &quot;#1b9e77&quot;;
 
@@ -1411,7 +1411,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -1425,7 +1425,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draw the view from scratch</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -1521,7 +1521,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">function tick(e){
+            <pre class="tog"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
                 .attr(&quot;cy&quot;, function(d) {return d.y;})
@@ -1553,7 +1553,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">vertical_split: function(alpha){
+            <pre class="tog"><code class="language-javascript">vertical_split: function(alpha){
 	var self = this;
 	//select all circles on the page
 	bubble_selection = this.vis.selectAll('circle');
@@ -1603,7 +1603,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the plot with new data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -1685,7 +1685,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">function tick(e){
+            <pre class="tog"><code class="language-javascript">function tick(e){
 	self.vertical_split(e.alpha);
 	self.nodes.attr(&quot;cx&quot;, function(d) {return d.x;})
                 .attr(&quot;cy&quot;, function(d) {return d.y;})
@@ -1702,7 +1702,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapFooterView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1735,11 +1735,11 @@
               <tr>
                 <td>template</td>
                 <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars<br />header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p></td>
+                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CMapFooterView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CMapFooterView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1748,7 +1748,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CMapFooterView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CMapFooterView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1757,7 +1757,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// store passed parameters as attributes of the view
 	this.organization = (this.options.organization !== undefined) ? this.options.organization : &quot;Broad Institute&quot;;
 	this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : &quot;/terms&quot;;
@@ -1779,7 +1779,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapFooter;
 
@@ -1801,7 +1801,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapHeaderView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org<br />the header provides links in the view to navigate back to apps.lincscloud.org as well as links for<br />sharing, settings, and information<br />The view accepts as parameters a page title, subtitle, and handlebars template<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapHeaderView({el:&quot;header_target&quot;,<br />                                    title: &quot;&quot;,<br />                                    subtitle: &quot;&quot;,<br />                                    template: &quot;templates/CMapHeader.handlebars&quot;});</p><p>A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org<br />the header provides links in the view to navigate back to apps.lincscloud.org as well as links for<br />sharing, settings, and information<br />The view accepts as parameters a page title, subtitle, and handlebars template<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1824,11 +1824,11 @@
               <tr>
                 <td>template</td>
                 <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                           templates/CMapHeader.handlebars<br />header = new CMapHeaderView({el:&quot;header_target&quot;,<br />                                    title: &quot;&quot;,<br />                                    subtitle: &quot;&quot;,<br />                                    template: &quot;templates/CMapHeader.handlebars&quot;});</p></td>
+                <td><p>The path to a handlebars template to use. Defaults to                           templates/CMapHeader.handlebars</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CMapHeaderView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CMapHeaderView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1837,7 +1837,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CMapHeaderView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CMapHeaderView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1846,7 +1846,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
         var self = this;
 
         // store passed parameters as attributes of the view
@@ -1879,7 +1879,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapHeader;
@@ -1899,7 +1899,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -1908,7 +1908,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -1917,7 +1917,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
         var self = this;
 
         // store passed parameters as attributes of the view
@@ -1947,7 +1947,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">wrap_content: function(){
+            <pre class="tog"><code class="language-javascript">wrap_content: function(){
     $(&quot;body&quot;).children().wrapAll('&lt;div class=&quot;cmap-navigation-content&quot;/&gt;');
     $(&quot;.cmap-navigation-content&quot;).wrapAll('&lt;div class=&quot;cmap-navigation-wrapper&quot;/&gt;');
 },</code></pre></span>
@@ -1959,7 +1959,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_navigation: function(){
+            <pre class="tog"><code class="language-javascript">build_navigation: function(){
     var self = this;
     $(&quot;.cmap-navigation-wrapper&quot;).prepend('&lt;div class=&quot;cmap-navigation-menu&quot;&gt;&lt;/div&gt;');
     var $el = $(&quot;.cmap-navigation-menu&quot;);
@@ -2001,7 +2001,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">addLink: function(text,route) {
+            <pre class="tog"><code class="language-javascript">addLink: function(text,route) {
 	var $el = $(&quot;.cmap-navigation-menu&quot;);
 	$el.append('&lt;a href=&quot;' + route + '&quot; class=&quot;col-xs-12 cmap-navigation-menu-item&quot;&gt;' + text + '&lt;/a&gt;');
 }
@@ -2014,7 +2014,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete<br />functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the<br />search view&#39;s input, a &quot;search:DidType&quot; event is fired.</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CellSearchBar = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CellSearchBar = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -2023,7 +2023,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CellSearchBar&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CellSearchBar&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -2032,10 +2032,10 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	var self = this;</code></pre></span>
           <div style="font-family:Roboto Slab" class="description"><p>determines whether or not the search view will match cell lines for autocomplete</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">// determine whether or not we will match cell line strings in the autocomplete
+            <pre class="tog"><code class="language-javascript">// determine whether or not we will match cell line strings in the autocomplete
 this.match_cell_lines = (this.options.match_cell_lines !== undefined) ? this.options.match_cell_lines : true;
 
 // custom placeholder if specified
@@ -2057,7 +2057,7 @@ $.getJSON(cellinfo,params,function(res){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>once the view is rendered, bind a change event to trigger a &quot;search:DidType&quot; event from<br />the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">var change_callback = function () {
+            <pre class="tog"><code class="language-javascript">var change_callback = function () {
 	var val  = $(&quot;#search&quot;,self.el).val();
 	var type = &quot;&quot;;
 	if (self.cell_lines.indexOf(val) != -1 &amp;&amp; self.match_cell_lines){
@@ -2090,7 +2090,7 @@ $.getJSON(cellinfo,params,function(res){
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,search_column: undefined});
+            <pre class="tog"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,search_column: undefined});
 			};
 
 			$(&quot;#search&quot;,self.el).bind('input propertychange change', _.throttle(change_callback,500));
@@ -2112,7 +2112,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Gets the current text entered in the view&#39;s search bar</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">get_val: function(){
+            <pre class="tog"><code class="language-javascript">get_val: function(){
 	return $(&quot;#search&quot;,this.el).val();
 },</code></pre></span>
           <section id="random_val">
@@ -2123,7 +2123,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>fills the view&#39;s search bar with a random pert_iname and triggers a &quot;search:DidType&quot; event</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">random_val: function(){
+            <pre class="tog"><code class="language-javascript">random_val: function(){
 	var self = this;
 	var cellinfo = Barista.APIURL + '/a2/cellinfo?callback=?';
 
@@ -2159,7 +2159,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_val: function(new_val){
+            <pre class="tog"><code class="language-javascript">set_val: function(new_val){
 	$(&quot;#search&quot;,this.el).val(new_val);
 	this.trigger(&quot;search:DidType&quot;,{val: new_val,search_column: undefined }); //TODO need to find search column info
 },</code></pre></span>
@@ -2171,7 +2171,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 
 	// load the template into the view's el tag
@@ -2191,7 +2191,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CompoundDetailView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: CompoundDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p><p>A Backbone.View that shows information about a small molecule compound<br />This view is frequently paired with a CompoundDetailModel<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -2209,11 +2209,11 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;<br />pert_detail_view = new CompoundDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: CompoundDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -2222,7 +2222,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CompoundDetailView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CompoundDetailView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -2231,7 +2231,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.CompoundDetailModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -2240,7 +2240,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up the plot height
 	this.options.plot_height = 260;
 
@@ -2260,7 +2260,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,search_column: search_column})
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// keep track of our scope at this level
 	var self = this;
 
@@ -2788,7 +2788,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CompoundSearchBar&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CompoundSearchBar&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -2797,7 +2797,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	var self = this;
 	this.render();
 
@@ -2832,7 +2832,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({</code></pre></span>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
+            <pre class="tog"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
 		};
 
 		$(&quot;#search&quot;,self.el).bind('input propertychange change', _.throttle(change_callback,500));
@@ -2853,7 +2853,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Gets the current text entered in the view&#39;s search bar</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">get_val: function(){
+            <pre class="tog"><code class="language-javascript">get_val: function(){
 	return $(&quot;#search&quot;,this.el).val();
 },</code></pre></span>
           <section id="random_val">
@@ -2864,7 +2864,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>fills the view&#39;s search bar with a random pert_iname and triggers a &quot;search:DidType&quot; event</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">random_val: function(){
+            <pre class="tog"><code class="language-javascript">random_val: function(){
 	var self = this;
 	skip = Math.round(Math.random()*40000);
 	var pertinfo = Barista.APIURL + '/a2/pertinfo?callback=?';
@@ -2902,7 +2902,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_val: function(new_val){
+            <pre class="tog"><code class="language-javascript">set_val: function(new_val){
 	$(&quot;#search&quot;,this.el).val(new_val);
 	this.trigger(&quot;search:DidType&quot;,{val: new_val,type: 'single'});
 },</code></pre></span>
@@ -2914,7 +2914,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 	// load the template into the view's el tag
 	this.$el.append(BaristaTemplates.CMapPertSearchBar());
@@ -2965,7 +2965,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">filter: function(response){
+            <pre class="tog"><code class="language-javascript">filter: function(response){
 	var datum_list = [];
 	var auto_data = [];
 	var object_map = {};
@@ -3022,7 +3022,7 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
+            <pre class="tog"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
 
 	model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
@@ -3033,7 +3033,7 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 // set up color options.  default if not specified
 this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#d9d9d9&quot;;
 this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -3090,7 +3090,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -3104,7 +3104,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -3183,7 +3183,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the visibility of the element</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_vis: function(){
+            <pre class="tog"><code class="language-javascript">update_vis: function(){
 	var self = this;
 	// grab the data from the model and plot the state of the treemap
 	this.data = this.model.get('tree_object');
@@ -3250,7 +3250,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>inserts tooltips that display the cell id and count for non-empty datasets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_tooltips: function(){
+            <pre class="tog"><code class="language-javascript">add_tooltips: function(){
 	// make a selection of all cells in the treemap
 	var cell_selection = $('.' + this.div_string + '_cell');
 
@@ -3280,7 +3280,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>clear visible text in fields</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">clear_text: function(){
+            <pre class="tog"><code class="language-javascript">clear_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.count&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
@@ -3293,7 +3293,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM<br />snippets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_foreignObject: function(){
+            <pre class="tog"><code class="language-javascript">draw_foreignObject: function(){
 	var self = this;
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data(this.treemap.nodes)
@@ -3334,7 +3334,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws text to the screen based on treemap data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_text: function(){
+            <pre class="tog"><code class="language-javascript">draw_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data(this.treemap.nodes)
 		.enter().append(&quot;text&quot;)
@@ -3387,7 +3387,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>saves the target svg on the screen to a png file</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">savePng: function(){
+            <pre class="tog"><code class="language-javascript">savePng: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;
@@ -3428,7 +3428,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>a view that supports a single label and a single count *</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -3437,7 +3437,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when<br />it needs to know what its class name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;GenericCountView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;GenericCountView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -3446,7 +3446,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -3455,7 +3455,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle<br />optional arguments, compile the view template, bind model changes<br />to view updates and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
   // set up label, default if not specified
   this.label = (this.options.label !== undefined) ? this.options.label : 'Signatures';
 
@@ -3482,7 +3482,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely re-render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function() {
+            <pre class="tog"><code class="language-javascript">render: function() {
   this.base_render()
     .renderTopBar()
     .renderLabel()
@@ -3498,7 +3498,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update only the dynamic portions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function() {
+            <pre class="tog"><code class="language-javascript">update: function() {
   this.updateCount();
 },</code></pre></span>
           <section id="renderTopBar">
@@ -3509,7 +3509,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draw the top bar of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderTopBar: function() {
+            <pre class="tog"><code class="language-javascript">renderTopBar: function() {
   this.fg_layer.selectAll('.genericCountViewTopBar').data([]).exit().remove();
   this.fg_layer.selectAll('.genericCountViewTopBar').data([1])
   .enter().append(&quot;rect&quot;)
@@ -3528,7 +3528,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draw the static label at the top of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderLabel: function() {
+            <pre class="tog"><code class="language-javascript">renderLabel: function() {
   this.fg_layer.selectAll('.genericCountViewLabel').data([]).exit().remove();
   this.fg_layer.selectAll('.genericCountViewLabel').data([1])
     .enter().append(&quot;text&quot;)
@@ -3576,7 +3576,7 @@ renderCount: function() {
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the count from the model. If if is undefined, assume it is 0</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">updateCount: function() {
+            <pre class="tog"><code class="language-javascript">updateCount: function() {
   // get the count from the model. If it is undefined, assume it is 0
   var count = this.model.get('count');
   if (typeof(count) !== 'number'){
@@ -3608,7 +3608,7 @@ Barista.Views.GridView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;GridView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -3617,7 +3617,7 @@ Barista.Views.GridView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// default search value
 	this.search_val = &quot;&quot;;
@@ -3658,7 +3658,7 @@ Barista.Views.GridView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>build the grid on the template using a clickable row<br /> If a row is clicked, a grid:RowClick event is fired with the row&#39;s model as the passed data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">onClick: function () {
+            <pre class="tog"><code class="language-javascript">onClick: function () {
 	self.trigger(&quot;grid:RowClick&quot;, this.model);
 },</code></pre></span>
           <section id="render">
@@ -3669,7 +3669,7 @@ Barista.Views.GridView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native render method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function () {
+            <pre class="tog"><code class="language-javascript">render: function () {
 	this.$el.empty();
 	var fragment = document.createDocumentFragment();
 	for (var i = 0; i &lt; this.cells.length; i++) {
@@ -3691,7 +3691,7 @@ Barista.Views.GridView = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide Backgrid.Row&#39;s native remove method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">remove: function () {
+            <pre class="tog"><code class="language-javascript">remove: function () {
 	this.$el.addClass(&quot;cmap-active-grid-row&quot;);
 	this.$el.animate({&quot;opacity&quot;:0},1000);
 	var self = this;
@@ -3752,7 +3752,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>adds a UI control to scroll the top of the grid</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_scroll_to_top_button: function(){
+            <pre class="tog"><code class="language-javascript">add_scroll_to_top_button: function(){
 	var self = this;
 	this.scroll_to_top_button_id = this.div_string + 'scroll_button';
 	this.$el.append('&lt;button id=&quot;' + this.scroll_to_top_button_id + '&quot; class=&quot;cmap_grid_to_top_button&quot;&gt;Scroll to Top&lt;/button&gt;');
@@ -3783,7 +3783,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">scroll_to_top: function(duration){
+            <pre class="tog"><code class="language-javascript">scroll_to_top: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.div_string).animate({scrollTop:0},duration);
 	this.hide_scroll_to_top_button();
@@ -3812,7 +3812,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">show_scroll_to_top_button: function(duration){
+            <pre class="tog"><code class="language-javascript">show_scroll_to_top_button: function(duration){
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
 	$(&quot;#&quot; + this.scroll_to_top_button_id).animate({opacity:1},duration);
@@ -3841,7 +3841,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
+            <pre class="tog"><code class="language-javascript">hide_scroll_to_top_button: function(duration){
 	var self= this;
 	duration = (duration !== undefined) ? duration : 500;
 	$(&quot;#&quot; + this.scroll_to_top_button_id).clearQueue();
@@ -3881,7 +3881,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
+            <pre class="tog"><code class="language-javascript">replace_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	var self = this;
 	this.search_val = (search_val !== undefined) ? search_val : this.search_val;
@@ -3940,7 +3940,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
+            <pre class="tog"><code class="language-javascript">update_collection: function(search_val,search_type,limit){
 	var getData_promise;
 	if (this.collection.models.length &lt; this.collection.maxCount){
 		var self = this;
@@ -3966,7 +3966,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>hides the visible data and rejects the slice</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">clear_collection: function(){
+            <pre class="tog"><code class="language-javascript">clear_collection: function(){
 	var self = this;
 	this.collection.skip = 0;
 	$(&quot;#&quot; + this.div_string).animate({opacity:0},500);
@@ -3992,7 +3992,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>changes the height of the grid based on the number of elements it holds</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">resize_div: function(){
+            <pre class="tog"><code class="language-javascript">resize_div: function(){
 	var self = this;
 	var container_height =  $(&quot;#&quot; + this.div_string).height();
 	setTimeout(function(){
@@ -4011,7 +4011,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'backgrid_target' + new Date().getTime();;
 	this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
 												   span_class: this.span_class,
@@ -4030,7 +4030,7 @@ this.update_collection(this.search_val,this.search_type,this.limit);
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>attempts to return data from a slice, and returns the slice button to its previous state if a failure<br />is detected</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">slice_all_table_data: function(){
+            <pre class="tog"><code class="language-javascript">slice_all_table_data: function(){
 	var self = this;
 	// change the button state to progress
 	this.change_slice_button_state(&quot;progress&quot;);
@@ -4267,7 +4267,7 @@ show: function(duration){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the<br />string version of the raw input</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
+            <pre class="tog"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
 Barista.HTMLFormatter.prototype = new Backgrid.CellFormatter();
 _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
           <section id="fromRaw">
@@ -4294,7 +4294,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fromRaw: function (rawValue) {
+            <pre class="tog"><code class="language-javascript">fromRaw: function (rawValue) {
   if (_.isUndefined(rawValue) || _.isNull(rawValue)) return '';
   return rawValue;
 }
@@ -4307,7 +4307,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>An extension of Backgrid.Cell to render raw html content into the target element of the cell</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
+            <pre class="tog"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   className: &quot;html-cell&quot;,
   formatter: new Barista.HTMLFormatter(),</code></pre></span>
           <section id="render">
@@ -4318,7 +4318,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function () {
+            <pre class="tog"><code class="language-javascript">render: function () {
   this.$el.html(this.formatter.fromRaw(this.model.get(this.column.get(&quot;name&quot;))));
   return this;
 }
@@ -4330,7 +4330,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.HeatmapView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>heatmap_view = new HeatmapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                annot_color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p><p>A Backbone.View that displays a simple heatmap<br />The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,<br />and title attributes<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4378,11 +4378,11 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                                      &quot;span12&quot;<br />example usage:<br />heatmap_view = new HeatmapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                annot_color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                                      &quot;span12&quot;<br />example usage:</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.HeatmapView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.HeatmapView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -4391,7 +4391,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;HeatMapView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;HeatMapView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -4400,7 +4400,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -4409,7 +4409,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.low_color = (this.options.low_color !== undefined) ? this.options.low_color : &quot;#0000ff&quot;;
@@ -4453,7 +4453,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(this.template({div_string: this.div_string,
@@ -4468,7 +4468,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view. Updates both static and dynamic content in the view.</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
 },</code></pre></span>
@@ -4480,7 +4480,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_panel: function(){
+            <pre class="tog"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -4652,7 +4652,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>adds a simple color lookup table based on the heatmap&#39;s color_scale</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_lookup_table: function(){
+            <pre class="tog"><code class="language-javascript">add_lookup_table: function(){
 	var self, data, scale_range, scale_domain, scale_unit, domain_unit;
 	self = this;
 	data = d3.range(50);
@@ -4678,7 +4678,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the y scale used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scale: function(){
+            <pre class="tog"><code class="language-javascript">set_scale: function(){
 		var domain, range_min, range_max, range;
 		// get the current data domain from this.color
 		domain = this.color.domain();
@@ -4699,7 +4699,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to build y axis for the look up table</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_axis: function(){
+            <pre class="tog"><code class="language-javascript">build_axis: function(){
 	this.yAxis = d3.svg.axis()
 		.scale(this.y_scale)
 		.orient(&quot;right&quot;);
@@ -4712,7 +4712,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">style_axes: function(){
+            <pre class="tog"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)
@@ -4735,7 +4735,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 	// determine the height and width of cells in the heatmap
 	if (this.height &lt; this.width){
@@ -4901,7 +4901,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">unravel_data: function(data){
+            <pre class="tog"><code class="language-javascript">unravel_data: function(data){
 	unraveled_data = [];
 	data.forEach(function(i_e,i){
 		i_e.forEach(function(j_e,j){
@@ -4918,7 +4918,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;
 	var height = this.height;
@@ -4951,7 +4951,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.LDMapView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple LDMap<br />The view is normally paired with a HeatMapModel, but works with any model that provides <em>data</em>,<em>cid</em>,<br />and title attributes<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a simple LDMap<br />The view is normally paired with a HeatMapModel, but works with any model that provides <em>data</em>,<em>cid</em>,<br />and title attributes<br />example usage:<br />LDMap_view = new LDMapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p><p>optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -4994,11 +4994,11 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                                &quot;span12&quot;<br />example usage:<br />LDMap_view = new LDMapView({el: $(&quot;target_selector&quot;),<br />                                                model: new HeatmapModel(),<br />                                                template: BaristaTemplates.d3_target,<br />                                                bg_color: &quot;#ffffff&quot;,<br />                                                low_color: &quot;#0000ff&quot;,<br />                                                high_color: &quot;#ff0000&quot;,<br />                                                color_scale: undefined,<br />                                                plot_height: 300,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                                &quot;span12&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.LDMapView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.LDMapView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -5007,7 +5007,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;LDMapView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;LDMapView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -5016,7 +5016,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.HeatmapModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -5025,7 +5025,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.low_color = (this.options.low_color !== undefined) ? this.options.low_color : &quot;#0000ff&quot;;
@@ -5068,7 +5068,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.$el.append(this.template({div_string: this.div_string,
@@ -5083,7 +5083,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view. Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
 },</code></pre></span>
@@ -5095,7 +5095,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_panel: function(){
+            <pre class="tog"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -5211,7 +5211,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 	// determine the height and width of cells in the heatmap
 	var usable_height = this.height - this.margin;
@@ -5307,7 +5307,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">unravel_data: function(data){
+            <pre class="tog"><code class="language-javascript">unravel_data: function(data){
 	unraveled_data = [];
 	data.forEach(function(i_e,i){
 		i_e.forEach(function(j_e,j){
@@ -5326,7 +5326,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;
 	var height = this.height;
@@ -5359,7 +5359,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.PertCountView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>count_view = new PertCountView({bg_color:&quot;#ffffff&quot;,<br />                                    well_color: &quot;#bdbdbd&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    static_text: &quot;Reagents&quot;,<br />                                    categories: []});</p><p>A Backbone.View that shows that number of perturbagens matching a given query<br />Optionally, sub-category counts are give for the type of perturbagen queried for<br />This view is frequently paired with a PertCountModel or CellCountModel<br />basic use:<br />count_view = new PertCountView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -5397,11 +5397,11 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <tr>
                 <td>categories</td>
                 <td>array</td>
-                <td><p>an array of objects to use as categories to display, defaults to [] count_view = new PertCountView({bg_color:&quot;#ffffff&quot;,<br />                                    well_color: &quot;#bdbdbd&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    static_text: &quot;Reagents&quot;,<br />                                    categories: []});</p></td>
+                <td><p>an array of objects to use as categories to display, defaults to []</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -5410,7 +5410,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -5419,7 +5419,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -5428,7 +5428,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -5491,7 +5491,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -5505,7 +5505,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
 },</code></pre></span>
@@ -5517,7 +5517,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_panel: function(){
+            <pre class="tog"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -5641,7 +5641,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -5704,7 +5704,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;
@@ -5748,7 +5748,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.PertDetailView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: PertDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p><p>A Backbone.View that shows information about a small molecule compound or gene<br />This view is frequently paired with a PertDetailModel<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;)});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -5766,11 +5766,11 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;<br />pert_detail_view = new PertDetailView({el: $(&quot;target_selector&quot;),<br />                                                 model: PertDetailModel,<br />                                                 bg_color: &quot;#ffffff&quot;,<br />                                                 span_class: &quot;col-lg-12&quot;});</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to                             &quot;col-lg-12&quot;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -5779,7 +5779,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertDetailView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;PertDetailView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -5788,7 +5788,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertDetailModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.PertDetailModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -5797,7 +5797,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	var self = this;
 	// set up the plot height
 	this.options.plot_height = 260;
@@ -5822,7 +5822,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// keep track of our scope at this level
 	var self = this;
 
@@ -6490,7 +6490,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertSearchBar&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;PertSearchBar&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -6499,10 +6499,10 @@ Barista.Views.PertSearchBar = Backbone.View.extend({</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	var self = this;</code></pre></span>
           <div style="font-family:Roboto Slab" class="description"><p>determines wether or not the search view will match cell lines for autocomplete<br />        @property match_cell_lines<br />        @default true<br />        @type Boolean</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">// set up custom Datasets if they are passed in the constructor
+            <pre class="tog"><code class="language-javascript">// set up custom Datasets if they are passed in the constructor
 this.datasets = (this.options.datasets !== undefined) ? this.options.datasets : [Barista.Datasets.CellID,Barista.Datasets.PertIName];
 
 // determine wether or not we will match cell line strings in the autocomplete
@@ -6535,7 +6535,7 @@ $.getJSON(cellinfo,params,function(res){
             @param {String} [msg.val=&quot;&quot;] the string val of the views search bar at the time of the event
             @param {String} [msg.type=&quot;&quot;] the type of message being passed, either &quot;&quot; or &quot;cell&quot;. &quot;cell&quot; is passed, if the string matches a cell line and match\_cell\_lines is set
 </code></pre> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
+            <pre class="tog"><code class="language-javascript">self.trigger(&quot;search:DidType&quot;,{val: val,type: type});
 			};
 
 			$(&quot;#search&quot;,self.el).bind('input propertychange change', _.throttle(change_callback,250));
@@ -6556,7 +6556,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Gets the current text entered in the view&#39;s search bar</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">get_val: function(){
+            <pre class="tog"><code class="language-javascript">get_val: function(){
 	return $(&quot;#search&quot;,this.el).val();
 },</code></pre></span>
           <section id="random_val">
@@ -6567,7 +6567,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>fills the view&#39;s search bar with a random pert_iname and triggers a &quot;search:DidType&quot; event</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">random_val: function(){
+            <pre class="tog"><code class="language-javascript">random_val: function(){
 	var self = this;
 	skip = Math.round(Math.random()*40000);
 	var pertinfo = Barista.APIURL + '/a2/pertinfo?callback=?';
@@ -6610,7 +6610,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_val: function(new_val,new_type){
+            <pre class="tog"><code class="language-javascript">set_val: function(new_val,new_type){
 	new_type = (new_type !== undefined) ? new_type : &quot;single&quot;;
 	$(&quot;#search&quot;,this.el).val(new_val);
 	this.trigger(&quot;search:DidType&quot;,{val: new_val,type: new_type});
@@ -6623,7 +6623,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 	// load the template into the view's el tag
 	this.$el.append(BaristaTemplates.CMapPertSearchBar({placeholder: self.placeholder}));
@@ -6639,7 +6639,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for<br />a given platform<br />he widget displays a count of the available experiments on the platform, a description of the platform,<br />a widget to extract a listing of the data available, and a link to a platform specific app for viewing<br />the contents of the available data on that platform<br />This view is frequently paired with a PlatformSummaryModel<br />basic use:<br />platform_summary_view = new PlatformSummaryView();<br />optional arguments:<br />...<br />        platform_summary_view = new PlatformSummaryView({<br />                                    ... });</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PlatformSummaryView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.PlatformSummaryView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -6648,7 +6648,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PlatformSummaryView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;PlatformSummaryView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -6657,7 +6657,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.GenericCountModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.GenericCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -6666,7 +6666,7 @@ self.trigger(&quot;search:DidType&quot;,{val: val,type: datum.type});
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color and font defaults
 	this.white_color = &quot;#ffffff&quot;;
 	this.black_color = &quot;#000000&quot;;
@@ -7041,7 +7041,7 @@ init_panel: function(){
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render_export_control: function(message, icon_class, handler) {
+            <pre class="tog"><code class="language-javascript">render_export_control: function(message, icon_class, handler) {
 	this.controls_layer.selectAll('.export_text').data([]).exit().remove();
 	return this.controls_layer.selectAll('.export_text').data([1])
 						.enter().append(&quot;foreignObject&quot;)
@@ -7064,7 +7064,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>download the backing data that matches the current model state</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">download_table: function() {
+            <pre class="tog"><code class="language-javascript">download_table: function() {
 	var self = this;
 
 	// indicate that we are downloading something
@@ -7111,7 +7111,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -7188,7 +7188,7 @@ init_panel: function(){
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render_description: function(options){
+            <pre class="tog"><code class="language-javascript">render_description: function(options){
 	var self = this;
 
 	// default arguments if they are not present
@@ -7247,7 +7247,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.width;
 	var height = this.height;
@@ -7313,7 +7313,7 @@ init_panel: function(){
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.ScatterPlotView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />scatter_plot_view = new ScatterPlotView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>scatter_plot_view = new ScatterPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    x_range: undefined,<br />                                    y_range: undefined,<br />                                    x_log: false,<br />                                    y_log: false,<br />                                    x_min_lock: undefined,<br />                                    y_min_lock: undefined,<br />                                    x_max_lock: undefined,<br />                                    y_max_lock: undefined,<br />                                    x_min_expand: false,<br />                                    y_min_expand: false,<br />                                    x_max_expand: false,<br />                                    y_max_expand: false,<br />                                    plot_height: 120});</p><p>A Backbone.View that displays a scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />scatter_plot_view = new ScatterPlotView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -7406,11 +7406,11 @@ init_panel: function(){
               <tr>
                 <td>plot_height</td>
                 <td>number</td>
-                <td><p>the height of the plot in pixels, defaults to 120 scatter_plot_view = new ScatterPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    x_range: undefined,<br />                                    y_range: undefined,<br />                                    x_log: false,<br />                                    y_log: false,<br />                                    x_min_lock: undefined,<br />                                    y_min_lock: undefined,<br />                                    x_max_lock: undefined,<br />                                    y_max_lock: undefined,<br />                                    x_min_expand: false,<br />                                    y_min_expand: false,<br />                                    x_max_expand: false,<br />                                    y_max_expand: false,<br />                                    plot_height: 120});</p></td>
+                <td><p>the height of the plot in pixels, defaults to 120</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -7419,7 +7419,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -7428,7 +7428,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>override the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
 	this.y_range = (this.options.y_range !== undefined) ? this.options.y_range : undefined;
@@ -7477,7 +7477,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -7490,7 +7490,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+            <pre class="tog"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -7582,7 +7582,7 @@ init_panel: function(){
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 var self = this;
 
 // get model data
@@ -7638,7 +7638,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_ranges: function(){
+            <pre class="tog"><code class="language-javascript">set_ranges: function(){
 	var x_data,y_data,min,max;
 	// calculate the x_range. If we need to caluclate it dynamically, check the lock and expand
 	// parameters for the axis
@@ -7720,7 +7720,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scales: function(){
+            <pre class="tog"><code class="language-javascript">set_scales: function(){
 	if (this.x_log){
 		this.x_scale=d3.scale.log().domain([this.x_range[0],this.x_range[1]]).range([this.margin, this.width - this.margin]);
 	}else{
@@ -7740,7 +7740,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_axes: function(){
+            <pre class="tog"><code class="language-javascript">build_axes: function(){
 	this.xAxis = d3.svg.axis()
 		.scale(this.x_scale)
 		.orient(&quot;bottom&quot;);
@@ -7756,7 +7756,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to compute a radius scaling funciton to use in plots</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scaling_function: function(){
+            <pre class="tog"><code class="language-javascript">set_scaling_function: function(){
 	var self = this;
 	if (this.scale_by !== undefined){
 		this.scale_data = this.model.get('meta_data')[this.scale_by];
@@ -7777,7 +7777,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">style_axes: function(){
+            <pre class="tog"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)
@@ -7800,7 +7800,7 @@ this.style_axes();
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.TagListView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p><p>A Backbone.View that displays a list of objects in a collection as tags<br />The tags are drawn as rounded rectangles with text inside<br />The text corresponds to the cid attributes in the collection by defaul, but can be customized to display<br />other fields if required<br />basic use:<br />tag_list_view = new TagListView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -7838,11 +7838,11 @@ this.style_axes();
               <tr>
                 <td>display_field</td>
                 <td>string</td>
-                <td><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;<br />tag_list_view = new TagListView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;white&quot;,<br />                                    tag_color: &quot;gray&quot;,<br />                                    span_class: &quot;col-lg-12&quot;,<br />                                    plot_height: 120,<br />                                    display_attribute: &quot;cid&quot;});</p></td>
+                <td><p>the model attribute to display for each model in the view&#39;s colleciton.                                defualts to &#39;cid&#39;</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -7851,7 +7851,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;TagListView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;TagListView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -7860,7 +7860,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set of the default model for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Backbone.Model(),</code></pre></span>
           <section id="collection">
             <h1>collection</h1>
             <h5 class="subheader"></h5>
@@ -7869,7 +7869,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up a default collection for the view to work with</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">collection: new Backbone.Collection(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">collection: new Backbone.Collection(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -7878,7 +7878,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// initialize the base view
 	this.base_initialize();
 
@@ -7914,7 +7914,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
 	this.base_render();
@@ -7941,7 +7941,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	var self = this;
 	// call BaristaBaseView's render function first so we can layer on top of it
 	this.base_render();
@@ -7968,7 +7968,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>fits the view height to the height taken by the tags displayed</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fit_height: function(){
+            <pre class="tog"><code class="language-javascript">fit_height: function(){
 	// set the view's height attribute based on the number of rows in the
 	// vis
 	var EmSize = Barista.getEmSizeInPixels(this.div_string);
@@ -7990,7 +7990,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to draw tags diven a data set</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_tags: function(){
+            <pre class="tog"><code class="language-javascript">draw_tags: function(){
 	var self = this;
 	// draw the foreground text of all the tags
 	this.fg_layer.selectAll('.tag_list_text').data([]).exit().remove();
@@ -8040,7 +8040,7 @@ this.style_axes();
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.TickView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>tick_view = new TickView({el: $(&quot;target_selector&quot;),<br />                                                model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: &quot;example data&quot;}),<br />                                                template: &quot;../templates/d3_target.handlebars&quot;,<br />                                                bg_color: &quot;#bdbdbd&quot;,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p><p>A Backbone.View that displays a Connectivity Map tick view<br />The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and<br />the scores of the ticks to show for each row<br />An example input data object from a CMapTickModel might looks like this:<br />{PC3: [.23,-.28], MCF7: [-0.6]}<br />The view will render a row for each key in the data object and a tick for each entry in the array values<br />for each row<br />The view also renders a title based on the model&#39;s title attribute<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -8063,11 +8063,11 @@ this.style_axes();
               <tr>
                 <td>span_class</td>
                 <td>string</td>
-                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span12&quot; example usage:<br />tick_view = new TickView({el: $(&quot;target_selector&quot;),<br />                                                model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: &quot;example data&quot;}),<br />                                                template: &quot;../templates/d3_target.handlebars&quot;,<br />                                                bg_color: &quot;#bdbdbd&quot;,<br />                                                span_class: &quot;span12&quot;<br />                                                });</p></td>
+                <td><p>a bootstrap span class to size the width of the view, defaults to &quot;span12&quot; example usage:</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.TickView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.TickView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -8076,7 +8076,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;TickView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;TickView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -8085,7 +8085,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.TickModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.TickModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -8094,7 +8094,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#eeeeee&quot;;
 	this.span_class = (this.options.span_class !== undefined) ? this.options.span_class : &quot;#span12&quot;;
@@ -8118,7 +8118,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view and draw it for the first time<br />tick_view.compile_template_and_draw();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template_and_draw: function(){
+            <pre class="tog"><code class="language-javascript">compile_template_and_draw: function(){
 	var self = this;
 	this.isCompiling = true;
 	this.div_string = 'd3_target' + new Date().getTime();;
@@ -8143,7 +8143,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>perform a full redraw of the view, including wiping out all d3 drawn components in the view and<br />initializing them again from scratch<br />tick_view.redraw();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	var self = this;
 	// set up the panel's width and height via animation
 	this.width = $(&quot;#&quot; + this.div_string).width();
@@ -8164,7 +8164,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view from scratch<br />Draw a background panel and place all dynamic content on that panel with defualt values<br />tick_view.init_view();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_view: function(){
+            <pre class="tog"><code class="language-javascript">init_view: function(){
 	// stuff &quot;this&quot; into a variable for use inside of scoped funcitons
 	var self = this;
 
@@ -8308,7 +8308,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the dynamic content of the view based on the current state of the view&#39;s data model<br />tick_view.render();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// grab data from the model and sort it according to the values in the object
 	var data_array = _.pairs(this.model.get('data_object'));
 	data_array = data_array.sort(function(a,b){
@@ -8344,7 +8344,7 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>hide()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view.hide(duration);</p><p>hides the view by dimming the opacity and hiding it in the DOM</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -8357,11 +8357,11 @@ this.style_axes();
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the hide animation. defualts to 1 pert_detail_view.hide(duration);</p></td>
+                <td><p>the time in ms for the hide animation. defualts to 1</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">hide: function(duration){
+            <pre class="tog"><code class="language-javascript">hide: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	var self = this;
 	this.$el.animate({opacity:0},duration);
@@ -8381,7 +8381,7 @@ this.style_axes();
               <div class="label label-info radius ctx-type">method</div><span>show()</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>shows the view by brightening the opacity and showing it in the DOM</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>pert_detail_view.show(duration);</p><p>shows the view by brightening the opacity and showing it in the DOM</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -8394,11 +8394,11 @@ this.style_axes();
               <tr>
                 <td>duration</td>
                 <td>number</td>
-                <td><p>the time in ms for the show animation. defualts to 1 pert_detail_view.show(duration);</p></td>
+                <td><p>the time in ms for the show animation. defualts to 1</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">show: function(duration){
+            <pre class="tog"><code class="language-javascript">show: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	this.$el.show();
 	this.$el.animate({opacity:1},duration);
@@ -8411,7 +8411,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.vis.attr(&quot;width&quot;);
 	var height = this.vis.attr(&quot;height&quot;);
@@ -8445,7 +8445,7 @@ this.style_axes();
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.ViolinPlotView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>violin_plot_view = new ViolinPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    x_range: undefined,<br />                                    y_range: undefined,<br />                                    x_log: false,<br />                                    y_log: false,<br />                                    plot_height: 120});</p><p>A Backbone.View that displays a single scatter plot<br />the view&#39;s model is assumed to have the same defaults as specified in ScatterPlotModel<br />basic use:<br />violin_plot_view = new ViolinPlotView();<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -8493,11 +8493,11 @@ this.style_axes();
               <tr>
                 <td>plot_height</td>
                 <td>number</td>
-                <td><p>the height of the plot in pixels, defaults to 120 violin_plot_view = new ViolinPlotView({el: $(&quot;target_selector&quot;,<br />                                    bg_color:&quot;#ffffff&quot;,<br />                                    fg_color: &quot;#1b9e77&quot;,<br />                                    span_class: &quot;span4&quot;,<br />                                    scale_by: undefined,<br />                                    x_range: undefined,<br />                                    y_range: undefined,<br />                                    x_log: false,<br />                                    y_log: false,<br />                                    plot_height: 120});</p></td>
+                <td><p>the height of the plot in pixels, defaults to 120</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -8506,7 +8506,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -8515,7 +8515,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up x and y range
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
 	this.y_range = (this.options.y_range !== undefined) ? this.options.y_range : undefined;
@@ -8565,7 +8565,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.compiled_template = BaristaTemplates.d3_target;
@@ -8581,7 +8581,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -8594,7 +8594,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+            <pre class="tog"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -8736,7 +8736,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	var self = this;
 	// grab data from the model and package it such that we can iterate over it
 	// and generate an area. The packaged data will be sorted by the x_data attribute
@@ -8782,7 +8782,7 @@ this.style_axes();
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">path_data_sorter: function(a,b) {
+            <pre class="tog"><code class="language-javascript">path_data_sorter: function(a,b) {
 	if (a.x &lt; b.x){
 		return -1;
 	}else{
@@ -8798,7 +8798,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A view the displays both sequence structure and modifications</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -8807,7 +8807,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -8816,7 +8816,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>the default model for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -8825,7 +8825,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
   // set up modification colors
   this.modificationColors = (this.options.modificationColors !== undefined) ? this.options.modificationColors : undefined;
   if (this.modificationColors === undefined) {
@@ -8853,7 +8853,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
   var self = this;
   // call BaristaBaseView's render function first so we can layer on top of it
   this.base_render();
@@ -8880,7 +8880,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
   this.render();
 
   return this;
@@ -8893,7 +8893,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>calculate the length of the sequence in pixels</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">getRenderLength: function() {
+            <pre class="tog"><code class="language-javascript">getRenderLength: function() {
   if (this.sequenceUnitSize * this.model.get('displaySequence').length &gt; this.width - 20) {
     return this.width -20;
   }
@@ -8908,7 +8908,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the line depicting the base sequence</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderSequenceLine: function() {
+            <pre class="tog"><code class="language-javascript">renderSequenceLine: function() {
   var renderLength = this.getRenderLength();
   this.fg_layer.selectAll('.sequenceLine').data([]).exit().remove();
   this.fg_layer.selectAll('.sequenceLine').data([1]).enter()
@@ -8930,7 +8930,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the modifications on the sequence</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModifications: function() {
+            <pre class="tog"><code class="language-javascript">renderModifications: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -8992,7 +8992,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders text overlays for modifications</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModificationsText: function() {
+            <pre class="tog"><code class="language-javascript">renderModificationsText: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -9029,7 +9029,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>configure zoom behavior</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setupZoom: function () {
+            <pre class="tog"><code class="language-javascript">setupZoom: function () {
   var self = this;
   // create the zoom listener
   var zoomListener = d3.behavior.zoom()

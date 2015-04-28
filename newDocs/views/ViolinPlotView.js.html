@@ -245,7 +245,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -254,7 +254,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -263,7 +263,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up x and y range
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
 	this.y_range = (this.options.y_range !== undefined) ? this.options.y_range : undefined;
@@ -313,7 +313,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	var self = this;
 	this.div_string = 'd3_target' + new Date().getTime();;
 	this.compiled_template = BaristaTemplates.d3_target;
@@ -329,7 +329,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -342,7 +342,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+            <pre class="tog"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -484,7 +484,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 	var self = this;
 	// grab data from the model and package it such that we can iterate over it
 	// and generate an area. The packaged data will be sorted by the x_data attribute
@@ -530,7 +530,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">path_data_sorter: function(a,b) {
+            <pre class="tog"><code class="language-javascript">path_data_sorter: function(a,b) {
 	if (a.x &lt; b.x){
 		return -1;
 	}else{

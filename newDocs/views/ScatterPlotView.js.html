@@ -290,7 +290,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -299,7 +299,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.ScatterPlotModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -308,7 +308,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>override the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up x and y range and determine if are going to draw the axes dynamically
 	this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
 	this.y_range = (this.options.y_range !== undefined) ? this.options.y_range : undefined;
@@ -357,7 +357,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	this.base_render();
 	this.init_plot();
 	this.update();
@@ -370,7 +370,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_plot: function(){
+            <pre class="tog"><code class="language-javascript">init_plot: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -462,7 +462,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
 var self = this;
 
 // get model data
@@ -518,7 +518,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y ranges used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_ranges: function(){
+            <pre class="tog"><code class="language-javascript">set_ranges: function(){
 	var x_data,y_data,min,max;
 	// calculate the x_range. If we need to caluclate it dynamically, check the lock and expand
 	// parameters for the axis
@@ -600,7 +600,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to get the x and y scales used in the plot</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scales: function(){
+            <pre class="tog"><code class="language-javascript">set_scales: function(){
 	if (this.x_log){
 		this.x_scale=d3.scale.log().domain([this.x_range[0],this.x_range[1]]).range([this.margin, this.width - this.margin]);
 	}else{
@@ -620,7 +620,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function used to build x and y axes</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_axes: function(){
+            <pre class="tog"><code class="language-javascript">build_axes: function(){
 	this.xAxis = d3.svg.axis()
 		.scale(this.x_scale)
 		.orient(&quot;bottom&quot;);
@@ -636,7 +636,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to compute a radius scaling funciton to use in plots</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">set_scaling_function: function(){
+            <pre class="tog"><code class="language-javascript">set_scaling_function: function(){
 	var self = this;
 	if (this.scale_by !== undefined){
 		this.scale_data = this.model.get('meta_data')[this.scale_by];
@@ -657,7 +657,7 @@ this.style_axes();
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>utility function to apply custom styles to axis components</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">style_axes: function(){
+            <pre class="tog"><code class="language-javascript">style_axes: function(){
 	this.vis.selectAll('.axis').selectAll(&quot;path&quot;)
 		.style(&quot;fill&quot;,&quot;none&quot;)
 		.style(&quot;stroke&quot;,&quot;black&quot;)

@@ -194,7 +194,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A view the provides the standard Connectivity map application navigation for apps built on<br />apps.lincscloud.org<br />basic use:<br />nav = new CMapNavigationView({el:&quot;header_target&quot;});</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.CMapNavigationView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -203,7 +203,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;CMapNavigationView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -212,7 +212,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize function to compile a built in template and then render<br />the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
         var self = this;
 
         // store passed parameters as attributes of the view
@@ -242,7 +242,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>wrap all existing content in the elements we need to work the slide out navigation that we are going<br />to build</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">wrap_content: function(){
+            <pre class="tog"><code class="language-javascript">wrap_content: function(){
     $(&quot;body&quot;).children().wrapAll('&lt;div class=&quot;cmap-navigation-content&quot;/&gt;');
     $(&quot;.cmap-navigation-content&quot;).wrapAll('&lt;div class=&quot;cmap-navigation-wrapper&quot;/&gt;');
 },</code></pre></span>
@@ -254,7 +254,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>build the navigation pane using all reuested menu items and links</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">build_navigation: function(){
+            <pre class="tog"><code class="language-javascript">build_navigation: function(){
     var self = this;
     $(&quot;.cmap-navigation-wrapper&quot;).prepend('&lt;div class=&quot;cmap-navigation-menu&quot;&gt;&lt;/div&gt;');
     var $el = $(&quot;.cmap-navigation-menu&quot;);
@@ -296,7 +296,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">addLink: function(text,route) {
+            <pre class="tog"><code class="language-javascript">addLink: function(text,route) {
 	var $el = $(&quot;.cmap-navigation-menu&quot;);
 	$el.append('&lt;a href=&quot;' + route + '&quot; class=&quot;col-xs-12 cmap-navigation-menu-item&quot;&gt;' + text + '&lt;/a&gt;');
 }

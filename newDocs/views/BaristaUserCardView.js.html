@@ -225,7 +225,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.BaristaUserCardView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -234,7 +234,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;BaristaUserCardView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -243,7 +243,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the view&#39;s default initialize method in order to catch options and render a custom template</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
     // set up defaults
     this.realName = (this.options.realName !== undefined) ? this.options.realName : &quot;Name&quot;;
     this.username = (this.options.username !== undefined) ? this.options.username : &quot;UserName&quot;;
@@ -262,7 +262,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
     var self = this;
     this.div_string = 'barista_view' + new Date().getTime();;
     this.$el.append(BaristaTemplates.CMapUserCard({div_string: this.div_string,
@@ -279,7 +279,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>translate the passed array of badge names into image urls</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">map_badges: function(){
+            <pre class="tog"><code class="language-javascript">map_badges: function(){
     var self = this;
     this.badge_urls = [];
     this.badges.forEach(function(badge){

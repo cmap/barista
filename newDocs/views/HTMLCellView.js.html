@@ -203,7 +203,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the<br />string version of the raw input</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
+            <pre class="tog"><code class="language-javascript">Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
 Barista.HTMLFormatter.prototype = new Backgrid.CellFormatter();
 _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
           <section id="fromRaw">
@@ -230,7 +230,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">fromRaw: function (rawValue) {
+            <pre class="tog"><code class="language-javascript">fromRaw: function (rawValue) {
   if (_.isUndefined(rawValue) || _.isNull(rawValue)) return '';
   return rawValue;
 }
@@ -243,7 +243,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>An extension of Backgrid.Cell to render raw html content into the target element of the cell</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
+            <pre class="tog"><code class="language-javascript">Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   className: &quot;html-cell&quot;,
   formatter: new Barista.HTMLFormatter(),</code></pre></span>
           <section id="render">
@@ -254,7 +254,7 @@ _.extend(Barista.HTMLFormatter.prototype, {</code></pre></span>
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function () {
+            <pre class="tog"><code class="language-javascript">render: function () {
   this.$el.html(this.formatter.fromRaw(this.model.get(this.column.get(&quot;name&quot;))));
   return this;
 }

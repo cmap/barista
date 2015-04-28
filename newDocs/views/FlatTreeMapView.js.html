@@ -194,7 +194,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
+            <pre class="tog"><code class="language-javascript">name: &quot;FlatTreeMapView&quot;,
 
 	model: new Barista.Models.PertCellBreakdownModel(),</code></pre></span>
           <section id="initialize">
@@ -205,7 +205,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overrides the default Backbone.View initialize method</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 // set up color options.  default if not specified
 this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#d9d9d9&quot;;
 this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -262,7 +262,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -276,7 +276,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -355,7 +355,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>updates the visibility of the element</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update_vis: function(){
+            <pre class="tog"><code class="language-javascript">update_vis: function(){
 	var self = this;
 	// grab the data from the model and plot the state of the treemap
 	this.data = this.model.get('tree_object');
@@ -422,7 +422,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>inserts tooltips that display the cell id and count for non-empty datasets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">add_tooltips: function(){
+            <pre class="tog"><code class="language-javascript">add_tooltips: function(){
 	// make a selection of all cells in the treemap
 	var cell_selection = $('.' + this.div_string + '_cell');
 
@@ -452,7 +452,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>clear visible text in fields</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">clear_text: function(){
+            <pre class="tog"><code class="language-javascript">clear_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.count&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
@@ -465,7 +465,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM<br />snippets</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_foreignObject: function(){
+            <pre class="tog"><code class="language-javascript">draw_foreignObject: function(){
 	var self = this;
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;.foreign&quot;).data(this.treemap.nodes)
@@ -506,7 +506,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>draws text to the screen based on treemap data</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">draw_text: function(){
+            <pre class="tog"><code class="language-javascript">draw_text: function(){
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data([]).exit().remove();
 	this.vis.data([this.data]).selectAll(&quot;text.name&quot;).data(this.treemap.nodes)
 		.enter().append(&quot;text&quot;)
@@ -559,7 +559,7 @@ $(window).resize(function() {self.render();} );
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>saves the target svg on the screen to a png file</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">savePng: function(){
+            <pre class="tog"><code class="language-javascript">savePng: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;

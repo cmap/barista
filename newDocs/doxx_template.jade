@@ -197,7 +197,7 @@ html
                       - var su2 = ti.indexOf(".main")
                       if (su > -1 && su2 < 0)
                         li.inner
-                          a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
+                          a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}               
         .span9
           if locals.readme
             section(id=name) !{readme}
@@ -241,7 +241,7 @@ html
                         td= tag.Description
             span(style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold") CLICK TO TOGGLE CODE
               if symbol.code
-                pre(style="display: none")
+                pre.tog
                   code.language-javascript
                     = symbol.code
               if symbol.jsfiddle

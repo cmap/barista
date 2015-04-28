@@ -220,7 +220,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.TickView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.TickView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -229,7 +229,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;TickView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;TickView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -238,7 +238,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.TickModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.TickModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -247,7 +247,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the defualt Backbone.View initialize method to bind the view to model changes, bind window<br />resize events to view re-draws, compile the template, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#eeeeee&quot;;
 	this.span_class = (this.options.span_class !== undefined) ? this.options.span_class : &quot;#span12&quot;;
@@ -271,7 +271,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view and draw it for the first time<br />tick_view.compile_template_and_draw();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template_and_draw: function(){
+            <pre class="tog"><code class="language-javascript">compile_template_and_draw: function(){
 	var self = this;
 	this.isCompiling = true;
 	this.div_string = 'd3_target' + new Date().getTime();;
@@ -296,7 +296,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>perform a full redraw of the view, including wiping out all d3 drawn components in the view and<br />initializing them again from scratch<br />tick_view.redraw();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	var self = this;
 	// set up the panel's width and height via animation
 	this.width = $(&quot;#&quot; + this.div_string).width();
@@ -317,7 +317,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view from scratch<br />Draw a background panel and place all dynamic content on that panel with defualt values<br />tick_view.init_view();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_view: function(){
+            <pre class="tog"><code class="language-javascript">init_view: function(){
 	// stuff &quot;this&quot; into a variable for use inside of scoped funcitons
 	var self = this;
 
@@ -461,7 +461,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the dynamic content of the view based on the current state of the view&#39;s data model<br />tick_view.render();</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// grab data from the model and sort it according to the values in the object
 	var data_array = _.pairs(this.model.get('data_object'));
 	data_array = data_array.sort(function(a,b){
@@ -514,7 +514,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">hide: function(duration){
+            <pre class="tog"><code class="language-javascript">hide: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	var self = this;
 	this.$el.animate({opacity:0},duration);
@@ -551,7 +551,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">show: function(duration){
+            <pre class="tog"><code class="language-javascript">show: function(duration){
 	duration = (duration !== undefined) ? duration : 1;
 	this.$el.show();
 	this.$el.animate({opacity:1},duration);
@@ -564,7 +564,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	// build a canvas element to store the image temporarily while we save it
 	var width = this.vis.attr(&quot;width&quot;);
 	var height = this.vis.attr(&quot;height&quot;);

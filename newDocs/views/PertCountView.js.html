@@ -235,7 +235,7 @@
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.PertCountView = Backbone.View.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -244,7 +244,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;PertCountView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -253,7 +253,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>set up the view&#39;s default model</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.PertCountModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -262,7 +262,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
 	// set up color options.  default if not specified
 	this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : &quot;#ffffff&quot;;
 	this.well_color = (this.options.well_color !== undefined) ? this.options.well_color : &quot;#bdbdbd&quot;;
@@ -325,7 +325,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">compile_template: function(){
+            <pre class="tog"><code class="language-javascript">compile_template: function(){
 	this.div_string = 'd3_target' + new Date().getTime();
 	this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 											span_class: this.span_class,
@@ -339,7 +339,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely redraw the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">redraw: function(){
+            <pre class="tog"><code class="language-javascript">redraw: function(){
 	this.init_panel();
 	this.render();
 },</code></pre></span>
@@ -351,7 +351,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>initialize the static parts of the view&#39;s panel</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">init_panel: function(){
+            <pre class="tog"><code class="language-javascript">init_panel: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -475,7 +475,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
 	// stuff this into a variable for later use
 	var self = this;
 
@@ -538,7 +538,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>save the current state of the view into a png image</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">save_png: function(){
+            <pre class="tog"><code class="language-javascript">save_png: function(){
 	//set the animate the div containing the view by applying and then removing
 	// css classes that defined the transitions we want
 	var $div = this.$div;

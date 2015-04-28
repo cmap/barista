@@ -194,7 +194,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>A view the displays both sequence structure and modifications</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
+            <pre class="tog"><code class="language-javascript">Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({</code></pre></span>
           <section id="name">
             <h1>name</h1>
             <h5 class="subheader"></h5>
@@ -203,7 +203,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre></span>
+            <pre class="tog"><code class="language-javascript">name: &quot;SequenceView&quot;,</code></pre></span>
           <section id="model">
             <h1>model</h1>
             <h5 class="subheader"></h5>
@@ -212,7 +212,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>the default model for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre></span>
+            <pre class="tog"><code class="language-javascript">model: new Barista.Models.SequenceModel(),</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -221,7 +221,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>Overide the default Backbone.View initialize method to handle optional arguments, compile the view<br />template, bind model changes to view updates, and render the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">initialize: function(){
+            <pre class="tog"><code class="language-javascript">initialize: function(){
   // set up modification colors
   this.modificationColors = (this.options.modificationColors !== undefined) ? this.options.modificationColors : undefined;
   if (this.modificationColors === undefined) {
@@ -249,7 +249,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>completely render the view<br />Updates both static and dynamic content in the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">render: function(){
+            <pre class="tog"><code class="language-javascript">render: function(){
   var self = this;
   // call BaristaBaseView's render function first so we can layer on top of it
   this.base_render();
@@ -276,7 +276,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>update the dynamic potions of the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">update: function(){
+            <pre class="tog"><code class="language-javascript">update: function(){
   this.render();
 
   return this;
@@ -289,7 +289,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>calculate the length of the sequence in pixels</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">getRenderLength: function() {
+            <pre class="tog"><code class="language-javascript">getRenderLength: function() {
   if (this.sequenceUnitSize * this.model.get('displaySequence').length &gt; this.width - 20) {
     return this.width -20;
   }
@@ -304,7 +304,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the line depicting the base sequence</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderSequenceLine: function() {
+            <pre class="tog"><code class="language-javascript">renderSequenceLine: function() {
   var renderLength = this.getRenderLength();
   this.fg_layer.selectAll('.sequenceLine').data([]).exit().remove();
   this.fg_layer.selectAll('.sequenceLine').data([1]).enter()
@@ -326,7 +326,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>render the modifications on the sequence</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModifications: function() {
+            <pre class="tog"><code class="language-javascript">renderModifications: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -388,7 +388,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>renders text overlays for modifications</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">renderModificationsText: function() {
+            <pre class="tog"><code class="language-javascript">renderModificationsText: function() {
   var self = this,
       renderLength = this.getRenderLength();
 
@@ -425,7 +425,7 @@
             </p>
           </section>
           <div style="font-family:Roboto Slab" class="description"><p>configure zoom behavior</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre style="display: none"><code class="language-javascript">setupZoom: function () {
+            <pre class="tog"><code class="language-javascript">setupZoom: function () {
   var self = this;
   // create the zoom listener
   var zoomListener = d3.behavior.zoom()
