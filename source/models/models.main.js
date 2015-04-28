@@ -1,7 +1,7 @@
 /**
- * A Backbone.Model that represents an analysis history object.
- * 
  * `pert_model = new AnalysisHistoryModel()`
+ * 
+ * A Backbone.Model that represents an analysis history object.
  */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
     /**
@@ -30,6 +30,7 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
  * points in the data
  * The meta data object should contain attributes for each meta data category and an array of values
  * matching the size of the points in the data
+ * 
  * for example:
  * meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
 
@@ -40,12 +41,12 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
 Barista.Models.BarPlotModel = Backbone.Model.extend({
 	/**
 	 * set of model defaults
-	 * @param {string}  title        the title of the plot. Defaults to ""
-	 * @param {string}  axis_title   the title of the x_axis. Defaults to ""
-	 * @param {array}   data         an array of data for the x_axis. Defaults to []
-	 * @param {array}   data_labels  an array of data for the y_axis. Defaults to []
-	 * @param {object}  meta_data    object containing meta data for the points in the plot
-	 *                               Defaults to {}
+	 * @param {string}  title        the title of the plot, defaults to ""
+	 * @param {string}  axis_title   the title of the x_axis, defaults to ""
+	 * @param {array}   data         an array of data for the x_axis, defaults to []
+	 * @param {array}   data_labels  an array of data for the y_axis, defaults to []
+	 * @param {object}  meta_data    object containing meta data for the points in the plot,
+	 *                               defaults to {}
 	 */
 	defaults: {
 		title: "",
@@ -57,13 +58,14 @@ Barista.Models.BarPlotModel = Backbone.Model.extend({
 });
 
 /**
+ * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of cell_lines
  * The data model captures both the total count of cell lines that meet a search criteria and the count of
  * each annotation category for the set of cell lines
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 Barista.Models.CellCountModel = Backbone.Model.extend({
   /**
@@ -149,8 +151,9 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
 });
 
 /**
- * A Backbone.Model that represents a cell line
  * `pert_model = new CellModel()`
+ * 
+ * A Backbone.Model that represents a cell line
  */
 Barista.Models.CellModel = Backbone.Model.extend({
 	/**
@@ -165,9 +168,10 @@ Barista.Models.CellModel = Backbone.Model.extend({
 });
 
 /**
+ * `pert_detail_model = new CompoundDetailModel()`
+ * 
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
- * `pert_detail_model = new CompoundDetailModel()`
  */
 
 Barista.Models.CompoundDetailModel = Backbone.Model.extend({
@@ -292,9 +296,10 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
 });
 
 /**
+ * `pert_detail_model = new GeneDetailModel()`
+ * 
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
- * `pert_detail_model = new GeneDetailModel()`
  */
 
 Barista.Models.GeneDetailModel = Backbone.Model.extend({
@@ -439,6 +444,8 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 });
 
 /**
+ * `generic_count_model = new GenericCountModel()`
+ * 
  * A Backbone.Model that represents the count of a set CMap databbase items
  * The data model captures the total count of perturbagens that meet a search criteria
  * optional arguments:
@@ -446,7 +453,6 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
  *                               defaults to "pert_iname"
  * @param {string} url           the url of the api service to fetch data from, defaults to
  *                               "//api.lincscloud.org/a2/pertinfo"
- * `generic_count_model = new GenericCountModel()`
  */
 
 Barista.Models.GenericCountModel = Backbone.Model.extend({
@@ -477,6 +483,7 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
       });
     };
   }
+  
 });
 
 Barista.Models.GenericSourceModel = Backbone.Model.extend({
@@ -518,10 +525,11 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({
 
 
 /**
+ * `pert_model = new GenericMongoModel()`
+ * 
  * A Backbone.Model that represents a generic MongoDB object
  * All fields in the document are passed to the model as normal and a date attribute is set from the _id
  * field of the mongo document
- * `pert_model = new GenericMongoModel()`
  */
 Barista.Models.GenericMongoModel = Backbone.Model.extend({
     /**
@@ -538,32 +546,33 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 });
 
 /**
+ * heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
+											rid: ['1','2'],
+											cid: ['1','2'],
+											annots: ['1','2'],
+											title: ""});
+ *
  * A Backbone.Model that represents the data in a heatmap
  * The model contains a two dimensional array of numbers, row and columns labels, and a title
  * example usage:
 
  			heatmap_model = new HeatmapModel();
  * optional arguments:
- * @param {array}  data          the data object to use in the heatmap. defualts to [[1,2],[3,4]]
- * @param {array}  rid           the row labels to use in the heatmap. defualts to ['1','2']
- * @param {array}  cid           the column labels to use in the heatmap. defualts to ['1','2']
- * @param {array}  annots        optional annotations categories to show under the heatmap. defualts to
+ * @param {array}  data          the data object to use in the heatmap, defualts to [[1,2],[3,4]]
+ * @param {array}  rid           the row labels to use in the heatmap, defualts to ['1','2']
+ * @param {array}  cid           the column labels to use in the heatmap, defualts to ['1','2']
+ * @param {array}  annots        optional annotations categories to show under the heatmap, defualts to
  *                               undefined
  * @param {array}  annote_label  optional label for annotations. defualts to undefined
  * @param {string} title         the title to use in the plot, defaults to ""
- * heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
-											rid: ['1','2'],
-											cid: ['1','2'],
-											annots: ['1','2'],
-											title: ""});
  */
 Barista.Models.HeatmapModel = Backbone.Model.extend({
 	/**
    * set up defaults for model values
-   * @param {array}  data    the data object to use in the heatmap. defualts to [[1,2],[3,4]]
-   * @param {array}  rid     the row labels to use in the heatmap. defualts to ['1','2']
-   * @param {array}  cid     the column labels to use in the heatmap. defualts to ['1','2']
-   * @param {array}  annots  optional annotations categories to show under the heatmap. defualts to
+   * @param {array}  data    the data object to use in the heatmap, defualts to [[1,2],[3,4]]
+   * @param {array}  rid     the row labels to use in the heatmap, defualts to ['1','2']
+   * @param {array}  cid     the column labels to use in the heatmap, defualts to ['1','2']
+   * @param {array}  annots  optional annotations categories to show under the heatmap, defualts to
    *                         undefined
    * @param {string} title   the title to use in the plot, defaults to ""
    */
@@ -577,10 +586,11 @@ Barista.Models.HeatmapModel = Backbone.Model.extend({
 	}
 })
 /**
+ * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
+ * 
  * A Backbone.Model that represents the cell line based breakdown of a set of perturbagens
  * the number of perturbagens matching a query is counted for each cell line
  * Data for all cell lines that contain a match to the query are represented in the model
- * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
  */
 Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
       /**
@@ -636,13 +646,14 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
   }
 });
 /**
+ * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of perturbagens
  * The data model captures both the total count of perturbagens that meet a search criteria and the count 
  * of each annotation category for the set of perturbagens
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 
 Barista.Models.PertCountModel = Backbone.Model.extend({
@@ -774,8 +785,9 @@ Barista.Models.PertDetailModel = Backbone.Model.extend({
 });
 
 /**
- * A Backbone.Model that represents a single perturbagen
  * `pert_model = new PertModel()`
+ * 
+ * A Backbone.Model that represents a single perturbagen
  */
 Barista.Models.PertModel = Backbone.Model.extend({
 	/**
@@ -898,8 +910,9 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
   }
 });
 /**
- * A Backbone.Model that represents a single signature
  * `pert_model = new SignatureModel()`
+ * 
+ * A Backbone.Model that represents a single signature
  */
 Barista.Models.SignatureModel = Backbone.Model.extend({
 	/**
@@ -931,10 +944,10 @@ Barista.Models.SignatureModel = Backbone.Model.extend({
   }
 });
 /**
+ * summly_result = new SummlyResultModel();
  * A Backbone.Model that represents the a single CMap Summly result
  * A single result is composed of the connection between two pert_inames (a query and a target), the
  * component data that went into computing the summly result, and the statistics  of the summly computation
- * summly_result = new SummlyResultModel();
  */
 Barista.Models.SummlyResultModel = Backbone.Model.extend({
 	/**

@@ -1,13 +1,14 @@
 /**
+ * var pert_type_object = CMapPertTypeAlias("trt_cp");
+ * pert_type_object.name;
+ * pert_type_object.acronym;
+ * 
  * a utility function to convert standard perturbagen type descriptors into more human friendly strings
  * Given an input type string, an object is returned with field names of 'name' and 'acronym'
  * If the passed string is not a recoqnized type, the 'name' and 'acronym' fields are set to the passed
  * string
  * @param {string} input_type  type of perturbagen (must be recognized type from cases below, or an error
  *                             will occur)
- * var pert_type_object = CMapPertTypeAlias("trt_cp");
- * pert_type_object.name;
- * pert_type_object.acronym;
  */
 Barista.CMapPertTypeAlias = function(input_type){
 	switch(input_type){
@@ -50,9 +51,9 @@ Barista.NumbersToSubscript = function(s) {
 
 /**
  * a utility function to take the average of an array of numeric values
- * @param  {array} arr  array of numeric values
  * the following evaluates to 2:
  * var a = arrayAverage([1,2,3]);
+ * @param  {array} arr  array of numeric values
  */
 Barista.arrayAverage = function arrayAverage (arr){
 	return _.reduce(arr, function(memo, num){
@@ -68,9 +69,9 @@ Barista.getEmSizeInPixels = function(id) {
     return Number(getComputedStyle(el, "").fontSize.match(/(\d+)px/)[1]);
 }
 /**
+ * taken from http://css-tricks.com/snippets/javascript/get-url-variables/
  * utility function to grab url parameters
  * @param  {string}  the attribute whose value we want returned
- * taken from http://css-tricks.com/snippets/javascript/get-url-variables/
  */
 Barista.getQueryVariable = function(variable)
 {
@@ -84,10 +85,10 @@ Barista.getQueryVariable = function(variable)
 }
 
 /**
- * a utility function to return a number with commas every three digits
- * @param  {number} x  number to add commas to
  * credit to Elias Zamaria http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-
  * thousands-separators-in-javascript
+ * a utility function to return a number with commas every three digits
+ * @param  {number} x  number to add commas to
  */
 Barista.numberWithCommas = function(x){
     // first check to see if something was passed. if so, convert it
@@ -104,7 +105,7 @@ Barista.numberWithCommas = function(x){
 
 /**
  * a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter
- * @param {string} api_endpoint  The location of the API endpoint to prefilter call from. defaults to
+ * @param {string} api_endpoint  The location of the API endpoint to prefilter call from, defaults to
  *                               "api.lincscloud.org"
  */
 Barista.setAPIPrefilter = function(api_endpoint) {
@@ -121,7 +122,7 @@ Barista.setAPIPrefilter = function(api_endpoint) {
 
 /**
  * a utility function to set an APIURL attribute on the Barista object
- * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls
+ * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls,
  *                      defaults to '//api.lincscloud.org'
  */
 Barista.setAPIURL = function(url) {

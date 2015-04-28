@@ -3592,7 +3592,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                   /**
                     * set the remote data source to use compute_status with custom query params
                     * @param  {string}  url    @todo this parameter is never used, consider removing
-                    * from function
+                    *                          from function
                     * @param  {string}  query  custom query
                     */ 
                 replace: function(url,query){
@@ -4342,15 +4342,16 @@ Barista.Datasets = _.extend(Barista.Datasets,
 );
 
 /**
+ * var pert_type_object = CMapPertTypeAlias("trt_cp");
+ * pert_type_object.name;
+ * pert_type_object.acronym;
+ * 
  * a utility function to convert standard perturbagen type descriptors into more human friendly strings
  * Given an input type string, an object is returned with field names of 'name' and 'acronym'
  * If the passed string is not a recoqnized type, the 'name' and 'acronym' fields are set to the passed
  * string
  * @param {string} input_type  type of perturbagen (must be recognized type from cases below, or an error
  *                             will occur)
- * var pert_type_object = CMapPertTypeAlias("trt_cp");
- * pert_type_object.name;
- * pert_type_object.acronym;
  */
 Barista.CMapPertTypeAlias = function(input_type){
 	switch(input_type){
@@ -4393,9 +4394,9 @@ Barista.NumbersToSubscript = function(s) {
 
 /**
  * a utility function to take the average of an array of numeric values
- * @param  {array} arr  array of numeric values
  * the following evaluates to 2:
  * var a = arrayAverage([1,2,3]);
+ * @param  {array} arr  array of numeric values
  */
 Barista.arrayAverage = function arrayAverage (arr){
 	return _.reduce(arr, function(memo, num){
@@ -4411,9 +4412,9 @@ Barista.getEmSizeInPixels = function(id) {
     return Number(getComputedStyle(el, "").fontSize.match(/(\d+)px/)[1]);
 }
 /**
+ * taken from http://css-tricks.com/snippets/javascript/get-url-variables/
  * utility function to grab url parameters
  * @param  {string}  the attribute whose value we want returned
- * taken from http://css-tricks.com/snippets/javascript/get-url-variables/
  */
 Barista.getQueryVariable = function(variable)
 {
@@ -4427,10 +4428,10 @@ Barista.getQueryVariable = function(variable)
 }
 
 /**
- * a utility function to return a number with commas every three digits
- * @param  {number} x  number to add commas to
  * credit to Elias Zamaria http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-
  * thousands-separators-in-javascript
+ * a utility function to return a number with commas every three digits
+ * @param  {number} x  number to add commas to
  */
 Barista.numberWithCommas = function(x){
     // first check to see if something was passed. if so, convert it
@@ -4447,7 +4448,7 @@ Barista.numberWithCommas = function(x){
 
 /**
  * a utility function to set up ajax calls to api.lincscloud.org to pass Barista.user_key as a parameter
- * @param {string} api_endpoint  The location of the API endpoint to prefilter call from. defaults to
+ * @param {string} api_endpoint  The location of the API endpoint to prefilter call from, defaults to
  *                               "api.lincscloud.org"
  */
 Barista.setAPIPrefilter = function(api_endpoint) {
@@ -4464,7 +4465,7 @@ Barista.setAPIPrefilter = function(api_endpoint) {
 
 /**
  * a utility function to set an APIURL attribute on the Barista object
- * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls
+ * @param {string} url  the url for an API endpoint that your would like barista to hit for all API calls,
  *                      defaults to '//api.lincscloud.org'
  */
 Barista.setAPIURL = function(url) {
@@ -4505,8 +4506,9 @@ Barista.setUserKey = function(key) {
 };
 
 /**
- * A Backbone.Model that represents an analysis history object.
  * `pert_model = new AnalysisHistoryModel()`
+ * 
+ * A Backbone.Model that represents an analysis history object.
  */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
     /**
@@ -4535,6 +4537,7 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
  * points in the data
  * The meta data object should contain attributes for each meta data category and an array of values
  * matching the size of the points in the data
+ * 
  * for example:
  * meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
 
@@ -4545,12 +4548,12 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
 Barista.Models.BarPlotModel = Backbone.Model.extend({
 	/**
 	 * set of model defaults
-	 * @param {string}  title        the title of the plot. Defaults to ""
-	 * @param {string}  axis_title   the title of the x_axis. Defaults to ""
-	 * @param {array}   data         an array of data for the x_axis. Defaults to []
-	 * @param {array}   data_labels  an array of data for the y_axis. Defaults to []
-	 * @param {object}  meta_data    object containing meta data for the points in the plot
-	 *                               Defaults to {}
+	 * @param {string}  title        the title of the plot, defaults to ""
+	 * @param {string}  axis_title   the title of the x_axis, defaults to ""
+	 * @param {array}   data         an array of data for the x_axis, defaults to []
+	 * @param {array}   data_labels  an array of data for the y_axis, defaults to []
+	 * @param {object}  meta_data    object containing meta data for the points in the plot,
+	 *                               defaults to {}
 	 */
 	defaults: {
 		title: "",
@@ -4562,13 +4565,14 @@ Barista.Models.BarPlotModel = Backbone.Model.extend({
 });
 
 /**
+ * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of cell_lines
  * The data model captures both the total count of cell lines that meet a search criteria and the count of
  * each annotation category for the set of cell lines
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 Barista.Models.CellCountModel = Backbone.Model.extend({
   /**
@@ -4654,8 +4658,9 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
 });
 
 /**
- * A Backbone.Model that represents a cell line
  * `pert_model = new CellModel()`
+ * 
+ * A Backbone.Model that represents a cell line
  */
 Barista.Models.CellModel = Backbone.Model.extend({
 	/**
@@ -4670,9 +4675,10 @@ Barista.Models.CellModel = Backbone.Model.extend({
 });
 
 /**
+ * `pert_detail_model = new CompoundDetailModel()`
+ * 
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
- * `pert_detail_model = new CompoundDetailModel()`
  */
 
 Barista.Models.CompoundDetailModel = Backbone.Model.extend({
@@ -4797,9 +4803,10 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
 });
 
 /**
+ * `pert_detail_model = new GeneDetailModel()`
+ * 
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
- * `pert_detail_model = new GeneDetailModel()`
  */
 
 Barista.Models.GeneDetailModel = Backbone.Model.extend({
@@ -4944,6 +4951,8 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 });
 
 /**
+ * `generic_count_model = new GenericCountModel()`
+ * 
  * A Backbone.Model that represents the count of a set CMap databbase items
  * The data model captures the total count of perturbagens that meet a search criteria
  * optional arguments:
@@ -4951,7 +4960,6 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
  *                               defaults to "pert_iname"
  * @param {string} url           the url of the api service to fetch data from, defaults to
  *                               "//api.lincscloud.org/a2/pertinfo"
- * `generic_count_model = new GenericCountModel()`
  */
 
 Barista.Models.GenericCountModel = Backbone.Model.extend({
@@ -4982,6 +4990,7 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
       });
     };
   }
+  
 });
 
 Barista.Models.GenericSourceModel = Backbone.Model.extend({
@@ -5023,10 +5032,11 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({
 
 
 /**
+ * `pert_model = new GenericMongoModel()`
+ * 
  * A Backbone.Model that represents a generic MongoDB object
  * All fields in the document are passed to the model as normal and a date attribute is set from the _id
  * field of the mongo document
- * `pert_model = new GenericMongoModel()`
  */
 Barista.Models.GenericMongoModel = Backbone.Model.extend({
     /**
@@ -5043,32 +5053,33 @@ Barista.Models.GenericMongoModel = Backbone.Model.extend({
 });
 
 /**
+ * heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
+											rid: ['1','2'],
+											cid: ['1','2'],
+											annots: ['1','2'],
+											title: ""});
+ *
  * A Backbone.Model that represents the data in a heatmap
  * The model contains a two dimensional array of numbers, row and columns labels, and a title
  * example usage:
 
  			heatmap_model = new HeatmapModel();
  * optional arguments:
- * @param {array}  data          the data object to use in the heatmap. defualts to [[1,2],[3,4]]
- * @param {array}  rid           the row labels to use in the heatmap. defualts to ['1','2']
- * @param {array}  cid           the column labels to use in the heatmap. defualts to ['1','2']
- * @param {array}  annots        optional annotations categories to show under the heatmap. defualts to
+ * @param {array}  data          the data object to use in the heatmap, defualts to [[1,2],[3,4]]
+ * @param {array}  rid           the row labels to use in the heatmap, defualts to ['1','2']
+ * @param {array}  cid           the column labels to use in the heatmap, defualts to ['1','2']
+ * @param {array}  annots        optional annotations categories to show under the heatmap, defualts to
  *                               undefined
  * @param {array}  annote_label  optional label for annotations. defualts to undefined
  * @param {string} title         the title to use in the plot, defaults to ""
- * heatmap_model = new HeatmapModel({data: [[1,2],[3,4]],
-											rid: ['1','2'],
-											cid: ['1','2'],
-											annots: ['1','2'],
-											title: ""});
  */
 Barista.Models.HeatmapModel = Backbone.Model.extend({
 	/**
    * set up defaults for model values
-   * @param {array}  data    the data object to use in the heatmap. defualts to [[1,2],[3,4]]
-   * @param {array}  rid     the row labels to use in the heatmap. defualts to ['1','2']
-   * @param {array}  cid     the column labels to use in the heatmap. defualts to ['1','2']
-   * @param {array}  annots  optional annotations categories to show under the heatmap. defualts to
+   * @param {array}  data    the data object to use in the heatmap, defualts to [[1,2],[3,4]]
+   * @param {array}  rid     the row labels to use in the heatmap, defualts to ['1','2']
+   * @param {array}  cid     the column labels to use in the heatmap, defualts to ['1','2']
+   * @param {array}  annots  optional annotations categories to show under the heatmap, defualts to
    *                         undefined
    * @param {string} title   the title to use in the plot, defaults to ""
    */
@@ -5082,10 +5093,11 @@ Barista.Models.HeatmapModel = Backbone.Model.extend({
 	}
 })
 /**
+ * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
+ * 
  * A Backbone.Model that represents the cell line based breakdown of a set of perturbagens
  * the number of perturbagens matching a query is counted for each cell line
  * Data for all cell lines that contain a match to the query are represented in the model
- * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
  */
 Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
       /**
@@ -5141,13 +5153,14 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
   }
 });
 /**
+ * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
+ * 
  * A Backbone.Model that represents the count of a set of perturbagens
  * The data model captures both the total count of perturbagens that meet a search criteria and the count 
  * of each annotation category for the set of perturbagens
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
  *                              to '["trt_sh","trt_oe"]'
- * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
  */
 
 Barista.Models.PertCountModel = Backbone.Model.extend({
@@ -5279,8 +5292,9 @@ Barista.Models.PertDetailModel = Backbone.Model.extend({
 });
 
 /**
- * A Backbone.Model that represents a single perturbagen
  * `pert_model = new PertModel()`
+ * 
+ * A Backbone.Model that represents a single perturbagen
  */
 Barista.Models.PertModel = Backbone.Model.extend({
 	/**
@@ -5403,8 +5417,9 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
   }
 });
 /**
- * A Backbone.Model that represents a single signature
  * `pert_model = new SignatureModel()`
+ * 
+ * A Backbone.Model that represents a single signature
  */
 Barista.Models.SignatureModel = Backbone.Model.extend({
 	/**
@@ -5436,10 +5451,10 @@ Barista.Models.SignatureModel = Backbone.Model.extend({
   }
 });
 /**
+ * summly_result = new SummlyResultModel();
  * A Backbone.Model that represents the a single CMap Summly result
  * A single result is composed of the connection between two pert_inames (a query and a target), the
  * component data that went into computing the summly result, and the statistics  of the summly computation
- * summly_result = new SummlyResultModel();
  */
 Barista.Models.SummlyResultModel = Backbone.Model.extend({
 	/**
@@ -5566,13 +5581,13 @@ Barista.Models.SequenceModel = Backbone.Model.extend({
  * A Backbone.Collection that represents a set of analysis history objects
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to PertModel
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to PertModel
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
  * @param {string}         skip       the skip parameter used in api calls when the collection is updated
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
+ *                                    operation, defaults to false
  */
 
 Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
@@ -5692,20 +5707,21 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
 });
 
 /**
+ *  pert_collection = new CellCollection({model: PertModel,
+                                           url: Barista.APIURL + '/a2/pertinfo?callback=?',
+                                           skip: 0,
+                                           isLoading: false});
+ *                                          
  * A Backbone.Collection that represents a set of cell types
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched, defaults to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
- * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated,
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
- *  `pert_collection = new CellCollection({model: PertModel,
-                                           url: Barista.APIURL + '/a2/pertinfo?callback=?',
-                                           skip: 0,
-                                           isLoading: false});`
+ *                                    operation, defaults to false`
  */
 
 Barista.Collections.CellCollection = Backbone.Collection.extend({
@@ -5779,21 +5795,22 @@ Barista.Collections.CellCollection = Backbone.Collection.extend({
 });
 
 /**
+ *        pert_collection = new PertCollection({model: PertModel,
+ *                                         url: Barista.APIURL + '/a2/pertinfo?callback=?',
+ *                                         skip: 0,
+ *                                         isLoading: false});
+ *                                         
  * A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file
  * The JSON file is assumed to contain a top level array containing objects
  * Each object in the array is modeled as a base Backbone.Model inside of the collection
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
  * @param {string}         skip       the skip parameter used in api calls when the collection is updated
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
  *                                    operation. defaults to false
- *        pert_collection = new PertCollection({model: PertModel,
-                                          url: Barista.APIURL + '/a2/pertinfo?callback=?',
-                                          skip: 0,
-                                          isLoading: false});
  */
 Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
     /**
@@ -5864,20 +5881,21 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
 	}
 });
 /**
+ * `pert_collection = new PertCollection({model: PertModel,
+ *                                         // url: Barista.APIURL + '/a2/pertinfo?callback=?',
+ *                                         // skip: 0,
+ *                                         // isLoading: false});`
+ *                                         
  * A Backbone.Collection that represents a set of perturbagens
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
- * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated,
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
- * `pert_collection = new PertCollection({model: PertModel,
-                                          // url: Barista.APIURL + '/a2/pertinfo?callback=?',
-                                          // skip: 0,
-                                          // isLoading: false});`
+ *                                    operation, defaults to false
  */
 
 Barista.Collections.PertCollection = Backbone.Collection.extend({
@@ -5981,20 +5999,21 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
 });
 
 /**
+ * `pert_collection = new SignatureCollection({model: PertModel,
+ *                                         // url: Barista.APIURL + '/a2/siginfo?callback=?',
+ *                                         // skip: 0,
+ *                                         // isLoading: false});`
+ *                                         
  * A Backbone.Collection that represents a set of signatures
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
- * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated,
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
- * `pert_collection = new SignatureCollection({model: PertModel,
-                                          // url: Barista.APIURL + '/a2/siginfo?callback=?',
-                                          // skip: 0,
-                                          // isLoading: false});`
+ *                                    operation, defaults to false
  */
 
 Barista.Collections.SignatureCollection = Backbone.Collection.extend({
@@ -6119,20 +6138,21 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
 });
 
 /**
+ * pert_collection = new PertCollection({model: PertModel,
+ *                                         url: Barista.APIURL + '/a2/pertinfo?callback=?',
+ *                                         skip: 0,
+ *                                         isLoading: false});
+ *                                         
  * A Backbone.Collection that represents a set of CMap Summly results
  * This collection is suitable for internal use in GridView
  * optional arguments:
- * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
- * @param {string}         url        the url from which model data is fetched. defaults  to
+ * @param {Backbone.model} model      the model used for the collection objects, defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched, defaults  to
  *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
- * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated,
  *                                    defaults to 0
  * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
- *                                    operation. defaults to false
- * pert_collection = new PertCollection({model: PertModel,
-                                          url: Barista.APIURL + '/a2/pertinfo?callback=?',
-                                          skip: 0,
-                                          isLoading: false});
+ *                                    operation, defaults to false
  */
 
 Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
@@ -6242,6 +6262,17 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 });
 
 /**
+ * base_view = new BaristaBaseView({el: $("target_selector",
+									bg_color:"#ffffff",
+									fg_color: "#1b9e77",
+									span_class: "col-lg-12",
+									plot_height: 120});
+ * to extend BaristaBaseView, use
+
+		extended_view = BaristaBaseView.extend({
+										...
+										});
+ *										
  * A Backbone.View the serves as the base view for other views in the barista library
  * BaristaBaseView provides common functionality for views including standard initialization, redraw,
  * render, template compilation, and png export functions
@@ -6258,16 +6289,6 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
  *                               "col-lg-12"
  * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
  * @param {boolean} png          show the png export button. defaults to true
- * base_view = new BaristaBaseView({el: $("target_selector",
-									bg_color:"#ffffff",
-									fg_color: "#1b9e77",
-									span_class: "col-lg-12",
-									plot_height: 120});
- * to extend BaristaBaseView, use
-
-		extended_view = BaristaBaseView.extend({
-										...
-										});
  */
 Barista.Views.BaristaBaseView = Backbone.View.extend({
 	/**
@@ -6518,7 +6539,7 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 
 	/**
 	 * shows the view by brightening the opacity and showing it in the DOM
-	 * @param  {number} duration  the time in ms for the hide animation. defualts to *1*
+	 * @param  {number} duration  the time in ms for the hide animation, defualts to *1*
 	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){
@@ -6529,6 +6550,19 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 });
 
 /**
+ * bar_plot_view = new BarPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									range: undefined,
+									log: false,
+									min_lock: undefined,
+									max_lock: undefined,
+									min_expand: false,
+									max_expand: false,
+									plot_height: 120});
+ *									
  * A Backbone.View that displays a scatter plot
  * the view's model is assumed to have the same defaults as specified in BarPlotModel
  * basic use:
@@ -6554,18 +6588,6 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
  * @param {string}  orientation  sets the orientation of the bar plot. options are 'horizontal' or
  *                               'vertical'. defaults to 'vertical'
  * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
- * bar_plot_view = new BarPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									range: undefined,
-									log: false,
-									min_lock: undefined,
-									max_lock: undefined,
-									min_expand: false,
-									max_expand: false,
-									plot_height: 120});
  */
 
 Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
@@ -6976,6 +6998,14 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 	}
 });
 /**
+ * card_view = new BaristaCardView({el: $("target_selector",
+									url:"",
+									title:"",
+									subtitle:"",
+									fg_color: "#1b9e77",
+									image:"",
+									span_class: "col-lg-12"});
+ *
  * A Backbone View that displays a card of information wrapped in link
  * The view is meant to be a top level entry point to other pages
  * basic use:
@@ -6989,13 +7019,6 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
  *                             #1b9e77
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
  *                             "col-lg-12"
- * card_view = new BaristaCardView({el: $("target_selector",
-									url:"",
-									title:"",
-									subtitle:"",
-									fg_color: "#1b9e77",
-									image:"",
-									span_class: "col-lg-12"});
  */
 Barista.Views.BaristaCardView = Backbone.View.extend({
 	/**
@@ -7062,10 +7085,10 @@ Barista.Views.BaristaCardView = Backbone.View.extend({
  * basic use:
  * card_view = new BaristaUserCardView();
  * optional arguments:
- * @param {string} realName  the name to display. defaults to "Name"
- * @param {string} username  the name to display. defaults to "Username"
- * @param {string} email     the email to display. defaults to "user@mail.com"
- * @param {string} badges    an array of badge images to display. defaults to []
+ * @param {string} realName  the name to display, defaults to "Name"
+ * @param {string} username  the name to display, defaults to "Username"
+ * @param {string} email     the email to display, defaults to "user@mail.com"
+ * @param {string} badges    an array of badge images to display, defaults to []
  */
 
 Barista.Views.BaristaUserCardView = Backbone.View.extend({
@@ -7127,6 +7150,10 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
 });
 
 /**
+ * bubble_view = new BubbleView({el: $("target_selector"),
+									fg_color: "#1b9e77",
+									span_class: "span4"});
+ *									
  * A Backbone.View that displays a single level tree of data as a bubble plot
  * The view should be bound to a model such as a **PertCellBreakdownModel** that captures tree data in a
  * tree_object attribute
@@ -7136,9 +7163,6 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
  * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
  *                             #1b9e77
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span4"
- * bubble_view = new BubbleView({el: $("target_selector"),
-									fg_color: "#1b9e77",
-									span_class: "span4"});
  */
 
 Barista.Views.BubbleView = Backbone.View.extend({
@@ -7428,6 +7452,13 @@ Barista.Views.BubbleView = Backbone.View.extend({
 });
 
 /**
+ * header = new CMapFooterView({el:"footer_target",
+									organization: "Broad Institute",
+									terms_url: "//lincscloud.org/terms-and-conditions/",
+ 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
+ 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
+									template: "../templates/CMapFooter.handlebars"});
+ *
  * A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
  * the view provides standard copyright text and customizable organization name, terms and conditions link,
  * and organization logo/link
@@ -7445,12 +7476,6 @@ Barista.Views.BubbleView = Backbone.View.extend({
  *                               ['//www.broadinstitute.org/','//lincscloud.org/']
  * @param {string} template      The path to a handlebars template to use. Defaults to
  *                               templates/CMapFooter.handlebars
- * header = new CMapFooterView({el:"footer_target",
-									organization: "Broad Institute",
-									terms_url: "//lincscloud.org/terms-and-conditions/",
- 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
- 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
-									template: "../templates/CMapFooter.handlebars"});
  */
 Barista.Views.CMapFooterView = Backbone.View.extend({
 	/**
@@ -7499,6 +7524,11 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 });
 
 /**
+ * header = new CMapHeaderView({el:"header_target",
+									title: "",
+									subtitle: "",
+									template: "templates/CMapHeader.handlebars"});
+ *
  * A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
  * the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
  * sharing, settings, and information
@@ -7510,10 +7540,6 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
  * @param {string} subtitle  The title of the page. Defaults to Sub Title
  * @param {string} template  The path to a handlebars template to use. Defaults to
  *                           templates/CMapHeader.handlebars
- * header = new CMapHeaderView({el:"header_target",
-									title: "",
-									subtitle: "",
-									template: "templates/CMapHeader.handlebars"});
  */
 Barista.Views.CMapHeaderView = Backbone.View.extend({
 	/**
@@ -7616,8 +7642,8 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
      * to build
      */
     wrap_content: function(){
-        $("body").children().wrapAll('<div class="cmap-navigation-content"/>');
-        $(".cmap-navigation-content").wrapAll('<div class="cmap-navigation-wrapper"/>');
+        $("body").children().wrapAll('<div class="container-fluid cmap-navigation-content"/>');
+        $(".cmap-navigation-content").wrapAll('<div class="container-fluid cmap-navigation-wrapper"/>');
     },
 
     /**
@@ -7773,6 +7799,11 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 });
 
 /**
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
+ 												model: CompoundDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ *
  * A Backbone.View that shows information about a small molecule compound
  * This view is frequently paired with a CompoundDetailModel
  * pert_detail_view = new CompoundDetailView({el: $("target_selector")});
@@ -7781,10 +7812,6 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
  *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
  *                             "col-lg-12"
- * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
- 												model: CompoundDetailModel,
- 												bg_color: "#ffffff",
- 												span_class: "col-lg-12"});
  */
 Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 	/**
@@ -9553,6 +9580,18 @@ Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   }
 });
 /**
+ * heatmap_view = new HeatmapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												annot_color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ *
  * A Backbone.View that displays a simple heatmap
  * The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,
  * and title attributes
@@ -9574,17 +9613,6 @@ Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
  * @param {string}   span_class         a bootstrap span class to size the width of the view, defaults to
  *                                      "span12"
  * example usage:
- * heatmap_view = new HeatmapView({el: $("target_selector"),
-												model: new HeatmapModel(),
-												template: BaristaTemplates.d3_target,
-												bg_color: "#ffffff",
-												low_color: "#0000ff",
-												high_color: "#ff0000",
-												color_scale: undefined,
-												annot_color_scale: undefined,
-												plot_height: 300,
-												span_class: "span12"
-												});
  */
 
 Barista.Views.HeatmapView = Backbone.View.extend({
@@ -10090,6 +10118,18 @@ Barista.Views.HeatmapView = Backbone.View.extend({
  * A Backbone.View that displays a simple LDMap
  * The view is normally paired with a HeatMapModel, but works with any model that provides *data*,*cid*,
  * and title attributes
+ * example usage:
+ * LDMap_view = new LDMapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ *
  * optional arguments:
  * @param {string}   tenplate     The handlebars template to use. Defaults to BaristaTemplates.d3_target
  * @param {string}   bg_color     the hex color code to use as the backgound of the view, defaults to
@@ -10103,17 +10143,6 @@ Barista.Views.HeatmapView = Backbone.View.extend({
  * @param {number}   plot_height  the height of the LDMap to generate in pixels, defaults to 300
  * @param {string}   span_class   a bootstrap span class to size the width of the view, defaults to
  *                                "span12"
- * example usage:
- * LDMap_view = new LDMapView({el: $("target_selector"),
-												model: new HeatmapModel(),
-												template: BaristaTemplates.d3_target,
-												bg_color: "#ffffff",
-												low_color: "#0000ff",
-												high_color: "#ff0000",
-												color_scale: undefined,
-												plot_height: 300,
-												span_class: "span12"
-												});
  */
 
 Barista.Views.LDMapView = Backbone.View.extend({
@@ -10424,6 +10453,13 @@ Barista.Views.LDMapView = Backbone.View.extend({
 	}
 });
 /**
+ * count_view = new PertCountView({bg_color:"#ffffff",
+									well_color: "#bdbdbd",
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									static_text: "Reagents",
+									categories: []});
+ *
  * A Backbone.View that shows that number of perturbagens matching a given query
  * Optionally, sub-category counts are give for the type of perturbagen queried for
  * This view is frequently paired with a PertCountModel or CellCountModel
@@ -10440,12 +10476,6 @@ Barista.Views.LDMapView = Backbone.View.extend({
  *                              "col-lg-4"
  * @param {string} static_text  the static text header to use in the view, defaults to "Reagents"
  * @param {array}  categories   an array of objects to use as categories to display, defaults to []
- * count_view = new PertCountView({bg_color:"#ffffff",
-									well_color: "#bdbdbd",
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									static_text: "Reagents",
-									categories: []});
  */
 
 Barista.Views.PertCountView = Backbone.View.extend({
@@ -10760,6 +10790,11 @@ Barista.Views.PertCountView = Backbone.View.extend({
 });
 
 /**
+ * pert_detail_view = new PertDetailView({el: $("target_selector"),
+ 												model: PertDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ *
  * A Backbone.View that shows information about a small molecule compound or gene
  * This view is frequently paired with a PertDetailModel
  * pert_detail_view = new PertDetailView({el: $("target_selector")});
@@ -10767,11 +10802,7 @@ Barista.Views.PertCountView = Backbone.View.extend({
  * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
  *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
- *                             "col-lg-12"
- * pert_detail_view = new PertDetailView({el: $("target_selector"),
- 												model: PertDetailModel,
- 												bg_color: "#ffffff",
- 												span_class: "col-lg-12"});                            
+ *                             "col-lg-12"                            
  */
 Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 	/**
@@ -12187,6 +12218,25 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 });
 
 /**
+ * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									x_min_lock: undefined,
+									y_min_lock: undefined,
+									x_max_lock: undefined,
+									y_max_lock: undefined,
+									x_min_expand: false,
+									y_min_expand: false,
+									x_max_expand: false,
+									y_max_expand: false,
+									plot_height: 120});
+ *
  * A Backbone.View that displays a scatter plot
  * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
  * basic use:
@@ -12223,24 +12273,6 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
  * @param {boolean} y_max_expand  if set, allows the maximum of the y_range to expand if data is found
  *                                above it. defaults to false
  * @param {number}  plot_height   the height of the plot in pixels, defaults to 120
- * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									x_range: undefined,
-									y_range: undefined,
-									x_log: false,
-									y_log: false,
-									x_min_lock: undefined,
-									y_min_lock: undefined,
-									x_max_lock: undefined,
-									y_max_lock: undefined,
-									x_min_expand: false,
-									y_min_expand: false,
-									x_max_expand: false,
-									y_max_expand: false,
-									plot_height: 120});
  */
 
 Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
@@ -12589,6 +12621,14 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 	}
 });
 /**
+ * tag_list_view = new TagListView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "white",
+									tag_color: "gray",
+									span_class: "col-lg-12",
+									plot_height: 120,
+									display_attribute: "cid"});
+ *
  * A Backbone.View that displays a list of objects in a collection as tags
  * The tags are drawn as rounded rectangles with text inside
  * The text corresponds to the cid attributes in the collection by defaul, but can be customized to display
@@ -12606,13 +12646,6 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
  * @param {number} plot_height    the height of the plot in pixels, defaults to 120
  * @param {string} display_field  the model attribute to display for each model in the view's colleciton.
  *                                defualts to 'cid'
- * tag_list_view = new TagListView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "white",
-									tag_color: "gray",
-									span_class: "col-lg-12",
-									plot_height: 120,
-									display_attribute: "cid"});
  */
 
 Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
@@ -12781,6 +12814,13 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 });
 
 /**
+ * tick_view = new TickView({el: $("target_selector"),
+												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
+												template: "../templates/d3_target.handlebars",
+												bg_color: "#bdbdbd",
+												span_class: "span12"
+												});
+ *
  * A Backbone.View that displays a Connectivity Map tick view
  * The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and
  * the scores of the ticks to show for each row
@@ -12796,12 +12836,6 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
  *                             #bdbdbd
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span12"
  * example usage:
- * tick_view = new TickView({el: $("target_selector"),
-												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
-												template: "../templates/d3_target.handlebars",
-												bg_color: "#bdbdbd",
-												span_class: "span12"
-												});
  */
 
 Barista.Views.TickView = Backbone.View.extend({
@@ -13057,9 +13091,10 @@ Barista.Views.TickView = Backbone.View.extend({
 	},
 
 	/**
+	 * pert_detail_view.hide(duration);
+	 * 
 	 * hides the view by dimming the opacity and hiding it in the DOM
 	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
-	 * pert_detail_view.hide(duration);
 	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
@@ -13076,9 +13111,10 @@ Barista.Views.TickView = Backbone.View.extend({
 	},
 
 	/**
+	 * pert_detail_view.show(duration);
+	 * 
 	 * shows the view by brightening the opacity and showing it in the DOM
 	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
-	 * pert_detail_view.show(duration);
 	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
@@ -13118,6 +13154,17 @@ Barista.Views.TickView = Backbone.View.extend({
 });
 
 /**
+ * violin_plot_view = new ViolinPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									plot_height: 120});
+ *
  * A Backbone.View that displays a single scatter plot
  * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
  * basic use:
@@ -13136,16 +13183,6 @@ Barista.Views.TickView = Backbone.View.extend({
  * @param {boolean} x_log        if set to true, plots the x axis on a log scale, defaults to false
  * @param {boolean} y_log        if set to true, plots the y axis on a log scale, defaults to false
  * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
- * violin_plot_view = new ViolinPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
-									fg_color: "#1b9e77",
-									span_class: "span4",
-									scale_by: undefined,
-									x_range: undefined,
-									y_range: undefined,
-									x_log: false,
-									y_log: false,
-									plot_height: 120});
  */
 Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 	/**
