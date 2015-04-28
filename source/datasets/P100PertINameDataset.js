@@ -1,29 +1,44 @@
-// # **P100PertINameDataset**
-// An object that extends Barista.Datasets to specify a backing dataset for
-// P100 Perturbation IDs available in the Connectivity Map
-
-// P100PertINameDataset is typically not used directly, rather it's content
-// is extracted from Barista.Datasets in views such as CMapSearchView
+/**
+ * An object that extends Barista.Datasets to specify a backing dataset for P100 Perturbation IDs available
+ * in the Connectivity Map
+ * P100PertINameDataset is typically not used directly, rather it's content is extracted from
+ * Barista.Datasets in views such as CMapSearchView
+ */
 
 Barista.Datasets = _.extend(Barista.Datasets,
 	{ P100PertIName:
 			{
-			// only return 6 items at a time in the autocomplete dropdown
+			/**
+			 * only return 6 items at a time in the autocomplete dropdown
+			 * @type {Number}
+			 */
 			limit: 6,
 
-			// provide a name for the default typeahead data source
+			/**
+			 * provide a name for the default typeahead data source
+			 * @type {String}
+			 */
 			name: 'P100PertIName',
 
-			// the template to render for all results
+			/**
+			 * the template to render for all results
+			 * @type {String}
+			 */
 			template: '<span class="label" style="background-color: #7bd9e4">P100</span><span class="label" style="background-color: {{ color }}">{{ type }}</span> {{ value }}',
 
-			// use twitter's hogan.js to compile the template for the typeahead results
+			/**
+			 * use twitter's hogan.js to compile the template for the typeahead results
+			 */
 			engine: Hogan,
 
 			remote: {
-				// set the remote data source to use cellinfo with custom query params
 				url: '',
-
+                  /**
+                    * set the remote data source to use profileinfo with custom query params
+                    * @param  {string}  url    @todo this parameter is never used, consider removing
+  					*                          from function
+  					* @param  {string}  query  custom query
+                    */ 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return ['//prefix:8080/p100/v1/profileinfo?',
@@ -34,7 +49,10 @@ Barista.Datasets = _.extend(Barista.Datasets,
 				},
 
 				dataType: 'jsonp',
-
+				/**
+				 * returns the processed list of data for the autocomplete
+				 * @param {array} response  array of data to extract pert_iname from
+				 */
 				filter: function(response){
 					var datum_list = [];
 					var auto_data = [];

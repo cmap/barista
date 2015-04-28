@@ -1,62 +1,67 @@
-// # **BaristaBaseView**
-// A Backbone.View the serves as the base view for other views in the barista library.  BaristaBaseView provides common
-// functionality for views including standard initialization, redraw, render, template compilation, and png export functions.
-// This view by itself will construct a single panel with a png export option, but it is meant to be used as the base view
-// that more complex views extend
+/**
+ * A Backbone.View the serves as the base view for other views in the barista library
+ * BaristaBaseView provides common functionality for views including standard initialization, redraw,
+ * render, template compilation, and png export functions
+ * This view by itself will construct a single panel with a png export option, but it is meant to be used
+ * as the base view that more complex views extend
+ * basic use:
+ * base_view = new BaristaBaseView();
+ * optional arguments:
+ * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                               #ffffff
+ * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults
+ *                               to #1b9e77
+ * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
+ *                               "col-lg-12"
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
+ * @param {boolean} png          show the png export button. defaults to true
+ * base_view = new BaristaBaseView({el: $("target_selector",
+									bg_color:"#ffffff",
+									fg_color: "#1b9e77",
+									span_class: "col-lg-12",
+									plot_height: 120});
+ * to extend BaristaBaseView, use
 
-// basic use:
-
-//		base_view = new BaristaBaseView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-// 4.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-// 5.  {Boolean} **png**  show the png export button. defaults to *true*
-
-//		base_view = new BaristaBaseView({el: $("target_selector",
-//									bg_color:"#ffffff",
-//									fg_color: "#1b9e77",
-//									span_class: "col-lg-12",
-//									plot_height: 120});
-
-// to extend BaristaBaseView, use
-
-//		extended_view = BaristaBaseView.extend({
-//										...
-//										});
+		extended_view = BaristaBaseView.extend({
+										...
+										});
+ */
 Barista.Views.BaristaBaseView = Backbone.View.extend({
-	// ### initialize
-	// initialize the view.  Views that extend BaristaBaseView should impliment code overiding this method.
-	// If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they should
-	// call it in their redraw method.  As an example:
-
-	//		initialize: function(){
-	//					this.base_initialize();
-	//					//your code here
-	//					}
-	//
-
+	/**
+ * initialize the view
+ * Views that extend BaristaBaseView should impliment code overiding this method
+ * If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they
+ * should call it in their redraw method
+ * As an example:
+ * initialize: function(){
+				this.base_initialize();
+				//your code here
+				}
+ */
 	initialize: function(){
 		this.base_initialize();
 	},
 
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "BaristaBaseView",
 
-	// ### model
-	// default model to Backbone.Model.  This default is only provided to make the view
-	// functional as a un-extended standalone.  An appropriate data model should be
-	// supplied for all views that extend BaristaBaseView
+	/**
+	 * default model to Backbone.Model
+	 * This default is only provided to make the view functional as a un-extended standalone
+	 * An appropriate data model should be supplied for all views that extend BaristaBaseView
+	 * @type {Backbone}
+	 */
 	model: new Backbone.Model(),
 
-	// ### base_initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view.  This method is provided so it
-	// can be used in view that extend BaristaBaseView
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 * This method is provided so it can be used in view that extend BaristaBaseView
+	 */
 	base_initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -97,8 +102,9 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		return this;
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'barista_view' + new Date().getTime();
@@ -108,26 +114,28 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.  Views
-	// that extend BaristaBaseView should impliment draw code overiding this method.  If extended
-	// BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should
-	// call it in their render method.  As an example:
-
-	//		render: function(){
-	//					this.base_render();
-	//					//your code here
-	//					}
-	//
-
+	/**
+ * completely render the view
+ * Updates both static and dynamic content in the view
+ * Views that extend BaristaBaseView should impliment draw code overiding this method
+ * If extended BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should
+ * call it in their render method
+ * As an example:
+ * render: function(){
+			this.base_render();
+			//your code here
+			}
+ */
 	render: function(){
 		this.base_render();
 		return this;
 	},
 
-	// ### base_render
-	// completely redraw the view. Updates both static and dynamic content in the view.
-	// This method is provided so it can be used in view that extend BaristaBaseView
+	/**
+	 * completely redraw the view
+	 * Updates both static and dynamic content in the view
+	 * This method is provided so it can be used in view that extend BaristaBaseView
+	 */
 	base_render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -184,14 +192,16 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic portions of the view
+	 */
 	update: function(){
 		return this;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// do any pre save work that the child class may require
 		this.save_png_pre();
@@ -235,29 +245,27 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		this.save_png_post();
 	},
 
-	// ### save_png_pre
-	// dummy method that should be overiden if there is any work to do before
-	// saving the png image of the view.  For example, removing elements that
-	// will not render properly could be done before saving the image.  This
-	// function is called as the first step of *save_png*
+	/**
+	 * dummy method that should be overridden if there is any work to do before saving the png image of
+	 * the view
+	 * For example, removing elements that will not render properly could be done before saving the image
+	 * This function is called as the first step of save_png
+	 */
 	save_png_pre: function(){},
 
-	// ### save_png_post
-	// dummy method that should be overiden if there is any work to do after
-	// saving the png image of the view.  For example, restoring elements that
-	// were removed before saving could be done after saving the image.  This
-	// function is called as the last step of *save_png*
+	/**
+	 * dummy method that should be overridden if there is any work to do after saving the png image of
+	 * the view
+	 * For example, restoring elements that were removed before saving could be done after saving the image
+	 * This function is called as the last step of save_png
+	 */
 	save_png_post: function(){},
 
-
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *1*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		var self = this;
@@ -265,14 +273,11 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		setTimeout(function(){self.$el.hide()},duration);
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *1*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to *1*
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		this.$el.show();
@@ -280,49 +285,57 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 	}
 });
 
-// # **BarPlotView**
-// A Backbone.View that displays a scatter plot.  the view's model is assumed to have the same defaults
-// as specified in **BarPlotModel**
-
-// basic use:
-
-//		bar_plot_view = new BarPlotView();
-
-// optional arguments:
-
-// 1.  {String}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {String}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {String}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-// 4.  {Array}  **range**  a two element array specifying the plotting bounds of the plot, defaults to *[min(data),max(data)]*
-// 5.  {Bool}  **log**  if set to true, plots the data on a log scale, defaults to *false*
-// 6. {Number} **min_lock** if set, locks the minimum of the range at the given value. Ignored if range is set. defaults to *undefined*
-// 7. {Number} **max_lock** if set, locks the maximum of the range at the given value. Ignored if range is set. defaults to *undefined*
-// 8. {Bool} **min_expand** if set, allows the minimum of the range to expand if data is found below it. defaults to *false*
-// 9. {Bool} **max_expand** if set, allows the maximum of the range to expand if data is found above it. defaults to *false*
-// 10. {String} **orientation** sets the orientation of the bar plot. options are 'horizontal' or 'vertical'. defaults to *'vertical'*
-// 11.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-
-//		bar_plot_view = new BarPlotView({el: $("target_selector",
-//									bg_color:"#ffffff", 
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									scale_by: undefined,
-//									range: undefined,
-//									log: false,
-//									min_lock: undefined,
-//									max_lock: undefined,
-//									min_expand: false,
-//									max_expand: false,
-//									plot_height: 120});
+/**
+ * A Backbone.View that displays a scatter plot
+ * the view's model is assumed to have the same defaults as specified in BarPlotModel
+ * basic use:
+ * bar_plot_view = new BarPlotView();
+ * optional arguments:
+ * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                               #ffffff
+ * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults to
+ *                               #1b9e77
+ * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
+ *                               "span12"
+ * @param {array}   range        a two element array specifying the plotting bounds of the plot, defaults
+ *                               to [min(data),max(data)]
+ * @param {boolean} log          if set to true, plots the data on a log scale, defaults to false
+ * @param {number}  min_lock     if set, locks the minimum of the range at the given value. Ignored if
+ *                               range is set. defaults to undefined
+ * @param {number}  max_lock     if set, locks the maximum of the range at the given value. Ignored if
+ *                               range is set. defaults to undefined
+ * @param {boolean} min_expand   if set, allows the minimum of the range to expand if data is found below
+ *                               it. defaults to false
+ * @param {boolean} max_expand   if set, allows the maximum of the range to expand if data is found above
+ *                               it. defaults to false
+ * @param {string}  orientation  sets the orientation of the bar plot. options are 'horizontal' or
+ *                               'vertical'. defaults to 'vertical'
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to *120*
+ * bar_plot_view = new BarPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									range: undefined,
+									log: false,
+									min_lock: undefined,
+									max_lock: undefined,
+									min_expand: false,
+									max_expand: false,
+									plot_height: 120});
+ */
 
 Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.BarPlotModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up x and y range and determine if are going to draw the axes dynamically
 		this.range = (this.options.range !== undefined) ? this.options.x_range : undefined;
@@ -359,16 +372,19 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		this.base_render();
 		this.init_plot();
 		this.update();
 	},
 
-	// ### init_plot
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_plot: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -402,8 +418,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('title'));
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		var self = this;
 		
@@ -427,8 +444,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_ranges
-	// utility function used to get the x and y ranges used in the plot
+	/**
+	 * utility function used to get the x and y ranges used in the plot
+	 */
 	set_ranges: function(){
 		var data,min,max;
 		// calculate the range. If we need to caluclate it dynamically, check the lock and expand
@@ -468,8 +486,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_scales
-	// utility function used to get the x and y scales used in the plot
+	/**
+	 * utility function used to get the x and y scales used in the plot
+	 */
 	set_scales: function(){
 		if (this.log){
 			this.x_scale=d3.scale.log().domain([this.range[0],this.range[1]]).range([this.margin, this.width - this.margin]);
@@ -483,8 +502,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### build_axes
-	// utility function used to build x and y axes
+	/**
+	 * utility function used to build x and y axes
+	 */
 	build_axes: function(){
 		var self = this;
 
@@ -510,8 +530,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
+	/**
+	 * utility function to apply custom styles to axis components
+	 */
 	style_axes: function(){
 		this.vis.selectAll('.axis').selectAll("path")
 			.style("fill","none")
@@ -528,8 +549,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.style("font-size","11px");
 	},
 
-	// ### render_vertical_bars
-	// draws bars in vertical mode
+	/**
+	 * draws bars in vertical mode
+	 */
 	render_vertical_bars: function(){
 		var self = this;
 		// get the model's data
@@ -578,8 +600,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.style_axes();
 	},
 
-	// ### render_horizontal_bars
-	// draws bars in horizontal mode
+	/**
+	 * draws bars in horizontal mode
+	 */
 	render_horizontal_bars: function(){
 		var self = this;
 		// get the model's data
@@ -611,8 +634,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('axis_title'));
 	},
 
-	// ### update_vertical_bars
-	// updates the data in the bars in vertical orientation
+	/**
+	 * updates the data in the bars in vertical orientation
+	 */
 	update_vertical_bars: function(){
 		var self = this;
 		// build Axes
@@ -674,8 +698,9 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.style_axes();
 	},
 
-	// ### update_horizontal_bars
-	// updates the data in the bars in vertical orientation
+	/**
+	 * updates the data in the bars in vertical orientation
+	 */
 	update_horizontal_bars: function(){
 		var self = this;
 		// figure out how tall each bar will be
@@ -707,42 +732,46 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.style_axes();
 	}
 });
-// # **BaristaCardView**
-// A Backbone View that displays a card of information wrapped in link.
-// The view is meant to be a top level entry point to other pages
-
-// basic use:
-
-//		card_view = new BaristaCardView();
-
-// optional arguments:
-
-// 1.  {string}  **url**  the link to navigate to if the card is clicked, defaults to *""*
-// 2.  {string}  **title**  the title of the card. defaults to *"title"*
-// 3.  {string}  **subtitle**  the subtitle of the card. defaults to *"subtitle"*
-// 2.  {string}  **image**  the link to an image to show as the cards main content. defaults to *""*
-// 4.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 5.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-
-//		card_view = new BaristaCardView({el: $("target_selector",
-//									url:"",
-//									title:"",
-//									subtitle:"",
-//									fg_color: "#1b9e77",
-//									image:"",
-//									span_class: "col-lg-12"});
+/**
+ * A Backbone View that displays a card of information wrapped in link
+ * The view is meant to be a top level entry point to other pages
+ * basic use:
+		card_view = new BaristaCardView();
+ * optional arguments:
+ * @param {string} url         the link to navigate to if the card is clicked, defaults to ""
+ * @param {string} title       the title of the card. defaults to "title"
+ * @param {string} subtitle    the subtitle of the card. defaults to "subtitle"
+ * @param {string} image       the link to an image to show as the cards main content. defaults to ""
+ * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
+ *                             #1b9e77
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
+ *                             "col-lg-12"
+ * card_view = new BaristaCardView({el: $("target_selector",
+									url:"",
+									title:"",
+									subtitle:"",
+									fg_color: "#1b9e77",
+									image:"",
+									span_class: "col-lg-12"});
+ */
 Barista.Views.BaristaCardView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "BaristaCardView",
 
-	// ## model
-	// supply a base model for the view.  Overide this if you need to use it for dynamic content
+	/**
+	 * supply a base model for the view
+	 * Overide this if you need to use it for dynamic content
+	 * @type {Backbone}
+	 */
 	model: new Backbone.Model(),
 
-	// ## initialize
-	// overide the view's default initialize method in order to catch options and
-	// render a custom template
+	/**
+	 * overide the view's default initialize method in order to catch options and render a custom template
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : "#1b9e77";
@@ -769,8 +798,9 @@ Barista.Views.BaristaCardView = Backbone.View.extend({
 		this.compile_template();
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'barista_view' + new Date().getTime();;
@@ -784,28 +814,28 @@ Barista.Views.BaristaCardView = Backbone.View.extend({
 	}
 });
 
-// # **BaristaUserCardView**
-// A Backbone View that displays a card of information about a user
-
-// basic use:
-
-//		card_view = new BaristaUserCardView();
-
-// optional arguments:
-
-// 1.  {string}  **realName**  the name to display. defaults to *"Name"*
-// 2.  {string}  **username**  the name to display. defaults to *"Username"*
-// 3.  {string}  **email**  the email to display. defaults to "user@mail.com"
-// 2.  {string}  **badges**  an array of badge images to display. defaults to *[]*
+/**
+ * A Backbone View that displays a card of information about a user
+ * basic use:
+ * card_view = new BaristaUserCardView();
+ * optional arguments:
+ * @param {string} realName  the name to display. defaults to "Name"
+ * @param {string} username  the name to display. defaults to "Username"
+ * @param {string} email     the email to display. defaults to "user@mail.com"
+ * @param {string} badges    an array of badge images to display. defaults to []
+ */
 
 Barista.Views.BaristaUserCardView = Backbone.View.extend({
-    // ### name
-    // give the view a name to be used throughout the View's functions when it needs to know what its class name is
+    /**
+     * give the view a name to be used throughout the View's functions when it needs to know what its class
+     * name is
+     * @type {String}
+     */
     name: "BaristaUserCardView",
 
-    // ## initialize
-    // overide the view's default initialize method in order to catch options and
-    // render a custom template
+    /**
+     * overide the view's default initialize method in order to catch options and render a custom template
+     */
     initialize: function(){
         // set up defaults
         this.realName = (this.options.realName !== undefined) ? this.options.realName : "Name";
@@ -818,8 +848,9 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
         this.compile_template();
     },
 
-    // ### compile_template
-    // use Handlebars to compile the template for the view
+    /**
+     * use Handlebars to compile the template for the view
+     */
     compile_template: function(){
         var self = this;
         this.div_string = 'barista_view' + new Date().getTime();;
@@ -830,8 +861,9 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
                                                 badges: this.badge_urls}));
     },
 
-    // ### map_badges
-    // translate the passed array of badge names into image urls
+    /**
+     * translate the passed array of badge names into image urls
+     */
     map_badges: function(){
         var self = this;
         this.badge_urls = [];
@@ -851,35 +883,39 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
     }
 });
 
-// # **BubbleView**
-// A Backbone.View that displays a single level tree of data as a bubble plot.  The view should be bound to a
-// model such as a **PertCellBreakdownModel** that captures tree data in a *tree_object* attribute.
-
-// basic use:
-
-//		bubble_view = new BubbleView({el: $("target_selector")});
-
-// optional arguments:
-
-// 3.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span4"*
-
-//		bubble_view = new BubbleView({el: $("target_selector"),
-//									fg_color: "#1b9e77",
-//									span_class: "span4"});
+/**
+ * A Backbone.View that displays a single level tree of data as a bubble plot
+ * The view should be bound to a model such as a **PertCellBreakdownModel** that captures tree data in a
+ * tree_object attribute
+ * basic use:
+ * bubble_view = new BubbleView({el: $("target_selector")});
+ * optional arguments:
+ * @param {string} fg_color    the hex color code to use as the foreground color of the view, defaults to
+ *                             #1b9e77
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span4"
+ * bubble_view = new BubbleView({el: $("target_selector"),
+									fg_color: "#1b9e77",
+									span_class: "span4"});
+ */
 
 Barista.Views.BubbleView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "BubbleView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.PertCellBreakdownModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.fg_color = (this.options.fg_color !== undefined) ? this.options.fg_color : "#1b9e77";
@@ -925,8 +961,9 @@ Barista.Views.BubbleView = Backbone.View.extend({
 		$(window).resize(function() {self.render();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();;
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
@@ -934,8 +971,9 @@ Barista.Views.BubbleView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### render
-	// draw the view from scratch
+	/**
+	 * draw the view from scratch
+	 */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -1006,10 +1044,13 @@ Barista.Views.BubbleView = Backbone.View.extend({
         this.nodes = this.vis.selectAll("circle");
         this.nodes.call(this.force.drag());
 
-		// reset a damening variable for simulation
+		// reset a dampening variable for simulation
 		this.damp = 0.1;
 
-		// tick function for use in the force class
+		/**
+		 * tick function for use in the force class, decrements alpha value
+		 * @param  {object} e  data from tick event
+		 */
 		function tick(e){
 			self.vertical_split(e.alpha);
 			self.nodes.attr("cx", function(d) {return d.x;})
@@ -1019,40 +1060,56 @@ Barista.Views.BubbleView = Backbone.View.extend({
         }
 	},
 
-	// ### vertical_split
-	// push bubbles vertically based on an attribute property
+	/**
+	 * push bubbles vertically based on an attribute property
+	 * @param  {number} alpha  in combination with damp value, creates spring constant for bubble animation
+	 */
 	vertical_split: function(alpha){
 		var self = this;
+		//select all circles on the page
 		bubble_selection = this.vis.selectAll('circle');
 		bubble_selection
+		//edit the center y attribute
 			.attr("cy",function(d){
+				//if the vertical split category is undefined, return the y value of d
 				if (self.category_centers[d[self.v_split]] === undefined){
 					return(d.y);
 				}
+				//if the value of the vertical split category is 0, return the y value of d
 				var category_y = self.category_centers[d[self.v_split]].y;
 				if (category_y === 0){
 					return(d.y);
-				}else{
+				}
+				//otherwise, add the current d.y value to the product of equations involving the vertical
+				//center, vertical split category, dampening value, and alpha value
+				else{
 					d.y = d.y + (self.v_center + category_y - d.y) * (self.damp + 0.03) * alpha * 1.1;
 					return(d.y);
 				}
 			})
+			//edit the center x attribute
 			.attr("cx",function(d){
+				//if the vertical split category is undefined, return the y value of d
 				if (self.category_centers[d[self.v_split]] === undefined){
 					return(d.x);
 				}
+				//if the value of the vertical split category is 0, return the x value of d
 				var category_x = self.category_centers[d[self.v_split]].x;
 				if (category_x === 0){
 					return(d.x);
-				}else{
+				}
+				//otherwise, add the current d.x value to the product of equations involving the horizontal
+				//center, vertical split category, dampening value, and alpha value
+				else{
 					d.x = d.x + (self.h_center - category_x - d.x) * (self.damp + 0.03) * alpha * 1.1;
 					return (d.x);
 				}
 			});
 	},
 
-	// ### update
-	// update the plot with new data
+	/**
+	 * update the plot with new data
+	 */
 	update: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -1112,7 +1169,10 @@ Barista.Views.BubbleView = Backbone.View.extend({
         this.nodes = this.vis.selectAll("circle");
         this.nodes.call(this.force.drag());
 
-        // tick function for use in the force class
+        /**
+		 * tick function for use in the force class, decrements alpha value
+		 * @param  {object} e  data from tick event
+		 */
 		function tick(e){
 			self.vertical_split(e.alpha);
 			self.nodes.attr("cx", function(d) {return d.x;})
@@ -1124,36 +1184,43 @@ Barista.Views.BubbleView = Backbone.View.extend({
 	}
 });
 
-// # **CMapFooterView**
-
-// A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
-// the view provides standard copyright text and customizable organization name,
-// terms and conditions link, and organization logo/link
-// basic use:
-
-//		header = new CMapHeaderView({el:"header_target"});
-
-// optional arguments:
-
-// 1.  {string}  **organization**  the name of the organization that claims copyright. Defaults to *Broad Institute*
-// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *//lincscloud.org/terms-and-conditions/*
-// 3.  {Array}  **logo**  The urls to organization logos to use. Defaults to *['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png','//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
-// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['//www.broadinstitute.org/','//lincscloud.org/']*
-// 5.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapFooter.handlebars*
-
-//		header = new CMapFooterView({el:"footer_target",
-//									organization: "Broad Institute",
-//									terms_url: "//lincscloud.org/terms-and-conditions/",
-// 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
-// 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
-//									template: "../templates/CMapFooter.handlebars"});
+/**
+ * A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
+ * the view provides standard copyright text and customizable organization name, terms and conditions link,
+ * and organization logo/link
+ * basic use:
+ * header = new CMapHeaderView({el:"header_target"});
+ * optional arguments:
+ * @param {string} organization  the name of the organization that claims copyright. Defaults to Broad
+ *                               Institute
+ * @param {string} terms_url     The url on which to find terms and conditions. Defaults to
+ *                               '//lincscloud.org/terms-and-conditions/'
+ * @param {array}  logo          The urls to organization logos to use. Defaults to
+ *                               ['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png',
+ *                               '//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']
+ * @param {array}  logo_url      The urls to organization links to use. Defaults to 
+ *                               ['//www.broadinstitute.org/','//lincscloud.org/']
+ * @param {string} template      The path to a handlebars template to use. Defaults to
+ *                               templates/CMapFooter.handlebars
+ * header = new CMapFooterView({el:"footer_target",
+									organization: "Broad Institute",
+									terms_url: "//lincscloud.org/terms-and-conditions/",
+ 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
+ 									logo_url: ['//www.broadinstitute.org/','//lincscloud.org/'],
+									template: "../templates/CMapFooter.handlebars"});
+ */
 Barista.Views.CMapFooterView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CMapFooterView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
+	/**
+	 * overide the default Backbone.View initialize function to compile a built in template and then render
+	 * the view
+	 */
 	initialize: function(){
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
@@ -1169,8 +1236,9 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 		this.render();
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the specified template for the view
+	/**
+	 * use Handlebars to compile the specified template for the view
+	 */
 	compile_template: function(){
 		// grab the template
 		this.compiled_template = BaristaTemplates.CMapFooter;
@@ -1187,32 +1255,35 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 	}
 });
 
-// # **CMapHeaderView**
-
-// A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
-// the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
-// sharing, settings, and information.  The view accepts as parameters a page title, subtitle, and handlebars template
-// basic use:
-
-//		header = new CMapHeaderView({el:"header_target"});
-
-// optional arguments:
-
-// 1.  {string}  **title**  The title of the page. Defaults to *Title*
-// 2.  {string}  **subtitle**  The title of the page. Defaults to *Sub Title*
-// 3.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapHeader.handlebars*
-
-//		header = new CMapHeaderView({el:"header_target",
-//									title: "",
-//									subtitle: "",
-//									template: "templates/CMapHeader.handlebars"});
+/**
+ * A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
+ * the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+ * sharing, settings, and information
+ * The view accepts as parameters a page title, subtitle, and handlebars template
+ * basic use:
+ * header = new CMapHeaderView({el:"header_target"});
+ * optional arguments:
+ * @param {string} title     The title of the page. Defaults to Title
+ * @param {string} subtitle  The title of the page. Defaults to Sub Title
+ * @param {string} template  The path to a handlebars template to use. Defaults to
+ *                           templates/CMapHeader.handlebars
+ * header = new CMapHeaderView({el:"header_target",
+									title: "",
+									subtitle: "",
+									template: "templates/CMapHeader.handlebars"});
+ */
 Barista.Views.CMapHeaderView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CMapHeaderView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
+	/**
+	 * overide the default Backbone.View initialize function to compile a built in template and then render
+	 * the view
+	 */
 	initialize: function(){
         var self = this;
 
@@ -1239,8 +1310,9 @@ Barista.Views.CMapHeaderView = Backbone.View.extend({
 		}
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the specified template for the view
+	/**
+	 * use Handlebars to compile the specified template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		// grab the template
@@ -1254,26 +1326,31 @@ Barista.Views.CMapHeaderView = Backbone.View.extend({
 	}
 });
 
-// # **CMapNavigationView**
-
-// A view the provides the standard Connectivity map application navigation for apps built on apps.lincscloud.org
-// basic use:
-
-//		nav = new CMapNavigationView({el:"header_target"});
+/**
+ * A view the provides the standard Connectivity map application navigation for apps built on
+ * apps.lincscloud.org
+ * basic use:
+ * nav = new CMapNavigationView({el:"header_target"});
+ */
 
 Barista.Views.CMapNavigationView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CMapNavigationView",
 
-	// ### initialize
-	// overide the default Backbone.View initialize function to compile a built in template and then render the view
+	/**
+	 * overide the default Backbone.View initialize function to compile a built in template and then render
+	 * the view
+	 */
 	initialize: function(){
         var self = this;
 
         // store passed parameters as attributes of the view
-		this.items = (this.options.items !== undefined) ? this.options.items : ["all apps","data synopsis","query","compound digest","gene digest","history"];
-        this.links = (this.options.links !== undefined) ? this.options.links : ["/app_list","/data_synopsis","/query","/compound_digest","/gene_digest","/history"];
+				this.items = (this.options.items !== undefined) ? this.options.items : ["all apps","data synopsis","query","compound digest","gene digest","PCL","Concordance","history"];
+        this.links = (this.options.links !== undefined) ? this.options.links : ["/app_list","/data_synopsis","/query","/compound_digest","/gene_digest","/pcl","/concordance","/history"];
 
 
         // wrap the content
@@ -1291,16 +1368,18 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
 
 	},
 
-    // ### wrap_content
-    // wrap all existing content in the elements we need to work
-    // the slide out navigation that we are going to build
+    /**
+     * wrap all existing content in the elements we need to work the slide out navigation that we are going
+     * to build
+     */
     wrap_content: function(){
         $("body").children().wrapAll('<div class="cmap-navigation-content"/>');
         $(".cmap-navigation-content").wrapAll('<div class="cmap-navigation-wrapper"/>');
     },
 
-    // ### build navigation
-    // build the navigation pane using all reuested menu items and links
+    /**
+     * build the navigation pane using all reuested menu items and links
+     */
     build_navigation: function(){
         var self = this;
         $(".cmap-navigation-wrapper").prepend('<div class="cmap-navigation-menu"></div>');
@@ -1314,7 +1393,11 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
 			$(".cmap-navigation-wrapper").toggleClass("show-nav");
 		});
 	},
-
+/**
+ * adds a new attribute to the element that is comprised of an href with link text, and visible text
+ * @param {string} text   visible text of the element
+ * @param {string} route  href value of the element
+ */
 	addLink: function(text,route) {
 		var $el = $(".cmap-navigation-menu");
 		$el.append('<a href="' + route + '" class="col-xs-12 cmap-navigation-menu-item">' + text + '</a>');
@@ -1322,29 +1405,32 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
 });
 
 /**
-A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
-search view's input, a "search:DidType" event is fired.
-
-@class PertSearchBar
-@constructor
-@extends Backbone.View
-**/
+ * A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
+ * functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the
+ * search view's input, a "search:DidType" event is fired.
+ * @class PertSearchBar
+ * @constructor
+ * @extends Backbone.View
+*/
 Barista.Views.CellSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+ */
 	name: "CellSearchBar",
-
+/**
+ * overrides the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 
 		/**
-		determines whether or not the search view will match cell lines for autocomplete
-
-		@property match_cell_lines
-		@default true
-		@type Boolean
-		**/
+		 * determines whether or not the search view will match cell lines for autocomplete
+		 * @property match_cell_lines
+		 * @default true
+		 * @type Boolean
+		*/
 		// determine whether or not we will match cell line strings in the autocomplete
 		this.match_cell_lines = (this.options.match_cell_lines !== undefined) ? this.options.match_cell_lines : true;
 
@@ -1359,6 +1445,10 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 			self.render();
 
 			// once the view is rendered, bind a change event to trigger a "search:DidType" event from the view
+			/**
+			 * once the view is rendered, bind a change event to trigger a "search:DidType" event from
+			 * the view
+			 */
 			var change_callback = function () {
 				var val  = $("#search",self.el).val();
 				var type = "";
@@ -1367,13 +1457,15 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 				}
 
 				/**
-				Fired when the text in the view's search box changes
-
-				@event search:DidType
-				@param {Object} [msg={val:"",type:""}] an object containing the message of the event
-				@param {String} [msg.val=""] the string val of the views search bar at the time of the event
-				@param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
-				**/
+				 * Fired when the text in the view's search box changes
+				 * @event search:DidType
+				 * @param {Object} [msg={val:"",type:""}] an object containing the message of the event
+				 * @param {String} [msg.val=""] the string val of the views search bar at the time of
+				 *                              the event
+				 * @param {String} [msg.type=""] the type of message being passed, either "" or "cell"
+				 *                               "cell"is passed, if the string matches a cell line and
+				 *                               match\_cell\_lines is set
+				 */
 				self.trigger("search:DidType",{val: val,search_column: undefined});
 			};
 
@@ -1389,21 +1481,16 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 
 	},
 
-
-	/**
-    Gets the current text entered in the view's search bar
-
-    @method get_val
-    **/
+    /**
+     * Gets the current text entered in the view's search bar
+     */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-
-    @method random_val
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */
 	random_val: function(){
 		var self = this;
 		var cellinfo = Barista.APIURL + '/a2/cellinfo?callback=?';
@@ -1416,17 +1503,18 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 			self.trigger("search:DidType",{val: val,search_column: 'cell_id'});
 		});
 	},
-
+/**
+ * triggers a "search:DidType" event for the given search value
+ * @param {} new_val value to search for
+ */
 	set_val: function(new_val){
 		$("#search",this.el).val(new_val);
 		this.trigger("search:DidType",{val: new_val,search_column: undefined }); //TODO need to find search column info
 	},
 
 	/**
-    renders the view
-
-    @method render
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 
@@ -1441,34 +1529,38 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 	}
 });
 
-// # **CompoundDetailView**
-
-// A Backbone.View that shows information about a small molecule compound.  This view is
-// frequently paired with a CompoundDetailModel.
-
-//		pert_detail_view = new CompoundDetailView({el: $("target_selector")});
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-
-//		pert_detail_view = new CompoundDetailView({el: $("target_selector"),
-// 												model: CompoundDetailModel,
-// 												bg_color: "#ffffff",
-// 												span_class: "col-lg-12"});
+/**
+ * A Backbone.View that shows information about a small molecule compound
+ * This view is frequently paired with a CompoundDetailModel
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector")});
+ * optional arguments:
+ * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
+ *                             #ffffff
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
+ *                             "col-lg-12"
+ * pert_detail_view = new CompoundDetailView({el: $("target_selector"),
+ 												model: CompoundDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});
+ */
 Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CompoundDetailView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.CompoundDetailModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up the plot height
 		this.options.plot_height = 260;
@@ -1482,8 +1574,10 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		this.base_initialize();
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		// keep track of our scope at this level
 		var self = this;
@@ -1715,17 +1809,28 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		this.render();
 		return this;
 	},
 
-	// ### render_label_and_value
-	// utility function to draw a standard label and value for that label under
-	// the main pert_iname and pert_id text.  If pass_model_field_as_text is true,
-	// pass the value in model_field as text instead of serching for it in the model
+	/**
+	* utility function to draw a standard label and value for that label under the main pert_iname and
+	* pert_id text
+	* If pass_model_field_as_text is true, pass the value in model_field as text instead of serching for
+	* it in the model
+	* @param  {string}  class_name_base           base of the class name of the attribute
+	* @param  {string}  label_text                visible text that labels the element on screen
+	* @param  {string}  model_field               text to appear in the model field
+	* @param  {boolean} pass_model_field_as_text  determines whether the value in model_field will appear
+	*                                             as text (true) or if the value must be obtained by
+	*                                             searching (false)
+	* @param  {number}  x_pos_base                base position for the x_label set
+	* @param  {[type]}  value_link                iff supplied, used as a link on the visible text
+*/
 	render_label_and_value: function(class_name_base, label_text, model_field, pass_model_field_as_text, x_pos_base, value_link){
 		// set up a local variable to keep our scope straight
 		var self = this;
@@ -1792,17 +1897,19 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render_summary
-	// utility function to break a long summary string into a multiline
-	// and draw it at the desired location
-
-	// options
-
-	// 1.  {string}  **summary_string**  the string to be displayed, defaults to *""*
-	// 2.  {right}  **right**  the x position to place the **right** edge of text, defaults to *this.width*
-	// 3.  {left}  **left**  the x position to place the **left** edge of text, defaults to *this.width - 500*
-	// 4.  {top}  **top**  the y position to place the **top** edge of text, defaults to *0*
-	// 5.  {bottom}  **bottom**  the y position to place the **bottom** edge of text, defaults to *100*
+	/**
+	 * utility function to break a long summary string into a multiline and draw it at the desired location
+	 * @param  {object} options  describes the options for drawing a string to the screen
+	 * arguments for options:
+	 * @param {string} summary_string  the string to be displayed, defaults to ""
+	 * @param {right}  right           the x position to place the right edge of text, defaults to
+	 *                                 this.width
+	 * @param {left}   left            the x position to place the left edge of text, defaults to
+	 *                                 this.width - 500
+	 * @param {top}    top             the y position to place the **top** edge of text, defaults to 0
+	 * @param {bottom} bottom          the y position to place the **bottom** edge of text, defaults to
+	 *                                 100
+	 */
 	render_summary: function(options){
 		var self = this;
 
@@ -1854,8 +1961,9 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 				.text(function(d){return d;});
 	},
 
-	// ### toggle_panel_state
-	// utility to open or close the view
+	/**
+	 * utility to open or close the view
+	 */
 	toggle_panel_state: function(){
 		var self = this;
 		var h;
@@ -1879,8 +1987,14 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		this.vis.transition().duration(500).attr("height",h);
 	},
 
-	// ### draw tags
-	// utility function to draw tags given an array.
+	/**
+	 * utility function to draw tags given an array
+	 * @param  {string} class_name_base  base of the class name of the attribute
+	 * @param  {string} label_text       visible text that labels the element on screen
+	 * @param  {array}  data             array of data
+	 * @param  {string} fg_color         fill color of label
+	 * @param  {string} tag_color        color for background layer of tags 
+	 */
 	draw_tags: function(class_name_base, label_text, data, fg_color, tag_color){
 		var x_offsets = [10];
 		var row_number = 0;
@@ -1934,16 +2048,17 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 		return this
 	},
 
-	// ### clear_summary
-	// utility function to clear the pert summary
+	/**
+	 * utility function to clear the pert summary
+	 */
 	clear_summary: function(){
 		this.fg_layer.selectAll('.summary_text').data([]).exit().remove();
 	},
 
 
-	// ### save_png_pre
-	// overide the base views save_png_pre method to clear out the image so we
-	// can render the png properly
+	/**
+	 * override the base views save_png_pre method to clear out the image so we can render the png properly
+	 */
 	save_png_pre: function(){
 		// remove the static index reagent icon
 		this.fg_layer.selectAll('.index_text_icon').data([]).exit().remove();
@@ -1953,9 +2068,9 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 			.attr('x',10)
 	},
 
-	// ### save_png_post
-	// overide the base views save_png_post method to restore the image after
-	// saving
+	/**
+	 * override the base views save_png_post method to restore the image after saving
+	 */
 	save_png_post: function(){
 		// draw the static index reagent icon
 		this.fg_layer.selectAll('.index_text_icon').data([]).exit().remove();
@@ -1975,19 +2090,23 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 });
 
 /**
-A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
-search view's input, a "search:DidType" event is fired.
-
-@class PertSearchBar
-@constructor
-@extends Backbone.View
-**/
+ * A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
+ * functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
+ * search view's input, a "search:DidType" event is fired.
+ * @class PertSearchBar
+ * @constructor
+ * @extends Backbone.View
+*/
 Barista.Views.CompoundSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "CompoundSearchBar",
-
+/**
+ * overrides the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 		this.render();
@@ -1997,13 +2116,13 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 			var val  = $("#search",self.el).val();
 			var type = "";
 			/**
-			Fired when the text in the view's search box changes
+			 * Fired when the text in the view's search box changes
+			 * @event search:DidType
+			 * @param {Object} [msg={val:"",type:""}] an object containing the message of the event
+			 * @param {String} [msg.val=""] the string val of the views search bar at the time of the event
+			 * @param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
+			 */
 
-			@event search:DidType
-			@param {Object} [msg={val:"",type:""}] an object containing the message of the event
-			@param {String} [msg.val=""] the string val of the views search bar at the time of the event
-			@param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
-			**/
 			self.trigger("search:DidType",{val: val,type: type});
 		};
 
@@ -2020,19 +2139,15 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 
 	/**
-    Gets the current text entered in the view's search bar
-    
-    @method get_val
-    **/
+	 * Gets the current text entered in the view's search bar
+    */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    
-    @method random_val
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */    
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
@@ -2047,17 +2162,18 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 			self.trigger("search:DidType",{val: val,type: 'single'});
 		});
 	},
-
+/**
+ * triggers a "search:DidType" event for the given search value
+ * @param {string} new_val  value to search for
+ */
 	set_val: function(new_val){
 		$("#search",this.el).val(new_val);
 		this.trigger("search:DidType",{val: new_val,type: 'single'});
 	},
 
 	/**
-    renders the view
-    
-    @method render
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 		// load the template into the view's el tag
@@ -2086,6 +2202,10 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 				
 				dataType: 'jsonp',
 
+				/**
+				 * returns the processed list of data for the autocomplete
+				 * @param {array} response  array of data to extract cell id from
+				 */
 				filter: function(response){
 					var datum_list = [];
 					var auto_data = [];
@@ -2135,11 +2255,18 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	}
 });
 Barista.Views.FlatTreeMapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "FlatTreeMapView",
 
 		model: new Barista.Models.PertCellBreakdownModel(),
+
+		/**
+		 * overrides the default Backbone.View initialize method
+		 */
 
 		initialize: function(){
 		// set up color options.  default if not specified
@@ -2191,13 +2318,18 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 		$(window).resize(function() {self.render();} );
 	},
 
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 												span_class: this.span_class,
 												height: this.plot_height}));
 	},
-
+/**
+ * renders the view
+ */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -2269,7 +2401,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			.on("mouseout",function(){d3.select(this).transition().duration(500).attr("opacity",0.25);})
 			.on("click",function(){self.savePng();});
 	},
-
+/**
+ * updates the visibility of the element
+ */
 	update_vis: function(){
 		var self = this;
 		// grab the data from the model and plot the state of the treemap
@@ -2329,12 +2463,14 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 		}
 
 	},
-
+/**
+ * inserts tooltips that display the cell id and count for non-empty datasets
+ */
 	add_tooltips: function(){
 		// make a selection of all cells in the treemap
 		var cell_selection = $('.' + this.div_string + '_cell');
 
-		// remove existing tooltips so we don confuse the labels
+		// remove existing tooltips so we don't confuse the labels
 		cell_selection.each(function(){
 			$(this).tooltip('destroy');
 		});
@@ -2352,15 +2488,19 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			});
 		}
 	},
-
+/**
+ * clear visible text in fields
+ */
 	clear_text: function(){
 		this.vis.data([this.data]).selectAll("text.name").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll("text.count").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll(".foreign").data([]).exit().remove();
 	},
 
-	// add a foreignObject DOM snippet for each cell in the treemap based on
-	// an input mapping of DOM snippets
+	/**
+	 * add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM
+	 * snippets
+	 */
 	draw_foreignObject: function(){
 		var self = this;
 		this.vis.data([this.data]).selectAll(".foreign").data([]).exit().remove();
@@ -2394,7 +2534,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 				}
 			})
 	},
-
+/**
+ * draws text to the screen based on treemap data
+ */
 	draw_text: function(){
 		this.vis.data([this.data]).selectAll("text.name").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll("text.name").data(this.treemap.nodes)
@@ -2440,7 +2582,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			.style("pointer-events","none")
 			.transition().duration(500).attr("opacity",1);
 	},
-
+/**
+ * saves the target svg on the screen to a png file
+ */
 	savePng: function(){
 		//set the animate the div containing the view by applying and then removing
 		// css classes that defined the transitions we want
@@ -2475,10 +2619,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 	}
 });
 
-/**********************************************************
- * Generic Count View                                     *
+/**
  * a view that supports a single label and a single count *
- **********************************************************/
+ */
 
 Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
   /**
@@ -2503,6 +2646,9 @@ Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
   initialize: function(){
     // set up label, default if not specified
     this.label = (this.options.label !== undefined) ? this.options.label : 'Signatures';
+
+    // set the animation duration for count.
+    this.duration = (this.options.duration != undefined) ? this.options.duration : 500;
 
     // set up the top bar color, default to gray if not specified
     this.top_bar_color = (this.options.top_bar_color !== undefined) ? this.options.top_bar_color : 'white';
@@ -2613,7 +2759,7 @@ Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
 
     // transition the count to the new value
     this.fg_layer.selectAll('.genericCountViewCount').data([1])
-      .transition().duration(500)
+      .transition().duration(this.duration)
       .tween("text", function() {
           var i = d3.interpolate(this.textContent.replace(",",""), count);
           return function(t) {
@@ -2627,10 +2773,15 @@ Barista.Views.GenericCountView = Barista.Views.BaristaBaseView.extend({
 });
 
 Barista.Views.GridView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "GridView",
-
+/**
+ * overrides the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 		// default search value
@@ -2664,10 +2815,16 @@ Barista.Views.GridView = Backbone.View.extend({
 			events: {
 				"click": "onClick"
 			},
+			/**
+			 *  build the grid on the template using a clickable row
+			 *  If a row is clicked, a grid:RowClick event is fired with the row's model as the passed data
+			 */
 			onClick: function () {
 				self.trigger("grid:RowClick", this.model);
 			},
-			// overide Backgrid.Row's native render method
+			/**
+			 * overide Backgrid.Row's native render method
+			 */
 			render: function () {
 				this.$el.empty();
 				var fragment = document.createDocumentFragment();
@@ -2683,7 +2840,9 @@ Barista.Views.GridView = Backbone.View.extend({
 				return this;
 			},
 
-			// overide Backgrid.Row's native remove method
+			/**
+			 * overide Backgrid.Row's native remove method
+			 */
 			remove: function () {
 				this.$el.addClass("cmap-active-grid-row");
 				this.$el.animate({"opacity":0},1000);
@@ -2738,8 +2897,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 	},100),
 
-	// ### add_scroll_to_top_button
-	// adds a UI control to scroll the top of the grid
+	/**
+	 * adds a UI control to scroll the top of the grid
+	 */
 	add_scroll_to_top_button: function(){
 		var self = this;
 		this.scroll_to_top_button_id = this.div_string + 'scroll_button';
@@ -2748,33 +2908,30 @@ Barista.Views.GridView = Backbone.View.extend({
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### scroll_to_top
-	// scrolls the grid to the top of its container
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * scrolls the grid to the top of its container
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	scroll_to_top: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
 		$("#" + this.div_string).animate({scrollTop:0},duration);
 		this.hide_scroll_to_top_button();
 	},
 
-	// ### show_scroll_to_top_button
-	// shows the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * scrolls the grid to the bottom of its container
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	show_scroll_to_top_button: function(duration){
 		duration = (duration !== undefined) ? duration : 500;
 		$("#" + this.scroll_to_top_button_id).clearQueue();
 		$("#" + this.scroll_to_top_button_id).animate({opacity:1},duration);
 	},
 
-	// ### hide_scroll_to_top_button
-	// hides the scroll to top button
-	// argurments:
-
-	// 1.  {number}  **duration**  the duration of the scroll animation in ms, defaults to *500*
+	/**
+	 * hides the scroll to top button
+	 * @param  {number} duration  the duration of the scroll animation in ms, defaults to 500
+	 */
 	hide_scroll_to_top_button: function(duration){
 		var self= this;
 		duration = (duration !== undefined) ? duration : 500;
@@ -2782,6 +2939,12 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.scroll_to_top_button_id).animate({opacity:0},duration);
 	},
 
+/**
+ * changes the visible collection data and rejects the slice
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit        the number of models to be fetched
+ */
 	replace_collection: function(search_val,search_type,limit){
 		var getData_promise;
 		var self = this;
@@ -2807,7 +2970,12 @@ Barista.Views.GridView = Backbone.View.extend({
 		});
 		return getData_promise;
 	},
-
+/**
+ * changes the visible collection data
+ * @param  {string} search_val   the value to search for
+ * @param  {string} search_type  the type of search that will be performed by getData
+ * @param  {number} limit        the number of models to be fetched
+ */
 	update_collection: function(search_val,search_type,limit){
 		var getData_promise;
 		if (this.collection.models.length < this.collection.maxCount){
@@ -2826,7 +2994,9 @@ Barista.Views.GridView = Backbone.View.extend({
 			return getData_promise;
 		}
 	},
-
+/**
+ * hides the visible data and rejects the slice
+ */
 	clear_collection: function(){
 		var self = this;
 		this.collection.skip = 0;
@@ -2845,7 +3015,9 @@ Barista.Views.GridView = Backbone.View.extend({
 
 		},500);
 	},
-
+/**
+ * changes the height of the grid based on the number of elements it holds
+ */
 	resize_div: function(){
 		var self = this;
 		var container_height =  $("#" + this.div_string).height();
@@ -2857,7 +3029,9 @@ Barista.Views.GridView = Backbone.View.extend({
 			$("#" + self.div_string).animate({height:target_height},500);
 		},500);
 	},
-
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'backgrid_target' + new Date().getTime();;
 		this.$el.append(BaristaTemplates.CMapBaseGrid({div_string: this.div_string,
@@ -2869,7 +3043,10 @@ Barista.Views.GridView = Backbone.View.extend({
 													   edit: this.edit,
 													}));
 	},
-
+/**
+ * attempts to return data from a slice, and returns the slice button to its previous state if a failure
+ * is detected
+ */
 	slice_all_table_data: function(){
 		var self = this;
 		// change the button state to progress
@@ -2897,6 +3074,7 @@ Barista.Views.GridView = Backbone.View.extend({
 			dataType: 'json',
 			url: sig_slice,
 			data: {q: self.collection.q_param,l: 1000},
+			
 			success: function(res){
 				if (res.file_url){
 					self.change_slice_button_state("link",res.file_url);
@@ -2904,6 +3082,7 @@ Barista.Views.GridView = Backbone.View.extend({
 					self.change_slice_button_state("fail");
 				}
 			},
+
 			error: function(){
 				self.change_slice_button_state("fail");
 			}
@@ -2917,10 +3096,14 @@ Barista.Views.GridView = Backbone.View.extend({
 			self.change_slice_button_state("fail");
 		},60000);
 	},
-
+/**
+ * changes the state of the slice button based on the current state
+ * @param  {string} state  current state of the slice button (i.e. slice, progress, or link)
+ * @param  {string} link   link to the slice
+ */
 	change_slice_button_state: function (state,link){
 		var self = this;
-		// unbind an handlers on the button
+		// unbind any handlers on the button
 		$("#" + self.div_string + "_slice",self.el).unbind();
 
 		// handle the re-binding of handlers and update the button text and icon
@@ -2967,7 +3150,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		}
 
 	},
-
+	/**
+	 * download the backing data that matches the current model state
+	 */
 	download_table: function(){
 		var self = this;
 		// indicate we are downloading something
@@ -3024,8 +3209,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		});
 	},
 
-	// ### open_edit_table
-	// open up a column to show editing buttons
+	/**
+	 * open up a column to show editing buttons
+	 */
 	open_edit_table: function(){
 		var self = this;
 		console.log("opening edit");
@@ -3035,8 +3221,9 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.close_edit_table();});
 	},
 
-	// ### close_edit_table
-	// close column showing editing buttons
+	/**
+	 * close column showing editing buttons
+	 */
 	close_edit_table: function(){
 		var self = this;
 		var idCol = this.grid.columns.where({ name: "edit" });
@@ -3046,122 +3233,135 @@ Barista.Views.GridView = Backbone.View.extend({
 		$("#" + this.div_string + "_edit",this.el).click(function(){self.open_edit_table();});
 	},
 
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *500*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		var self = this;
 		this.$el.animate({opacity:0},duration);
 		setTimeout(function(){self.$el.hide();},duration);
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *500*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number}  duration  the time in ms for the hide animation. defualts to 500
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		this.$el.show();
 		this.$el.animate({opacity:1},duration);
 	}
 });
 
-// # **HTMLCellView**
+/**
+ * a Backgrid extension that supports display of html content in Backgrid tables
+ * HTMLCellView defines both a Backgrid.Cell subclass (HTMLCell) and Backgrid.CellFormatter subclass
+ * (HTMLFormatter) to use with it
+ * These two components are used together to integrate with Backgrid's existing cell definitions in order
+ * to use HTMLCell and HTMLFormatter, specify the cell parameter of a Backgrid column definition as
+ * HTMLCell
+ * as an example:
+ *    // set up a default collection and column definition for the grid to operate on
+     this.collection = new PertCollection();
+     this.columns = [{name: "pert_type_label", label: "Pert Type", cell: HTMLCell, editable: false}];
+ 
+     // build the template
+     this.compile_template();
+ 
+     // build the grid on the template
+     this.grid = new Backgrid.Grid({
+       columns: this.columns,
+       collection: this.collection
+     });
+ */
 
-// a Backgrid extension that supports display of html content in Backgrid tables.  HTMLCellView defines
-// both a Backgrid.Cell subclass (**HTMLCell**) and Backgrid.CellFormatter subclass (**HTMLFormatter**) to
-// use with it.  These two components are used together to integrate with Backgrid's existing cell definitions
 
-// in order to use **HTMLCell** and **HTMLFormatter**, specify the cell parameter of a Backgrid column definition
-// as **HTMLCell**.  As an example:
-
-//     // set up a default collection and column definition for the grid to operate on
-//     this.collection = new PertCollection();
-//     this.columns = [{name: "pert_type_label", label: "Pert Type", cell: HTMLCell, editable: false}];
-// 
-//     // build the template
-//     this.compile_template();
-// 
-//     // build the grid on the template
-//     this.grid = new Backgrid.Grid({
-//       columns: this.columns,
-//       collection: this.collection
-//     });
-
-
-// ## HTMLFormatter
-// A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed
-// to the string version of the rawinput 
+/**
+ * A formatter that extends Backgrid.CellFormatter to return exactly the raw input value as opposed to the
+ * string version of the raw input
+ */
 Barista.HTMLFormatter = Backgrid.HTMLFormatter = function () {};
 Barista.HTMLFormatter.prototype = new Backgrid.CellFormatter();
 _.extend(Barista.HTMLFormatter.prototype, {
+  /**
+   * returns the raw input value
+   * @param  {string} rawValue  string version of raw input
+   */
   fromRaw: function (rawValue) {
     if (_.isUndefined(rawValue) || _.isNull(rawValue)) return '';
     return rawValue;
   }
 });
 
-// ## HTMLCell
-// An extension of Backgrid.Cell to render raw html content into the target element of the cell
+/**
+ * An extension of Backgrid.Cell to render raw html content into the target element of the cell
+ */
 Barista.HTMLCell = Backgrid.HTMLCell = Backgrid.Cell.extend({
   className: "html-cell",
   formatter: new Barista.HTMLFormatter(),
+  /**
+   * renders the view
+   */
   render: function () {
     this.$el.html(this.formatter.fromRaw(this.model.get(this.column.get("name"))));
     return this;
   }
 });
-// # **HeatmapView**
-
-// A Backbone.View that displays a simple heatmap.  The view is normally paired with 
-// a *HeatmapModel*, but works with any model that provides *data*, *rid*, *cid*, and
-// *title* attributes.
-
-// optional arguments:
-
-// 1.  {string}  **template**  The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 3.  {string}  **low\_color**  the hex color code to use as lowest value color in the heatmap, defaults to *#0000ff*
-// 4.  {string}  **high\_color**  the hex color code to use as highest value color in the heatmap, defaults to *#ff0000*
-// 5.  {d3.scale}  **color_scale**  custom color scale to use in the heatmap.  If supplied, low\_color and high\_color are ignored, defaults to *undefined*
-// 6.  {d3.scale}  **annot_color_scale**  custom color scale to use in the heatmap annotations. defaults to *undefined* and causes the annotations to be rendered with a standard color scale
-// 7.  {Number}  **plot_height**  the height of the heatmap to generate in pixels, defaults to *300*
-// 8.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		heatmap_view = new HeatmapView({el: $("target_selector"),
-//												model: new HeatmapModel(),
-//												template: BaristaTemplates.d3_target,
-//												bg_color: "#ffffff",
-//												low_color: "#0000ff",
-//												high_color: "#ff0000",
-//												color_scale: undefined,
-//												annot_color_scale: undefined,
-//												plot_height: 300,
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a simple heatmap
+ * The view is normally paired with a HeatmapModel, but works with any model that provides data, rid, cid,
+ * and title attributes
+ * optional arguments:
+ * @param {string}   template           The handlebars template to use. Defaults to
+ *                                      BaristaTemplates.d3_target
+ * @param {string}   bg_color           the hex color code to use as the backgound of the view, defaults to
+ *                                      #ffffff
+ * @param {string}   low_color          the hex color code to use as lowest value color in the heatmap,
+ *                                      defaults to #0000ff
+ * @param {string}   high_color         the hex color code to use as highest value color in the heatmap,
+ *                                      defaults to #ff0000
+ * @param {d3.scale} color_scale        custom color scale to use in the heatmap.  If supplied, low_color
+ *                                      and high_color are ignored, defaults to undefined
+ * @param {d3.scale} annot_color_scale  custom color scale to use in the heatmap annotations. defaults to
+ *                                      undefined and causes the annotations to be rendered with a
+ *                                      standard color scale
+ * @param {number}   plot_height        the height of the heatmap to generate in pixels, defaults to 300
+ * @param {string}   span_class         a bootstrap span class to size the width of the view, defaults to
+ *                                      "span12"
+ * example usage:
+ * heatmap_view = new HeatmapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												annot_color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.HeatmapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "HeatMapView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.HeatmapModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -3199,8 +3399,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'd3_target' + new Date().getTime();;
@@ -3209,15 +3410,17 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view. Updates both static and dynamic content in the view.
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -3383,8 +3586,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### add look up table
-	// adds a simple color lookup table based on the heatmap's color_scale
+	/**
+	 * adds a simple color lookup table based on the heatmap's color_scale
+	 */
 	add_lookup_table: function(){
 		var self, data, scale_range, scale_domain, scale_unit, domain_unit;
 		self = this;
@@ -3404,8 +3608,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 
 	},
 
-	// ### set_scale
-	// utility function used to get the y scale used in the plot
+	/**
+	 * utility function used to get the y scale used in the plot
+	 */
 	set_scale: function(){
 			var domain, range_min, range_max, range;
 			// get the current data domain from this.color
@@ -3420,16 +3625,18 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			this.y_scale=d3.scale.linear().domain([domain[domain.length-1],domain[0]]).range(range);
 	},
 
-	// ### build_axis
-	// utility function used to build y axis for the look up table
+	/**
+	 * utility function used to build y axis for the look up table
+	 */
 	build_axis: function(){
 		this.yAxis = d3.svg.axis()
 			.scale(this.y_scale)
 			.orient("right");
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
+	/**
+	 * utility function to apply custom styles to axis components
+	 */
 	style_axes: function(){
 		this.vis.selectAll('.axis').selectAll("path")
 			.style("fill","none")
@@ -3446,8 +3653,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 			.style("font-size","11px");
 	},
 
-	// ### render
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	render: function(){
 		var self = this;
 		// determine the height and width of cells in the heatmap
@@ -3591,9 +3799,11 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		}
 	},
 
-	// ### unravel_data
-	// internal utility function to express 2D array data as a flat data array of objects with array
-	// coordinates and data value as attributes.
+	/**
+	 * internal utility function to express 2D array data as a flat data array of objects with array
+	 * coordinates and data value as attributes
+	 * @param {array} data  2D array of data
+	 */
 	unravel_data: function(data){
 		unraveled_data = [];
 		data.forEach(function(i_e,i){
@@ -3604,8 +3814,9 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		return unraveled_data;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.width;
@@ -3632,47 +3843,54 @@ Barista.Views.HeatmapView = Backbone.View.extend({
 		png_selection.attr("opacity",png_opacity);
 	}
 });
-// # **LDMapView**
-
-// A Backbone.View that displays a simple LDMap.  The view is normally paired with 
-// a *HeatMapModel*, but works with any model that provides *data*,*cid*, and
-// *title* attributes.
-
-// optional arguments:
-
-// 1.  {string}  **template**  The handlebars template to use. Defaults to *BaristaTemplates.d3_target*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 3.  {string}  **low\_color**  the hex color code to use as lowest value color in the LDMap, defaults to *#0000ff*
-// 4.  {string}  **high\_color**  the hex color code to use as highest value color in the LDMap, defaults to *#ff0000*
-// 5.  {d3.scale}  **color_scale**  custom color scale to use in the LDMap.  If supplied, low\_color and high\_color are ignored, defaults to *undefined*
-// 6.  {Number}  **plot_height**  the height of the LDMap to generate in pixels, defaults to *300*
-// 7.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		LDMap_view = new LDMapView({el: $("target_selector"),
-//												model: new HeatmapModel(),
-//												template: BaristaTemplates.d3_target,
-//												bg_color: "#ffffff",
-//												low_color: "#0000ff",
-//												high_color: "#ff0000",
-//												color_scale: undefined,
-//												plot_height: 300,
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a simple LDMap
+ * The view is normally paired with a HeatMapModel, but works with any model that provides *data*,*cid*,
+ * and title attributes
+ * optional arguments:
+ * @param {string}   tenplate     The handlebars template to use. Defaults to BaristaTemplates.d3_target
+ * @param {string}   bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                                #ffffff
+ * @param {string}   low_color    the hex color code to use as lowest value color in the LDMap, defaults to
+ *                                #0000ff
+ * @param {string}   high_color   the hex color code to use as highest value color in the LDMap, defaults
+ *                                to #ff0000
+ * @param {d3.scale} color_scale  custom color scale to use in the LDMap.  If supplied, low_color and
+ *                                high_color are ignored, defaults to undefined
+ * @param {number}   plot_height  the height of the LDMap to generate in pixels, defaults to 300
+ * @param {string}   span_class   a bootstrap span class to size the width of the view, defaults to
+ *                                "span12"
+ * example usage:
+ * LDMap_view = new LDMapView({el: $("target_selector"),
+												model: new HeatmapModel(),
+												template: BaristaTemplates.d3_target,
+												bg_color: "#ffffff",
+												low_color: "#0000ff",
+												high_color: "#ff0000",
+												color_scale: undefined,
+												plot_height: 300,
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.LDMapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "LDMapView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.HeatmapModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -3709,8 +3927,9 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'd3_target' + new Date().getTime();;
@@ -3719,15 +3938,17 @@ Barista.Views.LDMapView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view. Updates both static and dynamic content in the view
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -3837,8 +4058,9 @@ Barista.Views.LDMapView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### render
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	render: function(){
 		var self = this;
 		// determine the height and width of cells in the heatmap
@@ -3912,9 +4134,11 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		rid_selection.exit().remove();
 	},
 
-	// ### unravel_data
-	// internal utility function to express 2D array data as a flat data array of objects with array
-	// coordinates and data value as attributes.
+	/**
+	 * internal utility function to express 2D array data as a flat data array of objects with array
+	 * coordinates and data value as attributes
+	 * @param {array} data  2D array of data
+	 */
 	unravel_data: function(data){
 		unraveled_data = [];
 		data.forEach(function(i_e,i){
@@ -3927,8 +4151,9 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		return unraveled_data;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.width;
@@ -3955,45 +4180,49 @@ Barista.Views.LDMapView = Backbone.View.extend({
 		png_selection.attr("opacity",png_opacity);
 	}
 });
-// # **PertCountView**
-
-// A Backbone.View that shows that number of perturbagens matching a given query.  Optionally, sub-category
-// counts are give for the type of perturbagen queried for.  This view is frequently paired with a
-// **PertCountModel** or **CellCountModel**
-
-// basic use:
-
-//		count_view = new PertCountView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **well\_color**  the hex color code to use as the backgound of the wells, defaults to *#bdbdbd*
-// 3.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-4"*
-// 5.  {string}  **static\_text**  the static text header to use in the view, defaults to *"Reagents"*
-// 6.  {array}  **categories**  an array of objects to use as categories to display, defaults to *[]*
-
-//		count_view = new PertCountView({bg_color:"#ffffff",
-//									well_color: "#bdbdbd",
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									static_text: "Reagents",
-//									categories: []});
-
+/**
+ * A Backbone.View that shows that number of perturbagens matching a given query
+ * Optionally, sub-category counts are give for the type of perturbagen queried for
+ * This view is frequently paired with a PertCountModel or CellCountModel
+ * basic use:
+ * count_view = new PertCountView();
+ * optional arguments:
+ * @param {string} bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                              #ffffff
+ * @param {string} well_color   the hex color code to use as the backgound of the wells, defaults to
+ *                              #bdbdbd
+ * @param {string} fg_color     the hex color code to use as the foreground color of the view, defaults
+ *                              to #1b9e77
+ * @param {string} span_class   a bootstrap span class to size the width of the view, defaults to
+ *                              "col-lg-4"
+ * @param {string} static_text  the static text header to use in the view, defaults to "Reagents"
+ * @param {array}  categories   an array of objects to use as categories to display, defaults to []
+ * count_view = new PertCountView({bg_color:"#ffffff",
+									well_color: "#bdbdbd",
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									static_text: "Reagents",
+									categories: []});
+ */
 
 Barista.Views.PertCountView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PertCountView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.PertCountModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -4050,8 +4279,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
@@ -4059,15 +4289,17 @@ Barista.Views.PertCountView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view.
+	/**
+	 * completely redraw the view
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -4184,7 +4416,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 			.on("mouseout",function(){d3.select(this).transition().duration(500).attr("opacity",0.25).attr("fill","#000000");})
 			.on("click",function(){self.save_png();});
 	},
-
+	/**
+	 * update the dynamic potions of the view
+	 */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -4241,8 +4475,9 @@ Barista.Views.PertCountView = Backbone.View.extend({
 			});
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		//set the animate the div containing the view by applying and then removing
 		// css classes that defined the transitions we want
@@ -4281,34 +4516,38 @@ Barista.Views.PertCountView = Backbone.View.extend({
 	}
 });
 
-// # **PertDetailView**
-
-// A Backbone.View that shows information about a small molecule compound or gene.  This view is
-// frequently paired with a PertDetailModel.
-
-//		pert_detail_view = new PertDetailView({el: $("target_selector")});
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-
-//		pert_detail_view = new PertDetailView({el: $("target_selector"),
-// 												model: PertDetailModel,
-// 												bg_color: "#ffffff",
-// 												span_class: "col-lg-12"});
+/**
+ * A Backbone.View that shows information about a small molecule compound or gene
+ * This view is frequently paired with a PertDetailModel
+ * pert_detail_view = new PertDetailView({el: $("target_selector")});
+ * optional arguments:
+ * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
+ *                             #ffffff
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
+ *                             "col-lg-12"
+ * pert_detail_view = new PertDetailView({el: $("target_selector"),
+ 												model: PertDetailModel,
+ 												bg_color: "#ffffff",
+ 												span_class: "col-lg-12"});                            
+ */
 Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PertDetailView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.PertDetailModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		var self = this;
 		// set up the plot height
@@ -4327,8 +4566,10 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		// keep track of our scope at this level
 		var self = this;
@@ -4422,8 +4663,9 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### render_compound
-	// utility to render the compound specific parts of the view
+	/**
+	 * utility to render the compound specific parts of the view
+	 */
 	render_compound: function(){
 		this.clear_label_and_text();
 		var self = this;
@@ -4578,8 +4820,9 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render_gene
-	// utility to render the gene specific parts of the view
+	/**
+	 * utility to render the gene specific parts of the view
+	 */
 	render_gene: function(){
 		this.clear_label_and_text();
 		var self = this;
@@ -4716,17 +4959,28 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		this.render();
 		return this;
 	},
 
-	// ### render_label_and_value
-	// utility function to draw a standard label and value for that label under
-	// the main pert_iname and pert_id text.  If pass_model_field_as_text is true,
-	// pass the value in model_field as text instead of serching for it in the model
+	/**
+	* utility function to draw a standard label and value for that label under the main pert_iname and
+	* pert_id text
+	* If pass_model_field_as_text is true, pass the value in model_field as text instead of serching for
+	* it in the model
+	* @param  {string}  class_name_base           base of the class name of the attribute
+	* @param  {string}  label_text                visible text that labels the element on screen
+	* @param  {string}  model_field               text to appear in the model field
+	* @param  {boolean} pass_model_field_as_text  determines whether the value in model_field will appear
+	*                                             as text (true) or if the value must be obtained by
+	*                                             searching (false)
+	* @param  {number}  x_pos_base                base position for the x_label set
+	* @param  {string}  value_link                if supplied, used as a link on the visible text
+*/
 	render_label_and_value: function(class_name_base, label_text, model_field, pass_model_field_as_text, x_pos_base, value_link,increment_y){
 		// set up a local variable to keep our scope straight
 		var self = this;
@@ -4799,17 +5053,19 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render_summary
-	// utility function to break a long summary string into a multiline
-	// and draw it at the desired location
-
-	// options
-
-	// 1.  {string}  **summary_string**  the string to be displayed, defaults to *""*
-	// 2.  {right}  **right**  the x position to place the **right** edge of text, defaults to *this.width*
-	// 3.  {left}  **left**  the x position to place the **left** edge of text, defaults to *this.width - 500*
-	// 4.  {top}  **top**  the y position to place the **top** edge of text, defaults to *0*
-	// 5.  {bottom}  **bottom**  the y position to place the **bottom** edge of text, defaults to *100*
+	/**
+	 * utility function to break a long summary string into a multiline and draw it at the desired location
+	 * @param  {object} options  describes the options for drawing a string to the screen
+	 * arguments for options:
+	 * @param {string} summary_string  the string to be displayed, defaults to ""
+	 * @param {right}  right           the x position to place the right edge of text, defaults to
+	 *                                 this.width
+	 * @param {left}   left            the x position to place the left edge of text, defaults to
+	 *                                 this.width - 500
+	 * @param {top}    top             the y position to place the top edge of text, defaults to 0
+	 * @param {bottom} bottom          the y position to place the bottom edge of text, defaults to
+	 *                                 100
+	 */
 	render_summary: function(options){
 		var self = this;
 
@@ -4861,8 +5117,9 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 				.text(function(d){return d;});
 	},
 
-	// ### toggle_panel_state
-	// utility to open or close the view
+	/**
+	 * utility to open or close the view
+	 */
 	toggle_panel_state: function(){
 		var self = this;
 		var h;
@@ -4886,8 +5143,14 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		this.vis.transition().duration(500).attr("height",h);
 	},
 
-	// ### draw tags
-	// utility function to draw tags given an array.
+	/**
+	 * utility function to draw tags given an array
+	 * @param  {string} class_name_base  base of the class name of the attribute
+	 * @param  {string} label_text       visible text that labels the element on screen
+	 * @param  {array}  data             array of data
+	 * @param  {string} fg_color         fill color of label
+	 * @param  {string} tag_color        color for background layer of tags 
+	 */
 	draw_tags: function(class_name_base, label_text, data, fg_color, tag_color){
 		var x_offsets = [10];
 		var row_number = 0;
@@ -4941,15 +5204,17 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 		return this
 	},
 
-	// ### clear_summary
-	// utility function to clear the pert summary
+	/**
+	 * utility function to clear the pert summary
+	 */
 	clear_summary: function(){
 		this.fg_layer.selectAll('.summary_text').data([]).exit().remove();
 	},
 
-	// ### clear_label_and_text
-	// utility function to clear all of the labels and text generated with the
-	// render_label_and_value function
+	/*
+	 * utility function to clear all of the labels and text generated with the render_label_and_value
+	 * function
+	 */
 	clear_label_and_text: function(){
 		this.fg_layer.selectAll('.label_and_text').data([]).exit().remove();
 	}
@@ -4957,7 +5222,7 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 
 /**
 A Backbone.View that exposes a custom search bar.  The search bar provides autocomplete
-functionality for Connectivity Map pert\_inames and cell\_ids.  When the user types in the
+functionality for Connectivity Map pert_inames and cell_ids.  When the user types in the
 search view's input, a "search:DidType" event is fired.
 
 @class PertSearchBar
@@ -4965,21 +5230,25 @@ search view's input, a "search:DidType" event is fired.
 @extends Backbone.View
 **/
 Barista.Views.PertSearchBar = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PertSearchBar",
-
+/**
+ * overide the default Backbone.View initialize method
+ */
 	initialize: function(){
 		var self = this;
 
 
 		/**
 		determines wether or not the search view will match cell lines for autocomplete
-
 		@property match_cell_lines
 		@default true
 		@type Boolean
-		**/
+		*/
 
 		// set up custom Datasets if they are passed in the constructor
 		this.datasets = (this.options.datasets !== undefined) ? this.options.datasets : [Barista.Datasets.CellID,Barista.Datasets.PertIName];
@@ -5017,7 +5286,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 				@param {Object} [msg={val:"",type:""}] an object containing the message of the event
 				@param {String} [msg.val=""] the string val of the views search bar at the time of the event
 				@param {String} [msg.type=""] the type of message being passed, either "" or "cell". "cell" is passed, if the string matches a cell line and match\_cell\_lines is set
-				**/
+				*/
 				self.trigger("search:DidType",{val: val,type: type});
 			};
 
@@ -5032,21 +5301,16 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 
 	},
 
-
 	/**
-    Gets the current text entered in the view's search bar
-
-    @method get_val
-    **/
+	 * Gets the current text entered in the view's search bar
+    */
 	get_val: function(){
 		return $("#search",this.el).val();
 	},
 
 	/**
-    fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-
-    @method random_val
-    **/
+	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
+    */
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
@@ -5061,7 +5325,11 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 			self.trigger("search:DidType",{val: val,type: 'single'});
 		});
 	},
-
+/**
+ * triggers a "search:DidType" event for the given search value
+ * @param {string} new_val   value to search for
+ * @param {string} new_type  type of value
+ */
 	set_val: function(new_val,new_type){
 		new_type = (new_type !== undefined) ? new_type : "single";
 		$("#search",this.el).val(new_val);
@@ -5069,10 +5337,8 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 	},
 
 	/**
-    renders the view
-
-    @method render
-    **/
+	 * renders the view
+    */
 	render: function(){
 		var self = this;
 		// load the template into the view's el tag
@@ -5082,38 +5348,38 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 	}
 });
 
-// # **PlatformSummaryView**
-
-// A Backbone.View that shows a quick view card used to display the available data on lincscloud.org
-// for a given platform. The widget displays a count of the available experiments on the platform, 
-// a description of the platform, a widget to extract a listing of the data available, and a link 
-// to a platform specific app for viewing the contents of the available data on that platform.  
-// This view is frequently paired with a **PlatformSummaryModel**
-
-// basic use:
-
-//		platform_summary_view = new PlatformSummaryView();
-
-// optional arguments:
-
-// ...
-
-//		platform_summary_view = new PlatformSummaryView({ 
-//									... });
-
-
+/**
+ * A Backbone.View that shows a quick view card used to display the available data on lincscloud.org for
+ * a given platform
+ * he widget displays a count of the available experiments on the platform, a description of the platform,
+ * a widget to extract a listing of the data available, and a link to a platform specific app for viewing
+ * the contents of the available data on that platform
+ * This view is frequently paired with a PlatformSummaryModel
+ * basic use:
+ * platform_summary_view = new PlatformSummaryView();
+ * optional arguments:
+ * ...
+		platform_summary_view = new PlatformSummaryView({ 
+									... });
+ */
 Barista.Views.PlatformSummaryView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "PlatformSummaryView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.GenericCountModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up color and font defaults
 		this.white_color = "#ffffff";
@@ -5266,8 +5532,9 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
@@ -5275,13 +5542,19 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### redraw
-	// completely redraw the view.
+	/**
+	 * completely redraw the view
+	 */
 	redraw: function(){
 		this.init_panel();
 		this.render();
 	},
 	
+	/**
+	 * applies the given font to the text at the given target
+	 * @param  {font}   font    font to apply
+	 * @param  {string} target  text target to apply font to
+	 */
 	apply_font: function(font, target) {
 		return target.attr("font-family", font.family)
 			.attr("font-weight", font.weight)
@@ -5290,7 +5563,10 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			.attr("letter-spacing", font.spacing)
 			.attr("fill", font.color);
 	},
-	
+	/**
+	 * converts the attributes of a font object to a string of css text
+	 * @param  {font} font  font object
+	 */
 	font_to_css_style: function(font) {
 		return "font:"+ font.weight +" " + font.size + " " + font.family + "; "
 			+ "color:" + font.color + "; " 
@@ -5298,8 +5574,9 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			+ "letter-spacing:" + font.spacing + "; ";
 	},
 
-	// ### init_panel
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_panel: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -5444,7 +5721,12 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 							.style("background-color", this.bg_color)
 							.html("<a href='"+this.details_url+"' target='"+this.details_target+"' style=\"" + this.control_css_style + "\"><i class='icon-chevron-sign-right'></i> "+this.details_text+"</a>");
 	},
-	
+	/**
+	 * creates the render control object and draws it to the screen
+	 * @param  {string}   message     visible text
+	 * @param  {string}   icon_class  value of the class attribute
+	 * @param  {function} handler     function associated with click
+	 */
 	render_export_control: function(message, icon_class, handler) {
 		this.controls_layer.selectAll('.export_text').data([]).exit().remove();
 		return this.controls_layer.selectAll('.export_text').data([1])
@@ -5461,8 +5743,9 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 							.html("<span style=\"" + this.control_css_style + "\"><i class='" + icon_class + "' style='margin-right:2px;'></i>" + message + "</span>");
 	},
 
-	// ### download_table
-	// download the backing data that matches the current model state.
+	/**
+	 * download the backing data that matches the current model state
+	 */
 	download_table: function() {
 		var self = this;
 
@@ -5502,7 +5785,9 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			self.render_export_control(self.export_text, "icon-download", function(){self.download_table();});
 		});
 	},
-	
+	/**
+	 * renders the view
+	 */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -5527,18 +5812,22 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 	},
 
-	// ### render_description
-	// utility function to break a long description string into a multiline
-	// and draw it at the desired location
-
-	// options
-
-	// 1.  {string}  **description_string**  the string to be displayed, defaults to *""*
-	// 2.  {right}  **right**  the x position to place the **right** edge of text, defaults to *this.width*
-	// 3.  {left}  **left**  the x position to place the **left** edge of text, defaults to *this.width - 500*
-	// 4.  {top}  **top**  the y position to place the **top** edge of text, defaults to *0*
-	// 5.  {bottom}  **bottom**  the y position to place the **bottom** edge of text, defaults to *100*
-	// 6.  {node_class}  **node_class**  the class used for locating the text node within fg_layer, defaults to *""*
+	/**
+	 * utility function to break a long description string into a multiline and draw it at the desired
+	 * location
+	 * @param  {object} options  describes the options for drawing a string to the screen
+	 * arguments for options:
+	 * @param {string}     description_string  the string to be displayed, defaults to ""
+	 * @param {right}      right               the x position to place the right edge of text, defaults
+	 *                                         to this.width
+	 * @param {left}       left                the x position to place the left edge of text, defaults
+	 *                                         to this.width - 500
+	 * @param {top}        top                 the y position to place the top edge of text, defaults to 0
+	 * @param {bottom}     bottom              the y position to place the **bottom** edge of text,
+	 *                                         defaults to 100
+	 * @param {node_class} node_class          the class used for locating the text node within fg_layer,
+	 *                                         defaults to ""
+	 */
 	render_description: function(options){
 		var self = this;
 
@@ -5591,8 +5880,9 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 				.text(function(d){return d;}));
 	},
 	
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.width;
@@ -5653,61 +5943,74 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 	}
 });
 
-// # **ScatterPlotView**
-// A Backbone.View that displays a scatter plot.  the view's model is assumed to have the same defaults
-// as specified in **ScatterPlotModel**
-
-// basic use:
-
-//		scatter_plot_view = new ScatterPlotView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-// 4.  {string}  **scale_by**  an attribute in the model's meta data object to scale points by, defaults to *undefined*
-// 5.  {Array}  **x_range**  a two element array specifying the x plotting bounds of the plot, defaults to *[min(x_data),max(x_data)]*
-// 6.  {Array}  **y_range**  a two element array specifying the y plotting bounds of the plot, defaults to *[min(y_data),max(y_data)]*
-// 7.  {Bool}  **x_log**  if set to true, plots the x axis on a log scale, defaults to *false*
-// 8.  {Bool}  **y_log**  if set to true, plots the y axis on a log scale, defaults to *false*
-// 9. {Number} **x_min_lock** if set, locks the minimum of the x_range at the given value. Ignored if x_range is set. defaults to *undefined*
-// 10. {Number} **y_min_lock** if set, locks the minimum of the y_range at the given value. Ignored if y_range is set. defaults to *undefined*
-// 11. {Number} **x_max_lock** if set, locks the maximum of the x_range at the given value. Ignored if x_range is set. defaults to *undefined*
-// 12. {Number} **y_max_lock** if set, locks the maximum of the y_range at the given value. Ignored if y_range is set. defaults to *undefined*
-// 13. {Bool} **x_min_expand** if set, allows the minimum of the x_range to expand if data is found below it. defaults to *false*
-// 14. {Bool} **y_min_expand** if set, allows the minimum of the y_range to expand if data is found below it. defaults to *false*
-// 15. {Bool} **x_max_expand** if set, allows the maximum of the x_range to expand if data is found above it. defaults to *false*
-// 16. {Bool} **y_max_expand** if set, allows the maximum of the y_range to expand if data is found above it. defaults to *false*
-// 17.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-
-//		scatter_plot_view = new ScatterPlotView({el: $("target_selector",
-//									bg_color:"#ffffff", 
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									scale_by: undefined,
-//									x_range: undefined,
-//									y_range: undefined,
-//									x_log: false,
-//									y_log: false,
-//									x_min_lock: undefined,
-//									y_min_lock: undefined,
-//									x_max_lock: undefined,
-//									y_max_lock: undefined,
-//									x_min_expand: false,
-//									y_min_expand: false,
-//									x_max_expand: false,
-//									y_max_expand: false,
-//									plot_height: 120});
+/**
+ * A Backbone.View that displays a scatter plot
+ * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
+ * basic use:
+ * scatter_plot_view = new ScatterPlotView();
+ * optional arguments:
+ * @param {string}  bg_color      the hex color code to use as the backgound of the view, defaults to
+ *                                #ffffff
+ * @param {string}  fg_color      the hex color code to use as the foreground color of the view, defaults
+ *                                to #1b9e77
+ * @param {string}  span_class    a bootstrap span class to size the width of the view, defaults to
+ *                                "span12"
+ * @param {string}  scale_by      an attribute in the model's meta data object to scale points by, defaults
+ *                                to undefined
+ * @param {array}   x_range       a two element array specifying the x plotting bounds of the plot,
+ *                                defaults to [min(x_data),max(x_data)]
+ * @param {array}   y_range       a two element array specifying the y plotting bounds of the plot,
+ *                                defaults to [min(y_data),max(y_data)]
+ * @param {boolean} x_log         if set to true, plots the x axis on a log scale, defaults to false
+ * @param {boolean} y_log         if set to true, plots the y axis on a log scale, defaults to false
+ * @param {number}  x_min_lock    if set, locks the minimum of the x_range at the given value. Ignored if
+ *                                x_range is set. defaults to undefined
+ * @param {number}  y_min_lock    if set, locks the minimum of the y_range at the given value. Ignored if
+ *                                y_range is set. defaults to undefined
+ * @param {number}  x_max_lock    if set, locks the maximum of the x_range at the given value. Ignored if
+ *                                x_range is set. defaults to undefined
+ * @param {number}  y_max_lock    if set, locks the maximum of the y_range at the given value. Ignored if
+ *                                y_range is set. defaults to undefined
+ * @param {boolean} x_min_expand  if set, allows the minimum of the x_range to expand if data is found
+ *                                below it. defaults to false
+ * @param {boolean} y_min_expand  if set, allows the minimum of the y_range to expand if data is found
+ *                                below it. defaults to false
+ * @param {boolean} x_max_expand  if set, allows the maximum of the x_range to expand if data is found
+ *                                above it. defaults to false
+ * @param {boolean} y_max_expand  if set, allows the maximum of the y_range to expand if data is found
+ *                                above it. defaults to false
+ * @param {number}  plot_height   the height of the plot in pixels, defaults to 120
+ * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									x_min_lock: undefined,
+									y_min_lock: undefined,
+									x_max_lock: undefined,
+									y_max_lock: undefined,
+									x_min_expand: false,
+									y_min_expand: false,
+									x_max_expand: false,
+									y_max_expand: false,
+									plot_height: 120});
+ */
 
 Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.ScatterPlotModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * override the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up x and y range and determine if are going to draw the axes dynamically
 		this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
@@ -5750,16 +6053,19 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.base_initialize();
 	},
 
-	// ### redraw
-	// completely redraw the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely redraw the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		this.base_render();
 		this.init_plot();
 		this.update();
 	},
 
-	// ### init_plot
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_plot: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -5845,8 +6151,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.text(this.model.get('title'));
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 	var self = this;
 	
@@ -5896,8 +6203,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 	this.style_axes();
 	},
 
-	// ### set_ranges
-	// utility function used to get the x and y ranges used in the plot
+	/**
+	 * utility function used to get the x and y ranges used in the plot
+	 */
 	set_ranges: function(){
 		var x_data,y_data,min,max;
 		// calculate the x_range. If we need to caluclate it dynamically, check the lock and expand
@@ -5973,8 +6281,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### set_scales
-	// utility function used to get the x and y scales used in the plot
+	/**
+	 * utility function used to get the x and y scales used in the plot
+	 */
 	set_scales: function(){
 		if (this.x_log){
 			this.x_scale=d3.scale.log().domain([this.x_range[0],this.x_range[1]]).range([this.margin, this.width - this.margin]);
@@ -5988,8 +6297,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### build_axes
-	// utility function used to build x and y axes
+	/**
+	 * utility function used to build x and y axes
+	 */
 	build_axes: function(){
 		this.xAxis = d3.svg.axis()
 			.scale(this.x_scale)
@@ -5999,8 +6309,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.orient("left");
 	},
 
-	// ### set_scaling_function
-	// utility function to compute a radius scaling funciton to use in plots
+	/**
+	 * utility function to compute a radius scaling funciton to use in plots
+	 */
 	set_scaling_function: function(){
 		var self = this;
 		if (this.scale_by !== undefined){
@@ -6015,8 +6326,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### style axes
-	// utility function to apply custom styles to axis components
+	/**
+	 * utility function to apply custom styles to axis components
+	 */
 	style_axes: function(){
 		this.vis.selectAll('.axis').selectAll("path")
 			.style("fill","none")
@@ -6033,48 +6345,57 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.style("font-size","11px");
 	}
 });
-// **TagListView**
-// A Backbone.View that displays a list of objects in a collection as tags.  The tags are drawn
-// as rounded rectangles with text inside.  The text corresponds to the cid attributes in the
-// collection by defaul, but can be customized to display other fields if required
-
-// basic use
-
-//		tag_list_view = new TagListView();
-
-// optional arguments
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *white*
-// 3.  {string}  **tag\_color**  the hex color code to use as the tag color of the view, defaults to *gray*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-// 5.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-// 6.  {string}  **display_field**  the model attribute to display for each model in the view's colleciton.  defualts to *'cid'*
-
-//		tag_list_view = new TagListView({el: $("target_selector",
-//									bg_color:"#ffffff",
-//									fg_color: "white",
-//									tag_color: "gray",
-//									span_class: "col-lg-12",
-//									plot_height: 120,
-//									display_attribute: "cid"});
+/**
+ * A Backbone.View that displays a list of objects in a collection as tags
+ * The tags are drawn as rounded rectangles with text inside
+ * The text corresponds to the cid attributes in the collection by defaul, but can be customized to display
+ * other fields if required
+ * basic use:
+ * tag_list_view = new TagListView();
+ * optional arguments:
+ * @param {string} bg_color       the hex color code to use as the backgound of the view, defaults to
+ *                                #ffffff
+ * @param {string} fg_color       the hex color code to use as the foreground color of the view, defaults
+ *                                to white
+ * @param {string} tag_color      the hex color code to use as the tag color of the view, defaults to gray
+ * @param {string} span_class     a bootstrap span class to size the width of the view, defaults to
+ *                                "col-lg-12"
+ * @param {number} plot_height    the height of the plot in pixels, defaults to 120
+ * @param {string} display_field  the model attribute to display for each model in the view's colleciton.
+ *                                defualts to 'cid'
+ * tag_list_view = new TagListView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "white",
+									tag_color: "gray",
+									span_class: "col-lg-12",
+									plot_height: 120,
+									display_attribute: "cid"});
+ */
 
 Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "TagListView",
 
-	// ### model
-	// set of the default model for the view
+	/**
+	 * set of the default model for the view
+	 * @type {Backbone}
+	 */
 	model: new Backbone.Model(),
 
-	// ### collection
-	// set up a default collection for the view to work with
+	/**
+	 * set up a default collection for the view to work with
+	 * @type {Backbone}
+	 */
 	collection: new Backbone.Collection(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// initialize the base view
 		this.base_initialize();
@@ -6104,8 +6425,10 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		var self = this;
 		// call BaristaBaseView's render function first so we can layer on top of it
@@ -6126,8 +6449,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		var self = this;
 		// call BaristaBaseView's render function first so we can layer on top of it
@@ -6148,8 +6472,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### fit_height
-	// fits the view height to the height taken by the tags displayed
+	/**
+	 * fits the view height to the height taken by the tags displayed
+	 */
 	fit_height: function(){
 		// set the view's height attribute based on the number of rows in the
 		// vis
@@ -6165,8 +6490,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### draw tags
-	// utility function to draw tags diven a data set.
+	/**
+	 * utility function to draw tags diven a data set
+	 */
 	draw_tags: function(){
 		var self = this;
 		// draw the foreground text of all the tags
@@ -6211,44 +6537,48 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 	}
 });
 
-// # **TickView**
-
-// A Backbone.View that displays a Connectivity Map tick view.  The view is must be paired with a CMapTickModel that
-// describes the rows to display in the tick view and the scores of the ticks to show for each row.  An 
-// example input data object from a CMapTickModel might looks like this:
-
-//			{PC3: [.23,-.28], MCF7: [-0.6]}
-
-// The view will render a row for each key in the data object and a tick for each entry in the array values
-// for each row.  The view also renders a title based on the model's title attribute
-
-// optional arguments:
-
-// 1.  {string}  **template**  The path to a handlebars template to use. Defaults to *../templates/d3_target.handlebars*
-// 2.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#bdbdbd*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-
-// example usage:
-
-//		tick_view = new TickView({el: $("target_selector"),
-//												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
-//												template: "../templates/d3_target.handlebars",
-//												bg_color: "#bdbdbd",
-//												span_class: "span12"
-//												});
+/**
+ * A Backbone.View that displays a Connectivity Map tick view
+ * The view is must be paired with a CMapTickModel that describes the rows to display in the tick view and
+ * the scores of the ticks to show for each row
+ * An example input data object from a CMapTickModel might looks like this:
+ * {PC3: [.23,-.28], MCF7: [-0.6]}
+ * The view will render a row for each key in the data object and a tick for each entry in the array values
+ * for each row
+ * The view also renders a title based on the model's title attribute
+ * optional arguments:
+ * @param {string} template    The path to a handlebars template to use. Defaults to
+ *                             ../templates/d3_target.handlebars
+ * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
+ *                             #bdbdbd
+ * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to "span12"
+ * example usage:
+ * tick_view = new TickView({el: $("target_selector"),
+												model: new CMapTickModel({data:{PC3: [.23,-.28], MCF7: [-0.6]}, title: "example data"}),
+												template: "../templates/d3_target.handlebars",
+												bg_color: "#bdbdbd",
+												span_class: "span12"
+												});
+ */
 
 Barista.Views.TickView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "TickView",
 
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.TickModel(),
 
-	// ### initialize
-	// overide the defualt Backbone.View initialize method to bind the view to model changes, bind
-	// window resize events to view re-draws, compile the template, and render the view
+	/**
+	 * overide the defualt Backbone.View initialize method to bind the view to model changes, bind window
+	 * resize events to view re-draws, compile the template, and render the view
+	 */
 	initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#eeeeee";
@@ -6266,10 +6596,10 @@ Barista.Views.TickView = Backbone.View.extend({
 		$(window).resize(function() {self.redraw();} );
 	},
 
-	// ### compile_template_and_draw
-	// use Handlebars to compile the template for the view and draw it for the first time
-
-	//		tick_view.compile_template_and_draw();
+	/**
+	 * use Handlebars to compile the template for the view and draw it for the first time
+	 * tick_view.compile_template_and_draw();
+	 */
 	compile_template_and_draw: function(){
 		var self = this;
 		this.isCompiling = true;
@@ -6288,11 +6618,11 @@ Barista.Views.TickView = Backbone.View.extend({
 		this.redraw();
 	},
 
-	// ### redraw
-	// perform a full redraw of the view, including wiping out all d3 drawn components in the view and 
-	// initializing them again from scratch.
-
-	//		tick_view.redraw();
+	/**
+	 * perform a full redraw of the view, including wiping out all d3 drawn components in the view and 
+	 * initializing them again from scratch
+	 * tick_view.redraw();
+	 */
 	redraw: function(){
 		var self = this;
 		// set up the panel's width and height via animation
@@ -6307,11 +6637,11 @@ Barista.Views.TickView = Backbone.View.extend({
 		},501);
 	},
 
-	// ### init_view
-	// set up the view from scratch.  Draw a background panel and place all dynamic content on that panel
-	// with defualt values
-
-	//		tick_view.init_view();
+	/**
+	 * set up the view from scratch
+	 * Draw a background panel and place all dynamic content on that panel with defualt values
+	 * tick_view.init_view();
+	 */
 	init_view: function(){
 		// stuff "this" into a variable for use inside of scoped funcitons
 		var self = this;
@@ -6449,10 +6779,10 @@ Barista.Views.TickView = Backbone.View.extend({
 			.on("click",function(){self.save_png();});
 	},
 
-	// ### render
-	// render the dynamic content of the view based on the current state of the view's data model
-
-	//		tick_view.render();
+	/**
+	 * render the dynamic content of the view based on the current state of the view's data model
+	 * tick_view.render();
+	 */
 	render: function(){
 		// grab data from the model and sort it according to the values in the object
 		var data_array = _.pairs(this.model.get('data_object'));
@@ -6483,14 +6813,11 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	},
 
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *1*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		var self = this;
@@ -6505,24 +6832,20 @@ Barista.Views.TickView = Backbone.View.extend({
 		}
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *1*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		this.$el.show();
 		this.$el.animate({opacity:1},duration);
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
-
-	//		tick_view.save_png();
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// build a canvas element to store the image temporarily while we save it
 		var width = this.vis.attr("width");
@@ -6551,43 +6874,47 @@ Barista.Views.TickView = Backbone.View.extend({
 
 });
 
-// # **ViolinPlotView**
-// A Backbone.View that displays a single scatter plot.  the view's model is assumed to have the same defaults
-// as specified in **ScatterPlotModel**
-
-// basic use:
-
-//		violin_plot_view = new ViolinPlotView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"span12"*
-// 4.  {Array}  **x_range**  a two element array specifying the x plotting bounds of the plot, defaults to *[min(x_data),max(x_data)]*
-// 5.  {Array}  **y_range**  a two element array specifying the y plotting bounds of the plot, defaults to *[min(y_data),max(y_data)]*
-// 6.  {Bool}  **x_log**  if set to true, plots the x axis on a log scale, defaults to *false*
-// 7.  {Bool}  **y_log**  if set to true, plots the y axis on a log scale, defaults to *false*
-// 8.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-
-//		violin_plot_view = new ViolinPlotView({el: $("target_selector",
-//									bg_color:"#ffffff", 
-//									fg_color: "#1b9e77",
-//									span_class: "span4",
-//									scale_by: undefined,
-//									x_range: undefined,
-//									y_range: undefined,
-//									x_log: false,
-//									y_log: false,
-//									plot_height: 120});
+/**
+ * A Backbone.View that displays a single scatter plot
+ * the view's model is assumed to have the same defaults as specified in ScatterPlotModel
+ * basic use:
+ * violin_plot_view = new ViolinPlotView();
+ * optional arguments:
+ * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                               #ffffff
+ * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults
+ *                               to #1b9e77
+ * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
+ *                               "span12"
+ * @param {array}   x_range      a two element array specifying the x plotting bounds of the plot,
+ *                               defaults to [min(x_data),max(x_data)]
+ * @param {array}   y_range      a two element array specifying the y plotting bounds of the plot,
+ *                               defaults to [min(y_data),max(y_data)]
+ * @param {boolean} x_log        if set to true, plots the x axis on a log scale, defaults to false
+ * @param {boolean} y_log        if set to true, plots the y axis on a log scale, defaults to false
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
+ * violin_plot_view = new ViolinPlotView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "#1b9e77",
+									span_class: "span4",
+									scale_by: undefined,
+									x_range: undefined,
+									y_range: undefined,
+									x_log: false,
+									y_log: false,
+									plot_height: 120});
+ */
 Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
-	// ### model
-	// set up the view's default model
+	/**
+	 * set up the view's default model
+	 * @type {Barista}
+	 */
 	model: new Barista.Models.ScatterPlotModel(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view 
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// set up x and y range
 		this.x_range = (this.options.x_range !== undefined) ? this.options.x_range : undefined;
@@ -6631,8 +6958,9 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 		$(window).resize(function() {self.render();} );
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'd3_target' + new Date().getTime();;
@@ -6642,16 +6970,19 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 												height: this.plot_height}));
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		this.base_render();
 		this.init_plot();
 		this.update();
 	},
 
-	// ### init_plot
-	// initialize the static parts of the view's panel
+	/**
+	 * initialize the static parts of the view's panel
+	 */
 	init_plot: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -6787,8 +7118,9 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		var self = this;
 		// grab data from the model and package it such that we can iterate over it
@@ -6807,8 +7139,11 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 		lower.transition().duration(500).attr('d',this.lower_area_generator(this.path_data));
 	},
 
-	// ### path data sorter
-	// internal method used to sort path_data list elements by the x attribute
+	/**
+	 * internal method used to sort path_data list elements by the x attribute
+	 * @param  {object} a  first element to compare
+	 * @param  {object} b  second element to compare
+	 */
 	path_data_sorter: function(a,b) {
 		if (a.x < b.x){
 			return -1;
@@ -6824,7 +7159,8 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 
 Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({
   /**
-   * give the view a name to be used throughout the View's functions when it needs to know what its class name is
+   * give the view a name to be used throughout the View's functions when it needs to know what its class
+   * name is
    * @type {String}
    */
   name: "SequenceView",
@@ -6861,7 +7197,8 @@ Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({
   },
 
   /**
-   * completely render the view. Updates both static and dynamic content in the view.
+   * completely render the view
+   * Updates both static and dynamic content in the view
    * @return {SequenceView} A reference to this to support chaining
    */
   render: function(){

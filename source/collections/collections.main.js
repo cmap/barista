@@ -1,59 +1,71 @@
-// # **AnalysisHistoryCollection**
-// A Backbone.Collection that represents a set of analysis history objects.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/pertinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
+/**
+ * A Backbone.Collection that represents a set of analysis history objects
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to PertModel
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ */
 
 Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
-    // #### initialize
+    /**
+     * fetch model data from assigned url
+     */
     initialize: function(){
-        // #### url
         // the url from which model data is fetched
         this.url =  Barista.APIURL + '/compute_status?callback=?';
     },
 
-    // #### model
-    // the model used for the collection objects.
+    /**
+     * the model used for the collection objects
+     */
     model: Barista.Models.AnalysisHistoryModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
+    /**
+     * the maximum size of the collection
+     * defaults to Infinity
+     * @type {Number}
+     */
     maxCount: Infinity,
 
-    // ### user_id
-    // the user_id to search jobs for. Forcing this to be set prevents us from searching other users jobs
+    /**
+     * the user_id to search jobs for
+     * Forcing this to be set prevents us from searching other users jobs
+     * @type {string}
+     */
     user: undefined,
 
-    // ## getData
-    // `AnalysisHistoryCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 3.  {number}  **limit**  the number of models to be fetched, defaults to *30*
-
+  /**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * `AnalysisHistoryCollection.getData(search_string,search_type,limit)`
+   * the count and pert_types data is replaced with new data coming from the api call
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_type,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
-        // store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+        // store the value of search_string, search_type, and limit on the collection object
         this.search_string = (search_string !== undefined) ? search_string : '';
         this.search_type = (search_type !== undefined) ? search_type : '';
         this.limit = (limit !== undefined) ? limit : 30;
@@ -92,7 +104,7 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
 
         // make the api call and store the results as individual models in the collection.
         // we don't remove old models in this case as we want to support continuous building
-        // of the model list from a remote api.  On success, set **isLoading** back to false
+        // of the model list from a remote api.  On success, set isLoading back to false
         // and resolve a deferred that we set up as a return value
         var def = $.Deferred();
         $.getJSON(this.url, params, function(res){
@@ -115,57 +127,61 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
     }
 });
 
-// # **CellCollection**
-// A Backbone.Collection that represents a set of cell types.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/pertinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-// `pert_collection = new CellCollection({model: PertModel,
-                                          // url: Barista.APIURL + '/a2/pertinfo?callback=?',
-                                          // skip: 0,
-                                          // isLoading: false});`
+/**
+ * A Backbone.Collection that represents a set of cell types
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ *  `pert_collection = new CellCollection({model: PertModel,
+                                           url: Barista.APIURL + '/a2/pertinfo?callback=?',
+                                           skip: 0,
+                                           isLoading: false});`
+ */
 
 Barista.Collections.CellCollection = Backbone.Collection.extend({
-    // #### initialize
+    /**
+     * fetch model data from assigned url
+     */
     initialize: function(){
-        // #### url
         // the url from which model data is fetched
         this.url =  Barista.APIURL + '/a2/cellinfo?callback=?';
     },
 
-    // #### model
-    // the model used for the collection objects.
+    /**
+     * the model used for the collection objects
+     */
     model: Barista.Models.CellModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ## getData
-    // `PertCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_column**  the column to query the search_string against, defaults to "cell_id"
-    // 3.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 4.  {number}  **limit**  the number of models to be fetched, defaults to *30*
-
+/**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * the count and pert_types data is replaced with new data coming from the api call
+   * `PertCollection.getData(search_string,search_type,limit)`
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_column,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
         this.search_string = (search_string !== undefined) ? search_string : '';
@@ -198,60 +214,69 @@ Barista.Collections.CellCollection = Backbone.Collection.extend({
     }
 });
 
-// # **GenericJSONCollection**
-// A Backbone.Collection that represents and arbitrary set of objects stored
-// in a JSON file. The JSON file is assumed to contain a top level array
-// containing objects.  Each object in the array is modeled as a base
-// Backbone.Model inside of the collection
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'data.json'*
-// 3.  {String}  **skip**  the skip parameter used in method calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-//		pert_collection = new PertCollection({model: PertModel,
-//											url: Barista.APIURL + '/a2/pertinfo?callback=?',
-//											skip: 0,
-//											isLoading: false});
+/**
+ * A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file
+ * The JSON file is assumed to contain a top level array containing objects
+ * Each object in the array is modeled as a base Backbone.Model inside of the collection
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ *        pert_collection = new PertCollection({model: PertModel,
+                                          url: Barista.APIURL + '/a2/pertinfo?callback=?',
+                                          skip: 0,
+                                          isLoading: false});
+ */
 Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
-	// ### model
-	// the model used for collection objects
+    /**
+     * the model used for collection objects
+     */
 	model: Barista.Models.PertModel,
 
-	// #### url
-    // the url from which model data is fetched
+    /**
+     * the url from which model data is fetched
+     * @type {String}
+     */
     url: 'data.json',
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated. 
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
-
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation. 
+ 
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
+    /**
+     * the maximum size of the collection
+     * defaults to Infinity
+     * @type {Number}
+     */
     maxCount: Infinity,
 
-    // ## getData
-    // `GenericJSONCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    // 
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 3.  {number}  **limit**  the number of models to be fetched, defaults to *30*
+  /**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * the count and pert_types data is replaced with new data coming from the api call
+   * `GenericJSONCollection.getData(search_string,search_type,limit)`
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_type,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
-        // store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+        // store the value of search_string, search_type, and limit on the collection object
         this.search_string = (search_string !== undefined) ? search_string : '';
         this.search_type = (search_type !== undefined) ? search_type : '';
         this.limit = (limit !== undefined) ? limit : 30;
@@ -274,63 +299,71 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
         }
 	}
 });
-// # **PertCollection**
-// A Backbone.Collection that represents a set of perturbagens.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/pertinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-// `pert_collection = new PertCollection({model: PertModel,
+/**
+ * A Backbone.Collection that represents a set of perturbagens
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ * `pert_collection = new PertCollection({model: PertModel,
                                           // url: Barista.APIURL + '/a2/pertinfo?callback=?',
                                           // skip: 0,
                                           // isLoading: false});`
+ */
 
 Barista.Collections.PertCollection = Backbone.Collection.extend({
-    // #### initialize
+    /**
+     * fetch model data from assigned url
+     */
     initialize: function(){
-        // #### url
         // the url from which model data is fetched
         this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
     },
 
-    // #### model
-    // the model used for the collection objects.
+    /**
+     * the model used for the collection objects
+     */
     model: Barista.Models.PertModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
+    /**
+     * the maximum size of the collection
+     * defaults to Infinity
+     * @type {Number}
+     */
     maxCount: Infinity,
 
-    // ## getData
-    // `PertCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 3.  {number}  **limit**  the number of models to be fetched, defaults to *30*
-
+  /**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * the count and pert_types data is replaced with new data coming from the api call
+   * `PertCollection.getData(search_string,search_type,limit)`
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_type,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
-        // store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+        // store the value of search_string, search_type, and limit on the collection object
         this.search_string = (search_string !== undefined) ? search_string : '';
         this.search_type = (search_type !== undefined) ? search_type : '';
         this.limit = (limit !== undefined) ? limit : 30;
@@ -365,7 +398,7 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
 
         // make the api call and store the results as individual models in the collection.
         // we don't remove old models in this case as we want to support continuous building
-        // of the model list from a remote api.  On success, set **isLoading** back to false
+        // of the model list from a remote api.  On success, set isLoading back to false
 		$.getJSON(this.url, params, function(res){
             self.set(res,{remove: false});
             self.isLoading = false;
@@ -383,67 +416,77 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
     }
 });
 
-// # **SignatureCollection**
-// A Backbone.Collection that represents a set of signatures.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/siginfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-// `pert_collection = new SignatureCollection({model: PertModel,
+/**
+ * A Backbone.Collection that represents a set of signatures
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ * `pert_collection = new SignatureCollection({model: PertModel,
                                           // url: Barista.APIURL + '/a2/siginfo?callback=?',
                                           // skip: 0,
                                           // isLoading: false});`
+ */
 
 Barista.Collections.SignatureCollection = Backbone.Collection.extend({
-    // #### initialize
+    /**
+     * fetch model data from assigned url
+     */
     initialize: function(){
-        // #### url
         // the url from which model data is fetched
         this.url =  Barista.APIURL + '/a2/siginfo?callback=?';
     },
 
-    // #### model
-    // the model used for the collection objects.
+    /**
+     * the model used for the collection objects
+     */
     model: Barista.Models.SignatureModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
+    /**
+     * the maximum size of the collection
+     * defaults to Infinity
+     * @type {Number}
+     */
     maxCount: Infinity,
 
-    // ### gold_only
-    // boolean flag telling the collection to only include gold Connectivity Map signatures
+    /**
+     * boolean flag telling the collection to only include gold Connectivity Map signatures
+     * @type {Boolean}
+     */
     gold_only: true,
 
-    // ### getData
-    // `SignatureCollection.getData(search_string,search_type,limit)`
-
-    // Gets additional data from the specified url and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {string}  **search\_string**  the string on which a regex search into the api at the collections url will be performed, defaults to *""*
-    // 2.  {string}  **search\_type**  the type of search that will be performed, defaults to *"single"*
-    // 3.  {number}  **limit**  the number of models to be fetched, defaults to *30*
-
+  /**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * the count and pert_types data is replaced with new data coming from the api call
+   * `SignatureCollection.getData(search_string,search_type,limit)`
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_type,limit){
         var self = this;
-        // set **isLoading** to true so we don't constantly make api calls before the data comes back
+        // set isLoading to true so we don't constantly make api calls before the data comes back
         this.isLoading = true;
 
-        // store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+        // store the value of search_string, search_type, and limit on the collection object
         this.search_string = (search_string !== undefined) ? search_string : "";
         this.search_type = (search_type !== undefined) ? search_type : "";
         this.limit = (limit !== undefined) ? limit : 30;
@@ -451,7 +494,7 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
         // depending on the type of query we are making, set up the q param for the api call.
         // if we are doing a single query, match that query as a regular expression. If we are
         // doing a multi query, match exact names. If we are doing a cell line query, only match
-        // cell\_ids
+        // cell_ids
         if (search_type === "single" || search_type === ""){
             if (this.gold_only){
                 this.q_param = '{"pert_id":"' + search_string + '","is_gold":1}';
@@ -490,7 +533,7 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
 
         // make the api call and store the results as individual models in the collection.
         // we don't remove old models in this case as we want to support continuous building
-        // of the model list from a remote api.  On success, set **isLoading** back to false
+        // of the model list from a remote api.  On success, set isLoading back to false
 		var getData_promise = $.getJSON(this.url, params, function(res){
             self.set(res,{remove: false});
             self.isLoading = false;
@@ -511,60 +554,70 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
     }
 });
 
-// # **SummlyResultCollection**
-// A Backbone.Collection that represents a set of CMap Summly results.  This collection is suitable for
-// internal use in GridView.
-
-// optional arguments:
-
-// 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *SummlyResultModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'//api.lincscloud.org/a2/summlyinfo?callback=?'*
-// 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
-// 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
-
-//		pert_collection = new PertCollection({model: PertModel,
-//											url: Barista.APIURL + '/a2/pertinfo?callback=?',
-//											skip: 0,
-//											isLoading: false});
+/**
+ * A Backbone.Collection that represents a set of CMap Summly results
+ * This collection is suitable for internal use in GridView
+ * optional arguments:
+ * @param {Backbone.model} model      the model used for the collection objects. defaults to *PertModel*
+ * @param {string}         url        the url from which model data is fetched. defaults  to
+ *                                    '//api.lincscloud.org/a2/pertinfo?callback=?'
+ * @param {string}         skip       the skip parameter used in api calls when the collection is updated
+ *                                    defaults to 0
+ * @param {boolean}        isLoading  indicates wether or not the collection is in the middle of a fetch
+ *                                    operation. defaults to false
+ * pert_collection = new PertCollection({model: PertModel,
+                                          url: Barista.APIURL + '/a2/pertinfo?callback=?',
+                                          skip: 0,
+                                          isLoading: false});
+ */
 
 Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
-	// #### initialize
+    /**
+     * fetch model data from assigned url
+     */
 	initialize: function(){
-		// #### url
 		// the url from which model data is fetched
 		this.url =  Barista.APIURL + '/a2/pertinfo?callback=?';
 	},
 
-	// ### model
-	// the model used for collection objects
+    /**
+     * the model used for collection objects
+     */
 	model: Barista.Models.SummlyResultModel,
 
-    // #### skip
-    // the skip parameter used in api calls when the collection is updated.
+    /**
+     * the skip parameter used in api calls when the collection is updated
+     * @type {Number}
+     */
     skip: 0,
 
-    // #### isLoading
-    // indicates wether or not the collection is in the middle of a fetch operation.
+    /**
+     * indicates wether or not the collection is in the middle of a fetch operation
+     * @type {Boolean}
+     */
     isLoading: false,
 
-    // ### maxCount
-    // the maximum size of the collection. defaults to Infinity
+    /**
+     * the maximum size of the collection
+     * defaults to Infinity
+     * @type {Number}
+     */
     maxCount: Infinity,
 
-    // ## getDataMock
-    //			PertCollection.getDataMock(limit);
-
-    // Generates additional fake data objects and stores them as models in the collection
-
-    // arguments
-    //
-    // 1.  {number}  **limit**  the number of models to be fetched, defaults to *30*
+  /**
+   * Gets additional data from the specified url and stores them as models in the collection
+   * the count and pert_types data is replaced with new data coming from the api call
+   * @param  {string}  search_string  the string on which a regex search into the api at the collections
+   *                                  url will be performed, defaults to ""
+   * @param  {string}  search_type    the type of search that will be performed, defaults to "single"
+   * @param  {number}  limit          the number of models to be fetched, defaults to 30
+   */
     getData: function(search_string,search_type,limit){
 		var self = this;
-		// set **isLoading** to true so we don't constantly make api calls before the data comes back
+		// set isLoading to true so we don't constantly make api calls before the data comes back
 		this.isLoading = true;
 
-		// store the value of **search\_string**, **search\_type**, and **limit** on the collection object
+		// store the value of search_string, search_type, and limit on the collection object
         this.search_string = search_string;
         this.search_type = search_type;
         this.limit = (limit !== undefined) ? limit : 30;
@@ -572,7 +625,7 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 		// depending on the type of query we are making, set up the q param for the api call.
         // if we are doing a single query, match that query as a regular expression. If we are
         // doing a multi query, match exact names. If we are doing a cell line query, only match
-        // cell\_ids
+        // cell_ids
         if (search_type === "single" || search_type === undefined){
             this.q_param = '{"pert_iname":{"$regex":"' + "" + '","$options":"i"}}';
         }
@@ -589,7 +642,7 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 
 		// make the api call and store the results as individual models in the collection.
         // we don't remove old models in this case as we want to support continuous building
-        // of the model list from a remote api.  On success, set **isLoading** back to false
+        // of the model list from a remote api.  On success, set isLoading back to false
 		$.getJSON(this.url,params,function(res){
 			var data = [];
 			var cell_lines = ["ASC","HA1E","HCC515","NEU","NPC","PHH","SKL",

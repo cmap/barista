@@ -1,9 +1,16 @@
 Barista.Views.FlatTreeMapView = Backbone.View.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "FlatTreeMapView",
 
 		model: new Barista.Models.PertCellBreakdownModel(),
+
+		/**
+		 * overrides the default Backbone.View initialize method
+		 */
 
 		initialize: function(){
 		// set up color options.  default if not specified
@@ -55,13 +62,18 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 		$(window).resize(function() {self.render();} );
 	},
 
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		this.div_string = 'd3_target' + new Date().getTime();
 		this.$el.append(BaristaTemplates.d3_target({div_string: this.div_string,
 												span_class: this.span_class,
 												height: this.plot_height}));
 	},
-
+/**
+ * renders the view
+ */
 	render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -133,7 +145,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			.on("mouseout",function(){d3.select(this).transition().duration(500).attr("opacity",0.25);})
 			.on("click",function(){self.savePng();});
 	},
-
+/**
+ * updates the visibility of the element
+ */
 	update_vis: function(){
 		var self = this;
 		// grab the data from the model and plot the state of the treemap
@@ -193,12 +207,14 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 		}
 
 	},
-
+/**
+ * inserts tooltips that display the cell id and count for non-empty datasets
+ */
 	add_tooltips: function(){
 		// make a selection of all cells in the treemap
 		var cell_selection = $('.' + this.div_string + '_cell');
 
-		// remove existing tooltips so we don confuse the labels
+		// remove existing tooltips so we don't confuse the labels
 		cell_selection.each(function(){
 			$(this).tooltip('destroy');
 		});
@@ -216,15 +232,19 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			});
 		}
 	},
-
+/**
+ * clear visible text in fields
+ */
 	clear_text: function(){
 		this.vis.data([this.data]).selectAll("text.name").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll("text.count").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll(".foreign").data([]).exit().remove();
 	},
 
-	// add a foreignObject DOM snippet for each cell in the treemap based on
-	// an input mapping of DOM snippets
+	/**
+	 * add a foreignObject DOM snippet for each cell in the treemap based on an input mapping of DOM
+	 * snippets
+	 */
 	draw_foreignObject: function(){
 		var self = this;
 		this.vis.data([this.data]).selectAll(".foreign").data([]).exit().remove();
@@ -258,7 +278,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 				}
 			})
 	},
-
+/**
+ * draws text to the screen based on treemap data
+ */
 	draw_text: function(){
 		this.vis.data([this.data]).selectAll("text.name").data([]).exit().remove();
 		this.vis.data([this.data]).selectAll("text.name").data(this.treemap.nodes)
@@ -304,7 +326,9 @@ Barista.Views.FlatTreeMapView = Backbone.View.extend({
 			.style("pointer-events","none")
 			.transition().duration(500).attr("opacity",1);
 	},
-
+/**
+ * saves the target svg on the screen to a png file
+ */
 	savePng: function(){
 		//set the animate the div containing the view by applying and then removing
 		// css classes that defined the transitions we want

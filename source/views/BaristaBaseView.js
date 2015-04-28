@@ -1,62 +1,68 @@
-// # **BaristaBaseView**
-// A Backbone.View the serves as the base view for other views in the barista library.  BaristaBaseView provides common
-// functionality for views including standard initialization, redraw, render, template compilation, and png export functions.
-// This view by itself will construct a single panel with a png export option, but it is meant to be used as the base view
-// that more complex views extend
+/**
+ * base_view = new BaristaBaseView({el: $("target_selector",
+									bg_color:"#ffffff",
+									fg_color: "#1b9e77",
+									span_class: "col-lg-12",
+									plot_height: 120});
+ * to extend BaristaBaseView, use
 
-// basic use:
-
-//		base_view = new BaristaBaseView();
-
-// optional arguments:
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *#1b9e77*
-// 3.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-// 4.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-// 5.  {Boolean} **png**  show the png export button. defaults to *true*
-
-//		base_view = new BaristaBaseView({el: $("target_selector",
-//									bg_color:"#ffffff",
-//									fg_color: "#1b9e77",
-//									span_class: "col-lg-12",
-//									plot_height: 120});
-
-// to extend BaristaBaseView, use
-
-//		extended_view = BaristaBaseView.extend({
-//										...
-//										});
+		extended_view = BaristaBaseView.extend({
+										...
+										});
+ *										
+ * A Backbone.View the serves as the base view for other views in the barista library
+ * BaristaBaseView provides common functionality for views including standard initialization, redraw,
+ * render, template compilation, and png export functions
+ * This view by itself will construct a single panel with a png export option, but it is meant to be used
+ * as the base view that more complex views extend
+ * basic use:
+ * base_view = new BaristaBaseView();
+ * optional arguments:
+ * @param {string}  bg_color     the hex color code to use as the backgound of the view, defaults to
+ *                               #ffffff
+ * @param {string}  fg_color     the hex color code to use as the foreground color of the view, defaults
+ *                               to #1b9e77
+ * @param {string}  span_class   a bootstrap span class to size the width of the view, defaults to
+ *                               "col-lg-12"
+ * @param {number}  plot_height  the height of the plot in pixels, defaults to 120
+ * @param {boolean} png          show the png export button. defaults to true
+ */
 Barista.Views.BaristaBaseView = Backbone.View.extend({
-	// ### initialize
-	// initialize the view.  Views that extend BaristaBaseView should impliment code overiding this method.
-	// If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they should
-	// call it in their redraw method.  As an example:
-
-	//		initialize: function(){
-	//					this.base_initialize();
-	//					//your code here
-	//					}
-	//
-
+	/**
+ * initialize the view
+ * Views that extend BaristaBaseView should impliment code overiding this method
+ * If extended BaristaBaseViews want to use the built in base_initialize method of BaristaBaseView, they
+ * should call it in their redraw method
+ * As an example:
+ * initialize: function(){
+				this.base_initialize();
+				//your code here
+				}
+ */
 	initialize: function(){
 		this.base_initialize();
 	},
 
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "BaristaBaseView",
 
-	// ### model
-	// default model to Backbone.Model.  This default is only provided to make the view
-	// functional as a un-extended standalone.  An appropriate data model should be
-	// supplied for all views that extend BaristaBaseView
+	/**
+	 * default model to Backbone.Model
+	 * This default is only provided to make the view functional as a un-extended standalone
+	 * An appropriate data model should be supplied for all views that extend BaristaBaseView
+	 * @type {Backbone}
+	 */
 	model: new Backbone.Model(),
 
-	// ### base_initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view.  This method is provided so it
-	// can be used in view that extend BaristaBaseView
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 * This method is provided so it can be used in view that extend BaristaBaseView
+	 */
 	base_initialize: function(){
 		// set up color options.  default if not specified
 		this.bg_color = (this.options.bg_color !== undefined) ? this.options.bg_color : "#ffffff";
@@ -97,8 +103,9 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		return this;
 	},
 
-	// ### compile_template
-	// use Handlebars to compile the template for the view
+	/**
+	 * use Handlebars to compile the template for the view
+	 */
 	compile_template: function(){
 		var self = this;
 		this.div_string = 'barista_view' + new Date().getTime();
@@ -108,26 +115,28 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 												height: this.plot_height}));
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.  Views
-	// that extend BaristaBaseView should impliment draw code overiding this method.  If extended
-	// BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should
-	// call it in their render method.  As an example:
-
-	//		render: function(){
-	//					this.base_render();
-	//					//your code here
-	//					}
-	//
-
+	/**
+ * completely render the view
+ * Updates both static and dynamic content in the view
+ * Views that extend BaristaBaseView should impliment draw code overiding this method
+ * If extended BaristaBaseViews want to use the built in base_render method of BaristaBaseView, they should
+ * call it in their render method
+ * As an example:
+ * render: function(){
+			this.base_render();
+			//your code here
+			}
+ */
 	render: function(){
 		this.base_render();
 		return this;
 	},
 
-	// ### base_render
-	// completely redraw the view. Updates both static and dynamic content in the view.
-	// This method is provided so it can be used in view that extend BaristaBaseView
+	/**
+	 * completely redraw the view
+	 * Updates both static and dynamic content in the view
+	 * This method is provided so it can be used in view that extend BaristaBaseView
+	 */
 	base_render: function(){
 		// stuff this into a variable for later use
 		var self = this;
@@ -184,14 +193,16 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic portions of the view
+	 */
 	update: function(){
 		return this;
 	},
 
-	// ### savePng
-	// save the current state of the view into a png image
+	/**
+	 * save the current state of the view into a png image
+	 */
 	save_png: function(){
 		// do any pre save work that the child class may require
 		this.save_png_pre();
@@ -235,29 +246,27 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		this.save_png_post();
 	},
 
-	// ### save_png_pre
-	// dummy method that should be overiden if there is any work to do before
-	// saving the png image of the view.  For example, removing elements that
-	// will not render properly could be done before saving the image.  This
-	// function is called as the first step of *save_png*
+	/**
+	 * dummy method that should be overridden if there is any work to do before saving the png image of
+	 * the view
+	 * For example, removing elements that will not render properly could be done before saving the image
+	 * This function is called as the first step of save_png
+	 */
 	save_png_pre: function(){},
 
-	// ### save_png_post
-	// dummy method that should be overiden if there is any work to do after
-	// saving the png image of the view.  For example, restoring elements that
-	// were removed before saving could be done after saving the image.  This
-	// function is called as the last step of *save_png*
+	/**
+	 * dummy method that should be overridden if there is any work to do after saving the png image of
+	 * the view
+	 * For example, restoring elements that were removed before saving could be done after saving the image
+	 * This function is called as the last step of save_png
+	 */
 	save_png_post: function(){},
 
-
-	// ### hide
-	// hides the view by dimming the opacity and hiding it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the hide animation. defualts to *1*
-
-	//		pert_detail_view.hide(duration);
+	/**
+	 * hides the view by dimming the opacity and hiding it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
+	 * pert_detail_view.hide(duration);
+	 */
 	hide: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		var self = this;
@@ -265,14 +274,11 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 		setTimeout(function(){self.$el.hide()},duration);
 	},
 
-	// ### show
-	// shows the view by brightening the opacity and showing it in the DOM
-
-	// arguments
-
-	// 1.  {number}  **duration**  the time in ms for the show animation. defualts to *1*
-
-	//		pert_detail_view.show(duration);
+	/**
+	 * shows the view by brightening the opacity and showing it in the DOM
+	 * @param  {number} duration  the time in ms for the hide animation, defualts to *1*
+	 * pert_detail_view.show(duration);
+	 */
 	show: function(duration){
 		duration = (duration !== undefined) ? duration : 1;
 		this.$el.show();

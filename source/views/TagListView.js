@@ -1,45 +1,55 @@
-// **TagListView**
-// A Backbone.View that displays a list of objects in a collection as tags.  The tags are drawn
-// as rounded rectangles with text inside.  The text corresponds to the cid attributes in the
-// collection by defaul, but can be customized to display other fields if required
-
-// basic use
-
-//		tag_list_view = new TagListView();
-
-// optional arguments
-
-// 1.  {string}  **bg\_color**  the hex color code to use as the backgound of the view, defaults to *#ffffff*
-// 2.  {string}  **fg\_color**  the hex color code to use as the foreground color of the view, defaults to *white*
-// 3.  {string}  **tag\_color**  the hex color code to use as the tag color of the view, defaults to *gray*
-// 4.  {string}  **span\_class**  a bootstrap span class to size the width of the view, defaults to *"col-lg-12"*
-// 5.  {Number}  **plot_height**  the height of the plot in pixels, defaults to *120*
-// 6.  {string}  **display_field**  the model attribute to display for each model in the view's colleciton.  defualts to *'cid'*
-
-//		tag_list_view = new TagListView({el: $("target_selector",
-//									bg_color:"#ffffff",
-//									fg_color: "white",
-//									tag_color: "gray",
-//									span_class: "col-lg-12",
-//									plot_height: 120,
-//									display_attribute: "cid"});
+/**
+ * tag_list_view = new TagListView({el: $("target_selector",
+									bg_color:"#ffffff", 
+									fg_color: "white",
+									tag_color: "gray",
+									span_class: "col-lg-12",
+									plot_height: 120,
+									display_attribute: "cid"});
+ *
+ * A Backbone.View that displays a list of objects in a collection as tags
+ * The tags are drawn as rounded rectangles with text inside
+ * The text corresponds to the cid attributes in the collection by defaul, but can be customized to display
+ * other fields if required
+ * basic use:
+ * tag_list_view = new TagListView();
+ * optional arguments:
+ * @param {string} bg_color       the hex color code to use as the backgound of the view, defaults to
+ *                                #ffffff
+ * @param {string} fg_color       the hex color code to use as the foreground color of the view, defaults
+ *                                to white
+ * @param {string} tag_color      the hex color code to use as the tag color of the view, defaults to gray
+ * @param {string} span_class     a bootstrap span class to size the width of the view, defaults to
+ *                                "col-lg-12"
+ * @param {number} plot_height    the height of the plot in pixels, defaults to 120
+ * @param {string} display_field  the model attribute to display for each model in the view's colleciton.
+ *                                defualts to 'cid'
+ */
 
 Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
-	// ### name
-	// give the view a name to be used throughout the View's functions when it needs to know what its class name is
+	/**
+	 * give the view a name to be used throughout the View's functions when it needs to know what its class
+	 * name is
+	 * @type {String}
+	 */
 	name: "TagListView",
 
-	// ### model
-	// set of the default model for the view
+	/**
+	 * set of the default model for the view
+	 * @type {Backbone}
+	 */
 	model: new Backbone.Model(),
 
-	// ### collection
-	// set up a default collection for the view to work with
+	/**
+	 * set up a default collection for the view to work with
+	 * @type {Backbone}
+	 */
 	collection: new Backbone.Collection(),
 
-	// ### initialize
-	// overide the default Backbone.View initialize method to handle optional arguments, compile the view
-	// template, bind model changes to view updates, and render the view
+	/**
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
+	 * template, bind model changes to view updates, and render the view
+	 */
 	initialize: function(){
 		// initialize the base view
 		this.base_initialize();
@@ -69,8 +79,10 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		}
 	},
 
-	// ### render
-	// completely render the view. Updates both static and dynamic content in the view.
+	/**
+	 * completely render the view
+	 * Updates both static and dynamic content in the view
+	 */
 	render: function(){
 		var self = this;
 		// call BaristaBaseView's render function first so we can layer on top of it
@@ -91,8 +103,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### update
-	// update the dynamic potions of the view
+	/**
+	 * update the dynamic potions of the view
+	 */
 	update: function(){
 		var self = this;
 		// call BaristaBaseView's render function first so we can layer on top of it
@@ -113,8 +126,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 		return this;
 	},
 
-	// ### fit_height
-	// fits the view height to the height taken by the tags displayed
+	/**
+	 * fits the view height to the height taken by the tags displayed
+	 */
 	fit_height: function(){
 		// set the view's height attribute based on the number of rows in the
 		// vis
@@ -130,8 +144,9 @@ Barista.Views.TagListView = Barista.Views.BaristaBaseView.extend({
 
 	},
 
-	// ### draw tags
-	// utility function to draw tags diven a data set.
+	/**
+	 * utility function to draw tags diven a data set
+	 */
 	draw_tags: function(){
 		var self = this;
 		// draw the foreground text of all the tags
