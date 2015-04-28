@@ -45,8 +45,8 @@ Barista.Views.CMapNavigationView = Backbone.View.extend({
      * to build
      */
     wrap_content: function(){
-        $("body").children().wrapAll('<div class="cmap-navigation-content"/>');
-        $(".cmap-navigation-content").wrapAll('<div class="cmap-navigation-wrapper"/>');
+        $("body").children().wrapAll('<div class="container-fluid cmap-navigation-content"/>');
+        $(".cmap-navigation-content").wrapAll('<div class="container-fluid cmap-navigation-wrapper"/>');
     },
 
     /**
