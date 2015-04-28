@@ -10,6 +10,7 @@
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-docco-multi": "0.0.2",
+    "grunt-doxx": "0.1.2",
     "grunt-gitinfo": "^0.1.7",
     "grunt-groc": "~0.3.0",
     "intern": "^2.2.2",
