@@ -32,6 +32,7 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
       });
     };
   }
+  
 });
 
 Barista.Models.GenericSourceModel = Backbone.Model.extend({
