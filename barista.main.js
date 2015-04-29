@@ -2776,7 +2776,7 @@ function program9(depth0,data) {
     + "</p>\n				</div>\n\n				<div class=\"col-xs-4\">\n					";
   stack1 = helpers['if'].call(depth0, depth0.user, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n					<p class=\"cmap-header-splitter pull-right\"> </p>\n					<p id=\"cmapHeaderBetaFlag\" title=\"app name\" class=\"cmap-header-link-no-border pull-right\">Beta</p>\n					";
+  buffer += "\n					<p class=\"cmap-header-splitter pull-right\"> </p>\n					<p id=\"cmapHeaderBetaFlag\" title=\"app name\" class=\"cmap-header-flag-blue pull-right\">Beta</p>\n					";
   stack1 = helpers['if'].call(depth0, depth0.tour, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n				</div>\n			</div>\n		</div>\n	</div>\n\n\n\n	<!-- small screens -->\n	<div class=\"row visible-xs\">\n\n		<div class=\"row\">\n			<div class=\"col-sm-12 cmap-header-toolbar\">\n				<div class=\"col-xs-8\">\n					<p id=\"cmapHeaderMenuButtonXS\" title=\"menu\" class=\"cmap-header-link-no-border pull-left cmapHeaderMenuButton\"><i class=\"fa fa-bars\"></i> Menu</p>\n					";
