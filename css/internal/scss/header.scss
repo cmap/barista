@@ -26,6 +26,22 @@
     }
 }
 
+.cmap-header-flag {
+  font-family: $header_font_family;
+  font-size: 20px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0.87;
+  position: relative;
+  top: 14px;
+}
+
+.cmap-header-flag-blue {
+  @extend .cmap-header-flag;
+  color: $cmap_blue;
+}
+
 .cmap-header-link-no-border {
     font-family: $header_font_family;
     font-size: 20px;
