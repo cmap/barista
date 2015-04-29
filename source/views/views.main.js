@@ -1198,7 +1198,7 @@ Barista.Views.BubbleView = Backbone.View.extend({
  * @param {array}  logo          The urls to organization logos to use. Defaults to
  *                               ['//coreyflynn.github.io/Bellhop/img/broad_logo_small.png',
  *                               '//coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']
- * @param {array}  logo_url      The urls to organization links to use. Defaults to 
+ * @param {array}  logo_url      The urls to organization links to use. Defaults to
  *                               ['//www.broadinstitute.org/','//lincscloud.org/']
  * @param {string} template      The path to a handlebars template to use. Defaults to
  *                               templates/CMapFooter.handlebars
@@ -1225,8 +1225,8 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
 		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "/terms";
-		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png'];
-		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis'];
+		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//www.rocheusa.com/etc/docroot/corporate/common/img/roche-logo.png'];
+		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis','//www.rocheusa.com'];
 		this.template = (this.options.template !== undefined) ? this.options.template : "templates/CMapFooter.handlebars";
 
 		// compile the default template for the view
