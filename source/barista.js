@@ -4554,8 +4554,8 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
 		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "/terms";
-		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//www.rocheusa.com/etc/docroot/corporate/common/img/roche-logo.png'];
-		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis','//www.rocheusa.com'];
+		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//hometestingblog.testcountry.com/wp-content/uploads/2013/07/roche-logo.png'];
+		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis','//www.roche.com'];
 		this.template = (this.options.template !== undefined) ? this.options.template : "templates/CMapFooter.handlebars";
 
 		// compile the default template for the view
