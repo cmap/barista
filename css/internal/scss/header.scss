@@ -37,9 +37,9 @@
   top: 14px;
 }
 
-.cmap-header-flag-blue {
+.cmap-header-flag-red {
   @extend .cmap-header-flag;
-  color: $cmap_blue;
+  color: red;
 }
 
 .cmap-header-link-no-border {

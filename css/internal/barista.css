@@ -190,7 +190,7 @@ body {
   border: 1px solid white;
 }
 
-.cmap-header-flag, .cmap-header-flag-blue {
+.cmap-header-flag, .cmap-header-flag-red {
   font-family: "Roboto Slab", Cambria, serif;
   font-size: 20px;
   color: white;
@@ -201,8 +201,8 @@ body {
   top: 14px;
 }
 
-.cmap-header-flag-blue {
-  color: #40B1D6;
+.cmap-header-flag-red {
+  color: red;
 }
 
 .cmap-header-link-no-border, .cmap-header-username, .cmap-header-link-left-border, .cmap-header-link-right-border {

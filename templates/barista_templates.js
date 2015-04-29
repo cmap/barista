@@ -244,7 +244,7 @@ function program9(depth0,data) {
   return "\n						<div class=\"dropdown pull-right\">\n							<p id=\"username\" title=\"profile\" class=\"cmap-header-username data-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-user cmap-header-mobile-user-icon\"></i><span class=\"caret cmap-header-caret\"></span></p>\n							<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"username\">\n								<li role=\"presentation\"><a id=\"logout\" role=\"menuitem\" tabindex=\"-1\" href=\"/signout\">Logout</a></li>\n							<li role=\"presentation\"><a id=\"settings\" role=\"menuitem\" tabindex=\"-1\" href=\"/settings\">Account settings</a></li>\n							<li role=\"presentation\"><a id=\"about\" role=\"menuitem\" tabindex=\"-1\" href=\"/about\">About CLUE</a></li>\n							</ul>\n						</div>\n					";
   }
 
-  buffer += "<div class=\"cmap-header\">\n\n	<!-- large screens -->\n	<div class=\"row hidden-xs\">\n		<div class=\"row\">\n			<div class=\"col-sm-12 cmap-header-toolbar\">\n				<div class=\"col-xs-8\">\n					<p id=\"cmapHeaderMenuButtonXL\" title=\"menu\" class=\"cmap-header-link-no-border pull-left cmapHeaderMenuButton\"><i class=\"fa fa-bars\"></i> Menu</p>\n					<!-- <a href=\"/\"> -->\n						<img class=\"cmap-header-image pull-left\" src=\"//cmap.github.io/cdn/img/logos/linscloud_logo_RGB_small-cloud-web.png\">\n					<!-- </a> -->\n					";
+  buffer += "<div class=\"cmap-header\">\n\n	<!-- large screens -->\n	<div class=\"row hidden-xs\">\n		<div class=\"row\">\n			<div class=\"col-sm-12 cmap-header-toolbar\">\n				<div class=\"col-xs-8\">\n					<p id=\"cmapHeaderMenuButtonXL\" title=\"menu\" class=\"cmap-header-link-no-border pull-left cmapHeaderMenuButton\"><i class=\"fa fa-bars\"></i> Menu</p>\n					<!-- <a href=\"/\"> -->\n						<img class=\"cmap-header-image pull-left\" src=\"//cmap.github.io/cdn/img/logos/linscloud_logo_RGB_small-cloud-web.png\">\n					<!-- </a> -->\n					<p id=\"cmapHeaderBetaFlag\" title=\"app name\" class=\"cmap-header-flag-red pull-left\">Beta</p>\n					";
   stack1 = helpers['if'].call(depth0, depth0.title, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n					<p id=\"cmapHeaderMenuAppDescription\" title=\"description\" class=\"cmap-header-subtitle pull-left\">";
@@ -254,7 +254,7 @@ function program9(depth0,data) {
     + "</p>\n				</div>\n\n				<div class=\"col-xs-4\">\n					";
   stack1 = helpers['if'].call(depth0, depth0.user, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n					<p class=\"cmap-header-splitter pull-right\"> </p>\n					<p id=\"cmapHeaderBetaFlag\" title=\"app name\" class=\"cmap-header-flag-blue pull-right\">Beta</p>\n					";
+  buffer += "\n					<p class=\"cmap-header-splitter pull-right\"> </p>\n					";
   stack1 = helpers['if'].call(depth0, depth0.tour, {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n				</div>\n			</div>\n		</div>\n	</div>\n\n\n\n	<!-- small screens -->\n	<div class=\"row visible-xs\">\n\n		<div class=\"row\">\n			<div class=\"col-sm-12 cmap-header-toolbar\">\n				<div class=\"col-xs-8\">\n					<p id=\"cmapHeaderMenuButtonXS\" title=\"menu\" class=\"cmap-header-link-no-border pull-left cmapHeaderMenuButton\"><i class=\"fa fa-bars\"></i> Menu</p>\n					";
