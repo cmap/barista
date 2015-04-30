@@ -4,6 +4,31 @@ mixin iForSymbolType(symbol)
 mixin labelForSymbolType(symbol)
   div(class=["label", "label-"+(symbol.gtype === "function" || symbol.gtype === "method" ? "info":"success"), "radius", "ctx-type"])= symbol.ctx.type
 
+mixin sub(cat, start)
+  li
+    - var x = currentName
+    - var catstring = JSON.stringify(cat)
+      if (x.search(cat.toLowerCase()) > -1)
+        a.lower_outer(onclick="listCollapse(this, " + catstring +")") #{cat} &uarr;
+          ul.mycoll(style="display: block")
+            each file in files
+              - var ti = JSON.stringify(file.name)
+              - var su = ti.indexOf(cat.toLowerCase() + "/")
+              - var su2 = ti.indexOf(".main")
+              if (su > -1 && su2 < 0)
+                li.inner
+                  a.lower_inner(href=file.relName) #{ti.substring(start, ti.length - 4)}
+      else
+        a.lower_outer(onclick="listCollapse(this, " + catstring +")") #{cat} &darr;
+          ul.mycoll(style="display: none")
+            each file in files
+              - var ti = JSON.stringify(file.name)
+              - var su = ti.indexOf(cat.toLowerCase() + "/")
+              - var su2 = ti.indexOf(".main")
+              if (su > -1 && su2 < 0)
+                li.inner
+                  a.lower_inner(href=file.relName) #{ti.substring(start, ti.length - 4)}
+
 doctype html
 html
   head
@@ -93,116 +118,17 @@ html
                         a.upper(href=file.relName) #{file.name.substring(0, su3)}
                       else
                         a.upper(href=file.relName) #{file.name}
-            li
-              - var x = currentName
-                if (x.search('collections') > -1)
-                  a.lower_outer(onclick="listCollapse(this, 'Collections')") Collections &uarr;
-                    ul.mycoll(style="display: block")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("collections/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(13, ti.length - 4)}
-                else
-                  a.lower_outer(onclick="listCollapse(this, 'Collections')") Collections &darr;
-                    ul.mycoll(style="display: none")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("collections/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(13, ti.length - 4)}
-            li
-              - var x = currentName
-                if (x.search('datasets') > -1)
-                  a.lower_outer(onclick="listCollapse(this, 'Datasets')") Datasets &uarr;
-                    ul.mycoll(style="display: block")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("datasets/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(10, ti.length - 4)}
-                else
-                  a.lower_outer(onclick="listCollapse(this, 'Datasets')") Datasets &darr;
-                    ul.mycoll(style="display: none")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("datasets/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(10, ti.length - 4)}
-            li
-              - var x = currentName
-                if (x.search('models') > -1)
-                  a.lower_outer(onclick="listCollapse(this, 'Models')") Models &uarr;
-                    ul.mycoll(style="display: block")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("models/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(8, ti.length - 4)}
-                else
-                  a.lower_outer(onclick="listCollapse(this, 'Models')") Models &darr;
-                    ul.mycoll(style="display: none")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("models/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(8, ti.length - 4)}
-            li
-              - var x = currentName
-                if (x.search('utils') > -1)
-                  a.lower_outer(onclick="listCollapse(this, 'Utils')") Utils &uarr;
-                    ul.mycoll(style="display: block")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("utils/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
-                else
-                  a.lower_outer(onclick="listCollapse(this, 'Utils')") Utils &darr;
-                    ul.mycoll(style="display: none")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("utils/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
-            li
-              - var x = currentName
-                if (x.search('views') > -1)
-                  a.lower_outer(onclick="listCollapse(this, 'Views')") Views &uarr;
-                    ul.mycoll(style="display: block")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("views/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}
-                else
-                  a.lower_outer(onclick="listCollapse(this, 'Views')") Views &darr;
-                    ul.mycoll(style="display: none")
-                      each file in files
-                        - var ti = JSON.stringify(file.name)
-                        - var su = ti.indexOf("views/")
-                        - var su2 = ti.indexOf(".main")
-                        if (su > -1 && su2 < 0)
-                          li.inner
-                            a.lower_inner(href=file.relName) #{ti.substring(7, ti.length - 4)}               
+            
+            +sub('Collections', 13)
+
+            +sub('Datasets', 10)
+
+            +sub('Models', 8)
+
+            +sub('Utils', 7)
+
+            +sub('Views', 7)
+         
         .span9
           if locals.readme
             section(id=name) !{readme}
