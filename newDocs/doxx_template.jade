@@ -4,7 +4,7 @@ mixin iForSymbolType(symbol)
 mixin labelForSymbolType(symbol)
   div(class=["label", "label-"+(symbol.gtype === "function" || symbol.gtype === "method" ? "info":"success"), "radius", "ctx-type"])= symbol.ctx.type
 
-mixin sub(cat, start)
+mixin sub(cat)
   li
     - var x = currentName
       if (x.search(cat.toLowerCase()) > -1)
@@ -16,7 +16,7 @@ mixin sub(cat, start)
               - var su2 = ti.indexOf(".main")
               if (su > -1 && su2 < 0)
                 li.inner
-                  a.lower_inner(href=file.relName) #{ti.substring(start, ti.length - 4)}
+                  a.lower_inner(href=file.relName) #{ti.substring(cat.length + 2, ti.length - 4)}
       else
         a.lower_outer(onclick="listCollapse(this, '" + cat +"')") #{cat} &darr;
           ul.mycoll(style="display: none")
@@ -26,7 +26,7 @@ mixin sub(cat, start)
               - var su2 = ti.indexOf(".main")
               if (su > -1 && su2 < 0)
                 li.inner
-                  a.lower_inner(href=file.relName) #{ti.substring(start, ti.length - 4)}
+                  a.lower_inner(href=file.relName) #{ti.substring(cat.length + 2, ti.length - 4)}
 
 doctype html
 html
@@ -118,15 +118,15 @@ html
                       else
                         a.upper(href=file.relName) #{file.name}
             
-            +sub('Collections', 13)
+            +sub('Collections')
 
-            +sub('Datasets', 10)
+            +sub('Datasets')
 
-            +sub('Models', 8)
+            +sub('Models')
 
-            +sub('Utils', 7)
+            +sub('Utils')
 
-            +sub('Views', 7)
+            +sub('Views')
          
         .span9
           if locals.readme
