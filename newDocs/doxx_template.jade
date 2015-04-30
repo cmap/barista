@@ -7,9 +7,8 @@ mixin labelForSymbolType(symbol)
 mixin sub(cat, start)
   li
     - var x = currentName
-    - var catstring = JSON.stringify(cat)
       if (x.search(cat.toLowerCase()) > -1)
-        a.lower_outer(onclick="listCollapse(this, " + catstring +")") #{cat} &uarr;
+        a.lower_outer(onclick="listCollapse(this, '" + cat +"')") #{cat} &uarr;
           ul.mycoll(style="display: block")
             each file in files
               - var ti = JSON.stringify(file.name)
@@ -19,7 +18,7 @@ mixin sub(cat, start)
                 li.inner
                   a.lower_inner(href=file.relName) #{ti.substring(start, ti.length - 4)}
       else
-        a.lower_outer(onclick="listCollapse(this, " + catstring +")") #{cat} &darr;
+        a.lower_outer(onclick="listCollapse(this, '" + cat +"')") #{cat} &darr;
           ul.mycoll(style="display: none")
             each file in files
               - var ti = JSON.stringify(file.name)
