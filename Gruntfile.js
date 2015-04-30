@@ -191,10 +191,10 @@ module.exports = function(grunt) {
     doxx: {
       custom: {
         src: 'source',
-        target: 'newDocs2',
+        target: 'newDocs',
         options: {
           ignore: 'test',
-          template: 'newDocs2/doxx_template.jade'
+          template: 'newDocs/doxx_template.jade'
         },
       }
     },
