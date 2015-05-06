@@ -39,9 +39,8 @@ html
     script(src="collapse.js" type="text/javascript")
     script(type='text/javascript')
       |$(document).ready(function(){
-      |  var x = event.target;
-      |  $(document).on("click", "span", (function() {
-      |    $(event.target).find("pre").toggle(400);
+      |  $(document).on("click", "span", (function(e) {
+      |    $(e.target).find("pre").toggle(400);
       |  }));
       |});
     style.
