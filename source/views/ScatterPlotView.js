@@ -194,7 +194,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.bg_layer.selectAll('.y_axis_label').data([1]).enter().append('text')
 			.attr("class","y_axis_label axis_label")
 			// .attr("transform", "rotate(-90)")
-			.attr("y", 20)
+			.attr("y", 40)
 			.attr("x", this.margin + 2)
 			.attr("dy","1em")
 			.attr("font-family","Open Sans")
