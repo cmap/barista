@@ -9489,9 +9489,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("class","x_axis_label axis_label")
 			.attr("x",this.width/2)
 			.attr("y",this.height-10)
-			.attr("font-family","'Open Sans")
+			.attr("font-family","Open Sans")
       .attr("font-weight","300")
-      .attr("font-size","16px")
+      .attr("font-size","14px")
 			.text(this.model.get('x_axis_title'));
 
 		// plot the y axis label
@@ -9502,7 +9502,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("y", this.margin)
 			.attr("x", this.margin + 2)
 			.attr("dy","1em")
-			.attr("font-family","'Open Sans")
+			.attr("font-family","Open Sans")
       .attr("font-weight","300")
       .attr("font-size","14px")
 			.text(this.model.get('y_axis_title'));
@@ -9513,9 +9513,9 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("class","title")
 			.attr("x",this.margin)
 			.attr("y",this.margin/2)
-			.attr("font-family","'Open Sans")
+			.attr("font-family","Open Sans")
       .attr("font-weight","300")
-      .attr("font-size","14px")
+      .attr("font-size","16px")
 			.text(this.model.get('title'));
 	},
 
