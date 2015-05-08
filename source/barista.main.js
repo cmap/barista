@@ -9901,7 +9901,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.bg_layer.selectAll('.title').data([]).exit().remove();
 		this.bg_layer.selectAll('.title').data([1]).enter().append('text')
 			.attr("class","title")
-			.attr("x",this.width/2)
+			.attr("x",thi.margin)
 			.attr("y",this.margin/2)
 			.style("text-anchor","left")
 			.style("font","16px Open Sans")
