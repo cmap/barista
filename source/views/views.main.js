@@ -5956,7 +5956,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 /**
  * scatter_plot_view = new ScatterPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
+									bg_color:"#ffffff",
 									fg_color: "#1b9e77",
 									span_class: "span4",
 									scale_by: undefined,
@@ -6055,7 +6055,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.set_ranges();
 
 		// set up x and y scaling
-		this.set_scales();		
+		this.set_scales();
 
 		// build Axes
 		this.build_axes();
@@ -6086,7 +6086,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.set_ranges();
 
 		// set up x and y scaling
-		this.set_scales();		
+		this.set_scales();
 
 		// build Axes
 		this.build_axes();
@@ -6151,6 +6151,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("x", this.margin + 2)
 			.attr("dy","1em")
 			.style("text-anchor","left")
+			.style("font","14px Open Sans")
 			.text(this.model.get('y_axis_title'));
 
 		// plot the title
@@ -6168,11 +6169,11 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 	 */
 	update: function(){
 	var self = this;
-	
+
 	// get model data
 	this.x_data = this.model.get('x_data');
 	this.y_data = this.model.get('y_data');
-	
+
 	// set up x and y ranges
 	this.set_ranges();
 
@@ -6206,7 +6207,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			return self.dot_scaler(self.scale_data[i]);
 		}});
 
-	// remove excess points 
+	// remove excess points
 	this.points_selection.exit().remove();
 
 	// transition the axes
@@ -6357,6 +6358,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.style("font-size","11px");
 	}
 });
+
 /**
  * tag_list_view = new TagListView({el: $("target_selector",
 									bg_color:"#ffffff", 
