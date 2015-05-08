@@ -203,11 +203,11 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		// plot the title
 		this.bg_layer.selectAll('.title').data([]).exit().remove();
 		this.bg_layer.selectAll('.title').data([1]).enter().append('text')
-			.attr("class","title title")
+			.attr("class","title")
 			.attr("x",this.width/2)
 			.attr("y",this.margin/2)
-			.style("text-anchor","middle")
-			.style("font","14px Open Sans")
+			.style("text-anchor","left")
+			.style("font","16px Open Sans")
 			.text(this.model.get('title'));
 	},
 
@@ -402,6 +402,6 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 
 		this.vis.selectAll('.axis').selectAll("text")
 			.style("font-family","sans-serif")
-			.style("font-size","11px");
+			.style("font","14px Open Sans");
 	}
 });
