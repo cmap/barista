@@ -9903,7 +9903,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 		this.bg_layer.selectAll('.title').data([]).exit().remove();
 		this.bg_layer.selectAll('.title').data([1]).enter().append('text')
 			.attr("class","title")
-			.attr("x",this.margin)
+			.attr("x",0)
 			.attr("y",this.margin/2)
 			.attr("font-family","Open Sans")
       .attr("font-weight","300")
