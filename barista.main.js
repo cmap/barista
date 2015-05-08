@@ -12379,7 +12379,8 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 
 		this.vis.selectAll('.axis').selectAll("text")
 			.style("font-family","sans-serif")
-			.style("font-size","11px");
+			.style("font-size","11px")
+			.style("font","11px Open Sans");
 
 		// build a scaling function
 		this.set_scaling_function();
@@ -12402,7 +12403,8 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("class","x_axis_label axis_label")
 			.attr("x",this.width/2)
 			.attr("y",this.height-10)
-			.style("text-anchor","middle")
+			.style("text-anchor","left")
+			.style("font","14px Open Sans bold")
 			.text(this.model.get('x_axis_title'));
 
 		// plot the y axis label
@@ -12424,6 +12426,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("x",this.width/2)
 			.attr("y",this.margin/2)
 			.style("text-anchor","middle")
+			.style("font","14px Open Sans")
 			.text(this.model.get('title'));
 	},
 
