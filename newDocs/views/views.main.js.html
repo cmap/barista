@@ -1699,7 +1699,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapFooterView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -1732,7 +1732,7 @@
               <tr>
                 <td>template</td>
                 <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars</p></td>
+                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars<br />header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
@@ -1758,8 +1758,9 @@
 	// store passed parameters as attributes of the view
 	this.organization = (this.options.organization !== undefined) ? this.options.organization : &quot;Broad Institute&quot;;
 	this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : &quot;/terms&quot;;
-	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png'];
-	this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis'];
+	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//hometestingblog.testcountry.com/wp-content/uploads/2013/07/roche-logo.png'];
+	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//hometestingblog.testcountry.com/wp-content/uploads/2013/07/roche-logo.png'];
+	this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis','//www.roche.com'];
 	this.template = (this.options.template !== undefined) ? this.options.template : &quot;templates/CMapFooter.handlebars&quot;;
 
 	// compile the default template for the view
@@ -1767,16 +1768,12 @@
 
 	// render the template
 	this.render();
-},</code></pre></span>
-          <section id="compile_template">
-            <h1>compile_template</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
-            </p>
-          </section>
-          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre class="tog"><code class="language-javascript">compile_template: function(){
+},
+
+/**
+ * use Handlebars to compile the specified template for the view
+ */
+compile_template: function(){
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapFooter;
 
@@ -1790,51 +1787,33 @@
 									logo_objects: logo_objects,
 									year: new Date().getFullYear()}));
 }
-});</code></pre></span>
-          <section id="CMapHeaderView">
-            <h1>CMapHeaderView</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapHeaderView</span>
-            </p>
-          </section>
-          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapHeaderView({el:&quot;header_target&quot;,<br />                                    title: &quot;&quot;,<br />                                    subtitle: &quot;&quot;,<br />                                    template: &quot;templates/CMapHeader.handlebars&quot;});</p><p>A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org<br />the header provides links in the view to navigate back to apps.lincscloud.org as well as links for<br />sharing, settings, and information<br />The view accepts as parameters a page title, subtitle, and handlebars template<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th style="width:20%">Option name</th>
-                <th style="width:20%">Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>title</td>
-                <td>string</td>
-                <td><p>The title of the page. Defaults to Title</p></td>
-              </tr>
-              <tr>
-                <td>subtitle</td>
-                <td>string</td>
-                <td><p>The title of the page. Defaults to Sub Title</p></td>
-              </tr>
-              <tr>
-                <td>template</td>
-                <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                           templates/CMapHeader.handlebars</p></td>
-              </tr>
-            </tbody>
-          </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre class="tog"><code class="language-javascript">Barista.Views.CMapHeaderView = Backbone.View.extend({</code></pre></span>
-          <section id="name">
-            <h1>name</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-success radius ctx-type">property</div><span>name</span>
-            </p>
-          </section>
-          <div style="font-family:Roboto Slab" class="description"><p>give the view a name to be used throughout the View&#39;s functions when it needs to know what its class<br />name is</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre class="tog"><code class="language-javascript">name: &quot;CMapHeaderView&quot;,</code></pre></span>
+});
+
+/**
+ * header = new CMapHeaderView({el:&quot;header_target&quot;,
+								title: &quot;&quot;,
+								subtitle: &quot;&quot;,
+								template: &quot;templates/CMapHeader.handlebars&quot;});
+ *
+ * A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
+ * the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+ * sharing, settings, and information
+ * The view accepts as parameters a page title, subtitle, and handlebars template
+ * basic use:
+ * header = new CMapHeaderView({el:&quot;header_target&quot;});
+ * optional arguments:
+ * @param {string} title     The title of the page. Defaults to Title
+ * @param {string} subtitle  The title of the page. Defaults to Sub Title
+ * @param {string} template  The path to a handlebars template to use. Defaults to
+ *                           templates/CMapHeader.handlebars
+ */
+Barista.Views.CMapHeaderView = Backbone.View.extend({
+/**
+ * give the view a name to be used throughout the View's functions when it needs to know what its class
+ * name is
+ * @type {String}
+ */
+name: &quot;CMapHeaderView&quot;,</code></pre></span>
           <section id="initialize">
             <h1>initialize</h1>
             <h5 class="subheader"></h5>
@@ -7457,7 +7436,7 @@ init_panel: function(){
 	this.set_ranges();
 
 	// set up x and y scaling
-	this.set_scales();		
+	this.set_scales();
 
 	// build Axes
 	this.build_axes();
@@ -7495,7 +7474,7 @@ init_panel: function(){
 	this.set_ranges();
 
 	// set up x and y scaling
-	this.set_scales();		
+	this.set_scales();
 
 	// build Axes
 	this.build_axes();
@@ -7525,7 +7504,8 @@ init_panel: function(){
 
 	this.vis.selectAll('.axis').selectAll(&quot;text&quot;)
 		.style(&quot;font-family&quot;,&quot;sans-serif&quot;)
-		.style(&quot;font-size&quot;,&quot;11px&quot;);
+		.style(&quot;font-size&quot;,&quot;11px&quot;)
+		.style(&quot;font&quot;,&quot;11px Open Sans&quot;);
 
 	// build a scaling function
 	this.set_scaling_function();
@@ -7548,7 +7528,9 @@ init_panel: function(){
 		.attr(&quot;class&quot;,&quot;x_axis_label axis_label&quot;)
 		.attr(&quot;x&quot;,this.width/2)
 		.attr(&quot;y&quot;,this.height-10)
-		.style(&quot;text-anchor&quot;,&quot;middle&quot;)
+		.attr(&quot;font-family&quot;,&quot;Open Sans&quot;)
+      .attr(&quot;font-weight&quot;,&quot;300&quot;)
+      .attr(&quot;font-size&quot;,&quot;14px&quot;)
 		.text(this.model.get('x_axis_title'));
 
 	// plot the y axis label
@@ -7556,19 +7538,23 @@ init_panel: function(){
 	this.bg_layer.selectAll('.y_axis_label').data([1]).enter().append('text')
 		.attr(&quot;class&quot;,&quot;y_axis_label axis_label&quot;)
 		// .attr(&quot;transform&quot;, &quot;rotate(-90)&quot;)
-		.attr(&quot;y&quot;, this.margin)
+		.attr(&quot;y&quot;, 40)
 		.attr(&quot;x&quot;, this.margin + 2)
 		.attr(&quot;dy&quot;,&quot;1em&quot;)
-		.style(&quot;text-anchor&quot;,&quot;left&quot;)
+		.attr(&quot;font-family&quot;,&quot;Open Sans&quot;)
+      .attr(&quot;font-weight&quot;,&quot;300&quot;)
+      .attr(&quot;font-size&quot;,&quot;14px&quot;)
 		.text(this.model.get('y_axis_title'));
 
 	// plot the title
 	this.bg_layer.selectAll('.title').data([]).exit().remove();
 	this.bg_layer.selectAll('.title').data([1]).enter().append('text')
-		.attr(&quot;class&quot;,&quot;title title&quot;)
-		.attr(&quot;x&quot;,this.width/2)
+		.attr(&quot;class&quot;,&quot;title&quot;)
+		.attr(&quot;x&quot;,0)
 		.attr(&quot;y&quot;,this.margin/2)
-		.style(&quot;text-anchor&quot;,&quot;middle&quot;)
+		.attr(&quot;font-family&quot;,&quot;Open Sans&quot;)
+      .attr(&quot;font-weight&quot;,&quot;300&quot;)
+      .attr(&quot;font-size&quot;,&quot;16px&quot;)
 		.text(this.model.get('title'));
 },</code></pre></span>
           <section id="update">
@@ -7619,7 +7605,7 @@ this.points_selection.transition().duration(500)
 		return self.dot_scaler(self.scale_data[i]);
 	}});
 
-// remove excess points 
+// remove excess points
 this.points_selection.exit().remove();
 
 // transition the axes
@@ -7787,7 +7773,7 @@ this.style_axes();
 
 	this.vis.selectAll('.axis').selectAll(&quot;text&quot;)
 		.style(&quot;font-family&quot;,&quot;sans-serif&quot;)
-		.style(&quot;font-size&quot;,&quot;11px&quot;);
+		.style(&quot;font&quot;,&quot;14px Open Sans&quot;);
 }
 });</code></pre></span>
           <section id="TagListView">

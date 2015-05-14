@@ -190,7 +190,7 @@
               <div class="label label-success radius ctx-type">property</div><span>Barista.Views.CMapFooterView</span>
             </p>
           </section>
-          <div style="font-family:Roboto Slab" class="description"><p>header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
+          <div style="font-family:Roboto Slab" class="description"><p>A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org<br />the view provides standard copyright text and customizable organization name, terms and conditions link,<br />and organization logo/link<br />basic use:<br />header = new CMapHeaderView({el:&quot;header_target&quot;});<br />optional arguments:</p> </div>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -223,7 +223,7 @@
               <tr>
                 <td>template</td>
                 <td>string</td>
-                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars</p></td>
+                <td><p>The path to a handlebars template to use. Defaults to                               templates/CMapFooter.handlebars<br />header = new CMapFooterView({el:&quot;footer_target&quot;,<br />                                    organization: &quot;Broad Institute&quot;,<br />                                    terms_url: &quot;//lincscloud.org/terms-and-conditions/&quot;,<br />                                     logo: [&#39;../img/broad_logo_small.png&#39;,&#39;../img/cmap_logo_small.png&#39;],<br />                                     logo_url: [&#39;//www.broadinstitute.org/&#39;,&#39;//lincscloud.org/&#39;],<br />                                    template: &quot;../templates/CMapFooter.handlebars&quot;});</p></td>
               </tr>
             </tbody>
           </table><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
@@ -249,8 +249,9 @@
 	// store passed parameters as attributes of the view
 	this.organization = (this.options.organization !== undefined) ? this.options.organization : &quot;Broad Institute&quot;;
 	this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : &quot;/terms&quot;;
-	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png'];
-	this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis'];
+	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//hometestingblog.testcountry.com/wp-content/uploads/2013/07/roche-logo.png'];
+	this.logo = (this.options.logo !== undefined) ? this.options.logo : ['//coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','//coreyflynn.github.io/Bellhop/img/CMap-logox.png','//coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','//hometestingblog.testcountry.com/wp-content/uploads/2013/07/roche-logo.png'];
+	this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['//www.broadinstitute.org/','//clue.io/','//www.broadinstitute.org/vis','//www.roche.com'];
 	this.template = (this.options.template !== undefined) ? this.options.template : &quot;templates/CMapFooter.handlebars&quot;;
 
 	// compile the default template for the view
@@ -258,16 +259,12 @@
 
 	// render the template
 	this.render();
-},</code></pre></span>
-          <section id="compile_template">
-            <h1>compile_template</h1>
-            <h5 class="subheader"></h5>
-            <p>
-              <div class="label label-info radius ctx-type">method</div><span>compile_template()</span>
-            </p>
-          </section>
-          <div style="font-family:Roboto Slab" class="description"><p>use Handlebars to compile the specified template for the view</p> </div><span style="cursor: pointer;color: #ff66cc;font-family: Helvetica Neue;font-weight: bold">CLICK TO TOGGLE CODE
-            <pre class="tog"><code class="language-javascript">compile_template: function(){
+},
+
+/**
+ * use Handlebars to compile the specified template for the view
+ */
+compile_template: function(){
 	// grab the template
 	this.compiled_template = BaristaTemplates.CMapFooter;
 
