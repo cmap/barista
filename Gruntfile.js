@@ -224,7 +224,7 @@ module.exports = function(grunt) {
   grunt.registerTask('concat_main',['concat:js_barista_main_min']);
 
   // Default task(s).
-  grunt.registerTask('default', ['handlebars','concat_internal','uglify:main','concat_main','cssmin','groc']);
+  grunt.registerTask('default', ['handlebars','concat_internal','uglify:main','concat_main','cssmin']);
 
 
 
