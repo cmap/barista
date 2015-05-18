@@ -1024,7 +1024,7 @@ Barista.Views.BubbleView = Backbone.View.extend({
 
 // # **CMapFooterView**
 
-// A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
+// A view that provides the standard Connectivity map page footer for apps built on clue.io
 // the view provides standard copyright text and customizable organization name,
 // terms and conditions link, and organization logo/link
 // basic use:
@@ -1034,16 +1034,16 @@ Barista.Views.BubbleView = Backbone.View.extend({
 // optional arguments:
 
 // 1.  {string}  **organization**  the name of the organization that claims copyright. Defaults to *Broad Institute*
-// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://lincscloud.org/terms-and-conditions/*
+// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://clue.io/terms-and-conditions/*
 // 3.  {Array}  **logo**  The urls to organization logos to use. Defaults to *['http://coreyflynn.github.io/Bellhop/img/broad_logo_small.png','http://coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
-// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://lincscloud.org/']*
+// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://clue.io/']*
 // 5.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapFooter.handlebars*
 
 //		header = new CMapFooterView({el:"footer_target",
 //									organization: "Broad Institute",
-//									terms_url: "http://lincscloud.org/terms-and-conditions/",
+//									terms_url: "http://clue.io/terms-and-conditions/",
 // 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
-// 									logo_url: ['http://www.broadinstitute.org/','http://lincscloud.org/'],
+// 									logo_url: ['http://www.broadinstitute.org/','http://clue.io/'],
 //									template: "../templates/CMapFooter.handlebars"});
 Barista.Views.CMapFooterView = Backbone.View.extend({
 	// ### name
@@ -1055,9 +1055,9 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 	initialize: function(){
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
-		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://lincscloud.org/terms-and-conditions/";
+		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://clue.io/terms-and-conditions/";
 		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['http://coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','http://coreyflynn.github.io/Bellhop/img/CMap-logox.png','http://coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','http://coreyflynn.github.io/Bellhop/img/NIH_LINCS_logo.gif'];
-		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://lincscloud.org/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
+		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://clue.io/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
 		this.template = (this.options.template !== undefined) ? this.options.template : "templates/CMapFooter.handlebars";
 
 		// compile the default template for the view
@@ -1087,8 +1087,8 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 
 // # **CMapHeaderView**
 
-// A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
-// the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+// A view the provides the standard Connectivity map page header for apps built on clue.io
+// the header provides links in the view to navigate back to clue.io as well as links for
 // sharing, settings, and information.  The view accepts as parameters a page title, subtitle, and handlebars template
 // basic use:
 
@@ -1171,7 +1171,7 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 		this.placeholder = (this.options.placeholder !== undefined) ? this.options.placeholder : "search cell lines";
 
 		// grab cell_ids and store them as an atribute of the view
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 		var params = {q:'{"cell_id":{"$regex":""}}',d:"cell_id"};
 		$.getJSON(cellinfo,params,function(res){
 			self.cell_lines = res;
@@ -1225,7 +1225,7 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
     **/
 	random_val: function(){
 		var self = this;
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 
 		var skip = Math.round(Math.random()*40);
 		var params = {q:'{"lincs_status":{"$in":["core_cline","core_pline","DIVR"]}}', l:1, sk:skip};
@@ -1855,7 +1855,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
-		var pertinfo = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+		var pertinfo = 'http://api.clue.io/a2/pertinfo?callback=?';
 		params = {q: '{"pert_type":"trt_cp"}',
 					f:'{"pert_iname":1}',
 										l:1,
@@ -1897,7 +1897,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 			remote: {
 				// set the remote data source to use pertinfo with custom query params
-				url: ['http://api.lincscloud.org/a2/pertinfo?',
+				url: ['http://api.clue.io/a2/pertinfo?',
 					  'q={"pert_iname":{"$regex":"%QUERY", "$options":"i"}, "pert_type":"trt_cp"}',
 					  '&f={"pert_iname":1,"pert_type":1}',
 					  '&l=100',
@@ -4572,7 +4572,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 		this.placeholder = (this.options.placeholder !== undefined) ? this.options.placeholder : 'search gene, compound or cell type name';
 
 		// grab cell_ids and store them as an atribute of the view
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 		var params = {q:'{"cell_id":{"$regex":""}}',d:"cell_id"};
 		$.getJSON(cellinfo,params,function(res){
 			self.cell_lines = res;
@@ -4631,7 +4631,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
-		var pertinfo = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+		var pertinfo = 'http://api.clue.io/a2/pertinfo?callback=?';
 		params = {q: '{"pert_type":{"$in":["trt_cp","trt_sh"]}}',
 					f:'{"pert_iname":1}',
 										l:1,
@@ -4814,7 +4814,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 		// set up static view details, default if not specified
 		this.details_text = (this.options.details_text !== undefined) ? this.options.details_text : "view details";
-		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://apps.lincscloud.org";
+		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://clue.io";
 		this.details_target = (this.options.details_target !== undefined) ? this.options.details_target : "_self";
 
 		// set up default categories to display

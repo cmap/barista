@@ -49,7 +49,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/cellinfo?',
+					return ['http://api.clue.io/a2/cellinfo?',
 						'q={"lincs_status":{"$in":["core_cline","core_pline","DIVR"]},"cell_histology":{"$regex":"^' + query + '", "$options":"i"}}',
 						'&l=10',
 						'&s={"cell_id":1}'].join('');
@@ -124,7 +124,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url, query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/cellinfo?',
+					return ['http://api.clue.io/a2/cellinfo?',
 						'q={"lincs_status":{"$in":["core_cline","core_pline","DIVR"]},"cell_id":{"$regex":"^' + query + '", "$options":"i"}}',
 						'&l=10',
 						'&s={"cell_id":1}'].join('')
@@ -199,7 +199,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/cellinfo?',
+					return ['http://api.clue.io/a2/cellinfo?',
 						'q={"lincs_status":{"$in":["core_cline","core_pline","DIVR"]},"cell_lineage":{"$regex":"^' + query + '", "$options":"i"}}',
 						'&l=10',
 						'&s={"cell_id":1}'].join('');
@@ -274,7 +274,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/cellinfo?',
+					return ['http://api.clue.io/a2/cellinfo?',
 						'q={"lincs_status":{"$in":["core_cline","core_pline","DIVR"]}}',
 						'&d=mutations'].join('');
 				},
@@ -342,7 +342,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/pertinfo?',
+					return ['http://api.clue.io/a2/pertinfo?',
 						'q={"pert_iname":{"$regex":"^' + query + '", "$options":"i"}, "pert_type":"trt_cp"}',
 						'&f={"pert_iname":1,"pert_type":1}',
 						'&l=100',
@@ -449,7 +449,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/pertinfo?',
+					return ['http://api.clue.io/a2/pertinfo?',
 						'q={"pert_iname":{"$regex":"^' + query + '", "$options":"i"}, "pert_type":{"$in":["trt_sh","trt_oe","trt_oe.mut"]}}',
 						'&f={"pert_iname":1,"pert_type":1}',
 						'&l=100',
@@ -556,7 +556,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
-                    ['http://api.lincscloud.org/compute_status?',
+                    ['http://api.clue.io/compute_status?',
                           'q={"job_id":{"$regex":"^' + query + '", "$options":"i"}}',
                           '&l=10',
                           '&s={"job_id":1}'].join('');
@@ -631,7 +631,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
                 reomote: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
-                    return ['http://api.lincscloud.org/compute_status?',
+                    return ['http://api.clue.io/compute_status?',
                           'q={"params.rpt":{"$regex":"^' + query + '", "$options":"i"}}',
                           '&l=10',
                           '&s={"job_id":1}'].join('');
@@ -706,7 +706,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
-                    return ['http://api.lincscloud.org/compute_status?',
+                    return ['http://api.clue.io/compute_status?',
                           'q={"status":{"$regex":"^' + query + '", "$options":"i"}}',
                           '&l=10',
                           '&s={"status":1}'].join('')
@@ -862,7 +862,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/prism/v1/profileinfo?',
+					return ['http://api.clue.io/prism/v1/profileinfo?',
 						'q={"pert_iname":{"$regex":"^' + query + '", "$options":"i"}}',
 						'&f={"pert_iname":1}',
 						'&l=100',
@@ -943,7 +943,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
-					return ['http://api.lincscloud.org/a2/pertinfo?',
+					return ['http://api.clue.io/a2/pertinfo?',
 						'q={"pert_iname":{"$regex":"^' + query + '", "$options":"i"}, "pert_type":{"$regex":"^(?!.*c[a-z]s$).*$"}}',
 						'&f={"pert_iname":1,"pert_type":1}',
 						'&l=100',
@@ -1050,7 +1050,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
-                    return ['http://api.lincscloud.org/compute_status?',
+                    return ['http://api.clue.io/compute_status?',
                           'q={"tool_id":{"$regex":"^' + query + '", "$options":"i"}}',
                           '&l=10',
                           '&s={"tool_id":1}'].join('');
@@ -1125,7 +1125,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
-                    return ['http://api.lincscloud.org/compute_status?',
+                    return ['http://api.clue.io/compute_status?',
                           'q={"user_id":{"$regex":"^' + query + '", "$options":"i"}}',
                           '&l=10',
                           '&s={"user_id":1}'].join('');
@@ -1249,15 +1249,15 @@ Barista.numberWithCommas = function(x){
 // # **setUserKey**
 
 // a utility function to set a user_key attribute on the Barista object and set up
-// ajax calls to api.lincscloud.org to pass that user_key as a parameter
+// ajax calls to api.clue.io to pass that user_key as a parameter
 
 // arguments
 // 
 // 1.  {string}  **key**  The user_key to use or a path to a JSON file containing a user_key attribute, defaults to *""*
 Barista.setUserKey = function(key) {
-	// configure ajax calls to add the user key parameter on calls to api.lincscloud.org
+	// configure ajax calls to add the user key parameter on calls to api.clue.io
 	$.ajaxPrefilter(function( options, originalOptions, jqXHR ){
-		var re = new RegExp('api.lincscloud.org');
+		var re = new RegExp('api.clue.io');
 		if (re.test(options.url)){
 			options.data = $.param($.extend(originalOptions.data,{user_key:Barista.user_key}));
 		}
@@ -1354,9 +1354,9 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
     // cell\_ids
-    var sig_info = 'http://api.lincscloud.org/a2/siginfo?callback=?';
-    var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
-    var cell_info = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+    var sig_info = 'http://api.clue.io/a2/siginfo?callback=?';
+    var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
+    var cell_info = 'http://api.clue.io/a2/cellinfo?callback=?';
     var params = {};
     if (search_type === "multi"){
       search_string = '["' + search_string.split(/[:, ]/).join('","') + '"]';
@@ -1466,7 +1466,7 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
 
     // set up the api parameters to make a regular expression matched query against
     // pert_inames in pertinfo and retrieve the first result's pert_iname and pert_desc
-    var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+    var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
     var params = params = {q:'{"pert_type":"trt_cp","pert_iname":{"$regex":"^' + search_string + '", "$options":"i"}}',
                           l:1};
 
@@ -1606,7 +1606,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 
     // set up the api parameters to make a regular expression matched query against
     // pert_inames in pertinfo
-    var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+    var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
     var params = params = {
         q:'{"pert_type":{"$in":["trt_sh","trt_oe"]},"pert_iname":{"$regex":"^' + search_string + '", "$options":"i"}}',
         f:'{"pert_iname":1}',
@@ -1666,7 +1666,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 
         // set up the api parameters to make an exact matched query against
         // pert_inames in pertinfo and retrieve the first result
-        var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+        var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
         var params = params = {q:'{"pert_type":"'+ pert_type + '","pert_iname":"' + search_string + '"}',
                               l:1};
 
@@ -1697,7 +1697,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 // optional arguments:
 
 // 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-// 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"http://api.lincscloud.org/a2/pertinfo"*
+// 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"http://api.clue.io/a2/pertinfo"*
 
 // `generic_count_model = new GenericCountModel()`
 
@@ -1706,10 +1706,10 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
   // describes the model's default parameters
 
   // 1.  {string}  **search_field**  the document field the model with count over upon fetching data, defaults to *"pert_iname"*
-  // 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"http://api.lincscloud.org/a2/pertinfo"*
+  // 2.  {string}  **url**  the url of the api service to fetch data from, defaults to *"http://api.clue.io/a2/pertinfo"*
   defaults: {
     "search_field": "pert_iname",
-    "url": "http://api.lincscloud.org/a2/pertinfo",
+    "url": "http://api.clue.io/a2/pertinfo",
     "count": 0,
     "last_update": (new Date()).getTime(),
     "search_string": "",
@@ -1835,7 +1835,7 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
     // cell\_ids
-    var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+    var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi"){
       search_string = '["' + search_string.split(/[:, ]/).join('","') + '"]';
@@ -1902,7 +1902,7 @@ Barista.Models.PertCountModel = Backbone.Model.extend({
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
     // cell\_ids
-    var pert_info = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+    var pert_info = 'http://api.clue.io/a2/pertinfo?callback=?';
     var params = {};
     if (search_type === "multi") {
       search_string = '["' + search_string.split(/[:, ]/).join('","') + '"]';
@@ -2077,7 +2077,7 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
     // if we are doing a single query, match that query as a regular expression. If we are
     // doing a multi query, match exact names. If we are doing a cell line query, only match
     // cell\_ids
-    var sig_info = 'http://api.lincscloud.org/a2/siginfo?callback=?';
+    var sig_info = 'http://api.clue.io/a2/siginfo?callback=?';
     var params = {};
     if (search_type === "multi") {
       search_string = '["' + search_string.split(/[:, ]/).join('","') + '"]';
@@ -2207,7 +2207,7 @@ Barista.Models.TickModel = Backbone.Model.extend({
 // optional arguments:
 
 // 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.lincscloud.org/a2/pertinfo?callback=?'*
+// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.clue.io/a2/pertinfo?callback=?'*
 // 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
@@ -2218,7 +2218,7 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
 
     // #### url
     // the url from which model data is fetched
-    url: 'http://api.lincscloud.org/compute_status?callback=?',
+    url: 'http://api.clue.io/compute_status?callback=?',
 
     // #### skip
     // the skip parameter used in api calls when the collection is updated.
@@ -2321,12 +2321,12 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
 // optional arguments:
 
 // 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.lincscloud.org/a2/pertinfo?callback=?'*
+// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.clue.io/a2/pertinfo?callback=?'*
 // 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
 // `pert_collection = new CellCollection({model: PertModel,
-                                          // url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+                                          // url: 'http://api.clue.io/a2/pertinfo?callback=?',
                                           // skip: 0,
                                           // isLoading: false});`
 
@@ -2337,7 +2337,7 @@ Barista.Collections.CellCollection = Backbone.Collection.extend({
 
     // #### url
     // the url from which model data is fetched
-    url: 'http://api.lincscloud.org/a2/cellinfo?callback=?',
+    url: 'http://api.clue.io/a2/cellinfo?callback=?',
 
     // #### skip
     // the skip parameter used in api calls when the collection is updated.
@@ -2408,7 +2408,7 @@ Barista.Collections.CellCollection = Backbone.Collection.extend({
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
 //		pert_collection = new PertCollection({model: PertModel,
-//											url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+//											url: 'http://api.clue.io/a2/pertinfo?callback=?',
 //											skip: 0,
 //											isLoading: false});
 Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
@@ -2477,12 +2477,12 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
 // optional arguments:
 
 // 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.lincscloud.org/a2/pertinfo?callback=?'*
+// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.clue.io/a2/pertinfo?callback=?'*
 // 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
 // `pert_collection = new PertCollection({model: PertModel,
-                                          // url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+                                          // url: 'http://api.clue.io/a2/pertinfo?callback=?',
                                           // skip: 0,
                                           // isLoading: false});`
 
@@ -2493,7 +2493,7 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
 
     // #### url
     // the url from which model data is fetched
-    url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+    url: 'http://api.clue.io/a2/pertinfo?callback=?',
 
     // #### skip
     // the skip parameter used in api calls when the collection is updated.
@@ -2583,12 +2583,12 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
 // optional arguments:
 
 // 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *PertModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.lincscloud.org/a2/siginfo?callback=?'*
+// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.clue.io/a2/siginfo?callback=?'*
 // 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
 // `pert_collection = new SignatureCollection({model: PertModel,
-                                          // url: 'http://api.lincscloud.org/a2/siginfo?callback=?',
+                                          // url: 'http://api.clue.io/a2/siginfo?callback=?',
                                           // skip: 0,
                                           // isLoading: false});`
 
@@ -2599,7 +2599,7 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
 
     // #### url
     // the url from which model data is fetched
-    url: 'http://api.lincscloud.org/a2/siginfo?callback=?',
+    url: 'http://api.clue.io/a2/siginfo?callback=?',
 
     // #### skip
     // the skip parameter used in api calls when the collection is updated. 
@@ -2707,12 +2707,12 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
 // optional arguments:
 
 // 1.  {Backbone.Model}  **model**  the model used for the collection objects. defaults to *SummlyResultModel*
-// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.lincscloud.org/a2/summlyinfo?callback=?'*
+// 2.  {String}  **url**  the url from which model data is fetched. defaults  to *'http://api.clue.io/a2/summlyinfo?callback=?'*
 // 3.  {String}  **skip**  the skip parameter used in api calls when the collection is updated. defaults to *0*
 // 4.  {Boolean}  **isLoading**  indicates wether or not the collection is in the middle of a fetch operation. defaults to *false*
 
 //		pert_collection = new PertCollection({model: PertModel,
-//											url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+//											url: 'http://api.clue.io/a2/pertinfo?callback=?',
 //											skip: 0,
 //											isLoading: false});
 
@@ -2723,7 +2723,7 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 
 	// #### url
     // the url from which model data is fetched
-    url: 'http://api.lincscloud.org/a2/pertinfo?callback=?',
+    url: 'http://api.clue.io/a2/pertinfo?callback=?',
 
     // #### skip
     // the skip parameter used in api calls when the collection is updated.
@@ -3836,7 +3836,7 @@ Barista.Views.BubbleView = Backbone.View.extend({
 
 // # **CMapFooterView**
 
-// A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
+// A view that provides the standard Connectivity map page footer for apps built on clue.io
 // the view provides standard copyright text and customizable organization name,
 // terms and conditions link, and organization logo/link
 // basic use:
@@ -3846,16 +3846,16 @@ Barista.Views.BubbleView = Backbone.View.extend({
 // optional arguments:
 
 // 1.  {string}  **organization**  the name of the organization that claims copyright. Defaults to *Broad Institute*
-// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://lincscloud.org/terms-and-conditions/*
+// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://clue.io/terms-and-conditions/*
 // 3.  {Array}  **logo**  The urls to organization logos to use. Defaults to *['http://coreyflynn.github.io/Bellhop/img/broad_logo_small.png','http://coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
-// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://lincscloud.org/']*
+// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://clue.io/']*
 // 5.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapFooter.handlebars*
 
 //		header = new CMapFooterView({el:"footer_target",
 //									organization: "Broad Institute",
-//									terms_url: "http://lincscloud.org/terms-and-conditions/",
+//									terms_url: "http://clue.io/terms-and-conditions/",
 // 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
-// 									logo_url: ['http://www.broadinstitute.org/','http://lincscloud.org/'],
+// 									logo_url: ['http://www.broadinstitute.org/','http://clue.io/'],
 //									template: "../templates/CMapFooter.handlebars"});
 Barista.Views.CMapFooterView = Backbone.View.extend({
 	// ### name
@@ -3867,9 +3867,9 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 	initialize: function(){
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
-		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://lincscloud.org/terms-and-conditions/";
+		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://clue.io/terms-and-conditions/";
 		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['http://coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','http://coreyflynn.github.io/Bellhop/img/CMap-logox.png','http://coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','http://coreyflynn.github.io/Bellhop/img/NIH_LINCS_logo.gif'];
-		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://lincscloud.org/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
+		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://clue.io/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
 		this.template = (this.options.template !== undefined) ? this.options.template : "templates/CMapFooter.handlebars";
 
 		// compile the default template for the view
@@ -3899,8 +3899,8 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 
 // # **CMapHeaderView**
 
-// A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
-// the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+// A view the provides the standard Connectivity map page header for apps built on clue.io
+// the header provides links in the view to navigate back to clue.io as well as links for
 // sharing, settings, and information.  The view accepts as parameters a page title, subtitle, and handlebars template
 // basic use:
 
@@ -3983,7 +3983,7 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
 		this.placeholder = (this.options.placeholder !== undefined) ? this.options.placeholder : "search cell lines";
 
 		// grab cell_ids and store them as an atribute of the view
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 		var params = {q:'{"cell_id":{"$regex":""}}',d:"cell_id"};
 		$.getJSON(cellinfo,params,function(res){
 			self.cell_lines = res;
@@ -4037,7 +4037,7 @@ Barista.Views.CellSearchBar = Backbone.View.extend({
     **/
 	random_val: function(){
 		var self = this;
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 
 		var skip = Math.round(Math.random()*40);
 		var params = {q:'{"lincs_status":{"$in":["core_cline","core_pline","DIVR"]}}', l:1, sk:skip};
@@ -4667,7 +4667,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
-		var pertinfo = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+		var pertinfo = 'http://api.clue.io/a2/pertinfo?callback=?';
 		params = {q: '{"pert_type":"trt_cp"}',
 					f:'{"pert_iname":1}',
 										l:1,
@@ -4709,7 +4709,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 			remote: {
 				// set the remote data source to use pertinfo with custom query params
-				url: ['http://api.lincscloud.org/a2/pertinfo?',
+				url: ['http://api.clue.io/a2/pertinfo?',
 					  'q={"pert_iname":{"$regex":"%QUERY", "$options":"i"}, "pert_type":"trt_cp"}',
 					  '&f={"pert_iname":1,"pert_type":1}',
 					  '&l=100',
@@ -7384,7 +7384,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 		this.placeholder = (this.options.placeholder !== undefined) ? this.options.placeholder : 'search gene, compound or cell type name';
 
 		// grab cell_ids and store them as an atribute of the view
-		var cellinfo = 'http://api.lincscloud.org/a2/cellinfo?callback=?';
+		var cellinfo = 'http://api.clue.io/a2/cellinfo?callback=?';
 		var params = {q:'{"cell_id":{"$regex":""}}',d:"cell_id"};
 		$.getJSON(cellinfo,params,function(res){
 			self.cell_lines = res;
@@ -7443,7 +7443,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
-		var pertinfo = 'http://api.lincscloud.org/a2/pertinfo?callback=?';
+		var pertinfo = 'http://api.clue.io/a2/pertinfo?callback=?';
 		params = {q: '{"pert_type":{"$in":["trt_cp","trt_sh"]}}',
 					f:'{"pert_iname":1}',
 										l:1,
@@ -7626,7 +7626,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 		// set up static view details, default if not specified
 		this.details_text = (this.options.details_text !== undefined) ? this.options.details_text : "view details";
-		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://apps.lincscloud.org";
+		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://clue.io";
 		this.details_target = (this.options.details_target !== undefined) ? this.options.details_target : "_self";
 
 		// set up default categories to display

@@ -1,7 +1,7 @@
 // # **CMapHeaderView**
 
-// A view the provides the standard Connectivity map page header for apps built on apps.lincscloud.org
-// the header provides links in the view to navigate back to apps.lincscloud.org as well as links for
+// A view the provides the standard Connectivity map page header for apps built on clue.io
+// the header provides links in the view to navigate back to clue.io as well as links for
 // sharing, settings, and information.  The view accepts as parameters a page title, subtitle, and handlebars template
 // basic use:
 

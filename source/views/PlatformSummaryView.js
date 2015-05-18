@@ -150,7 +150,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 		// set up static view details, default if not specified
 		this.details_text = (this.options.details_text !== undefined) ? this.options.details_text : "view details";
-		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://apps.lincscloud.org";
+		this.details_url = (this.options.details_url !== undefined) ? this.options.details_url : "http://clue.io";
 		this.details_target = (this.options.details_target !== undefined) ? this.options.details_target : "_self";
 
 		// set up default categories to display

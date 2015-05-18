@@ -1,6 +1,6 @@
 // # **CMapFooterView**
 
-// A view that provides the standard Connectivity map page footer for apps built on apps.lincscloud.org
+// A view that provides the standard Connectivity map page footer for apps built on clue.io
 // the view provides standard copyright text and customizable organization name,
 // terms and conditions link, and organization logo/link
 // basic use:
@@ -10,16 +10,16 @@
 // optional arguments:
 
 // 1.  {string}  **organization**  the name of the organization that claims copyright. Defaults to *Broad Institute*
-// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://lincscloud.org/terms-and-conditions/*
+// 2.  {string}  **terms_url**  The url on which to find terms and conditions. Defaults to *http://clue.io/terms-and-conditions/*
 // 3.  {Array}  **logo**  The urls to organization logos to use. Defaults to *['http://coreyflynn.github.io/Bellhop/img/broad_logo_small.png','http://coreyflynn.github.io/Bellhop/img/cmap_logo_small.png']*
-// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://lincscloud.org/']*
+// 4.  {Array}  **logo_url**  The urls to organization links to use. Defaults to *['http://www.broadinstitute.org/','http://clue.io/']*
 // 5.  {string}  **template**  The path to a handlebars template to use. Defaults to *templates/CMapFooter.handlebars*
 
 //		header = new CMapFooterView({el:"footer_target",
 //									organization: "Broad Institute",
-//									terms_url: "http://lincscloud.org/terms-and-conditions/",
+//									terms_url: "http://clue.io/terms-and-conditions/",
 // 									logo: ['../img/broad_logo_small.png','../img/cmap_logo_small.png'],
-// 									logo_url: ['http://www.broadinstitute.org/','http://lincscloud.org/'],
+// 									logo_url: ['http://www.broadinstitute.org/','http://clue.io/'],
 //									template: "../templates/CMapFooter.handlebars"});
 Barista.Views.CMapFooterView = Backbone.View.extend({
 	// ### name
@@ -31,9 +31,9 @@ Barista.Views.CMapFooterView = Backbone.View.extend({
 	initialize: function(){
 		// store passed parameters as attributes of the view
 		this.organization = (this.options.organization !== undefined) ? this.options.organization : "Broad Institute";
-		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://lincscloud.org/terms-and-conditions/";
+		this.terms_url = (this.options.terms_url !== undefined) ? this.options.terms_url : "http://clue.io/terms-and-conditions/";
 		this.logo = (this.options.logo !== undefined) ? this.options.logo : ['http://coreyflynn.github.io/Bellhop/img/broad_logo_small_text.png','http://coreyflynn.github.io/Bellhop/img/CMap-logox.png','http://coreyflynn.github.io/Bellhop/img/skunkworks-logo.png','http://coreyflynn.github.io/Bellhop/img/NIH_LINCS_logo.gif'];
-		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://lincscloud.org/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
+		this.logo_url = (this.options.logo_url !== undefined) ? this.options.logo_url : ['http://www.broadinstitute.org/','http://clue.io/','http://www.broadinstitute.org/vis','http://www.lincsproject.org/'];
 		this.template = (this.options.template !== undefined) ? this.options.template : "templates/CMapFooter.handlebars";
 
 		// compile the default template for the view

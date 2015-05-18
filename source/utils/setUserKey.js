@@ -1,15 +1,15 @@
 // # **setUserKey**
 
 // a utility function to set a user_key attribute on the Barista object and set up
-// ajax calls to api.lincscloud.org to pass that user_key as a parameter
+// ajax calls to api.clue.io to pass that user_key as a parameter
 
 // arguments
 // 
 // 1.  {string}  **key**  The user_key to use or a path to a JSON file containing a user_key attribute, defaults to *""*
 Barista.setUserKey = function(key) {
-	// configure ajax calls to add the user key parameter on calls to api.lincscloud.org
+	// configure ajax calls to add the user key parameter on calls to api.clue.io
 	$.ajaxPrefilter(function( options, originalOptions, jqXHR ){
-		var re = new RegExp('api.lincscloud.org');
+		var re = new RegExp('api.clue.io');
 		if (re.test(options.url)){
 			options.data = $.param($.extend(originalOptions.data,{user_key:Barista.user_key}));
 		}
