@@ -21,20 +21,20 @@ If you want to use only parts of the library or roll your own extensions to it, 
 
 
 # **Components**
-Barista provides [models](#models), [collections](#collections), [views](#views), and [utility functions](#utils) out of the box.  These components can be extended using [standard extension mechanisms](http://backbonejs.org/#Model-extend "Extension") in backbone.js and underscore.js.  All components are housed under a top-level object called `Barista`.  
+Barista provides models, collections, views, and utils out of the box.  These components can be extended using [standard extension mechanisms](http://backbonejs.org/#Model-extend "Extension") in backbone.js and underscore.js.  All components are housed under a top-level object called `Barista`.  
 
 ## **Models**
-Models provide objects that encapsulate information about commonly used data types in Connectivity Map data.  Many models also abstract the logic required to retrieve that information via the Connectivity Map's data APIs. Check out an [example model](http://cmap.github.io/barista/doc/models/CellCountModel.html "Example Model") to get a feel for what models provide.  You can find models under `Barista.Models`.
+Models provide objects that encapsulate information about commonly used data types in Connectivity Map data.  Many models also abstract the logic required to retrieve that information via the Connectivity Map's data APIs. Check out an [example model](models/CellCountModel.js.html "Example Model") to get a feel for what models provide.  You can find models under `Barista.Models`.
 
 ## **Collections**
-Collections build on top of models.  A Collection represents a group of models that will be operated on as a whole. As an example, rather than handling a set of [PertModels](http://cmap.github.io/barista/doc/models/PertModel.html "PertModel") indivudually it is convient to use a [PertCollection](http://cmap.github.io/barista/doc/collections/PertCollection.html "PertCollection").  This allows you to interact with the models as a set instead of handling them one at a time. Certain views such as the [GridView](http://cmap.github.io/barista/doc/views/GridView.html "GridView") are built on top of collections. You can find collections under `Barista.Collections`.
+Collections build on top of models.  A Collection represents a group of models that will be operated on as a whole. As an example, rather than handling a set of [PertModels](models/PertModel.js.html "PertModel") indivudually it is convient to use a [PertCollection](collections/PertCollection.js.html "PertCollection").  This allows you to interact with the models as a set instead of handling them one at a time. Certain views such as the [GridView](views/GridView.js.html "GridView") are built on top of collections. You can find collections under `Barista.Collections`.
 
 ## **Views**
 Views handle the display of data that is exposed in models and collections. A given model or collection could be used in multiple different views provided that the view is able to consume the data that it needs from the paired model or collection.  Views also handle much of the controller behavior in a typical MVC framework.  Think of the views as handling all rendering and UI responsibilities. If the User sees it, it is built through a view.  Views also transparently respond to changes in the underlying data model as it changes. You can find views under `Barista.Views`
 
 
 ### Instantiating a Minimal View
-A minimal view can be instantiated using [BaristaBaseView](http://cmap.github.io/barista/doc/views/BaristaBaseView.html).  This view serves as the basis for
+A minimal view can be instantiated using [BaristaBaseView](views/BaristaBaseView.js.html).  This view serves as the basis for
 many more complicated views in barista and handles common tasks such as standard initialization, redraw, render, template compilation, and png export functions.
 
 ```html
@@ -64,7 +64,7 @@ many more complicated views in barista and handles common tasks such as standard
 ```  
 
 ### Extending a Minimal View
-[BaristaBaseView](http://cmap.github.io/barista/doc/views/BaristaBaseView.html) is not very exciting in of itself since it is meant to be a bare bones view.  To contruct a more interesting view, [BaristaBaseView](http://cmap.github.io/barista/doc/views/BaristaBaseView.html) can be extended using the following
+[BaristaBaseView](views/BaristaBaseView.js.html) is not very exciting in of itself since it is meant to be a bare bones view.  To contruct a more interesting view, [BaristaBaseView](views/BaristaBaseView.js.html) can be extended using the following
 
 ```javascript
 MySweetView = Barista.Views.BaristaBaseView.extend({
@@ -72,15 +72,15 @@ MySweetView = Barista.Views.BaristaBaseView.extend({
 });
 ```
 
-To see this in action, check out one of the views built on top of [BaristaBaseView](http://cmap.github.io/barista/doc/views/BaristaBaseView.html) such as [ViolinPlotView](http://cmap.github.io/barista/doc/views/ViolinPlotView.html)
+To see this in action, check out one of the views built on top of [BaristaBaseView](views/BaristaBaseView.js.html) such as [ViolinPlotView](views/ViolinPlotView.js.html)
 
 ## **Utils**
-There are a small set of utility functions that do not fit cleanly as a model, collection, or view.  Think of these as mechanisms through which we abstract away mundane processing of data.  For example, the function [CMapPertTypeAlias](http://cmap.github.io/barista/doc/utils/CMapTypeAlias.html "CMapPertTypeAlias") returns an object of standard names and acronyms when given a Connectivity Map perturbagen type.  Utility functions are registered under the top-level `Barista` object.
+There are a small set of utility functions that do not fit cleanly as a model, collection, or view.  Think of these as mechanisms through which we abstract away mundane processing of data.  For example, the function [CMapPertTypeAlias](utils/CMapTypeAlias.js.html "CMapPertTypeAlias") returns an object of standard names and acronyms when given a Connectivity Map perturbagen type.  Utility functions are registered under the top-level `Barista` object.
 
 # **Developer Documentation**
 Want the nuts and bolts? dig in!
 
-[Developer Documentation >](http://cmap.github.io/barista/doc)
+[Developer Documentation >](index.html)
 
 # **Attribution**
 barista is written and maintained by [@coreyflynn](https://github.com/coreyflynn) and the [@cmap](https://github.com/cmap) team
