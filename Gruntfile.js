@@ -268,8 +268,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
 
   // by default, do everything but doc and external dependency builds
-  grunt.registerTask('default', ['gitinfo','handlebars','concat_internal','uglify:main','concat_main','sass','cssmin']);
-  //grunt.registerTask('default', ['gitinfo','handlebars','concat_internal','uglify:main','concat_main','sass','cssmin', 'doxx']);
+  //grunt.registerTask('default', ['gitinfo','handlebars','concat_internal','uglify:main','concat_main','sass','cssmin']);
+  grunt.registerTask('default', ['gitinfo','handlebars','concat_internal','uglify:main','concat_main','sass','cssmin', 'doxx']);
 
   // task to concat and minimized external sources and then run the default pipeline
   grunt.registerTask('build_external',['gitinfo','concat:js_external','uglify:external','handlebars','concat_internal','uglify:main','concat_main','sass','cssmin']);
