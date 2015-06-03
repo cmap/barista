@@ -80,7 +80,7 @@ There are a small set of utility functions that do not fit cleanly as a model, c
 # **Developer Documentation**
 Want the nuts and bolts? dig in!
 
-[Developer Documentation >](index.html)
+[Developer Documentation >](http://cmap.github.io/barista/index.html)
 
 # **Attribution**
 barista is written and maintained by [@coreyflynn](https://github.com/coreyflynn) and the [@cmap](https://github.com/cmap) team
