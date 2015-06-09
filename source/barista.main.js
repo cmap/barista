@@ -5080,6 +5080,7 @@ Barista.Views.CMapHeaderView = Backbone.View.extend({
 		// grab the template
 		this.compiled_template = BaristaTemplates.CMapHeader;
 		this.$el.append(this.compiled_template({title: this.title,
+										flag: this.flag,
 										subtitle: this.subtitle,
 										user: this.user,
 										support_link: this.support_link,
