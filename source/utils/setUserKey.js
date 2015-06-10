@@ -15,7 +15,6 @@ Barista.setUserKey = function(key) {
 		return Barista.user_key;
 	});
 	key_request.fail(function(){
-		console.log("could not find a file at " + key + "; setting Barista.user_key to " + key);
 		Barista.user_key = key;
 		return null;
 	});

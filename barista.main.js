@@ -1447,7 +1447,7 @@ In case you find this class useful - especially in commercial projects -
 I am not totally unhappy for a small donation to my PayPal account
 mario@quasimondo.de
 
-Or support me on flattr: 
+Or support me on flattr:
 https://flattr.com/thing/72791/StackBlur-a-fast-almost-Gaussian-Blur-Effect-for-CanvasJavascript
 
 Copyright (c) 2010 Mario Klingemann
@@ -1475,7 +1475,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 */
 var mul_table=[512,512,456,512,328,456,335,512,405,328,271,456,388,335,292,512,454,405,364,328,298,271,496,456,420,388,360,335,312,292,273,512,482,454,428,405,383,364,345,328,312,298,284,271,259,496,475,456,437,420,404,388,374,360,347,335,323,312,302,292,282,273,265,512,497,482,468,454,441,428,417,405,394,383,373,364,354,345,337,328,320,312,305,298,291,284,278,271,265,259,507,496,485,475,465,456,446,437,428,420,412,404,396,388,381,374,367,360,354,347,341,335,329,323,318,312,307,302,297,292,287,282,278,273,269,265,261,512,505,497,489,482,475,468,461,454,447,441,435,428,422,417,411,405,399,394,389,383,378,373,368,364,359,354,350,345,341,337,332,328,324,320,316,312,309,305,301,298,294,291,287,284,281,278,274,271,268,265,262,259,257,507,501,496,491,485,480,475,470,465,460,456,451,446,442,437,433,428,424,420,416,412,408,404,400,396,392,388,385,381,377,374,370,367,363,360,357,354,350,347,344,341,338,335,332,329,326,323,320,318,315,312,310,307,304,302,299,297,294,292,289,287,285,282,280,278,275,273,271,269,267,265,263,261,259],shg_table=[9,11,12,13,13,14,14,15,15,15,15,16,16,16,16,17,17,17,17,17,17,17,18,18,18,18,18,18,18,18,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24];/*!
  * canvg.js - Javascript SVG parser and renderer on Canvas
- * MIT Licensed 
+ * MIT Licensed
  * Gabe Lerner (gabelerner@gmail.com)
  * http://code.google.com/p/canvg/
  *
@@ -1685,7 +1685,7 @@ if(pp.addMarkerAngle(halfWay,ah-dir*Math.PI/2),pp.addMarkerAngle(cp,ah-dir*Math.
 /* canvas-toBlob.js
  * A canvas.toBlob() implementation.
  * 2013-12-27
- * 
+ *
  * By Eli Grey, http://eligrey.com and Devin Samarin, https://github.com/eboyjr
  * License: X11/MIT
  *   See LICENSE.md
@@ -2528,13 +2528,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
-  
+
+
   return "\n	";
   }
 
 function program3(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		<p class=\"pull-left\" style=\"cursor: pointer\" id=\"";
   if (stack1 = helpers.div_string) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2545,7 +2545,7 @@ function program3(depth0,data) {
   }
 
 function program5(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		<p class=\"pull-left\" style=\"padding-left: 8px; cursor: pointer\" id=\"";
   if (stack1 = helpers.div_string) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2556,7 +2556,7 @@ function program5(depth0,data) {
   }
 
 function program7(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		<p class=\"pull-left\" style=\"padding-left: 8px; cursor: pointer\" id=\"";
   if (stack1 = helpers.div_string) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2567,13 +2567,13 @@ function program7(depth0,data) {
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   return "\n		<div class=\"col-lg-8\"></div>\n	";
   }
 
 function program11(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		";
   stack1 = helpers['if'].call(depth0, depth0.legend, {hash:{},inverse:self.program(14, program14, data),fn:self.program(12, program12, data),data:data});
@@ -2582,7 +2582,7 @@ function program11(depth0,data) {
   return buffer;
   }
 function program12(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n			";
   if (stack1 = helpers.legend) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2593,8 +2593,8 @@ function program12(depth0,data) {
   }
 
 function program14(depth0,data) {
-  
-  
+
+
   return "\n			<span class=\"col-lg-8\">\n				<p class=\"pull-right\" style=\"padding-right: 8px\"><span class=\"label\" style=\"background-color: #E69F00\">SMC</span> Small Molecule Compound </p>\n				<p class=\"pull-right\" style=\"padding-right: 8px\"><span class=\"label\" style=\"background-color: #56B4E9\">KD</span> Knock Down </p>\n				<p class=\"pull-right\" style=\"padding-right: 8px\"><span class=\"label\" style=\"background-color: #D55E00\">OE</span> Over Expression </p>\n			</span>\n		";
   }
 
@@ -2658,7 +2658,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		<a href=\"";
   if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2673,7 +2673,7 @@ function program1(depth0,data) {
   }
 
 function program3(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n		<a href=\"";
   if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2727,7 +2727,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n						<p id=\"cmapHeaderBetaFlag\" title=\"app name\" class=\"cmap-header-flag-red pull-left\">";
   if (stack1 = helpers.flag) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2738,7 +2738,7 @@ function program1(depth0,data) {
   }
 
 function program3(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n						<p id=\"cmapHeaderMenuAppName\" title=\"app name\" class=\"cmap-header-app-name pull-left\">";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2749,7 +2749,7 @@ function program3(depth0,data) {
   }
 
 function program5(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n						<div class=\"dropdown pull-right\">\n							<p id=\"username\" title=\"profile\" class=\"cmap-header-username data-toggle\" data-toggle=\"dropdown\">";
   if (stack1 = helpers.user) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2760,20 +2760,20 @@ function program5(depth0,data) {
   }
 
 function program7(depth0,data) {
-  
-  
+
+
   return "\n						<p title=\"login\" class=\"cmap-header-link-left-border pull-right\" onclick=\"window.location.href = '/start';\">login</p>\n					";
   }
 
 function program9(depth0,data) {
-  
-  
+
+
   return "\n						<p title=\"tour\" class=\"cmap-header-link-no-border pull-right\" onclick=\"tour();\">Tour</p>\n					";
   }
 
 function program11(depth0,data) {
-  
-  
+
+
   return "\n						<div class=\"dropdown pull-right\">\n							<p id=\"username\" title=\"profile\" class=\"cmap-header-username data-toggle\" data-toggle=\"dropdown\"><i class=\"fa fa-user cmap-header-mobile-user-icon\"></i><span class=\"caret cmap-header-caret\"></span></p>\n							<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"username\">\n								<li role=\"presentation\"><a id=\"logout\" role=\"menuitem\" tabindex=\"-1\" href=\"/signout\">Logout</a></li>\n							<li role=\"presentation\"><a id=\"settings\" role=\"menuitem\" tabindex=\"-1\" href=\"/settings\">Account settings</a></li>\n							<li role=\"presentation\"><a id=\"about\" role=\"menuitem\" tabindex=\"-1\" href=\"/about\">About CLUE</a></li>\n							</ul>\n						</div>\n					";
   }
 
@@ -2826,7 +2826,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = "";
   buffer += "\n                    <img src=\""
     + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
@@ -2889,7 +2889,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n<div id=\"";
   if (stack1 = helpers.div_string) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2908,7 +2908,7 @@ function program1(depth0,data) {
   }
 
 function program3(depth0,data) {
-  
+
   var buffer = "", stack1;
   buffer += "\n<div id=\"";
   if (stack1 = helpers.div_string) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
@@ -2993,7 +2993,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/cellinfo?',
@@ -3086,7 +3086,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url, query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/cellinfo?',
@@ -3179,7 +3179,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/cellinfo?',
@@ -3272,7 +3272,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/cellinfo?',
@@ -3358,7 +3358,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/pertinfo?',
@@ -3483,7 +3483,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
   					* @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-  					*/ 
+  					*/
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/pertinfo?',
@@ -3608,7 +3608,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
                     *                          from function
                     * @param  {string}  query  custom query
-                    */ 
+                    */
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -3664,7 +3664,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job IDs available in the
  * Connectivity Map
- * JobNameDataset is typically not used directly, rather it's content is extracted from Barista.Datasets 
+ * JobNameDataset is typically not used directly, rather it's content is extracted from Barista.Datasets
  * in views such as CMapSearchView
  */
 
@@ -3701,7 +3701,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
                     *                          from function
                     * @param  {string}  query  custom query
-                    */ 
+                    */
                 remote: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -3757,7 +3757,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
 /**
  * An object that extends Barista.Datasets to specify a backing dataset for job Statuses available in the
  * Connectivity Map
- * JobStatusDataset is typically not used directly, rather it's content is extracted from Barista.Datasets 
+ * JobStatusDataset is typically not used directly, rather it's content is extracted from Barista.Datasets
  * in views such as CMapSearchView
  */
 
@@ -3794,7 +3794,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
                     *                          from function
                     * @param  {string}  query  custom query
-                    */ 
+                    */
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -3887,7 +3887,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-                    */ 
+                    */
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return ['//prefix:8080/p100/v1/profileinfo?',
@@ -3986,7 +3986,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-                    */ 
+                    */
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/prism/v1/profileinfo?',
@@ -4085,7 +4085,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
   					*                          from function
   					* @param  {string}  query  custom query
-                    */ 
+                    */
 				replace: function(url,query){
 					query = (query[0] === "*") ? query.replace("*",".*") : query;
 					return [Barista.APIURL + '/a2/pertinfo?',
@@ -4209,7 +4209,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
                     *                          from function
                     * @param  {string}  query  custom query
-                    */ 
+                    */
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -4302,7 +4302,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
                     * @param  {string}  url    @todo this parameter is never used, consider removing
                     *                          from function
                     * @param  {string}  query  custom query
-                    */ 
+                    */
                 replace: function(url,query){
                     query = (query[0] === "*") ? query.replace("*",".*") : query;
                     return [Barista.APIURL + '/compute_status?',
@@ -4359,7 +4359,7 @@ Barista.Datasets = _.extend(Barista.Datasets,
  * var pert_type_object = CMapPertTypeAlias("trt_cp");
  * pert_type_object.name;
  * pert_type_object.acronym;
- * 
+ *
  * a utility function to convert standard perturbagen type descriptors into more human friendly strings
  * Given an input type string, an object is returned with field names of 'name' and 'acronym'
  * If the passed string is not a recoqnized type, the 'name' and 'acronym' fields are set to the passed
@@ -4513,7 +4513,6 @@ Barista.setUserKey = function(key) {
 		return Barista.user_key;
 	});
 	key_request.fail(function(){
-		console.log("could not find a file at " + key + "; setting Barista.user_key to " + key);
 		Barista.user_key = key;
 		return null;
 	});
@@ -4521,7 +4520,7 @@ Barista.setUserKey = function(key) {
 
 /**
  * `pert_model = new AnalysisHistoryModel()`
- * 
+ *
  * A Backbone.Model that represents an analysis history object.
  */
 Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
@@ -4551,7 +4550,7 @@ Barista.Models.AnalysisHistoryModel = Backbone.Model.extend({
  * points in the data
  * The meta data object should contain attributes for each meta data category and an array of values
  * matching the size of the points in the data
- * 
+ *
  * for example:
  * meta_data = {'dose: [1,2,3]', timepoint: ['6H','6H','6H']}
 
@@ -4580,7 +4579,7 @@ Barista.Models.BarPlotModel = Backbone.Model.extend({
 
 /**
  * `cell_count_model = new CellCountModel({type_string: '["trt_sh","trt_oe"]'})`
- * 
+ *
  * A Backbone.Model that represents the count of a set of cell_lines
  * The data model captures both the total count of cell lines that meet a search criteria and the count of
  * each annotation category for the set of cell lines
@@ -4673,7 +4672,7 @@ Barista.Models.CellCountModel = Backbone.Model.extend({
 
 /**
  * `pert_model = new CellModel()`
- * 
+ *
  * A Backbone.Model that represents a cell line
  */
 Barista.Models.CellModel = Backbone.Model.extend({
@@ -4690,7 +4689,7 @@ Barista.Models.CellModel = Backbone.Model.extend({
 
 /**
  * `pert_detail_model = new CompoundDetailModel()`
- * 
+ *
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
  */
@@ -4818,7 +4817,7 @@ Barista.Models.CompoundDetailModel = Backbone.Model.extend({
 
 /**
  * `pert_detail_model = new GeneDetailModel()`
- * 
+ *
  * A Backbone.Model that represents a single compound's description
  * The data model captures a number of fields including
  */
@@ -4966,7 +4965,7 @@ Barista.Models.GeneDetailModel = Backbone.Model.extend({
 
 /**
  * `generic_count_model = new GenericCountModel()`
- * 
+ *
  * A Backbone.Model that represents the count of a set CMap databbase items
  * The data model captures the total count of perturbagens that meet a search criteria
  * optional arguments:
@@ -5004,7 +5003,7 @@ Barista.Models.GenericCountModel = Backbone.Model.extend({
       });
     };
   }
-  
+
 });
 
 Barista.Models.GenericSourceModel = Backbone.Model.extend({
@@ -5047,7 +5046,7 @@ Barista.Models.GenericSourceModel = Backbone.Model.extend({
 
 /**
  * `pert_model = new GenericMongoModel()`
- * 
+ *
  * A Backbone.Model that represents a generic MongoDB object
  * All fields in the document are passed to the model as normal and a date attribute is set from the _id
  * field of the mongo document
@@ -5108,7 +5107,7 @@ Barista.Models.HeatmapModel = Backbone.Model.extend({
 })
 /**
  * `pert_cell_breakdown_model = new PertCellBreakdownModel()`
- * 
+ *
  * A Backbone.Model that represents the cell line based breakdown of a set of perturbagens
  * the number of perturbagens matching a query is counted for each cell line
  * Data for all cell lines that contain a match to the query are represented in the model
@@ -5168,9 +5167,9 @@ Barista.Models.PertCellBreakdownModel = Backbone.Model.extend({
 });
 /**
  * `count_model = new PertCountModel({type_string: '["trt_sh","trt_oe"]'})`
- * 
+ *
  * A Backbone.Model that represents the count of a set of perturbagens
- * The data model captures both the total count of perturbagens that meet a search criteria and the count 
+ * The data model captures both the total count of perturbagens that meet a search criteria and the count
  * of each annotation category for the set of perturbagens
  * optional arguments:
  * @param {string} type_string  the string of pert_types that will be search upon fetching data, defaults
@@ -5307,7 +5306,7 @@ Barista.Models.PertDetailModel = Backbone.Model.extend({
 
 /**
  * `pert_model = new PertModel()`
- * 
+ *
  * A Backbone.Model that represents a single perturbagen
  */
 Barista.Models.PertModel = Backbone.Model.extend({
@@ -5316,7 +5315,7 @@ Barista.Models.PertModel = Backbone.Model.extend({
   * @todo these parameters are never used, consider removing from function
   * @param  {string}  attributes
   * @param  {string}  options
-  */ 
+  */
 	initialize: function(attributes, options) {
 		this.cid = this.get('pert_id');
 		var pert_type = this.get('pert_type');
@@ -5432,7 +5431,7 @@ Barista.Models.SigCountModel = Backbone.Model.extend({
 });
 /**
  * `pert_model = new SignatureModel()`
- * 
+ *
  * A Backbone.Model that represents a single signature
  */
 Barista.Models.SignatureModel = Backbone.Model.extend({
@@ -5445,7 +5444,7 @@ Barista.Models.SignatureModel = Backbone.Model.extend({
 	initialize: function(attributes, options) {
 		// set the unique collection identifier to match the sig_id
 		this.cid = this.get('sig_id');
-		
+
 		// generate an html label for pert_type
 		var pert_type = this.get('pert_type');
 		switch(pert_type){
@@ -5725,7 +5724,7 @@ Barista.Collections.AnalysisHistoryCollection = Backbone.Collection.extend({
                                            url: Barista.APIURL + '/a2/pertinfo?callback=?',
                                            skip: 0,
                                            isLoading: false});
- *                                          
+ *
  * A Backbone.Collection that represents a set of cell types
  * This collection is suitable for internal use in GridView
  * optional arguments:
@@ -5813,7 +5812,7 @@ Barista.Collections.CellCollection = Backbone.Collection.extend({
  *                                         url: Barista.APIURL + '/a2/pertinfo?callback=?',
  *                                         skip: 0,
  *                                         isLoading: false});
- *                                         
+ *
  * A Backbone.Collection that represents an arbitrary set of objects stored in a JSON file
  * The JSON file is assumed to contain a top level array containing objects
  * Each object in the array is modeled as a base Backbone.Model inside of the collection
@@ -5843,7 +5842,7 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
      * @type {Number}
      */
     skip: 0,
- 
+
     /**
      * indicates wether or not the collection is in the middle of a fetch operation
      * @type {Boolean}
@@ -5877,7 +5876,7 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
         this.limit = (limit !== undefined) ? limit : 30;
 
         // fetch data from the given url.  If the url attribute is a string, fetch data via an ajax
-        // request. Read each returned item in the response into a new PertModel.  If it is an object, 
+        // request. Read each returned item in the response into a new PertModel.  If it is an object,
         // assume it is an array of data and read each array item into a new PertModel
         if (typeof(this.url) == 'object'){
             this.url.forEach(function(o){self.add(new Barista.Models.PertModel(o));});
@@ -5899,7 +5898,7 @@ Barista.Collections.GenericJSONCollection = Backbone.Collection.extend({
  *                                         // url: Barista.APIURL + '/a2/pertinfo?callback=?',
  *                                         // skip: 0,
  *                                         // isLoading: false});`
- *                                         
+ *
  * A Backbone.Collection that represents a set of perturbagens
  * This collection is suitable for internal use in GridView
  * optional arguments:
@@ -6017,7 +6016,7 @@ Barista.Collections.PertCollection = Backbone.Collection.extend({
  *                                         // url: Barista.APIURL + '/a2/siginfo?callback=?',
  *                                         // skip: 0,
  *                                         // isLoading: false});`
- *                                         
+ *
  * A Backbone.Collection that represents a set of signatures
  * This collection is suitable for internal use in GridView
  * optional arguments:
@@ -6156,7 +6155,7 @@ Barista.Collections.SignatureCollection = Backbone.Collection.extend({
  *                                         url: Barista.APIURL + '/a2/pertinfo?callback=?',
  *                                         skip: 0,
  *                                         isLoading: false});
- *                                         
+ *
  * A Backbone.Collection that represents a set of CMap Summly results
  * This collection is suitable for internal use in GridView
  * optional arguments:
@@ -6286,7 +6285,7 @@ Barista.Collections.SummlyResultCollection = Backbone.Collection.extend({
 		extended_view = BaristaBaseView.extend({
 										...
 										});
- *										
+ *
  * A Backbone.View the serves as the base view for other views in the barista library
  * BaristaBaseView provides common functionality for views including standard initialization, redraw,
  * render, template compilation, and png export functions
@@ -6565,7 +6564,7 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 
 /**
  * bar_plot_view = new BarPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
+									bg_color:"#ffffff",
 									fg_color: "#1b9e77",
 									span_class: "span4",
 									scale_by: undefined,
@@ -6576,7 +6575,7 @@ Barista.Views.BaristaBaseView = Backbone.View.extend({
 									min_expand: false,
 									max_expand: false,
 									plot_height: 120});
- *									
+ *
  * A Backbone.View that displays a scatter plot
  * the view's model is assumed to have the same defaults as specified in BarPlotModel
  * basic use:
@@ -6640,7 +6639,7 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.set_ranges();
 
 		// set up x and y scaling
-		this.set_scales();		
+		this.set_scales();
 
 		// run BaristaBaseView's base_initialize method to handle boilerplate view construction
 		// and initial view rendering
@@ -6672,7 +6671,7 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 		this.set_ranges();
 
 		// set up x and y scaling
-		this.set_scales();		
+		this.set_scales();
 
 		// build Axes
 		this.build_axes();
@@ -6702,10 +6701,10 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 	 */
 	update: function(){
 		var self = this;
-		
+
 		// get model data
 		this.data = this.model.get('data');
-		
+
 		// set up x and y ranges
 		this.set_ranges();
 
@@ -6945,7 +6944,7 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("height",function(d){return self.y_scale(self.range[0]) - self.y_scale(d)})
 			.attr("opacity",1);
 
-		// remove excess points 
+		// remove excess points
 		bar_selection.exit().remove();
 
 		// update the labels if they are there
@@ -7003,7 +7002,7 @@ Barista.Views.BarPlotView = Barista.Views.BaristaBaseView.extend({
 			.attr("width",this.x_scale)
 			.attr("opacity",1);
 
-		// remove excess points 
+		// remove excess points
 		bar_selection.exit().remove();
 
 		// transition the axes
@@ -7167,7 +7166,7 @@ Barista.Views.BaristaUserCardView = Backbone.View.extend({
  * bubble_view = new BubbleView({el: $("target_selector"),
 									fg_color: "#1b9e77",
 									span_class: "span4"});
- *									
+ *
  * A Backbone.View that displays a single level tree of data as a bubble plot
  * The view should be bound to a model such as a **PertCellBreakdownModel** that captures tree data in a
  * tree_object attribute
@@ -8279,7 +8278,7 @@ Barista.Views.CompoundDetailView = Barista.Views.BaristaBaseView.extend({
 	 * @param  {string} label_text       visible text that labels the element on screen
 	 * @param  {array}  data             array of data
 	 * @param  {string} fg_color         fill color of label
-	 * @param  {string} tag_color        color for background layer of tags 
+	 * @param  {string} tag_color        color for background layer of tags
 	 */
 	draw_tags: function(class_name_base, label_text, data, fg_color, tag_color){
 		var x_offsets = [10];
@@ -8433,7 +8432,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 
 	/**
 	 * fills the view's search bar with a random pert_iname and triggers a "search:DidType" event
-    */    
+    */
 	random_val: function(){
 		var self = this;
 		skip = Math.round(Math.random()*40000);
@@ -8485,7 +8484,7 @@ Barista.Views.CompoundSearchBar = Backbone.View.extend({
 					  '&f={"pert_iname":1,"pert_type":1}',
 					  '&l=100',
 					  '&s={"pert_iname":1}'].join(''),
-				
+
 				dataType: 'jsonp',
 
 				/**
@@ -9360,7 +9359,7 @@ Barista.Views.GridView = Backbone.View.extend({
 			dataType: 'json',
 			url: sig_slice,
 			data: {q: self.collection.q_param,l: 1000},
-			
+
 			success: function(res){
 				if (res.file_url){
 					self.change_slice_button_state("link",res.file_url);
@@ -9552,10 +9551,10 @@ Barista.Views.GridView = Backbone.View.extend({
  *    // set up a default collection and column definition for the grid to operate on
      this.collection = new PertCollection();
      this.columns = [{name: "pert_type_label", label: "Pert Type", cell: HTMLCell, editable: false}];
- 
+
      // build the template
      this.compile_template();
- 
+
      // build the grid on the template
      this.grid = new Backgrid.Grid({
        columns: this.columns,
@@ -10818,7 +10817,7 @@ Barista.Views.PertCountView = Backbone.View.extend({
  * @param {string} bg_color    the hex color code to use as the backgound of the view, defaults to
  *                             #ffffff
  * @param {string} span_class  a bootstrap span class to size the width of the view, defaults to
- *                             "col-lg-12"                            
+ *                             "col-lg-12"
  */
 Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 	/**
@@ -11439,7 +11438,7 @@ Barista.Views.PertDetailView = Barista.Views.BaristaBaseView.extend({
 	 * @param  {string} label_text       visible text that labels the element on screen
 	 * @param  {array}  data             array of data
 	 * @param  {string} fg_color         fill color of label
-	 * @param  {string} tag_color        color for background layer of tags 
+	 * @param  {string} tag_color        color for background layer of tags
 	 */
 	draw_tags: function(class_name_base, label_text, data, fg_color, tag_color){
 		var x_offsets = [10];
@@ -11649,7 +11648,7 @@ Barista.Views.PertSearchBar = Backbone.View.extend({
  * platform_summary_view = new PlatformSummaryView();
  * optional arguments:
  * ...
-		platform_summary_view = new PlatformSummaryView({ 
+		platform_summary_view = new PlatformSummaryView({
 									... });
  */
 Barista.Views.PlatformSummaryView = Backbone.View.extend({
@@ -11800,7 +11799,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		// get categories from model and determine the maximum category count
 		// this.categories = this.model.get('platform_types');
 		this.max_category_count = _.max(_.pluck(this.categories,'count'));
-		
+
 		// bind render to model changes
 		this.listenTo(this.model,'change', this.render);
 
@@ -11839,7 +11838,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		this.init_panel();
 		this.render();
 	},
-	
+
 	/**
 	 * applies the given font to the text at the given target
 	 * @param  {font}   font    font to apply
@@ -11859,8 +11858,8 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 	 */
 	font_to_css_style: function(font) {
 		return "font:"+ font.weight +" " + font.size + " " + font.family + "; "
-			+ "color:" + font.color + "; " 
-			+ "text-transform:" + font.transform + "; " 
+			+ "color:" + font.color + "; "
+			+ "text-transform:" + font.transform + "; "
 			+ "letter-spacing:" + font.spacing + "; ";
 	},
 
@@ -11874,7 +11873,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		// set up the panel's width and height
 		this.width = $("#" + this.div_string).width();
 		this.height = $("#" + this.div_string).outerHeight();
-		
+
 		// set up component row positioning
 		this.hrule0 = 60;
 		this.hrule1 = this.hrule0 + 30;
@@ -11933,7 +11932,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			bottom: this.height,
 			node_class: 'description_text'
 		});
-		
+
 		// draw the generic count info
 		var count = this.model.get('count');
 		if (count === undefined){
@@ -11946,7 +11945,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 							.attr("x",40)
 							.attr("y",this.hrule3)
 							.text(count));
-		
+
 		// draw the experiments text
 		this.fg_layer.selectAll('.experiments_text').data([]).exit().remove();
 		this.apply_font(this.fonts.header, this.fg_layer.selectAll('.experiments_text').data([1])
@@ -11982,7 +11981,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 		// css inline styling, this value can have single quotes in it, so use double-quotes to apply it
 		this.control_css_style = "text-decoration:none; "+this.font_to_css_style(this.fonts.control);
-		
+
 		// determine control positioning based on display size
 		this.details_x = this.width - 135;
 		this.details_y = this.hrule4 - 15; // 15 is a hack adjusting for line height
@@ -11993,7 +11992,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			this.export_x = this.details_x;
 			this.export_y = this.details_y - 30;
 		}
-		
+
 		// add the export table control
 		this.render_export_control(this.export_text, "icon-download", function(){self.download_table();});
 
@@ -12041,7 +12040,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 
 		// indicate that we are downloading something
 		this.render_export_control(this.exporting_text, "icon-refresh icon-spin", null);
-		
+
 
 		// set up api call parameters
 		var url = this.model.get("url");
@@ -12129,7 +12128,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 		left_edge = (options.left !== undefined) ? options.left : this.width - 500;
 		node_class = (options.node_class != undefined) ? options.node_class : "";
     node_class_selector = '.' + node_class;
-    
+
 		// clear existing description
 		this.fg_layer.selectAll(node_class_selector).data([]).exit().remove();
 
@@ -12169,7 +12168,7 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 				// .attr("text-anchor", "middle")
 				.text(function(d){return d;}));
 	},
-	
+
 	/**
 	 * save the current state of the view into a png image
 	 */
@@ -12194,10 +12193,10 @@ Barista.Views.PlatformSummaryView = Backbone.View.extend({
 			bottom: this.height,
 			node_class: 'description_text'
 		});
-		
+
 		// grab the content of the target svg and place it in the canvas element
 		var svg_snippet = this.vis.node().parentNode.innerHTML;
-		
+
 		// restore content
 		this.fg_layer.selectAll('.platform_icon').data([1])
 			.enter().append("svg:image")
@@ -12646,7 +12645,7 @@ Barista.Views.ScatterPlotView = Barista.Views.BaristaBaseView.extend({
 
 /**
  * tag_list_view = new TagListView({el: $("target_selector",
-									bg_color:"#ffffff", 
+									bg_color:"#ffffff",
 									fg_color: "white",
 									tag_color: "gray",
 									span_class: "col-lg-12",
@@ -12920,7 +12919,7 @@ Barista.Views.TickView = Backbone.View.extend({
 	},
 
 	/**
-	 * perform a full redraw of the view, including wiping out all d3 drawn components in the view and 
+	 * perform a full redraw of the view, including wiping out all d3 drawn components in the view and
 	 * initializing them again from scratch
 	 * tick_view.redraw();
 	 */
@@ -13064,7 +13063,7 @@ Barista.Views.TickView = Backbone.View.extend({
 								.attr("fill", "#ff0000");
 		});
 
-		
+
 
 		// add a png export overlay
 		this.fg_layer.selectAll("." + this.div_string + "png_export").data([]).exit().remove();
@@ -13116,7 +13115,7 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	/**
 	 * pert_detail_view.hide(duration);
-	 * 
+	 *
 	 * hides the view by dimming the opacity and hiding it in the DOM
 	 * @param  {number} duration  the time in ms for the hide animation. defualts to 1
 	 */
@@ -13136,7 +13135,7 @@ Barista.Views.TickView = Backbone.View.extend({
 
 	/**
 	 * pert_detail_view.show(duration);
-	 * 
+	 *
 	 * shows the view by brightening the opacity and showing it in the DOM
 	 * @param  {number} duration  the time in ms for the show animation. defualts to 1
 	 */
@@ -13179,7 +13178,7 @@ Barista.Views.TickView = Backbone.View.extend({
 
 /**
  * violin_plot_view = new ViolinPlotView({el: $("target_selector",
-									bg_color:"#ffffff", 
+									bg_color:"#ffffff",
 									fg_color: "#1b9e77",
 									span_class: "span4",
 									scale_by: undefined,
@@ -13216,7 +13215,7 @@ Barista.Views.ViolinPlotView = Barista.Views.BaristaBaseView.extend({
 	model: new Barista.Models.ScatterPlotModel(),
 
 	/**
-	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view 
+	 * overide the default Backbone.View initialize method to handle optional arguments, compile the view
 	 * template, bind model changes to view updates, and render the view
 	 */
 	initialize: function(){
@@ -13681,7 +13680,7 @@ Barista.Views.SequenceView = Barista.Views.BaristaBaseView.extend({
 /**
 Tile constructor
 @param {object} [options={}] options object to set properties
-@classdesc A Tile that displays simple information and serves as a front door to the an underlying app.  The 
+@classdesc A Tile that displays simple information and serves as a front door to the an underlying app.  The
 tile is composted of a square div element that can be small, medium, or wide.  The height of the tile is 150px
 for small and 300px for large tiles.  The width is expressed as bootstrap span units of 3(small), 6(medium), or
 12(wide).  This base class provides mechanisms for injecting html into the DOM and showing or hiding the tile as
@@ -13691,7 +13690,7 @@ well as default styling
 @param {string}  [options.div_target] the div id into which to inject html, defaults to "body"
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.style]  inline style specification, defaults to "#bdbdbd"
-@param {string}  [options.color]  the background color of the tile, defuaults to 
+@param {string}  [options.color]  the background color of the tile, defuaults to
 @param {string}  [options.tile_type]  tile type, can be "small", "medium", or "wide", defaults to "medium"
 @param {bool}  [options.display]  true to render the tile on object creation, false not to, defaults to true
 
@@ -13716,7 +13715,7 @@ function Tile(options){
 /**
 Initializes Tile by building the appropriate html and injecting it into the DOM
 @memberof Tile
-@method init 
+@method init
 **/
 Tile.prototype.init = function() {
 	// build the html to inject into the DOM
@@ -13739,7 +13738,7 @@ Tile.prototype.init = function() {
 /**
 Builds the html for the tile based on the tile_type given in the constructor
 @memberof Tile
-@method build_html 
+@method build_html
 **/
 Tile.prototype.build_html = function() {
 	if (this.tile_type == "small"){
@@ -13765,7 +13764,7 @@ Tile.prototype.inject = function() {
 /**
 draws the tiles background using d3.js
 @memberof Tile
-@method draw_bg 
+@method draw_bg
 **/
 Tile.prototype.draw_bg = function() {
 	// get the correct height and width to draw
@@ -13823,7 +13822,7 @@ Tile.prototype.draw_bg = function() {
 hides the tile
 @param {object} [duration=0] the duration of a fade out animation applied before hiding the tile
 @memberof Tile
-@method hide 
+@method hide
 **/
 Tile.prototype.hide = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
@@ -13836,7 +13835,7 @@ Tile.prototype.hide = function(duration) {
 shows the tile
 @param {object} [duration=0] the duration of a fade out animation applied after showing the tile
 @memberof Tile
-@method show 
+@method show
 **/
 Tile.prototype.show = function(duration) {
 	duration = (duration !== undefined) ? duration : 0;
@@ -13855,7 +13854,7 @@ ImageTile constructor
 @param {string}  [options.div_target] the div id into which to inject html, defaults to "body"
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.style] inline style specification, defaults to "#f0f0f0"
-@param {string}  [options.color] the background color of the tile, defuaults to 
+@param {string}  [options.color] the background color of the tile, defuaults to
 @param {string}  [options.tile_type] tile type, can be "small", "medium", or "wide", defaults to "medium"
 
 **/
@@ -13872,7 +13871,7 @@ ImageTile.prototype.constructor = ImageTile;
 /**
 top level draw wrapper around draw\_bg and draw\_image
 @memberof ImageTile
-@method draw 
+@method draw
 **/
 ImageTile.prototype.draw = function() {
 	this.draw_bg();
@@ -13882,7 +13881,7 @@ ImageTile.prototype.draw = function() {
 /**
 draws the tile's image using d3.js
 @memberof ImageTile
-@method draw_image 
+@method draw_image
 **/
 ImageTile.prototype.draw_image = function() {
 	// get the correct height and width to draw
@@ -13925,7 +13924,7 @@ AnimatedImageTextTile constructor
 @param {string}  [options.div_target] the div id into which to inject html, defaults to "body"
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.style] inline style specification, defaults to "#f0f0f0"
-@param {string}  [options.color] the background color of the tile, defuaults to 
+@param {string}  [options.color] the background color of the tile, defuaults to
 @param {string}  [options.tile_type] tile type, can be "small", "medium", or "wide", defaults to "medium"
 
 **/
@@ -13943,7 +13942,7 @@ AnimatedImageTile.prototype.constructor = AnimatedImageTile;
 /**
 top level draw wrapper around draw\_bg and draw\_image
 @memberof AnimatedImageTile
-@method draw 
+@method draw
 **/
 AnimatedImageTile.prototype.draw = function() {
 	this.draw_bg();
@@ -13953,7 +13952,7 @@ AnimatedImageTile.prototype.draw = function() {
 /**
 starts periodic animation of the Image on the Tile
 @memberof AnimatedImageTile
-@method start_animation 
+@method start_animation
 @param {int}  [duration=2000] duration the length of the animation in milliseconds
 @param {int}  [frequency= 10000 to 20000] frequency the frequency of the animation in milliseconds
 **/
@@ -13975,7 +13974,7 @@ AnimatedImageTile.prototype.start_animation = function(duration,frequency) {
 /**
 ImageTextTile constructor
 @param {object} [options={}] options object to set properties
-@classdesc A Tile that extends ImageTile to add text 
+@classdesc A Tile that extends ImageTile to add text
 @class ImageTextTile
 @constructor
 @extends ImageTile
@@ -13984,7 +13983,7 @@ ImageTextTile constructor
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.text] the text to display on the panel, defaults to "Title"
 @param {string}  [options.style] inline style specification, defaults to "#f0f0f0"
-@param {string}  [options.color] the background color of the tile, defuaults to 
+@param {string}  [options.color] the background color of the tile, defuaults to
 @param {string}  [options.tile_type] tile type, can be "small", "medium", or "wide", defaults to "medium"
 
 **/
@@ -14001,7 +14000,7 @@ ImageTextTile.prototype.constructor = ImageTextTile;
 /**
 top level draw wrapper around draw\_bg and draw\_image and draw\_text
 @memberof ImageTextTile
-@method draw 
+@method draw
 **/
 ImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -14012,7 +14011,7 @@ ImageTextTile.prototype.draw = function() {
 /**
 draws the tile's text using d3.js
 @memberof ImageTextTile
-@method draw_text 
+@method draw_text
 **/
 ImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
@@ -14075,7 +14074,7 @@ AnimatedImageTextTile constructor
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.text] the text to display on the panel, defaults to "Title"
 @param {string}  [options.style] inline style specification, defaults to "#f0f0f0"
-@param {string}  [options.color] the background color of the tile, defuaults to 
+@param {string}  [options.color] the background color of the tile, defuaults to
 @param {string}  [options.tile_type] tile type, can be "small", "medium", or "wide", defaults to "medium"
 
 **/
@@ -14094,7 +14093,7 @@ AnimatedImageTextTile.prototype.constructor = AnimatedImageTextTile;
 /**
 top level draw wrapper around draw\_bg and draw\_image and draw\_text
 @memberof AnimatedImageTextTile
-@method draw 
+@method draw
 **/
 AnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -14123,7 +14122,7 @@ AnimatedImageTextTile.prototype.show_text = function() {
 /**
 hide the text in the Tile
 @memberof AnimatedImageTextTile
-@method hide_text 
+@method hide_text
 **/
 AnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimating){
@@ -14137,7 +14136,7 @@ AnimatedImageTextTile.prototype.hide_text = function() {
 /**
 draws the tile's text using d3.js
 @memberof AnimatedImageTextTile
-@method draw_text 
+@method draw_text
 **/
 AnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
@@ -14197,7 +14196,7 @@ FullAnimatedImageTextTile constructor
 @param {string}  [options.div_id] the div id for generated html, defaults to "Tile" plus a random number
 @param {string}  [options.text] the text to display on the panel, defaults to "Title"
 @param {string}  [options.style] inline style specification, defaults to "#f0f0f0"
-@param {string}  [options.color] the background color of the tile, defuaults to 
+@param {string}  [options.color] the background color of the tile, defuaults to
 @param {string}  [options.tile_type] tile type, can be "small", "medium", or "wide", defaults to "medium"
 
 **/
@@ -14217,7 +14216,7 @@ FullAnimatedImageTextTile.prototype.constructor = FullAnimatedImageTextTile;
 /**
 top level draw wrapper around draw\_bg and draw\_image and draw\_text
 @memberof FullAnimatedImageTextTile
-@method draw 
+@method draw
 **/
 FullAnimatedImageTextTile.prototype.draw = function() {
 	this.draw_bg();
@@ -14246,7 +14245,7 @@ FullAnimatedImageTextTile.prototype.show_text = function() {
 /**
 hide the text in the Tile
 @memberof FullAnimatedImageTextTile
-@method hide_text 
+@method hide_text
 **/
 FullAnimatedImageTextTile.prototype.hide_text = function() {
 	if (!this.TextIsAnimatingOut){
@@ -14260,7 +14259,7 @@ FullAnimatedImageTextTile.prototype.hide_text = function() {
 /**
 draws the tile's text using d3.js
 @memberof FullAnimatedImageTextTile
-@method draw_text 
+@method draw_text
 **/
 FullAnimatedImageTextTile.prototype.draw_text = function() {
 	// get the correct height and width to draw
