@@ -1,3 +1,5 @@
+**DEPRECATED:** This project is no longer actively maintained.
+
 ![barista.js](http://coreyflynn.github.io/Bellhop/img/cmap_broad_logo_small.png)
 
 
